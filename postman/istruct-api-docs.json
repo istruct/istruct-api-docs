@@ -7,12 +7,9 @@
   },
   "item": [
     {
-      "_postman_id": "98582d72-aa93-4bc7-823b-db3c9a6b71f0",
       "name": "Authorization",
-      "description": "To interact with other endpoints your requests have to be authorized using OAuth2 access token.\n\nTo obtain a token your application can get it in exchange for API Keys using client credentials grant (id and secret).",
       "item": [
         {
-          "_postman_id": "b8a48a3c-1c26-4446-8339-0283c2718679",
           "name": "Fetch new token",
           "event": [
             {
@@ -45,6 +42,7 @@
               }
             }
           ],
+          "_postman_id": "b8a48a3c-1c26-4446-8339-0283c2718679",
           "request": {
             "method": "POST",
             "header": [
@@ -63,19 +61,16 @@
                 {
                   "key": "grant_type",
                   "value": "client_credentials",
-                  "description": "",
                   "type": "text"
                 },
                 {
                   "key": "client_id",
                   "value": "{{client_id}}",
-                  "description": "",
                   "type": "text"
                 },
                 {
                   "key": "client_secret",
                   "value": "{{client_secret}}",
-                  "description": "",
                   "type": "text"
                 }
               ]
@@ -109,19 +104,16 @@
                     {
                       "key": "grant_type",
                       "value": "client_credentials",
-                      "description": "",
                       "type": "text"
                     },
                     {
                       "key": "client_id",
                       "value": "{{client_id}}",
-                      "description": "",
                       "type": "text"
                     },
                     {
                       "key": "client_secret",
                       "value": "{{client_secret}}",
-                      "description": "",
                       "type": "text"
                     }
                   ]
@@ -172,6 +164,8 @@
           ]
         }
       ],
+      "_postman_id": "98582d72-aa93-4bc7-823b-db3c9a6b71f0",
+      "description": "To interact with other endpoints your requests have to be authorized using OAuth2 access token.\n\nTo obtain a token your application can get it in exchange for API Keys using client credentials grant (id and secret).",
       "event": [
         {
           "listen": "prerequest",
@@ -196,23 +190,17 @@
       ]
     },
     {
-      "_postman_id": "1350357e-8683-4f12-abff-969e9889f12f",
       "name": "Resources",
-      "description": "Manage or view iStruct resources.\n\n**All endpoints require Bearer access token.**",
       "item": [
         {
-          "_postman_id": "3e8f0a97-4916-49d7-a069-1136dbe6a41a",
           "name": "Shop",
-          "description": "iStruct Shop modules support full eCommerce flow. Products and categories management, order and payment processing with external gateways, shipping packages via carriers or brokers, invoicing and much more.",
           "item": [
             {
-              "_postman_id": "22efebb0-9f03-4dd2-ad24-94cd16d2d2d0",
               "name": "Package",
-              "description": "Packages aggregate Orders into a single entity that allows one or more of them to be shipped in one parcel. Package contains one **Main Order** that defines delivery address and shipment type. Main order can contain zero or more **Connected Orders** that should be shipped all together.",
               "item": [
                 {
-                  "_postman_id": "d60874bd-a5c1-4375-a8da-aaa9c0dee547",
                   "name": "Fetch multiple packages",
+                  "_postman_id": "d60874bd-a5c1-4375-a8da-aaa9c0dee547",
                   "request": {
                     "method": "GET",
                     "header": [
@@ -225,10 +213,6 @@
                         "value": "application/vnd.api+json"
                       }
                     ],
-                    "body": {
-                      "mode": "raw",
-                      "raw": ""
-                    },
                     "url": "{{url}}/api/v1/shop/packages",
                     "description": "**Available filters**\n\n| Name                    | Type     | Description                                                             |\n|-------------------------|----------|-------------------------------------------------------------------------|\n| cancelled               | bool     | Has package been cancelled?                                             |\n| carrierName             | string   | Exact carrier name                                                      |\n| createdFrom             | datetime | `>=` Date when package has been created                                 |\n| createdTo               | datetime | `<=` Date when package has been created                                 |\n| delivered               | bool     | Has package been delivered?                                             |\n| sent                    | bool     | Has package been sent?                                                  |\n| trackingNumber          | string   | Exact tracking number                                                   |\n\n**Available sortings**\n\n* id\n* createdAt"
                   },
@@ -248,10 +232,6 @@
                             "value": "application/vnd.api+json"
                           }
                         ],
-                        "body": {
-                          "mode": "raw",
-                          "raw": ""
-                        },
                         "url": {
                           "raw": "{{url}}/api/v1/shop/packages?filter[sent]=false&filter[cancelled]=false&sort=createdAt",
                           "host": [
@@ -266,18 +246,15 @@
                           "query": [
                             {
                               "key": "filter[sent]",
-                              "value": "false",
-                              "equals": true
+                              "value": "false"
                             },
                             {
                               "key": "filter[cancelled]",
-                              "value": "false",
-                              "equals": true
+                              "value": "false"
                             },
                             {
                               "key": "sort",
-                              "value": "createdAt",
-                              "equals": true
+                              "value": "createdAt"
                             }
                           ]
                         }
@@ -305,10 +282,6 @@
                             "value": "application/vnd.api+json"
                           }
                         ],
-                        "body": {
-                          "mode": "raw",
-                          "raw": ""
-                        },
                         "url": {
                           "raw": "{{url}}/api/v1/shop/packages?filter[createdFrom]=2018-10-17T00%3A00%3A00%2B0200&filter[createdTo]=2018-10-17T23%3A59%3A59%2B0200",
                           "host": [
@@ -323,13 +296,11 @@
                           "query": [
                             {
                               "key": "filter[createdFrom]",
-                              "value": "2018-10-17T00%3A00%3A00%2B0200",
-                              "equals": true
+                              "value": "2018-10-17T00%3A00%3A00%2B0200"
                             },
                             {
                               "key": "filter[createdTo]",
-                              "value": "2018-10-17T23%3A59%3A59%2B0200",
-                              "equals": true
+                              "value": "2018-10-17T23%3A59%3A59%2B0200"
                             }
                           ]
                         }
@@ -355,10 +326,6 @@
                             "value": "application/vnd.api+json"
                           }
                         ],
-                        "body": {
-                          "mode": "raw",
-                          "raw": ""
-                        },
                         "url": "{{url}}/api/v1/shop/packages"
                       },
                       "status": "OK",
@@ -405,8 +372,8 @@
                   ]
                 },
                 {
-                  "_postman_id": "9e33573f-4599-4ff2-96f1-b7cfe9237d53",
                   "name": "Fetch single package",
+                  "_postman_id": "9e33573f-4599-4ff2-96f1-b7cfe9237d53",
                   "request": {
                     "method": "GET",
                     "header": [
@@ -419,10 +386,6 @@
                         "value": "application/vnd.api+json"
                       }
                     ],
-                    "body": {
-                      "mode": "raw",
-                      "raw": ""
-                    },
                     "url": "{{url}}/api/v1/shop/packages/{{package_id}}",
                     "description": "**Package attributes**\n\n| Name                    | Type     | Nullable | Description                                                                         |\n|-------------------------|----------|----------|-------------------------------------------------------------------------------------|\n| trackingNumber          | string   | Yes      | Package tracking number                                                             |\n| trackingUrl             | string   | Yes      | Tracking URL (to external carrier service)                                          |\n| carrierName             | string   | Yes      | Carrier of package                                                                  |\n| receiver.name           | string   | No       | Entity that is a receiver of package                                                |\n| receiver.phone          | string   | No       | Phone number of receiver                                                            |\n| receiver.countryId      | string   | No       | [ISO 3166-1 alpha-2](https://en.wikipedia.org/wiki/ISO_3166-1_alpha-2) country code |\n| receiver.postalCode     | string   | No       | Delivery postal code                                                                |\n| receiver.cityName       | string   | No       | Delivery city name                                                                  |\n| receiver.street         | string   | No       | Delivery address (street, home number, apartment number                             |\n| shipment.isCod          | bool     | No       | Whether this parcel should be COD                                                   |\n| shipment.codAmount      | float    | No       | COD amount (important when `shipment.isCod` is `true`)                              |\n| shipment.codCurrency    | string   | No       | COD currency symbol ([ISO 4217](https://en.wikipedia.org/wiki/ISO_4217) format, important when `shipment.isCod` is `true`) |\n| createdAt               | datetime | No       | Date when package has been created                                                  |\n| sent                    | bool     | No       | Has package been sent? (Passed to external package handling service)                |\n| delivered               | bool     | No       | Has package been delivered?                                                         |\n| deliveredAt             | datetime | Yes      | Date when package has been delivered                                                |\n| cancelled               | bool     | No       | Has package been cancelled?                                                         |\n\n**Relationships**\n\n* mainOrder - Package main `Order` object\n* mainShipment - Package `Shipment` object"
                   },
@@ -442,7 +405,10 @@
                             "value": "application/vnd.api+json"
                           }
                         ],
-                        "body": {},
+                        "body": {
+                          "mode": "formdata",
+                          "formdata": []
+                        },
                         "url": "http://{{url}}/api/v1/shop/packages/{{package_id}}"
                       },
                       "status": "OK",
@@ -501,7 +467,10 @@
                             "value": "application/vnd.api+json"
                           }
                         ],
-                        "body": {},
+                        "body": {
+                          "mode": "formdata",
+                          "formdata": []
+                        },
                         "url": {
                           "raw": "http://{{url}}/api/v1/shop/packages/{{package_id}}?include=mainOrder",
                           "protocol": "http",
@@ -518,8 +487,7 @@
                           "query": [
                             {
                               "key": "include",
-                              "value": "mainOrder",
-                              "equals": true
+                              "value": "mainOrder"
                             }
                           ]
                         }
@@ -568,8 +536,8 @@
                   ]
                 },
                 {
-                  "_postman_id": "a1c609b8-eb80-4675-9eca-34c3d131b2eb",
                   "name": "Fetch package main order",
+                  "_postman_id": "a1c609b8-eb80-4675-9eca-34c3d131b2eb",
                   "request": {
                     "method": "GET",
                     "header": [
@@ -582,10 +550,6 @@
                         "value": "application/vnd.api+json"
                       }
                     ],
-                    "body": {
-                      "mode": "raw",
-                      "raw": ""
-                    },
                     "url": "{{url}}/api/v1/shop/packages/{{package_id}}/relationships/main_order",
                     "description": "See `Order` endpoints for details about this response."
                   },
@@ -605,7 +569,10 @@
                             "value": "application/vnd.api+json"
                           }
                         ],
-                        "body": {},
+                        "body": {
+                          "mode": "formdata",
+                          "formdata": []
+                        },
                         "url": "http://{{url}}/api/v1/shop/packages/{{package_id}}/relationships/main_order"
                       },
                       "status": "OK",
@@ -652,8 +619,8 @@
                   ]
                 },
                 {
-                  "_postman_id": "f4b99a90-7ba1-497f-8177-fb418188f34f",
                   "name": "Fetch package main shipment",
+                  "_postman_id": "f4b99a90-7ba1-497f-8177-fb418188f34f",
                   "request": {
                     "method": "GET",
                     "header": [
@@ -666,10 +633,6 @@
                         "value": "application/vnd.api+json"
                       }
                     ],
-                    "body": {
-                      "mode": "raw",
-                      "raw": ""
-                    },
                     "url": "{{url}}/api/v1/shop/packages/{{package_id}}/relationships/main_shipment",
                     "description": "See `Order` endpoints for details about this response."
                   },
@@ -689,7 +652,10 @@
                             "value": "application/vnd.api+json"
                           }
                         ],
-                        "body": {},
+                        "body": {
+                          "mode": "formdata",
+                          "formdata": []
+                        },
                         "url": "http://{{url}}/api/v1/shop/packages/{{package_id}}/relationships/main_shipment"
                       },
                       "status": "OK",
@@ -736,8 +702,8 @@
                   ]
                 },
                 {
-                  "_postman_id": "be375048-8ab0-47e3-a1f3-116f47125885",
                   "name": "Mark package as sent",
+                  "_postman_id": "be375048-8ab0-47e3-a1f3-116f47125885",
                   "request": {
                     "method": "PUT",
                     "header": [
@@ -953,8 +919,8 @@
                   ]
                 },
                 {
-                  "_postman_id": "4b9987b8-3e20-4761-b3f0-36f2e9cadafd",
                   "name": "Mark package as delivered",
+                  "_postman_id": "4b9987b8-3e20-4761-b3f0-36f2e9cadafd",
                   "request": {
                     "method": "PUT",
                     "header": [
@@ -1108,8 +1074,8 @@
                   ]
                 },
                 {
-                  "_postman_id": "561023af-7b3b-402b-bbe8-502e09fca4ff",
                   "name": "Set package tracking details",
+                  "_postman_id": "561023af-7b3b-402b-bbe8-502e09fca4ff",
                   "request": {
                     "method": "PUT",
                     "header": [
@@ -1263,6 +1229,8 @@
                   ]
                 }
               ],
+              "_postman_id": "22efebb0-9f03-4dd2-ad24-94cd16d2d2d0",
+              "description": "Packages aggregate Orders into a single entity that allows one or more of them to be shipped in one parcel. Package contains one **Main Order** that defines delivery address and shipment type. Main order can contain zero or more **Connected Orders** that should be shipped all together.",
               "event": [
                 {
                   "listen": "prerequest",
@@ -1288,13 +1256,11 @@
               "_postman_isSubFolder": true
             },
             {
-              "_postman_id": "839fab0d-b849-45f6-a46b-f91f5ebd3b8a",
               "name": "Order",
-              "description": "Shop Order contains at least one product **Item**, exactly one **Shipment** and exactly one **Payment** objects. It can contain zero or more **Connected Orders** and zero or exactly one **Sales Document** objects.",
               "item": [
                 {
-                  "_postman_id": "39c07ac8-6d3c-46da-911c-5f685c5abb95",
                   "name": "Fetch multiple orders",
+                  "_postman_id": "39c07ac8-6d3c-46da-911c-5f685c5abb95",
                   "request": {
                     "method": "GET",
                     "header": [
@@ -1307,10 +1273,6 @@
                         "value": "application/vnd.api+json"
                       }
                     ],
-                    "body": {
-                      "mode": "raw",
-                      "raw": ""
-                    },
                     "url": "{{url}}/api/v1/shop/orders",
                     "description": "**Available filters**\n\n| Name                    | Type     | Description                                                             |\n|-------------------------|----------|-------------------------------------------------------------------------|\n| code                    | string   | Exact order code                                                        |\n| currency                | string   | Exact order currency                                                    |\n| currentStatusId         | int/int[]| One or more status IDs (see **Order statuses** below)                   |\n| createdFrom             | datetime | `>=` Date when order has been created                                   |\n| createdTo               | datetime | `<=` Date when order has been created                                   |\n\n**Available sortings**\n\n* id\n* createdAt\n\n**Order statuses**\n\n| Status ID | Status name |\n|-----------|-------------|\n| 1         | new         |\n| 2         | paid        |\n| 3         | realized    |\n| 4         | sent        |\n| 5         | delivered   |\n| 6         | returned    |\n| 7         | cancelled   |"
                   },
@@ -1330,7 +1292,10 @@
                             "value": "application/vnd.api+json"
                           }
                         ],
-                        "body": {},
+                        "body": {
+                          "mode": "formdata",
+                          "formdata": []
+                        },
                         "url": "http://{{url}}/api/v1/shop/orders"
                       },
                       "status": "OK",
@@ -1389,7 +1354,10 @@
                             "value": "application/vnd.api+json"
                           }
                         ],
-                        "body": {},
+                        "body": {
+                          "mode": "formdata",
+                          "formdata": []
+                        },
                         "url": {
                           "raw": "http://{{url}}/api/v1/shop/orders?filter[currentStatusId]=5&order=-createdAt",
                           "protocol": "http",
@@ -1405,13 +1373,11 @@
                           "query": [
                             {
                               "key": "filter[currentStatusId]",
-                              "value": "5",
-                              "equals": true
+                              "value": "5"
                             },
                             {
                               "key": "order",
-                              "value": "-createdAt",
-                              "equals": true
+                              "value": "-createdAt"
                             }
                           ]
                         }
@@ -1460,8 +1426,8 @@
                   ]
                 },
                 {
-                  "_postman_id": "9b99bad5-ef1d-4c20-ad19-e16060f0b5c7",
                   "name": "Fetch single order",
+                  "_postman_id": "9b99bad5-ef1d-4c20-ad19-e16060f0b5c7",
                   "request": {
                     "method": "GET",
                     "header": [
@@ -1474,10 +1440,6 @@
                         "value": "application/vnd.api+json"
                       }
                     ],
-                    "body": {
-                      "mode": "raw",
-                      "raw": ""
-                    },
                     "url": "{{url}}/api/v1/shop/orders/{{order_id}}",
                     "description": "**Order attributes**\n\n| Name                    | Type     | Nullable | Description                                                                         |\n|-------------------------|----------|----------|-------------------------------------------------------------------------------------|\n| code                    | string   | No       | Auto generated, unique order code                                                   |\n| currency                | string   | No       | Payment currency symbol ([ISO 4217](https://en.wikipedia.org/wiki/ISO_4217) format) |\n| amount                  | float    | No       | Total amount for order in `currency`                                                |\n| points                  | float    | No       | Total points for order (for calculating commissions)                                |\n| orderer.name            | string   | No       | Entity that placed this order                                                       |\n| orderer.isCompany       | bool     | No       | Whether order has been placed on behalf of a company entity                         |\n| orderer.companyName     | string   | Yes      | When `isCompany = true` this name is filled                                         |\n| orderer.phone           | string   | No       | Phone number of orderer                                                             |\n| orderer.email           | string   | No       | E-mail address of orderer                                                           |\n| orderer.address.countryId | string | No       | [ISO 3166-1 alpha-2](https://en.wikipedia.org/wiki/ISO_3166-1_alpha-2) country code |\n| orderer.address.postalCode| string | No       | Orderer postal code                                                                 |\n| orderer.address.cityName  | string | No       | Orderer city name                                                                   |\n| orderer.address.street    | string | No       | Orderer address (street, home number, apartment number                              |\n| orderer.address.annotations | string | Yes    | Orderer annotations or remarks regarding this order                                 |\n| orderer.vatNumber       | string   | Yes      | When `isCompany = true` this number is filled (used for invoicing)                  |\n| orderer.isVatEu         | bool     | No       | Whether `vatNumber` is an EU VAT Number                                             |\n| delivery.name           | string   | No       | Order receiver name                                                                 |\n| delivery.phone          | string   | No       | Phone number for delivery                                                           |\n| delivery.countryId      | string   | No       | [ISO 3166-1 alpha-2](https://en.wikipedia.org/wiki/ISO_3166-1_alpha-2) country code |\n| delivery.postalCode     | string   | No       | Delivery postal code                                                                |\n| delivery.cityName       | string   | No       | Delivery city name                                                                  |\n| delivery.street         | string   | No       | Delivery address (street, home number, apartment number                             |\n| createdAt               | datetime | No       | Date when order has been placed                                                     |\n| currentStatusId         | bool     | No       | Current order status (see **Order statuses** table)                                 |\n| currentStatusUpdatedAt  | datetime | No       | Date when order has reached current status                                          |\n| shipSalesDocument       | bool     | No       | Whether physical copy of sales document should be inserted into package? (Customer wish) |\n\n**Relationships**\n\n* payment - Order `Payment` object\n* shipment - Order `Shipment` object\n* items - Order `Item` collection\n* connectedOrders - Orders connected to this order\n* salesDocument - An `Invoice` object or null"
                   },
@@ -1497,7 +1459,10 @@
                             "value": "application/vnd.api+json"
                           }
                         ],
-                        "body": {},
+                        "body": {
+                          "mode": "formdata",
+                          "formdata": []
+                        },
                         "url": "http://{{url}}/api/v1/shop/orders/{{order_id}}"
                       },
                       "status": "OK",
@@ -1544,8 +1509,8 @@
                   ]
                 },
                 {
-                  "_postman_id": "d7ab1aa6-4924-48d2-9cf1-8d707fbbd5fb",
                   "name": "Fetch order items",
+                  "_postman_id": "d7ab1aa6-4924-48d2-9cf1-8d707fbbd5fb",
                   "request": {
                     "method": "GET",
                     "header": [
@@ -1558,10 +1523,6 @@
                         "value": "application/vnd.api+json"
                       }
                     ],
-                    "body": {
-                      "mode": "raw",
-                      "raw": ""
-                    },
                     "url": "{{url}}/api/v1/shop/orders/{{order_id}}/relationships/items",
                     "description": "**Item attributes**\n\n| Name                    | Type     | Nullable | Description                                                                         |\n|-------------------------|----------|----------|-------------------------------------------------------------------------------------|\n| number                  | int      | No       | Ordinal number of product in order                                                  |\n| name                    | string   | No       | Product name                                                                        |\n| code                    | string   | No       | Product item code shown in eCommerce                                                |\n| barcode                 | string   | Yes      | Product item barcode                                                                |\n| warehouseCode           | string   | No       | Product item warehouse code                                                         |\n| quantity                | int      | No       | Purchased product quantity                                                          |\n| price                   | float    | No       | Product price per single unit                                                       |\n| points                  | float    | No       | Product points per single unit (used for commissions calculation)                   |\n| taxPercent              | int      | No       | Product tax percent                                                                 |\n| weight                  | float    | No       | Product weight per single unit                                                      |\n| orderId                 | int      | No       | ID of order to which this item belongs                                              |"
                   },
@@ -1581,7 +1542,10 @@
                             "value": "application/vnd.api+json"
                           }
                         ],
-                        "body": {},
+                        "body": {
+                          "mode": "formdata",
+                          "formdata": []
+                        },
                         "url": "http://{{url}}/api/v1/shop/orders/{{order_id}}/relationships/items"
                       },
                       "status": "OK",
@@ -1628,8 +1592,8 @@
                   ]
                 },
                 {
-                  "_postman_id": "e59e425a-fe43-41ba-9f3c-9a73b189f294",
                   "name": "Fetch order connected orders",
+                  "_postman_id": "e59e425a-fe43-41ba-9f3c-9a73b189f294",
                   "request": {
                     "method": "GET",
                     "header": [
@@ -1642,10 +1606,6 @@
                         "value": "application/vnd.api+json"
                       }
                     ],
-                    "body": {
-                      "mode": "raw",
-                      "raw": ""
-                    },
                     "url": "{{url}}/api/v1/shop/orders/{{order_id}}/relationships/connected_orders"
                   },
                   "response": [
@@ -1664,7 +1624,10 @@
                             "value": "application/vnd.api+json"
                           }
                         ],
-                        "body": {},
+                        "body": {
+                          "mode": "formdata",
+                          "formdata": []
+                        },
                         "url": "http://{{url}}/api/v1/shop/orders/{{order_id}}/relationships/connected_orders"
                       },
                       "status": "OK",
@@ -1723,7 +1686,10 @@
                             "value": "application/vnd.api+json"
                           }
                         ],
-                        "body": {},
+                        "body": {
+                          "mode": "formdata",
+                          "formdata": []
+                        },
                         "url": "http://{{url}}/api/v1/shop/orders/3/relationships/connected_orders"
                       },
                       "status": "OK",
@@ -1770,8 +1736,8 @@
                   ]
                 },
                 {
-                  "_postman_id": "54d79020-2090-4f3a-9a9e-f0611c2decd1",
                   "name": "Fetch order payment",
+                  "_postman_id": "54d79020-2090-4f3a-9a9e-f0611c2decd1",
                   "request": {
                     "method": "GET",
                     "header": [
@@ -1784,10 +1750,6 @@
                         "value": "application/vnd.api+json"
                       }
                     ],
-                    "body": {
-                      "mode": "raw",
-                      "raw": ""
-                    },
                     "url": "{{url}}/api/v1/shop/orders/{{order_id}}/relationships/payment",
                     "description": "**Payment attributes**\n\n| Name                    | Type     | Nullable | Description                                                                         |\n|-------------------------|----------|----------|-------------------------------------------------------------------------------------|\n| typeId                  | int      | No       | ID of payment type                                                                  |\n| name                    | string   | No       | Payment type name                                                                   |\n| amount                  | float    | No       | Payment amount                                                                      |\n| orderId                 | int      | No       | ID of order to which this payment belongs                                           |"
                   },
@@ -1807,7 +1769,10 @@
                             "value": "application/vnd.api+json"
                           }
                         ],
-                        "body": {},
+                        "body": {
+                          "mode": "formdata",
+                          "formdata": []
+                        },
                         "url": "http://{{url}}/api/v1/shop/orders/{{order_id}}/relationships/payment"
                       },
                       "status": "OK",
@@ -1854,8 +1819,8 @@
                   ]
                 },
                 {
-                  "_postman_id": "5fda03da-f695-475d-8c8a-b30d297e7196",
                   "name": "Fetch order shipment",
+                  "_postman_id": "5fda03da-f695-475d-8c8a-b30d297e7196",
                   "request": {
                     "method": "GET",
                     "header": [
@@ -1868,10 +1833,6 @@
                         "value": "application/vnd.api+json"
                       }
                     ],
-                    "body": {
-                      "mode": "raw",
-                      "raw": ""
-                    },
                     "url": "{{url}}/api/v1/shop/orders/{{order_id}}/relationships/shipment",
                     "description": "**Shipment attributes**\n\n| Name                    | Type     | Nullable | Description                                                                         |\n|-------------------------|----------|----------|-------------------------------------------------------------------------------------|\n| typeId                  | int      | No       | ID of shipment type                                                                 |\n| isCod                   | bool     | No       | Whether shipment is COD                                                             |\n| name                    | string   | No       | Shipment type name                                                                  |\n| cost                    | float    | No       | Shipment cost                                                                       |\n| orderId                 | int      | No       | ID of order to which this shipment belongs                                          |"
                   },
@@ -1891,7 +1852,10 @@
                             "value": "application/vnd.api+json"
                           }
                         ],
-                        "body": {},
+                        "body": {
+                          "mode": "formdata",
+                          "formdata": []
+                        },
                         "url": "http://{{url}}/api/v1/shop/orders/{{order_id}}/relationships/shipment"
                       },
                       "status": "OK",
@@ -1942,8 +1906,8 @@
                   ]
                 },
                 {
-                  "_postman_id": "44680e09-4033-41d5-8611-2ab457f5b5ce",
                   "name": "Fetch order sales document",
+                  "_postman_id": "44680e09-4033-41d5-8611-2ab457f5b5ce",
                   "request": {
                     "method": "GET",
                     "header": [
@@ -1956,10 +1920,6 @@
                         "value": "application/vnd.api+json"
                       }
                     ],
-                    "body": {
-                      "mode": "raw",
-                      "raw": ""
-                    },
                     "url": "{{url}}/api/v1/shop/orders/{{order_id}}/relationships/sales_document",
                     "description": "**Sales document attributes**\n\n| Name                    | Type     | Nullable | Description                                                                         |\n|-------------------------|----------|----------|-------------------------------------------------------------------------------------|\n| title                   | string   | No       | Title of sales document                                                             |\n| currency                | string   | No       | Currency of document                                                                |\n| amount                  | float    | No       | Total amount on document                                                            |\n| soldAt                  | datetime | No       | Datetime of sale                                                                    |\n| issuedAt                | datetime | No       | Datetime of document issuing                                                        |\n| file.name               | string   | No       | Document file name                                                                  |\n| file.extension          | string   | No       | Document file extension (pdf)                                                       |\n| file.mime               | string   | No       | Document file mimetype (application/pdf)                                            |\n| file.size               | int      | No       | Document file size in bytes                                                         |\n| file.contents           | string   | No       | Document file contents encoded in base64                                            |\n| orderId                 | int      | No       | ID of order to which this sales document belongs                                    |"
                   },
@@ -1979,7 +1939,10 @@
                             "value": "application/vnd.api+json"
                           }
                         ],
-                        "body": {},
+                        "body": {
+                          "mode": "formdata",
+                          "formdata": []
+                        },
                         "url": "http://{{url}}/api/v1/shop/orders/{{order_id}}/relationships/sales_document"
                       },
                       "status": "OK",
@@ -2026,6 +1989,8 @@
                   ]
                 }
               ],
+              "_postman_id": "839fab0d-b849-45f6-a46b-f91f5ebd3b8a",
+              "description": "Shop Order contains at least one product **Item**, exactly one **Shipment** and exactly one **Payment** objects. It can contain zero or more **Connected Orders** and zero or exactly one **Sales Document** objects.",
               "event": [
                 {
                   "listen": "prerequest",
@@ -2051,6 +2016,8 @@
               "_postman_isSubFolder": true
             }
           ],
+          "_postman_id": "3e8f0a97-4916-49d7-a069-1136dbe6a41a",
+          "description": "iStruct Shop modules support full eCommerce flow. Products and categories management, order and payment processing with external gateways, shipping packages via carriers or brokers, invoicing and much more.",
           "event": [
             {
               "listen": "prerequest",
@@ -2076,10 +2043,12 @@
           "_postman_isSubFolder": true
         }
       ],
+      "_postman_id": "1350357e-8683-4f12-abff-969e9889f12f",
+      "description": "Manage or view iStruct resources.\n\n**All endpoints require Bearer access token.**",
       "auth": {
         "type": "oauth2",
         "oauth2": {
-          "accessToken": "eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiIsImp0aSI6ImU0MTY5YjQzNGMwZWExZDQ2YmNmODBlMjVkNzcyM2E0ZGM4NTE1MWQwZDYxMTE4ZDNlMGM5MTMyMDIzMGQ5NmM4YTJjNTRhYTVhZjU3OWZlIn0.eyJhdWQiOiIxIiwianRpIjoiZTQxNjliNDM0YzBlYTFkNDZiY2Y4MGUyNWQ3NzIzYTRkYzg1MTUxZDBkNjExMThkM2UwYzkxMzIwMjMwZDk2YzhhMmM1NGFhNWFmNTc5ZmUiLCJpYXQiOjE1NDQxNzc0NjYsIm5iZiI6MTU0NDE3NzQ2NiwiZXhwIjoxNTQ0MzUwMjY2LCJzdWIiOiIiLCJzY29wZXMiOltdfQ.xIYPm3oOWcF8tcnDODMLbbPPQGv5DRkP10-0f756QwMxth-e6QzEAatJV-z-nzbGIgOLVWDSbM0g0PmDVvFarfPoGNHrKaGgo-_Yqblc6aZenxiZizVVQj5IIdwSoWmhttdqyq5sA7x8TO4pPLKsDnkWnlSDCgNeLZKgo35hk5LvK9LRzv4SLjOFBESnnvqand_T0qqf2g5lP8s2ZM5-y3HozaY1XQ4NavoarPExThIO_fFkct0ri1_qlQXmDEb5taOdm5JBkTGNGP6XqfIL33KsjNAnkeV0dkNn-q4w0m2zNbLlKua1H5irTaeo8C9igGnLcaD6PgAxYKveB8TyKg",
+          "accessToken": "eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiIsImp0aSI6ImVlMDU2NDkzYmRkZTFhNGVkZDhmMWY0MWI3ZDA0M2EzNTg3ZmY2MjRhZDZjNTA2NTUxN2QyMmI5Y2QyYzllMDE0ZTAzM2IyZDM4MmI5YThiIn0.eyJhdWQiOiIxIiwianRpIjoiZWUwNTY0OTNiZGRlMWE0ZWRkOGYxZjQxYjdkMDQzYTM1ODdmZjYyNGFkNmM1MDY1NTE3ZDIyYjljZDJjOWUwMTRlMDMzYjJkMzgyYjlhOGIiLCJpYXQiOjE1NTU0MzMwOTEsIm5iZiI6MTU1NTQzMzA5MSwiZXhwIjoxNTU1NjA1ODkxLCJzdWIiOiIiLCJzY29wZXMiOltdfQ.fBd2MiyQu4fqDYBMg6XypZBie3M4aREZDtcIAZsz-YLOefhISwzVvyX0MMhtOhKf9bPXFpeqaOYlNTNqikrWgHWJRg57wGY42-3QKIxfuvfYfVLXgktMEQauQQGjjX-KCY-9pGqwBaMUyQB7C0u25EXBV2DbzIGo0W0ZjLJ0ODVw5suay8Hg8_9RH8R4YJGaxicdS7eyZWlk9iutxA6uiyiKZPuiSky9s3garl0YlG3LwEHgOJt5o2XzGrvSj4JfVc1vSIuyTqPbn9YlleESjFKmLT_5oP2r7gOHGgfZvGgemclROvFssxH8lBszFVFcnBTBg8bGL-YRts8HmIZglw",
           "tokenType": "Bearer",
           "addTokenTo": "header"
         }
