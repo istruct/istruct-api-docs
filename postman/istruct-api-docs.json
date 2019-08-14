@@ -202,6 +202,13 @@
                   "name": "Fetch multiple packages",
                   "_postman_id": "d60874bd-a5c1-4375-a8da-aaa9c0dee547",
                   "request": {
+                    "auth": {
+                      "type": "oauth2",
+                      "oauth2": {
+                        "accessToken": "{{access_token}}",
+                        "addTokenTo": "header"
+                      }
+                    },
                     "method": "GET",
                     "header": [
                       {
