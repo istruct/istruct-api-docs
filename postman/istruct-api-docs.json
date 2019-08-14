@@ -202,13 +202,6 @@
                   "name": "Fetch multiple packages",
                   "_postman_id": "d60874bd-a5c1-4375-a8da-aaa9c0dee547",
                   "request": {
-                    "auth": {
-                      "type": "oauth2",
-                      "oauth2": {
-                        "accessToken": "{{access_token}}",
-                        "addTokenTo": "header"
-                      }
-                    },
                     "method": "GET",
                     "header": [
                       {
@@ -2060,7 +2053,7 @@
       "auth": {
         "type": "oauth2",
         "oauth2": {
-          "accessToken": "eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiIsImp0aSI6IjI4ODZjNWNlNmVhNjUxNTUyYzk2MWYwZmRlN2ViY2M1NzVjNDMyNjM1NzgzOWUwZWM3NWRkNGM0YTgzNDhhNGE0ZTQ2NjY2YTY2OWEwNWRjIn0.eyJhdWQiOiIxIiwianRpIjoiMjg4NmM1Y2U2ZWE2NTE1NTJjOTYxZjBmZGU3ZWJjYzU3NWM0MzI2MzU3ODM5ZTBlYzc1ZGQ0YzRhODM0OGE0YTRlNDY2NjZhNjY5YTA1ZGMiLCJpYXQiOjE1NTU1MTMwMDYsIm5iZiI6MTU1NTUxMzAwNiwiZXhwIjoxNTU1Njg1ODA2LCJzdWIiOiIiLCJzY29wZXMiOltdfQ.12He5uE2pCEp3OFqCAeq_wcF2H4VAgEuNiQxcTzvZ43VCoROTLeiVX2szs7x_e-6prxz5XjRvmnzi2fH8nfkLd3-UhWeVOxQl1A1A-5wJvdkYMcqxiarcNIldtgCz7PTZTV85b3CCnQWC7V4B6Pb1GGrUMea62WmlJJGVbZbbI_MNMvqvOTQBDtmvpqNbkpsnzs02KX3w7TIiyggkNx5VSw_T-WmkWqsqA_-pAkT1aYlKYAFQPX-L7dOCxoVlC23wElw21G6gNtk_fAhacxdpF2C0H5yCAwK_ikTB130enJ8kX1jolg_xxaxtfXPZa1sw18vobxN9CF7xV37i4-9Rg",
+          "accessToken": "{{access_token}}",
           "tokenType": "Bearer",
           "addTokenTo": "header"
         }
