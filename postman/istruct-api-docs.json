@@ -550,27 +550,7 @@
                         "value": "application/vnd.api+json"
                       }
                     ],
-                    "url": {
-                      "raw": "{{url}}/api/v1/shop/packages/{{package_id}}/relationships/main_order?XDEBUG_SESSION_START=insee",
-                      "host": [
-                        "{{url}}"
-                      ],
-                      "path": [
-                        "api",
-                        "v1",
-                        "shop",
-                        "packages",
-                        "{{package_id}}",
-                        "relationships",
-                        "main_order"
-                      ],
-                      "query": [
-                        {
-                          "key": "XDEBUG_SESSION_START",
-                          "value": "insee"
-                        }
-                      ]
-                    },
+                    "url": "{{url}}/api/v1/shop/packages/{{package_id}}/relationships/main_order",
                     "description": "See `Order` endpoints for details about this response."
                   },
                   "response": [
