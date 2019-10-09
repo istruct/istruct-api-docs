@@ -2103,7 +2103,37 @@
                       "body": "{\n    \"jsonapi\": {\n        \"version\": \"1.0\"\n    },\n    \"meta\": {\n        \"page\": {\n            \"number\": 1,\n            \"size\": 25\n        },\n        \"totalItems\": 2\n    },\n    \"links\": {\n        \"self\": \"/api/v1/shop/shipment-types?page[number]=1\",\n        \"first\": \"/api/v1/shop/shipment-types?page[number]=1\",\n        \"last\": \"/api/v1/shop/shipment-types?page[number]=1\"\n    },\n    \"data\": [\n        {\n            \"type\": \"shop_shipment_type\",\n            \"id\": \"4\",\n            \"links\": {\n                \"self\": \"/api/v1/shop/shipment-types/4\"\n            },\n            \"attributes\": {\n                \"code\": \"ups\"\n            }\n        },\n        {\n            \"type\": \"shop_shipment_type\",\n            \"id\": \"6\",\n            \"links\": {\n                \"self\": \"/api/v1/shop/shipment-types/6\"\n            },\n            \"attributes\": {\n                \"code\": \"po_box\"\n            }\n        }\n    ]\n}"
                     }
                   ]
+                }
+              ],
+              "_postman_id": "58fe4f42-ec3a-42f9-a0bf-19ede0b0a78e",
+              "description": "This endpoint returns information about shipment methods available in your iStruct instance via API. Every shipment type has a unique code, which is required when creating **Order** via api.",
+              "event": [
+                {
+                  "listen": "prerequest",
+                  "script": {
+                    "id": "64034435-95ab-46f7-bf57-affb25b6d7a8",
+                    "type": "text/javascript",
+                    "exec": [
+                      ""
+                    ]
+                  }
                 },
+                {
+                  "listen": "test",
+                  "script": {
+                    "id": "988ebcfb-759f-4cf6-b075-58f9f59c5716",
+                    "type": "text/javascript",
+                    "exec": [
+                      ""
+                    ]
+                  }
+                }
+              ],
+              "_postman_isSubFolder": true
+            },
+            {
+              "name": "PaymentType",
+              "item": [
                 {
                   "name": "Fetch multiple shipment types Copy",
                   "_postman_id": "c63d7a03-0fe9-4c97-bb7d-c7cc124e294d",
@@ -2186,35 +2216,6 @@
                   ]
                 }
               ],
-              "_postman_id": "58fe4f42-ec3a-42f9-a0bf-19ede0b0a78e",
-              "description": "This endpoint returns information about shipment methods available in your iStruct instance via API. Every shipment type has a unique code, which is required when creating **Order** via api.",
-              "event": [
-                {
-                  "listen": "prerequest",
-                  "script": {
-                    "id": "64034435-95ab-46f7-bf57-affb25b6d7a8",
-                    "type": "text/javascript",
-                    "exec": [
-                      ""
-                    ]
-                  }
-                },
-                {
-                  "listen": "test",
-                  "script": {
-                    "id": "988ebcfb-759f-4cf6-b075-58f9f59c5716",
-                    "type": "text/javascript",
-                    "exec": [
-                      ""
-                    ]
-                  }
-                }
-              ],
-              "_postman_isSubFolder": true
-            },
-            {
-              "name": "PaymentType",
-              "item": [],
               "_postman_id": "8608d0b6-a825-44a0-abd0-84d12f86130c",
               "description": "This endpoint returns information about payment methods available in your iStruct instance via API. Every payment type has a unique code, which is required when creating **Order** via api.",
               "event": [
