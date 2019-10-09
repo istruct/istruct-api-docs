@@ -2024,6 +2024,29 @@
               "name": "ShipmentTypes",
               "item": [],
               "_postman_id": "58fe4f42-ec3a-42f9-a0bf-19ede0b0a78e",
+              "description": "This endpoint returns information about shipment methods available in your iStruct instance via API. Every shipment type has a unique code, which is required when creating **Order** via api.",
+              "event": [
+                {
+                  "listen": "prerequest",
+                  "script": {
+                    "id": "64034435-95ab-46f7-bf57-affb25b6d7a8",
+                    "type": "text/javascript",
+                    "exec": [
+                      ""
+                    ]
+                  }
+                },
+                {
+                  "listen": "test",
+                  "script": {
+                    "id": "988ebcfb-759f-4cf6-b075-58f9f59c5716",
+                    "type": "text/javascript",
+                    "exec": [
+                      ""
+                    ]
+                  }
+                }
+              ],
               "_postman_isSubFolder": true
             }
           ],
