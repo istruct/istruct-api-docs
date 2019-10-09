@@ -2135,7 +2135,7 @@
               "name": "PaymentType",
               "item": [
                 {
-                  "name": "Fetch multiple shipment types Copy",
+                  "name": "Fetch multiple payment types",
                   "_postman_id": "c63d7a03-0fe9-4c97-bb7d-c7cc124e294d",
                   "protocolProfileBehavior": {
                     "disableBodyPruning": true
