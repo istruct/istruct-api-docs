@@ -2130,6 +2130,35 @@
                 }
               ],
               "_postman_isSubFolder": true
+            },
+            {
+              "name": "PaymentType",
+              "item": [],
+              "_postman_id": "8608d0b6-a825-44a0-abd0-84d12f86130c",
+              "description": "This endpoint returns information about payment methods available in your iStruct instance via API. Every payment type has a unique code, which is required when creating **Order** via api.",
+              "event": [
+                {
+                  "listen": "prerequest",
+                  "script": {
+                    "id": "563778d0-7fba-43b9-93b8-0551d35e9ae9",
+                    "type": "text/javascript",
+                    "exec": [
+                      ""
+                    ]
+                  }
+                },
+                {
+                  "listen": "test",
+                  "script": {
+                    "id": "6fafd98c-610b-4c76-91e1-a4d5bcdf6a19",
+                    "type": "text/javascript",
+                    "exec": [
+                      ""
+                    ]
+                  }
+                }
+              ],
+              "_postman_isSubFolder": true
             }
           ],
           "_postman_id": "3e8f0a97-4916-49d7-a069-1136dbe6a41a",
