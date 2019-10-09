@@ -1994,7 +1994,7 @@
                   ]
                 },
                 {
-                  "name": "Fetch single order Copy",
+                  "name": "Add single order",
                   "_postman_id": "9fc62f24-c74f-456e-8b8c-6ef02d3b91a9",
                   "protocolProfileBehavior": {
                     "disableBodyPruning": true
