@@ -2022,7 +2022,174 @@
             },
             {
               "name": "ShipmentTypes",
-              "item": [],
+              "item": [
+                {
+                  "name": "Fetch multiple shipment types",
+                  "_postman_id": "0e46d479-534c-4b1e-bf65-b9ca4dcadda4",
+                  "protocolProfileBehavior": {
+                    "disableBodyPruning": true
+                  },
+                  "request": {
+                    "method": "GET",
+                    "header": [
+                      {
+                        "key": "Accept",
+                        "value": "application/vnd.api+json"
+                      },
+                      {
+                        "key": "Content-Type",
+                        "value": "application/vnd.api+json"
+                      },
+                      {
+                        "key": "Cookie",
+                        "value": "{{debug_cookie}}",
+                        "type": "text"
+                      }
+                    ],
+                    "url": "{{url}}/api/v1/shop/shipment-types"
+                  },
+                  "response": [
+                    {
+                      "id": "cac9c80f-9b52-45b6-ab68-441fe73bae61",
+                      "name": "Fetch delivered orders",
+                      "originalRequest": {
+                        "method": "GET",
+                        "header": [
+                          {
+                            "key": "Accept",
+                            "value": "application/vnd.api+json"
+                          },
+                          {
+                            "key": "Content-Type",
+                            "value": "application/vnd.api+json"
+                          }
+                        ],
+                        "url": {
+                          "raw": "http://{{url}}/api/v1/shop/orders?filter[currentStatusId]=5&order=-createdAt",
+                          "protocol": "http",
+                          "host": [
+                            "{{url}}"
+                          ],
+                          "path": [
+                            "api",
+                            "v1",
+                            "shop",
+                            "orders"
+                          ],
+                          "query": [
+                            {
+                              "key": "filter[currentStatusId]",
+                              "value": "5"
+                            },
+                            {
+                              "key": "order",
+                              "value": "-createdAt"
+                            }
+                          ]
+                        }
+                      },
+                      "status": "OK",
+                      "code": 200,
+                      "_postman_previewlanguage": "json",
+                      "header": [
+                        {
+                          "key": "Server",
+                          "value": "nginx/1.15.0"
+                        },
+                        {
+                          "key": "Date",
+                          "value": "Fri, 19 Oct 2018 21:35:57 GMT"
+                        },
+                        {
+                          "key": "Content-Type",
+                          "value": "application/vnd.api+json"
+                        },
+                        {
+                          "key": "Transfer-Encoding",
+                          "value": "chunked"
+                        },
+                        {
+                          "key": "Connection",
+                          "value": "keep-alive"
+                        },
+                        {
+                          "key": "Expires",
+                          "value": "Thu, 19 Nov 1981 08:52:00 GMT"
+                        },
+                        {
+                          "key": "Cache-Control",
+                          "value": "no-store, no-cache, must-revalidate"
+                        },
+                        {
+                          "key": "Pragma",
+                          "value": "no-cache"
+                        }
+                      ],
+                      "cookie": [],
+                      "responseTime": null,
+                      "body": "{\n    \"jsonapi\": {\n        \"version\": \"1.0\"\n    },\n    \"meta\": {\n        \"page\": {\n            \"number\": 1,\n            \"size\": 25\n        },\n        \"totalItems\": 2\n    },\n    \"links\": {\n        \"self\": \"/api/v1/shop/orders?page[number]=1&filter[currentStatusId]=5\",\n        \"first\": \"/api/v1/shop/orders?page[number]=1&filter[currentStatusId]=5\",\n        \"last\": \"/api/v1/shop/orders?page[number]=1&filter[currentStatusId]=5\"\n    },\n    \"data\": [\n        {\n            \"type\": \"shop_order\",\n            \"id\": \"3\",\n            \"links\": {\n                \"self\": \"/api/v1/shop/orders/3\"\n            },\n            \"attributes\": {\n                \"code\": \"1/10/2018/1\",\n                \"currency\": \"PLN\",\n                \"amount\": 103.19,\n                \"points\": 329,\n                \"orderer\": {\n                    \"name\": \"Administrator Systemu\",\n                    \"isCompany\": true,\n                    \"companyName\": \"InSee Sp. z o.o.\",\n                    \"phone\": \"502 411 983\",\n                    \"email\": \"administrator@tefaland.pl\",\n                    \"address\": {\n                        \"countryId\": \"PL\",\n                        \"postalCode\": \"00-189 \",\n                        \"cityName\": \"Warszawa\",\n                        \"street\": \"Inflancka 4C\",\n                        \"annotations\": null\n                    },\n                    \"vatNumber\": \"5252432256\",\n                    \"isVatEu\": false\n                },\n                \"delivery\": {\n                    \"name\": \"Administrator Systemu\",\n                    \"phone\": \"502 411 983\",\n                    \"countryId\": \"PL\",\n                    \"postalCode\": \"00-189 \",\n                    \"cityName\": \"Warszawa\",\n                    \"street\": \"Inflancka 4C\"\n                },\n                \"createdAt\": \"2018-10-18T22:51:07+0200\",\n                \"currentStatusId\": 5,\n                \"currentStatusUpdatedAt\": \"2018-10-19T23:23:39+0200\",\n                \"shipSalesDocument\": false\n            },\n            \"relationships\": {\n                \"payment\": {\n                    \"links\": {\n                        \"related\": \"/api/v1/shop/orders/3/relationships/payment\"\n                    },\n                    \"data\": {\n                        \"type\": \"shop_order_payment\",\n                        \"id\": \"3\"\n                    }\n                },\n                \"shipment\": {\n                    \"links\": {\n                        \"related\": \"/api/v1/shop/orders/3/relationships/shipment\"\n                    },\n                    \"data\": {\n                        \"type\": \"shop_order_shipment\",\n                        \"id\": \"3\"\n                    }\n                },\n                \"items\": {\n                    \"links\": {\n                        \"related\": \"/api/v1/shop/orders/3/relationships/items\"\n                    }\n                },\n                \"connectedOrders\": {\n                    \"links\": {\n                        \"related\": \"/api/v1/shop/orders/3/relationships/connected_orders\"\n                    }\n                },\n                \"salesDocument\": {\n                    \"links\": {\n                        \"related\": \"/api/v1/shop/orders/3/relationships/sales_document\"\n                    },\n                    \"data\": {\n                        \"type\": \"invoice\",\n                        \"id\": \"2\"\n                    }\n                }\n            }\n        },\n        {\n            \"type\": \"shop_order\",\n            \"id\": \"1\",\n            \"links\": {\n                \"self\": \"/api/v1/shop/orders/1\"\n            },\n            \"attributes\": {\n                \"code\": \"1/09/2018/1\",\n                \"currency\": \"PLN\",\n                \"amount\": 103.19,\n                \"points\": 329,\n                \"orderer\": {\n                    \"name\": \"Administrator Systemu\",\n                    \"isCompany\": false,\n                    \"companyName\": null,\n                    \"phone\": \"502 411 983\",\n                    \"email\": \"administrator@tefaland.pl\",\n                    \"address\": {\n                        \"countryId\": \"PL\",\n                        \"postalCode\": \"00-189 \",\n                        \"cityName\": \"Warszawa\",\n                        \"street\": \"Inflancka 4C\",\n                        \"annotations\": null\n                    },\n                    \"vatNumber\": null,\n                    \"isVatEu\": false\n                },\n                \"delivery\": {\n                    \"name\": \"Administrator Systemu\",\n                    \"phone\": \"502 411 983\",\n                    \"countryId\": \"PL\",\n                    \"postalCode\": \"00-189 \",\n                    \"cityName\": \"Warszawa\",\n                    \"street\": \"Inflancka 4C\"\n                },\n                \"createdAt\": \"2018-09-03T07:33:48+0200\",\n                \"currentStatusId\": 5,\n                \"currentStatusUpdatedAt\": \"2018-10-19T21:06:45+0200\",\n                \"shipSalesDocument\": true\n            },\n            \"relationships\": {\n                \"payment\": {\n                    \"links\": {\n                        \"related\": \"/api/v1/shop/orders/1/relationships/payment\"\n                    },\n                    \"data\": {\n                        \"type\": \"shop_order_payment\",\n                        \"id\": \"1\"\n                    }\n                },\n                \"shipment\": {\n                    \"links\": {\n                        \"related\": \"/api/v1/shop/orders/1/relationships/shipment\"\n                    },\n                    \"data\": {\n                        \"type\": \"shop_order_shipment\",\n                        \"id\": \"1\"\n                    }\n                },\n                \"items\": {\n                    \"links\": {\n                        \"related\": \"/api/v1/shop/orders/1/relationships/items\"\n                    }\n                },\n                \"connectedOrders\": {\n                    \"links\": {\n                        \"related\": \"/api/v1/shop/orders/1/relationships/connected_orders\"\n                    }\n                },\n                \"salesDocument\": {\n                    \"links\": {\n                        \"related\": \"/api/v1/shop/orders/1/relationships/sales_document\"\n                    },\n                    \"data\": {\n                        \"type\": \"invoice\",\n                        \"id\": \"1\"\n                    }\n                }\n            }\n        }\n    ]\n}"
+                    },
+                    {
+                      "id": "da40fe1c-9a3c-4da8-98bb-4145bd6dffd6",
+                      "name": "Fetch multiple orders",
+                      "originalRequest": {
+                        "method": "GET",
+                        "header": [
+                          {
+                            "key": "Accept",
+                            "value": "application/vnd.api+json"
+                          },
+                          {
+                            "key": "Content-Type",
+                            "value": "application/vnd.api+json"
+                          }
+                        ],
+                        "url": "http://{{url}}/api/v1/shop/orders"
+                      },
+                      "status": "OK",
+                      "code": 200,
+                      "_postman_previewlanguage": "json",
+                      "header": [
+                        {
+                          "key": "Server",
+                          "value": "nginx/1.15.0"
+                        },
+                        {
+                          "key": "Date",
+                          "value": "Fri, 19 Oct 2018 21:33:56 GMT"
+                        },
+                        {
+                          "key": "Content-Type",
+                          "value": "application/vnd.api+json"
+                        },
+                        {
+                          "key": "Transfer-Encoding",
+                          "value": "chunked"
+                        },
+                        {
+                          "key": "Connection",
+                          "value": "keep-alive"
+                        },
+                        {
+                          "key": "Expires",
+                          "value": "Thu, 19 Nov 1981 08:52:00 GMT"
+                        },
+                        {
+                          "key": "Cache-Control",
+                          "value": "no-store, no-cache, must-revalidate"
+                        },
+                        {
+                          "key": "Pragma",
+                          "value": "no-cache"
+                        }
+                      ],
+                      "cookie": [],
+                      "responseTime": null,
+                      "body": "{\n    \"jsonapi\": {\n        \"version\": \"1.0\"\n    },\n    \"meta\": {\n        \"page\": {\n            \"number\": 1,\n            \"size\": 25\n        },\n        \"totalItems\": 3\n    },\n    \"links\": {\n        \"self\": \"/api/v1/shop/orders?page[number]=1\",\n        \"first\": \"/api/v1/shop/orders?page[number]=1\",\n        \"last\": \"/api/v1/shop/orders?page[number]=1\"\n    },\n    \"data\": [\n        {\n            \"type\": \"shop_order\",\n            \"id\": \"3\",\n            \"links\": {\n                \"self\": \"/api/v1/shop/orders/3\"\n            },\n            \"attributes\": {\n                \"code\": \"1/10/2018/1\",\n                \"currency\": \"PLN\",\n                \"amount\": 103.19,\n                \"points\": 329,\n                \"orderer\": {\n                    \"name\": \"Administrator Systemu\",\n                    \"isCompany\": true,\n                    \"companyName\": \"InSee Sp. z o.o.\",\n                    \"phone\": \"502 411 983\",\n                    \"email\": \"administrator@tefaland.pl\",\n                    \"address\": {\n                        \"countryId\": \"PL\",\n                        \"postalCode\": \"00-189 \",\n                        \"cityName\": \"Warszawa\",\n                        \"street\": \"Inflancka 4C\",\n                        \"annotations\": null\n                    },\n                    \"vatNumber\": \"5252432256\",\n                    \"isVatEu\": false\n                },\n                \"delivery\": {\n                    \"name\": \"Administrator Systemu\",\n                    \"phone\": \"502 411 983\",\n                    \"countryId\": \"PL\",\n                    \"postalCode\": \"00-189 \",\n                    \"cityName\": \"Warszawa\",\n                    \"street\": \"Inflancka 4C\"\n                },\n                \"createdAt\": \"2018-10-18T22:51:07+0200\",\n                \"currentStatusId\": 5,\n                \"currentStatusUpdatedAt\": \"2018-10-19T23:23:39+0200\",\n                \"shipSalesDocument\": false\n            },\n            \"relationships\": {\n                \"payment\": {\n                    \"links\": {\n                        \"related\": \"/api/v1/shop/orders/3/relationships/payment\"\n                    },\n                    \"data\": {\n                        \"type\": \"shop_order_payment\",\n                        \"id\": \"3\"\n                    }\n                },\n                \"shipment\": {\n                    \"links\": {\n                        \"related\": \"/api/v1/shop/orders/3/relationships/shipment\"\n                    },\n                    \"data\": {\n                        \"type\": \"shop_order_shipment\",\n                        \"id\": \"3\"\n                    }\n                },\n                \"items\": {\n                    \"links\": {\n                        \"related\": \"/api/v1/shop/orders/3/relationships/items\"\n                    }\n                },\n                \"connectedOrders\": {\n                    \"links\": {\n                        \"related\": \"/api/v1/shop/orders/3/relationships/connected_orders\"\n                    }\n                },\n                \"salesDocument\": {\n                    \"links\": {\n                        \"related\": \"/api/v1/shop/orders/3/relationships/sales_document\"\n                    },\n                    \"data\": {\n                        \"type\": \"invoice\",\n                        \"id\": \"2\"\n                    }\n                }\n            }\n        },\n        {\n            \"type\": \"shop_order\",\n            \"id\": \"2\",\n            \"links\": {\n                \"self\": \"/api/v1/shop/orders/2\"\n            },\n            \"attributes\": {\n                \"code\": \"1/09/2018/2\",\n                \"currency\": \"PLN\",\n                \"amount\": 103.19,\n                \"points\": 329,\n                \"orderer\": {\n                    \"name\": \"Administrator Systemu\",\n                    \"isCompany\": false,\n                    \"companyName\": null,\n                    \"phone\": \"502 411 983\",\n                    \"email\": \"administrator@tefaland.pl\",\n                    \"address\": {\n                        \"countryId\": \"PL\",\n                        \"postalCode\": \"00-189 \",\n                        \"cityName\": \"Warszawa\",\n                        \"street\": \"Inflancka 4C\",\n                        \"annotations\": null\n                    },\n                    \"vatNumber\": null,\n                    \"isVatEu\": false\n                },\n                \"delivery\": {\n                    \"name\": \"Administrator Systemu\",\n                    \"phone\": \"502 411 983\",\n                    \"countryId\": \"PL\",\n                    \"postalCode\": \"00-189 \",\n                    \"cityName\": \"Warszawa\",\n                    \"street\": \"Inflancka 4C\"\n                },\n                \"createdAt\": \"2018-09-11T10:25:43+0200\",\n                \"currentStatusId\": 2,\n                \"currentStatusUpdatedAt\": \"2018-10-18T22:51:16+0200\",\n                \"shipSalesDocument\": true\n            },\n            \"relationships\": {\n                \"payment\": {\n                    \"links\": {\n                        \"related\": \"/api/v1/shop/orders/2/relationships/payment\"\n                    },\n                    \"data\": {\n                        \"type\": \"shop_order_payment\",\n                        \"id\": \"2\"\n                    }\n                },\n                \"shipment\": {\n                    \"links\": {\n                        \"related\": \"/api/v1/shop/orders/2/relationships/shipment\"\n                    },\n                    \"data\": {\n                        \"type\": \"shop_order_shipment\",\n                        \"id\": \"2\"\n                    }\n                },\n                \"items\": {\n                    \"links\": {\n                        \"related\": \"/api/v1/shop/orders/2/relationships/items\"\n                    }\n                },\n                \"connectedOrders\": {\n                    \"links\": {\n                        \"related\": \"/api/v1/shop/orders/2/relationships/connected_orders\"\n                    }\n                },\n                \"salesDocument\": null\n            }\n        },\n        {\n            \"type\": \"shop_order\",\n            \"id\": \"1\",\n            \"links\": {\n                \"self\": \"/api/v1/shop/orders/1\"\n            },\n            \"attributes\": {\n                \"code\": \"1/09/2018/1\",\n                \"currency\": \"PLN\",\n                \"amount\": 103.19,\n                \"points\": 329,\n                \"orderer\": {\n                    \"name\": \"Administrator Systemu\",\n                    \"isCompany\": false,\n                    \"companyName\": null,\n                    \"phone\": \"502 411 983\",\n                    \"email\": \"administrator@tefaland.pl\",\n                    \"address\": {\n                        \"countryId\": \"PL\",\n                        \"postalCode\": \"00-189 \",\n                        \"cityName\": \"Warszawa\",\n                        \"street\": \"Inflancka 4C\",\n                        \"annotations\": null\n                    },\n                    \"vatNumber\": null,\n                    \"isVatEu\": false\n                },\n                \"delivery\": {\n                    \"name\": \"Administrator Systemu\",\n                    \"phone\": \"502 411 983\",\n                    \"countryId\": \"PL\",\n                    \"postalCode\": \"00-189 \",\n                    \"cityName\": \"Warszawa\",\n                    \"street\": \"Inflancka 4C\"\n                },\n                \"createdAt\": \"2018-09-03T07:33:48+0200\",\n                \"currentStatusId\": 5,\n                \"currentStatusUpdatedAt\": \"2018-10-19T21:06:45+0200\",\n                \"shipSalesDocument\": true\n            },\n            \"relationships\": {\n                \"payment\": {\n                    \"links\": {\n                        \"related\": \"/api/v1/shop/orders/1/relationships/payment\"\n                    },\n                    \"data\": {\n                        \"type\": \"shop_order_payment\",\n                        \"id\": \"1\"\n                    }\n                },\n                \"shipment\": {\n                    \"links\": {\n                        \"related\": \"/api/v1/shop/orders/1/relationships/shipment\"\n                    },\n                    \"data\": {\n                        \"type\": \"shop_order_shipment\",\n                        \"id\": \"1\"\n                    }\n                },\n                \"items\": {\n                    \"links\": {\n                        \"related\": \"/api/v1/shop/orders/1/relationships/items\"\n                    }\n                },\n                \"connectedOrders\": {\n                    \"links\": {\n                        \"related\": \"/api/v1/shop/orders/1/relationships/connected_orders\"\n                    }\n                },\n                \"salesDocument\": {\n                    \"links\": {\n                        \"related\": \"/api/v1/shop/orders/1/relationships/sales_document\"\n                    },\n                    \"data\": {\n                        \"type\": \"invoice\",\n                        \"id\": \"1\"\n                    }\n                }\n            }\n        }\n    ]\n}"
+                    }
+                  ]
+                }
+              ],
               "_postman_id": "58fe4f42-ec3a-42f9-a0bf-19ede0b0a78e",
               "description": "This endpoint returns information about shipment methods available in your iStruct instance via API. Every shipment type has a unique code, which is required when creating **Order** via api.",
               "event": [
