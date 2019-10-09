@@ -2039,11 +2039,6 @@
                       {
                         "key": "Content-Type",
                         "value": "application/vnd.api+json"
-                      },
-                      {
-                        "key": "Cookie",
-                        "value": "{{debug_cookie}}",
-                        "type": "text"
                       }
                     ],
                     "url": "{{url}}/api/v1/shop/shipment-types"
