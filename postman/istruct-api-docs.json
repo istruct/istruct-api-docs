@@ -1514,6 +1514,88 @@
                   ]
                 },
                 {
+                  "name": "Fetch single order Copy",
+                  "_postman_id": "9fc62f24-c74f-456e-8b8c-6ef02d3b91a9",
+                  "protocolProfileBehavior": {
+                    "disableBodyPruning": true
+                  },
+                  "request": {
+                    "method": "GET",
+                    "header": [
+                      {
+                        "key": "Accept",
+                        "value": "application/vnd.api+json"
+                      },
+                      {
+                        "key": "Content-Type",
+                        "value": "application/vnd.api+json"
+                      }
+                    ],
+                    "url": "{{url}}/api/v1/shop/orders/{{order_id}}",
+                    "description": "**Order attributes**\n\n| Name                    | Type     | Nullable | Description                                                                         |\n|-------------------------|----------|----------|-------------------------------------------------------------------------------------|\n| code                    | string   | No       | Auto generated, unique order code                                                   |\n| currency                | string   | No       | Payment currency symbol ([ISO 4217](https://en.wikipedia.org/wiki/ISO_4217) format) |\n| amount                  | float    | No       | Total amount for order in `currency`                                                |\n| points                  | float    | No       | Total points for order (for calculating commissions)                                |\n| orderer.name            | string   | No       | Entity that placed this order                                                       |\n| orderer.isCompany       | bool     | No       | Whether order has been placed on behalf of a company entity                         |\n| orderer.companyName     | string   | Yes      | When `isCompany = true` this name is filled                                         |\n| orderer.phone           | string   | No       | Phone number of orderer                                                             |\n| orderer.email           | string   | No       | E-mail address of orderer                                                           |\n| orderer.address.countryId | string | No       | [ISO 3166-1 alpha-2](https://en.wikipedia.org/wiki/ISO_3166-1_alpha-2) country code |\n| orderer.address.postalCode| string | No       | Orderer postal code                                                                 |\n| orderer.address.cityName  | string | No       | Orderer city name                                                                   |\n| orderer.address.street    | string | No       | Orderer address (street, home number, apartment number                              |\n| orderer.address.annotations | string | Yes    | Orderer annotations or remarks regarding this order                                 |\n| orderer.vatNumber       | string   | Yes      | When `isCompany = true` this number is filled (used for invoicing)                  |\n| orderer.isVatEu         | bool     | No       | Whether `vatNumber` is an EU VAT Number                                             |\n| delivery.name           | string   | No       | Order receiver name                                                                 |\n| delivery.phone          | string   | No       | Phone number for delivery                                                           |\n| delivery.countryId      | string   | No       | [ISO 3166-1 alpha-2](https://en.wikipedia.org/wiki/ISO_3166-1_alpha-2) country code |\n| delivery.postalCode     | string   | No       | Delivery postal code                                                                |\n| delivery.cityName       | string   | No       | Delivery city name                                                                  |\n| delivery.street         | string   | No       | Delivery address (street, home number, apartment number                             |\n| createdAt               | datetime | No       | Date when order has been placed                                                     |\n| currentStatusId         | bool     | No       | Current order status (see **Order statuses** table)                                 |\n| currentStatusUpdatedAt  | datetime | No       | Date when order has reached current status                                          |\n| shipSalesDocument       | bool     | No       | Whether physical copy of sales document should be inserted into package? (Customer wish) |\n\n**Relationships**\n\n* payment - Order `Payment` object\n* shipment - Order `Shipment` object\n* items - Order `Item` collection\n* connectedOrders - Orders connected to this order\n* salesDocument - An `Invoice` object or null"
+                  },
+                  "response": [
+                    {
+                      "id": "3d6abe99-88a8-43aa-bd3a-9c3d7238d9a7",
+                      "name": "Fetch single order",
+                      "originalRequest": {
+                        "method": "GET",
+                        "header": [
+                          {
+                            "key": "Accept",
+                            "value": "application/vnd.api+json"
+                          },
+                          {
+                            "key": "Content-Type",
+                            "value": "application/vnd.api+json"
+                          }
+                        ],
+                        "url": "http://{{url}}/api/v1/shop/orders/{{order_id}}"
+                      },
+                      "status": "OK",
+                      "code": 200,
+                      "_postman_previewlanguage": "json",
+                      "header": [
+                        {
+                          "key": "Server",
+                          "value": "nginx/1.15.0"
+                        },
+                        {
+                          "key": "Date",
+                          "value": "Fri, 19 Oct 2018 21:41:07 GMT"
+                        },
+                        {
+                          "key": "Content-Type",
+                          "value": "application/vnd.api+json"
+                        },
+                        {
+                          "key": "Transfer-Encoding",
+                          "value": "chunked"
+                        },
+                        {
+                          "key": "Connection",
+                          "value": "keep-alive"
+                        },
+                        {
+                          "key": "Expires",
+                          "value": "Thu, 19 Nov 1981 08:52:00 GMT"
+                        },
+                        {
+                          "key": "Cache-Control",
+                          "value": "no-store, no-cache, must-revalidate"
+                        },
+                        {
+                          "key": "Pragma",
+                          "value": "no-cache"
+                        }
+                      ],
+                      "cookie": [],
+                      "responseTime": null,
+                      "body": "{\n    \"jsonapi\": {\n        \"version\": \"1.0\"\n    },\n    \"data\": {\n        \"type\": \"shop_order\",\n        \"id\": \"1\",\n        \"links\": {\n            \"self\": \"/api/v1/shop/orders/1\"\n        },\n        \"attributes\": {\n            \"code\": \"1/09/2018/1\",\n            \"currency\": \"PLN\",\n            \"amount\": 103.19,\n            \"points\": 329,\n            \"orderer\": {\n                \"name\": \"Administrator Systemu\",\n                \"isCompany\": false,\n                \"companyName\": null,\n                \"phone\": \"502 411 983\",\n                \"email\": \"administrator@tefaland.pl\",\n                \"address\": {\n                    \"countryId\": \"PL\",\n                    \"postalCode\": \"00-189 \",\n                    \"cityName\": \"Warszawa\",\n                    \"street\": \"Inflancka 4C\",\n                    \"annotations\": null\n                },\n                \"vatNumber\": null,\n                \"isVatEu\": false\n            },\n            \"delivery\": {\n                \"name\": \"Administrator Systemu\",\n                \"phone\": \"502 411 983\",\n                \"countryId\": \"PL\",\n                \"postalCode\": \"00-189 \",\n                \"cityName\": \"Warszawa\",\n                \"street\": \"Inflancka 4C\"\n            },\n            \"createdAt\": \"2018-09-03T07:33:48+0200\",\n            \"currentStatusId\": 5,\n            \"currentStatusUpdatedAt\": \"2018-10-19T21:06:45+0200\",\n            \"shipSalesDocument\": true\n        },\n        \"relationships\": {\n            \"payment\": {\n                \"links\": {\n                    \"related\": \"/api/v1/shop/orders/1/relationships/payment\"\n                },\n                \"data\": {\n                    \"type\": \"shop_order_payment\",\n                    \"id\": \"1\"\n                }\n            },\n            \"shipment\": {\n                \"links\": {\n                    \"related\": \"/api/v1/shop/orders/1/relationships/shipment\"\n                },\n                \"data\": {\n                    \"type\": \"shop_order_shipment\",\n                    \"id\": \"1\"\n                }\n            },\n            \"items\": {\n                \"links\": {\n                    \"related\": \"/api/v1/shop/orders/1/relationships/items\"\n                }\n            },\n            \"connectedOrders\": {\n                \"links\": {\n                    \"related\": \"/api/v1/shop/orders/1/relationships/connected_orders\"\n                }\n            },\n            \"salesDocument\": {\n                \"links\": {\n                    \"related\": \"/api/v1/shop/orders/1/relationships/sales_document\"\n                },\n                \"data\": {\n                    \"type\": \"invoice\",\n                    \"id\": \"1\"\n                }\n            }\n        }\n    }\n}"
+                    }
+                  ]
+                },
+                {
                   "name": "Fetch order items",
                   "_postman_id": "d7ab1aa6-4924-48d2-9cf1-8d707fbbd5fb",
                   "request": {
@@ -2157,7 +2239,7 @@
                   "response": [
                     {
                       "id": "4bcea97a-3718-4864-b12d-a84ee81ee8cd",
-                      "name": "Fetch multiple shipment types",
+                      "name": "Fetch multiple payment types",
                       "originalRequest": {
                         "method": "GET",
                         "header": [
@@ -2170,7 +2252,7 @@
                             "value": "application/vnd.api+json"
                           }
                         ],
-                        "url": "http://{{url}}/api/v1/shop/shipment-types"
+                        "url": "http://{{url}}/api/v1/shop/payment-types"
                       },
                       "status": "OK",
                       "code": 200,
@@ -2211,7 +2293,7 @@
                       ],
                       "cookie": [],
                       "responseTime": null,
-                      "body": "{\n    \"jsonapi\": {\n        \"version\": \"1.0\"\n    },\n    \"meta\": {\n        \"page\": {\n            \"number\": 1,\n            \"size\": 25\n        },\n        \"totalItems\": 2\n    },\n    \"links\": {\n        \"self\": \"/api/v1/shop/shipment-types?page[number]=1\",\n        \"first\": \"/api/v1/shop/shipment-types?page[number]=1\",\n        \"last\": \"/api/v1/shop/shipment-types?page[number]=1\"\n    },\n    \"data\": [\n        {\n            \"type\": \"shop_shipment_type\",\n            \"id\": \"4\",\n            \"links\": {\n                \"self\": \"/api/v1/shop/shipment-types/4\"\n            },\n            \"attributes\": {\n                \"code\": \"ups\"\n            }\n        },\n        {\n            \"type\": \"shop_shipment_type\",\n            \"id\": \"6\",\n            \"links\": {\n                \"self\": \"/api/v1/shop/shipment-types/6\"\n            },\n            \"attributes\": {\n                \"code\": \"po_box\"\n            }\n        }\n    ]\n}"
+                      "body": "{\n    \"jsonapi\": {\n        \"version\": \"1.0\"\n    },\n    \"meta\": {\n        \"page\": {\n            \"number\": 1,\n            \"size\": 25\n        },\n        \"totalItems\": 2\n    },\n    \"links\": {\n        \"self\": \"/api/v1/shop/payment-types?page[number]=1\",\n        \"first\": \"/api/v1/shop/payment-types?page[number]=1\",\n        \"last\": \"/api/v1/shop/payment-types?page[number]=1\"\n    },\n    \"data\": [\n        {\n            \"type\": \"shop_payment_type\",\n            \"id\": \"1\",\n            \"links\": {\n                \"self\": \"/api/v1/shop/payment-types/1\"\n            },\n            \"attributes\": {\n                \"code\": \"wire_transfer\"\n            }\n        },\n        {\n            \"type\": \"shop_payment_type\",\n            \"id\": \"3\",\n            \"links\": {\n                \"self\": \"/api/v1/shop/payment-types/3\"\n            },\n            \"attributes\": {\n                \"code\": \"credit_card\"\n            }\n        }\n    ]\n}"
                     }
                   ]
                 }
