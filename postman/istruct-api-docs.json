@@ -2103,6 +2103,87 @@
                       "body": "{\n    \"jsonapi\": {\n        \"version\": \"1.0\"\n    },\n    \"meta\": {\n        \"page\": {\n            \"number\": 1,\n            \"size\": 25\n        },\n        \"totalItems\": 2\n    },\n    \"links\": {\n        \"self\": \"/api/v1/shop/shipment-types?page[number]=1\",\n        \"first\": \"/api/v1/shop/shipment-types?page[number]=1\",\n        \"last\": \"/api/v1/shop/shipment-types?page[number]=1\"\n    },\n    \"data\": [\n        {\n            \"type\": \"shop_shipment_type\",\n            \"id\": \"4\",\n            \"links\": {\n                \"self\": \"/api/v1/shop/shipment-types/4\"\n            },\n            \"attributes\": {\n                \"code\": \"ups\"\n            }\n        },\n        {\n            \"type\": \"shop_shipment_type\",\n            \"id\": \"6\",\n            \"links\": {\n                \"self\": \"/api/v1/shop/shipment-types/6\"\n            },\n            \"attributes\": {\n                \"code\": \"po_box\"\n            }\n        }\n    ]\n}"
                     }
                   ]
+                },
+                {
+                  "name": "Fetch multiple shipment types Copy",
+                  "_postman_id": "c63d7a03-0fe9-4c97-bb7d-c7cc124e294d",
+                  "protocolProfileBehavior": {
+                    "disableBodyPruning": true
+                  },
+                  "request": {
+                    "method": "GET",
+                    "header": [
+                      {
+                        "key": "Accept",
+                        "value": "application/vnd.api+json"
+                      },
+                      {
+                        "key": "Content-Type",
+                        "value": "application/vnd.api+json"
+                      }
+                    ],
+                    "url": "{{url}}/api/v1/shop/shipment-types"
+                  },
+                  "response": [
+                    {
+                      "id": "4bcea97a-3718-4864-b12d-a84ee81ee8cd",
+                      "name": "Fetch multiple shipment types",
+                      "originalRequest": {
+                        "method": "GET",
+                        "header": [
+                          {
+                            "key": "Accept",
+                            "value": "application/vnd.api+json"
+                          },
+                          {
+                            "key": "Content-Type",
+                            "value": "application/vnd.api+json"
+                          }
+                        ],
+                        "url": "http://{{url}}/api/v1/shop/shipment-types"
+                      },
+                      "status": "OK",
+                      "code": 200,
+                      "_postman_previewlanguage": "json",
+                      "header": [
+                        {
+                          "key": "Server",
+                          "value": "nginx/1.15.0"
+                        },
+                        {
+                          "key": "Date",
+                          "value": "Fri, 19 Oct 2018 21:33:56 GMT"
+                        },
+                        {
+                          "key": "Content-Type",
+                          "value": "application/vnd.api+json"
+                        },
+                        {
+                          "key": "Transfer-Encoding",
+                          "value": "chunked"
+                        },
+                        {
+                          "key": "Connection",
+                          "value": "keep-alive"
+                        },
+                        {
+                          "key": "Expires",
+                          "value": "Thu, 19 Nov 1981 08:52:00 GMT"
+                        },
+                        {
+                          "key": "Cache-Control",
+                          "value": "no-store, no-cache, must-revalidate"
+                        },
+                        {
+                          "key": "Pragma",
+                          "value": "no-cache"
+                        }
+                      ],
+                      "cookie": [],
+                      "responseTime": null,
+                      "body": "{\n    \"jsonapi\": {\n        \"version\": \"1.0\"\n    },\n    \"meta\": {\n        \"page\": {\n            \"number\": 1,\n            \"size\": 25\n        },\n        \"totalItems\": 2\n    },\n    \"links\": {\n        \"self\": \"/api/v1/shop/shipment-types?page[number]=1\",\n        \"first\": \"/api/v1/shop/shipment-types?page[number]=1\",\n        \"last\": \"/api/v1/shop/shipment-types?page[number]=1\"\n    },\n    \"data\": [\n        {\n            \"type\": \"shop_shipment_type\",\n            \"id\": \"4\",\n            \"links\": {\n                \"self\": \"/api/v1/shop/shipment-types/4\"\n            },\n            \"attributes\": {\n                \"code\": \"ups\"\n            }\n        },\n        {\n            \"type\": \"shop_shipment_type\",\n            \"id\": \"6\",\n            \"links\": {\n                \"self\": \"/api/v1/shop/shipment-types/6\"\n            },\n            \"attributes\": {\n                \"code\": \"po_box\"\n            }\n        }\n    ]\n}"
+                    }
+                  ]
                 }
               ],
               "_postman_id": "58fe4f42-ec3a-42f9-a0bf-19ede0b0a78e",
