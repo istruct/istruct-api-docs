@@ -2019,6 +2019,12 @@
                 }
               ],
               "_postman_isSubFolder": true
+            },
+            {
+              "name": "ShipmentTypes",
+              "item": [],
+              "_postman_id": "58fe4f42-ec3a-42f9-a0bf-19ede0b0a78e",
+              "_postman_isSubFolder": true
             }
           ],
           "_postman_id": "3e8f0a97-4916-49d7-a069-1136dbe6a41a",
