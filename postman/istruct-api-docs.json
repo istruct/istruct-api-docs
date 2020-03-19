@@ -76,7 +76,7 @@
               ]
             },
             "url": "{{url}}/api/v1/oauth2/token",
-            "description": "Generates new OAuth2 JWT token for current client"
+            "description": "Generates new OAuth2 JWT token for current client."
           },
           "response": [
             {
