@@ -1597,6 +1597,88 @@
                   ]
                 },
                 {
+                  "name": "Fetch order items Copy",
+                  "_postman_id": "256224fa-70f3-4b8d-b5e3-8fdf8f0c898e",
+                  "protocolProfileBehavior": {
+                    "disableBodyPruning": true
+                  },
+                  "request": {
+                    "method": "GET",
+                    "header": [
+                      {
+                        "key": "Accept",
+                        "value": "application/vnd.api+json"
+                      },
+                      {
+                        "key": "Content-Type",
+                        "value": "application/vnd.api+json"
+                      }
+                    ],
+                    "url": "{{url}}/api/v1/shop/orders/{{order_id}}/relationships/items",
+                    "description": "**Item attributes**\n\n| Name                    | Type     | Nullable | Description                                                                         |\n|-------------------------|----------|----------|-------------------------------------------------------------------------------------|\n| number                  | int      | No       | Ordinal number of product in order                                                  |\n| name                    | string   | No       | Product name                                                                        |\n| code                    | string   | No       | Product item code shown in eCommerce                                                |\n| barcode                 | string   | Yes      | Product item barcode                                                                |\n| warehouseCode           | string   | No       | Product item warehouse code                                                         |\n| quantity                | int      | No       | Purchased product quantity                                                          |\n| price                   | float    | No       | Product price per single unit                                                       |\n| points                  | float    | No       | Product points per single unit (used for commissions calculation)                   |\n| taxPercent              | int      | No       | Product tax percent                                                                 |\n| weight                  | float    | No       | Product weight per single unit                                                      |\n| orderId                 | int      | No       | ID of order to which this item belongs                                              |"
+                  },
+                  "response": [
+                    {
+                      "id": "a8c1fcc4-c16f-4b64-8017-b34b82f79180",
+                      "name": "Fetch order items",
+                      "originalRequest": {
+                        "method": "GET",
+                        "header": [
+                          {
+                            "key": "Accept",
+                            "value": "application/vnd.api+json"
+                          },
+                          {
+                            "key": "Content-Type",
+                            "value": "application/vnd.api+json"
+                          }
+                        ],
+                        "url": "http://{{url}}/api/v1/shop/orders/{{order_id}}/relationships/items"
+                      },
+                      "status": "OK",
+                      "code": 200,
+                      "_postman_previewlanguage": "json",
+                      "header": [
+                        {
+                          "key": "Server",
+                          "value": "nginx/1.15.0"
+                        },
+                        {
+                          "key": "Date",
+                          "value": "Fri, 19 Oct 2018 21:55:28 GMT"
+                        },
+                        {
+                          "key": "Content-Type",
+                          "value": "application/vnd.api+json"
+                        },
+                        {
+                          "key": "Transfer-Encoding",
+                          "value": "chunked"
+                        },
+                        {
+                          "key": "Connection",
+                          "value": "keep-alive"
+                        },
+                        {
+                          "key": "Expires",
+                          "value": "Thu, 19 Nov 1981 08:52:00 GMT"
+                        },
+                        {
+                          "key": "Cache-Control",
+                          "value": "no-store, no-cache, must-revalidate"
+                        },
+                        {
+                          "key": "Pragma",
+                          "value": "no-cache"
+                        }
+                      ],
+                      "cookie": [],
+                      "responseTime": null,
+                      "body": "{\n    \"jsonapi\": {\n        \"version\": \"1.0\"\n    },\n    \"meta\": {\n        \"page\": {\n            \"number\": 1,\n            \"size\": 25\n        },\n        \"totalItems\": 1\n    },\n    \"links\": {\n        \"self\": \"/api/v1/shop/orders/1/relationships/items?page[number]=1\",\n        \"first\": \"/api/v1/shop/orders/1/relationships/items?page[number]=1\",\n        \"last\": \"/api/v1/shop/orders/1/relationships/items?page[number]=1\"\n    },\n    \"data\": [\n        {\n            \"type\": \"shop_order_item\",\n            \"id\": \"1\",\n            \"attributes\": {\n                \"number\": 1,\n                \"name\": \"Placeat qui est quisquam\",\n                \"code\": \"001\",\n                \"barcode\": \"9560999275434\",\n                \"warehouseCode\": \"001\",\n                \"quantity\": 1,\n                \"price\": 103.19,\n                \"points\": 329,\n                \"taxPercent\": 23,\n                \"weight\": 0,\n                \"orderId\": 2792\n            }\n        }\n    ]\n}"
+                    }
+                  ]
+                },
+                {
                   "name": "Fetch order connected orders",
                   "_postman_id": "e59e425a-fe43-41ba-9f3c-9a73b189f294",
                   "request": {
@@ -2087,88 +2169,6 @@
                       "cookie": [],
                       "responseTime": null,
                       "body": "{\n    \"jsonapi\": {\n        \"version\": \"1.0\"\n    },\n    \"data\": {\n        \"type\": \"shop_order\",\n        \"id\": \"1\",\n        \"links\": {\n            \"self\": \"/api/v1/shop/orders/1\"\n        },\n        \"attributes\": {\n            \"code\": \"1/09/2018/1\",\n            \"currency\": \"PLN\",\n            \"amount\": 103.19,\n            \"points\": 329,\n            \"orderer\": {\n                \"name\": \"System's Administrator\",\n                \"isCompany\": false,\n                \"companyName\": null,\n                \"phone\": \"123456789\",\n                \"email\": \"administrator@istruct.com\",\n                \"address\": {\n                    \"countryId\": \"PL\",\n                    \"postalCode\": \"00-189 \",\n                    \"cityName\": \"Warszawa\",\n                    \"street\": \"Testowa 1\",\n                    \"annotations\": \"This is some annotation\"\n                },\n                \"vatNumber\": null,\n                \"isVatEu\": false\n            },\n            \"delivery\": {\n                \"name\": \"System's Administrator\",\n                \"phone\": \"123456789\",\n                \"countryId\": \"PL\",\n                \"postalCode\": \"00-189 \",\n                \"cityName\": \"Warsaw\",\n                \"street\": \"12th Test Rd\"\n            },\n            \"createdAt\": \"2018-09-03T07:33:48+0200\",\n            \"currentStatusId\": 5,\n            \"currentStatusUpdatedAt\": \"2018-10-19T21:06:45+0200\",\n            \"shipSalesDocument\": true\n        },\n        \"relationships\": {\n            \"payment\": {\n                \"links\": {\n                    \"related\": \"/api/v1/shop/orders/1/relationships/payment\"\n                },\n                \"data\": {\n                    \"type\": \"shop_order_payment\",\n                    \"id\": \"1\"\n                }\n            },\n            \"shipment\": {\n                \"links\": {\n                    \"related\": \"/api/v1/shop/orders/1/relationships/shipment\"\n                },\n                \"data\": {\n                    \"type\": \"shop_order_shipment\",\n                    \"id\": \"1\"\n                }\n            },\n            \"items\": {\n                \"links\": {\n                    \"related\": \"/api/v1/shop/orders/1/relationships/items\"\n                }\n            },\n            \"connectedOrders\": {\n                \"links\": {\n                    \"related\": \"/api/v1/shop/orders/1/relationships/connected_orders\"\n                }\n            },\n            \"salesDocument\": {\n                \"links\": {\n                    \"related\": \"/api/v1/shop/orders/1/relationships/sales_document\"\n                },\n                \"data\": {\n                    \"type\": \"invoice\",\n                    \"id\": \"1\"\n                }\n            }\n        }\n    }\n}"
-                    }
-                  ]
-                },
-                {
-                  "name": "Fetch order items Copy",
-                  "_postman_id": "256224fa-70f3-4b8d-b5e3-8fdf8f0c898e",
-                  "protocolProfileBehavior": {
-                    "disableBodyPruning": true
-                  },
-                  "request": {
-                    "method": "GET",
-                    "header": [
-                      {
-                        "key": "Accept",
-                        "value": "application/vnd.api+json"
-                      },
-                      {
-                        "key": "Content-Type",
-                        "value": "application/vnd.api+json"
-                      }
-                    ],
-                    "url": "{{url}}/api/v1/shop/orders/{{order_id}}/relationships/items",
-                    "description": "**Item attributes**\n\n| Name                    | Type     | Nullable | Description                                                                         |\n|-------------------------|----------|----------|-------------------------------------------------------------------------------------|\n| number                  | int      | No       | Ordinal number of product in order                                                  |\n| name                    | string   | No       | Product name                                                                        |\n| code                    | string   | No       | Product item code shown in eCommerce                                                |\n| barcode                 | string   | Yes      | Product item barcode                                                                |\n| warehouseCode           | string   | No       | Product item warehouse code                                                         |\n| quantity                | int      | No       | Purchased product quantity                                                          |\n| price                   | float    | No       | Product price per single unit                                                       |\n| points                  | float    | No       | Product points per single unit (used for commissions calculation)                   |\n| taxPercent              | int      | No       | Product tax percent                                                                 |\n| weight                  | float    | No       | Product weight per single unit                                                      |\n| orderId                 | int      | No       | ID of order to which this item belongs                                              |"
-                  },
-                  "response": [
-                    {
-                      "id": "a8c1fcc4-c16f-4b64-8017-b34b82f79180",
-                      "name": "Fetch order items",
-                      "originalRequest": {
-                        "method": "GET",
-                        "header": [
-                          {
-                            "key": "Accept",
-                            "value": "application/vnd.api+json"
-                          },
-                          {
-                            "key": "Content-Type",
-                            "value": "application/vnd.api+json"
-                          }
-                        ],
-                        "url": "http://{{url}}/api/v1/shop/orders/{{order_id}}/relationships/items"
-                      },
-                      "status": "OK",
-                      "code": 200,
-                      "_postman_previewlanguage": "json",
-                      "header": [
-                        {
-                          "key": "Server",
-                          "value": "nginx/1.15.0"
-                        },
-                        {
-                          "key": "Date",
-                          "value": "Fri, 19 Oct 2018 21:55:28 GMT"
-                        },
-                        {
-                          "key": "Content-Type",
-                          "value": "application/vnd.api+json"
-                        },
-                        {
-                          "key": "Transfer-Encoding",
-                          "value": "chunked"
-                        },
-                        {
-                          "key": "Connection",
-                          "value": "keep-alive"
-                        },
-                        {
-                          "key": "Expires",
-                          "value": "Thu, 19 Nov 1981 08:52:00 GMT"
-                        },
-                        {
-                          "key": "Cache-Control",
-                          "value": "no-store, no-cache, must-revalidate"
-                        },
-                        {
-                          "key": "Pragma",
-                          "value": "no-cache"
-                        }
-                      ],
-                      "cookie": [],
-                      "responseTime": null,
-                      "body": "{\n    \"jsonapi\": {\n        \"version\": \"1.0\"\n    },\n    \"meta\": {\n        \"page\": {\n            \"number\": 1,\n            \"size\": 25\n        },\n        \"totalItems\": 1\n    },\n    \"links\": {\n        \"self\": \"/api/v1/shop/orders/1/relationships/items?page[number]=1\",\n        \"first\": \"/api/v1/shop/orders/1/relationships/items?page[number]=1\",\n        \"last\": \"/api/v1/shop/orders/1/relationships/items?page[number]=1\"\n    },\n    \"data\": [\n        {\n            \"type\": \"shop_order_item\",\n            \"id\": \"1\",\n            \"attributes\": {\n                \"number\": 1,\n                \"name\": \"Placeat qui est quisquam\",\n                \"code\": \"001\",\n                \"barcode\": \"9560999275434\",\n                \"warehouseCode\": \"001\",\n                \"quantity\": 1,\n                \"price\": 103.19,\n                \"points\": 329,\n                \"taxPercent\": 23,\n                \"weight\": 0,\n                \"orderId\": 2792\n            }\n        }\n    ]\n}"
                     }
                   ]
                 }
