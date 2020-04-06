@@ -2350,7 +2350,18 @@
                   },
                   "request": {
                     "method": "GET",
-                    "header": [],
+                    "header": [
+                      {
+                        "key": "Accept",
+                        "value": "application/vnd.api+json",
+                        "type": "text"
+                      },
+                      {
+                        "key": "Content-Type",
+                        "value": "application/vnd.api+json",
+                        "type": "text"
+                      }
+                    ],
                     "url": "{{url}}/api/v1/shop/adjustment-type"
                   },
                   "response": []
