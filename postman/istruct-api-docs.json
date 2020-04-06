@@ -2351,7 +2351,7 @@
                   "request": {
                     "method": "GET",
                     "header": [],
-                    "url": ""
+                    "url": "{{url}}/api/v1/shop/adjustment-type"
                   },
                   "response": []
                 }
