@@ -2341,7 +2341,21 @@
             },
             {
               "name": "AdjustmentType",
-              "item": [],
+              "item": [
+                {
+                  "name": "Fetch multiple adjustment types",
+                  "_postman_id": "bbf39b55-46c8-4f57-8ba5-20ac9da855e3",
+                  "protocolProfileBehavior": {
+                    "disableBodyPruning": true
+                  },
+                  "request": {
+                    "method": "GET",
+                    "header": [],
+                    "url": ""
+                  },
+                  "response": []
+                }
+              ],
               "_postman_id": "1f721936-96df-4547-80d3-c29f4320c329",
               "description": "This endpoint returns information about adjustment types available in your iStruct instance via API. Adjustments are things that affect either order value (e. g. discounts, sales tax) or payment amount (e. g. vouchers, partial payments from wallet).",
               "event": [
