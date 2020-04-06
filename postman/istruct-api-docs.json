@@ -2338,6 +2338,12 @@
                 }
               ],
               "_postman_isSubFolder": true
+            },
+            {
+              "name": "AdjustmentType",
+              "item": [],
+              "_postman_id": "1f721936-96df-4547-80d3-c29f4320c329",
+              "_postman_isSubFolder": true
             }
           ],
           "_postman_id": "3e8f0a97-4916-49d7-a069-1136dbe6a41a",
