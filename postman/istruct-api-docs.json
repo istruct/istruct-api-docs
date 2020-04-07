@@ -1646,7 +1646,8 @@
                         "value": "application/vnd.api+json"
                       }
                     ],
-                    "url": "{{url}}/api/v1/shop/orders/{{order_id}}/relationships/connected_orders"
+                    "url": "{{url}}/api/v1/shop/orders/{{order_id}}/relationships/connected_orders",
+                    "description": "Currently connected orders are not enabled on Kannaway, so this will be always empty."
                   },
                   "response": [
                     {
