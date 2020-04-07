@@ -1279,7 +1279,7 @@
                       }
                     ],
                     "url": "{{url}}/api/v1/shop/orders",
-                    "description": "**Available filters**\n\n| Name                    | Type     | Description                                                             |\n|-------------------------|----------|-------------------------------------------------------------------------|\n| code                    | string   | Exact order code                                                        |\n| currency                | string   | Exact order currency                                                    |\n| currentStatusId         | int/int[]| One or more status IDs (see **Order statuses** below)                   |\n| createdFrom             | datetime | `>=` Date when order has been created                                   |\n| createdTo               | datetime | `<=` Date when order has been created                                   |\n\n**Available sortings**\n\n* id\n* createdAt\n\n**Order statuses**\n\n| Status ID | Status name |\n|-----------|-------------|\n| 1         | new         |\n| 2         | paid        |\n| 3         | realized    |\n| 4         | sent        |\n| 5         | delivered   |\n| 6         | returned    |\n| 7         | cancelled   |"
+                    "description": "**Available filters**\n\n| Name                    | Type     | Description                                                             |\n|-------------------------|----------|-------------------------------------------------------------------------|\n| code                    | string   | Exact order code                                                        |\n| currency                | string   | Exact order currency                                                    |\n| currentStatusId         | int/int[]| One or more status IDs (see **Order statuses** below)                   |\n| createdFrom             | datetime | `>=` Date when order has been created                                   |\n| createdTo               | datetime | `<=` Date when order has been created                                   |\n| paidFrom                | datetime | `>=` Date when order has been marked as paid                            |\n| paidTo.                 | datetime | `>=` Date when order has been marked as paid                            |\n| warehouseId             | int      | Internal ID of the warehouse                                            |\n\n**Available sortings**\n\n* id\n* createdAt\n* paidAt\n\n**Order statuses**\n\n| Status ID | Status name        |\n|-----------|--------------------|\n| 1         | new                |\n| 2         | paid               |\n| 3         | realized           |\n| 4         | sent               |\n| 5         | delivered          |\n| 6         | returned           |\n| 7         | cancelled          |\n| 8         | new smartship      |\n| 9         | smartship accepted |"
                   },
                   "response": [
                     {
@@ -1615,12 +1615,12 @@
                       }
                     ],
                     "url": "{{url}}/api/v1/shop/orders/{{order_id}}/relationships/adjustments",
-                    "description": "**Adjustment attributes**\n\n| Name                    | Type     | Nullable | Description                                                                         |\n|-------------------------|----------|----------|-------------------------------------------------------------------------------------|\n| orderId                 | int      | No       | ID of parent order                                                                  |\n| adjustmentId            | string   | No       | ID of adjustment                                                                    |\n| typeId                  | int      | No       | ID of adjustment type (see Adjustment types endpoint to fetch all possible values)  |\n| typeName                | string   | No       | Internal name of adjustment type                                                    |\n| amount                  | float    | No       | Amount in order currency indicating how big the change was. It shows effective amount, so voucher for 50USD used for order with total amount of 40USD will only show 40USD in this field. This value will be negative for discounts, positive for additional charges, like sales tax. |\n| points                  | float    | No       | Amount of points that were added to (positive value) or deducted from (negative value) order. |\n| price                   | float    | No       | Product price per single unit                                                       |\n| params                  | object   | No       | Adjustment params depend on your iStruct configuration and available types. Example fields include label, description and voucherCode       |"
+                    "description": "**Adjustment attributes**\n\n| Name                    | Type     | Nullable | Description                                                                         |\n|-------------------------|----------|----------|-------------------------------------------------------------------------------------|\n| orderId                 | int      | No       | ID of parent order                                                                  |\n| adjustmentId            | string   | No       | ID of adjustment                                                                    |\n| typeId                  | int      | No       | ID of adjustment type (see Adjustment types endpoint to fetch all possible values)  |\n| typeName                | string   | No       | Internal name of adjustment type                                                    |\n| amount                  | float    | No       | Amount in order currency. It shows effective amount, so voucher for 50USD used for order with total amount of 40USD will only show -40 in this field. This value will be negative for discounts, positive for additional charges, like sales tax. |\n| points                  | float    | No       | Amount of points that were added to (positive value) or deducted from (negative value) order. |\n| price                   | float    | No       | Product price per single unit                                                       |\n| params                  | object   | No       | Adjustment params depend on your iStruct configuration and available types. Example fields include label, description and voucherCode       |"
                   },
                   "response": [
                     {
-                      "id": "a8c1fcc4-c16f-4b64-8017-b34b82f79180",
-                      "name": "Fetch order items",
+                      "id": "1d87d2a1-1490-4d4c-9f0f-f3788e6ee7e6",
+                      "name": "Fetch order adjustments",
                       "originalRequest": {
                         "method": "GET",
                         "header": [
@@ -1633,48 +1633,13 @@
                             "value": "application/vnd.api+json"
                           }
                         ],
-                        "url": "http://{{url}}/api/v1/shop/orders/{{order_id}}/relationships/items"
+                        "url": "{{url}}/api/v1/shop/orders/{{order_id}}/relationships/adjustments"
                       },
-                      "status": "OK",
-                      "code": 200,
-                      "_postman_previewlanguage": "json",
-                      "header": [
-                        {
-                          "key": "Server",
-                          "value": "nginx/1.15.0"
-                        },
-                        {
-                          "key": "Date",
-                          "value": "Fri, 19 Oct 2018 21:55:28 GMT"
-                        },
-                        {
-                          "key": "Content-Type",
-                          "value": "application/vnd.api+json"
-                        },
-                        {
-                          "key": "Transfer-Encoding",
-                          "value": "chunked"
-                        },
-                        {
-                          "key": "Connection",
-                          "value": "keep-alive"
-                        },
-                        {
-                          "key": "Expires",
-                          "value": "Thu, 19 Nov 1981 08:52:00 GMT"
-                        },
-                        {
-                          "key": "Cache-Control",
-                          "value": "no-store, no-cache, must-revalidate"
-                        },
-                        {
-                          "key": "Pragma",
-                          "value": "no-cache"
-                        }
-                      ],
+                      "_postman_previewlanguage": null,
+                      "header": null,
                       "cookie": [],
                       "responseTime": null,
-                      "body": "{\n    \"jsonapi\": {\n        \"version\": \"1.0\"\n    },\n    \"meta\": {\n        \"page\": {\n            \"number\": 1,\n            \"size\": 25\n        },\n        \"totalItems\": 1\n    },\n    \"links\": {\n        \"self\": \"/api/v1/shop/orders/1/relationships/items?page[number]=1\",\n        \"first\": \"/api/v1/shop/orders/1/relationships/items?page[number]=1\",\n        \"last\": \"/api/v1/shop/orders/1/relationships/items?page[number]=1\"\n    },\n    \"data\": [\n        {\n            \"type\": \"shop_order_item\",\n            \"id\": \"1\",\n            \"attributes\": {\n                \"number\": 1,\n                \"name\": \"Placeat qui est quisquam\",\n                \"code\": \"001\",\n                \"barcode\": \"9560999275434\",\n                \"warehouseCode\": \"001\",\n                \"quantity\": 1,\n                \"price\": 103.19,\n                \"points\": 329,\n                \"taxPercent\": 23,\n                \"weight\": 0,\n                \"orderId\": 2792\n            }\n        }\n    ]\n}"
+                      "body": "{\n    \"jsonapi\": {\n        \"version\": \"1.0\"\n    },\n    \"meta\": {\n        \"page\": {\n            \"number\": 1,\n            \"size\": 25\n        },\n        \"totalItems\": 5\n    },\n    \"links\": {\n        \"self\": \"/api/v1/shop/orders/456/relationships/order_adjustments?page[number]=1\",\n        \"first\": \"/api/v1/shop/orders/456/relationships/order_adjustments?page[number]=1\",\n        \"last\": \"/api/v1/shop/orders/456/relationships/order_adjustments?page[number]=1\"\n    },\n    \"data\": [\n        {\n            \"type\": \"shop_order_adjustment\",\n            \"id\": \"456_897\",\n            \"attributes\": {\n                \"orderId\": 456,\n                \"adjustmentId\": 897,\n                \"typeId\": 4,\n                \"typeName\": \"Avatax Salestax\",\n                \"amount\": \"18.22\",\n                \"points\": \"0.00\",\n                \"params\": {},\n                \"isPaymentMethod\": false\n            }\n        },\n        {\n            \"type\": \"shop_order_adjustment\",\n            \"id\": \"456_321\",\n            \"attributes\": {\n                \"orderId\": 456,\n                \"adjustmentId\": 321,\n                \"typeId\": 1,\n                \"typeName\": \"Other\",\n                \"amount\": \"-23.02\",\n                \"points\": \"0.00\",\n                \"params\": {\n                    \"label\": \"<strong>10% discount</strong> on order amount and <strong>0% </strong> on order points\",\n                    \"description\": null\n                },\n                \"isPaymentMethod\": false\n            }\n        },\n        {\n            \"type\": \"shop_order_adjustment\",\n            \"id\": \"456_800\",\n            \"attributes\": {\n                \"orderId\": 456,\n                \"adjustmentId\": 800,\n                \"typeId\": 1,\n                \"typeName\": \"Other\",\n                \"amount\": \"0.00\",\n                \"points\": \"-93.33\",\n                \"params\": {\n                    \"label\": \"Promo xyz points discount (93.33 points)\",\n                    \"description\": null\n                },\n                \"isPaymentMethod\": false\n            }\n        },\n        {\n            \"type\": \"shop_order_adjustment\",\n            \"id\": \"456_245\",\n            \"attributes\": {\n                \"orderId\": 456,\n                \"adjustmentId\": 245,\n                \"typeId\": 7,\n                \"typeName\": \"Company Payment\",\n                \"amount\": \"-140.00\",\n                \"points\": \"0.00\",\n                \"params\": {\n                    \"label\": \"Promo xyz order discount ($140.00)\"\n                },\n                \"isPaymentMethod\": true\n            }\n        },\n        {\n            \"type\": \"shop_order_adjustment\",\n            \"id\": \"456_333\",\n            \"attributes\": {\n                \"orderId\": 456,\n                \"adjustmentId\": 333,\n                \"typeId\": 3,\n                \"typeName\": \"UserWallet\",\n                \"amount\": \"-21.64\",\n                \"points\": \"0.00\",\n                \"params\": {\n                    \"label\": \"Pay from eWallet\"\n                },\n                \"isPaymentMethod\": true\n            }\n        }\n    ]\n}\n"
                     }
                   ]
                 },
