@@ -2127,7 +2127,7 @@
                 }
               ],
               "_postman_id": "839fab0d-b849-45f6-a46b-f91f5ebd3b8a",
-              "description": "Shop Order contains at least one product **Item**, at least one product **ItemLine**, exactly one **Shipment** and exactly one **Payment** objects. It can contain zero or more **Connected Orders**, zero or exactly one **Sales Document** objects and zero ore more **OrderAdjustment**",
+              "description": "Shop Order contains at least one product **Item**, exactly one **Shipment** and exactly one **Payment** objects. It can contain zero or more **Connected Orders**, zero or exactly one **Sales Document** objects and zero ore more **OrderAdjustment**",
               "event": [
                 {
                   "listen": "prerequest",
