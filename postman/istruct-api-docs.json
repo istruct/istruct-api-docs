@@ -56,11 +56,6 @@
               {
                 "key": "Accept",
                 "value": "application/json"
-              },
-              {
-                "key": "Test",
-                "value": "1",
-                "type": "text"
               }
             ],
             "body": {
