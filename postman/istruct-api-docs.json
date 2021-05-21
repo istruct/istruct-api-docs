@@ -2234,7 +2234,7 @@
               ]
             },
             {
-              "name": "Channels Copy",
+              "name": "Channels",
               "item": [
                 {
                   "name": "Fetch shop channels",
@@ -2324,7 +2324,29 @@
                 }
               ],
               "id": "f2fea801-5aea-4025-926e-63970c8a01fb",
-              "description": "This endpoint allows to fetch shop channels. Channels are separate places where Products can be purchased. These are predefined by other modules that are available in the system (ex. Online shop, Autoship, Admin orders). You can assign Products to be available only in specified channels."
+              "description": "This endpoint allows to fetch shop channels. Channels are separate places where Products can be purchased. These are predefined by other modules that are available in the system (ex. Online shop, Autoship, Admin orders). You can assign Products to be available only in specified channels.",
+              "event": [
+                {
+                  "listen": "prerequest",
+                  "script": {
+                    "id": "61781dbd-826d-4ea5-ab94-48140f306db4",
+                    "type": "text/javascript",
+                    "exec": [
+                      ""
+                    ]
+                  }
+                },
+                {
+                  "listen": "test",
+                  "script": {
+                    "id": "43da20e3-0a4e-4dd0-a015-a95a305612b3",
+                    "type": "text/javascript",
+                    "exec": [
+                      ""
+                    ]
+                  }
+                }
+              ]
             },
             {
               "name": "ShipmentType",
