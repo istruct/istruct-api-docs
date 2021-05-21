@@ -2651,7 +2651,7 @@
               ]
             },
             {
-              "name": "ProductType",
+              "name": "ProductType Copy",
               "item": [
                 {
                   "name": "Fetch multiple product types",
@@ -2679,29 +2679,7 @@
                   "response": []
                 }
               ],
-              "id": "c1800ac5-0d1d-4ddf-a084-8d6943c26c13",
-              "event": [
-                {
-                  "listen": "prerequest",
-                  "script": {
-                    "id": "a2df9e6e-8ffa-4cdc-9457-ae09f1c0e27b",
-                    "type": "text/javascript",
-                    "exec": [
-                      ""
-                    ]
-                  }
-                },
-                {
-                  "listen": "test",
-                  "script": {
-                    "id": "2e749e4b-0df2-4695-813f-a28da6c0718f",
-                    "type": "text/javascript",
-                    "exec": [
-                      ""
-                    ]
-                  }
-                }
-              ]
+              "id": "c1800ac5-0d1d-4ddf-a084-8d6943c26c13"
             }
           ],
           "id": "3e8f0a97-4916-49d7-a069-1136dbe6a41a",
