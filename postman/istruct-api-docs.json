@@ -2365,7 +2365,8 @@
                         "value": "application/vnd.api+json"
                       }
                     ],
-                    "url": "{{url}}/api/v1/shop/payment-types"
+                    "url": "{{url}}/api/v1/shop/payment-types",
+                    "description": "**Required scope**: `shop_dictionaries:get`"
                   },
                   "response": [
                     {
