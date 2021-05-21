@@ -170,6 +170,97 @@
               "cookie": [],
               "responseTime": null,
               "body": "{\n    \"token_type\": \"Bearer\",\n    \"expires_in\": 172800,\n    \"access_token\": \"a-b_aefQ\"\n}"
+            },
+            {
+              "id": "a9f99c5e-76fc-49c5-a642-6d143181da89",
+              "name": "Fetch new token with limited scopes",
+              "originalRequest": {
+                "method": "POST",
+                "header": [
+                  {
+                    "key": "Content-Type",
+                    "value": "application/x-www-form-urlencoded"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "body": {
+                  "mode": "urlencoded",
+                  "urlencoded": [
+                    {
+                      "key": "grant_type",
+                      "value": "client_credentials",
+                      "type": "text"
+                    },
+                    {
+                      "key": "client_id",
+                      "value": "{{client_id}}",
+                      "type": "text"
+                    },
+                    {
+                      "key": "client_secret",
+                      "value": "{{client_secret}}",
+                      "type": "text"
+                    },
+                    {
+                      "key": "scope",
+                      "value": "shop_dictionaries:get shop_packages:get",
+                      "type": "text"
+                    }
+                  ]
+                },
+                "url": "{{url}}/api/v1/oauth2/token"
+              },
+              "status": "OK",
+              "code": 200,
+              "_postman_previewlanguage": "json",
+              "header": [
+                {
+                  "key": "Server",
+                  "value": "nginx/1.15.8"
+                },
+                {
+                  "key": "Date",
+                  "value": "Fri, 21 May 2021 23:01:56 GMT"
+                },
+                {
+                  "key": "Content-Type",
+                  "value": "application/json; charset=UTF-8"
+                },
+                {
+                  "key": "Transfer-Encoding",
+                  "value": "chunked"
+                },
+                {
+                  "key": "Connection",
+                  "value": "keep-alive"
+                },
+                {
+                  "key": "Expires",
+                  "value": "Thu, 19 Nov 1981 08:52:00 GMT"
+                },
+                {
+                  "key": "Cache-Control",
+                  "value": "no-store, no-cache, must-revalidate"
+                },
+                {
+                  "key": "Cache-Control",
+                  "value": "no-store"
+                },
+                {
+                  "key": "Pragma",
+                  "value": "no-cache"
+                },
+                {
+                  "key": "Pragma",
+                  "value": "no-cache"
+                }
+              ],
+              "cookie": [],
+              "responseTime": null,
+              "body": "{\n    \"token_type\": \"Bearer\",\n    \"expires_in\": 172800,\n    \"access_token\": \"eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiIsImp0aSI6IjIxZjlkYTAwZGMwZWFjMGJiNTkwNzE4ZjQyNmVhY2Q1N2RhNzlkZjlhM2E5MWI5MDEwN2Y4ZTFiZGU2MWU0NzYxYWYzNTE3ZTNkNjM4NTcyIn0.eyJhdWQiOiIyOSIsImp0aSI6IjIxZjlkYTAwZGMwZWFjMGJiNTkwNzE4ZjQyNmVhY2Q1N2RhNzlkZjlhM2E5MWI5MDEwN2Y4ZTFiZGU2MWU0NzYxYWYzNTE3ZTNkNjM4NTcyIiwiaWF0IjoxNjIxNjM4MTE2LCJuYmYiOjE2MjE2MzgxMTYsImV4cCI6MTYyMTgxMDkxNiwic3ViIjoiIiwic2NvcGVzIjpbInNob3BfZGljdGlvbmFyaWVzOmdldCIsInNob3BfcGFja2FnZXM6Z2V0Il19.sIyyOF_f_14xXS0zCdwnp72ec69Q9X1OYbkQh3JZqjlYfLkkI_hK3fuIA9GMbESY_7UflLnbFTIKR25qcNwQj9DU0aPyD2UEzq8hJ82w-k-h7pM73XF-CYLEH5dwXjlhr5zQJbyXp_6A0_XIY_Np0dZKo7rPTuP69D5rcXFZeody7bnno_4ryJONVEbjIG9pZdE_juwy4HsXh7tjgfK79oqLNzrhsV0S8-AC5ZonMkES3ZyDa9spqduTZz1UZ28xkLqTjr6faU_BPJH8GUw7kfAEMOFExaFyv16i4FSgiwe6vrnYG8NBZ9I3sjEiFD-SPU3s0PpWC1UNvAAvtaZqIg\"\n}"
             }
           ]
         }
