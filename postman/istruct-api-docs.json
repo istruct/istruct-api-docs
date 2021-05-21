@@ -35,6 +35,7 @@
                   "",
                   "if (jsonData.access_token) {",
                   "    postman.setGlobalVariable(\"access_token\", jsonData.access_token);",
+                  "    pm.environment.set(\"access_token\", jsonData.access_token);",
                   "}",
                   ""
                 ],
@@ -42,7 +43,7 @@
               }
             }
           ],
-          "_postman_id": "b8a48a3c-1c26-4446-8339-0283c2718679",
+          "id": "b8a48a3c-1c26-4446-8339-0283c2718679",
           "protocolProfileBehavior": {
             "disableBodyPruning": true
           },
@@ -75,11 +76,14 @@
                   "key": "client_secret",
                   "value": "{{client_secret}}",
                   "type": "text"
+                },
+                {
+                  "key": "scope",
+                  "value": "shop_dictionaries:get shop_packages:get",
+                  "type": "text",
+                  "disabled": true
                 }
-              ],
-              "options": {
-                "urlencoded": {}
-              }
+              ]
             },
             "url": "{{url}}/api/v1/oauth2/token",
             "description": "Generates new OAuth2 JWT token for current client."
@@ -170,7 +174,7 @@
           ]
         }
       ],
-      "_postman_id": "98582d72-aa93-4bc7-823b-db3c9a6b71f0",
+      "id": "98582d72-aa93-4bc7-823b-db3c9a6b71f0",
       "description": "To interact with other endpoints your requests have to be authorized using OAuth2 access token.\n\nTo obtain a token your application can get it in exchange for API Keys using client credentials grant (id and secret).",
       "event": [
         {
@@ -206,7 +210,7 @@
               "item": [
                 {
                   "name": "Fetch multiple packages",
-                  "_postman_id": "d60874bd-a5c1-4375-a8da-aaa9c0dee547",
+                  "id": "d60874bd-a5c1-4375-a8da-aaa9c0dee547",
                   "request": {
                     "method": "GET",
                     "header": [
@@ -379,7 +383,7 @@
                 },
                 {
                   "name": "Fetch single package",
-                  "_postman_id": "9e33573f-4599-4ff2-96f1-b7cfe9237d53",
+                  "id": "9e33573f-4599-4ff2-96f1-b7cfe9237d53",
                   "request": {
                     "method": "GET",
                     "header": [
@@ -535,7 +539,7 @@
                 },
                 {
                   "name": "Fetch package main order",
-                  "_postman_id": "a1c609b8-eb80-4675-9eca-34c3d131b2eb",
+                  "id": "a1c609b8-eb80-4675-9eca-34c3d131b2eb",
                   "request": {
                     "method": "GET",
                     "header": [
@@ -614,7 +618,7 @@
                 },
                 {
                   "name": "Fetch package main shipment",
-                  "_postman_id": "f4b99a90-7ba1-497f-8177-fb418188f34f",
+                  "id": "f4b99a90-7ba1-497f-8177-fb418188f34f",
                   "request": {
                     "method": "GET",
                     "header": [
@@ -697,7 +701,7 @@
                 },
                 {
                   "name": "Mark package as sent",
-                  "_postman_id": "be375048-8ab0-47e3-a1f3-116f47125885",
+                  "id": "be375048-8ab0-47e3-a1f3-116f47125885",
                   "request": {
                     "method": "PUT",
                     "header": [
@@ -914,7 +918,7 @@
                 },
                 {
                   "name": "Mark package as delivered",
-                  "_postman_id": "4b9987b8-3e20-4761-b3f0-36f2e9cadafd",
+                  "id": "4b9987b8-3e20-4761-b3f0-36f2e9cadafd",
                   "request": {
                     "method": "PUT",
                     "header": [
@@ -1069,7 +1073,7 @@
                 },
                 {
                   "name": "Set package tracking details",
-                  "_postman_id": "561023af-7b3b-402b-bbe8-502e09fca4ff",
+                  "id": "561023af-7b3b-402b-bbe8-502e09fca4ff",
                   "request": {
                     "method": "PUT",
                     "header": [
@@ -1223,7 +1227,7 @@
                   ]
                 }
               ],
-              "_postman_id": "22efebb0-9f03-4dd2-ad24-94cd16d2d2d0",
+              "id": "22efebb0-9f03-4dd2-ad24-94cd16d2d2d0",
               "description": "Packages aggregate Orders into a single entity that allows one or more of them to be shipped in one parcel. Package contains one **Main Order** that defines delivery address and shipment type. Main order can contain zero or more **Connected Orders** that should be shipped all together.",
               "event": [
                 {
@@ -1246,15 +1250,14 @@
                     ]
                   }
                 }
-              ],
-              "_postman_isSubFolder": true
+              ]
             },
             {
               "name": "Order",
               "item": [
                 {
                   "name": "Fetch multiple orders",
-                  "_postman_id": "39c07ac8-6d3c-46da-911c-5f685c5abb95",
+                  "id": "39c07ac8-6d3c-46da-911c-5f685c5abb95",
                   "request": {
                     "method": "GET",
                     "header": [
@@ -1418,7 +1421,7 @@
                 },
                 {
                   "name": "Fetch single order",
-                  "_postman_id": "9b99bad5-ef1d-4c20-ad19-e16060f0b5c7",
+                  "id": "9b99bad5-ef1d-4c20-ad19-e16060f0b5c7",
                   "request": {
                     "method": "GET",
                     "header": [
@@ -1497,7 +1500,7 @@
                 },
                 {
                   "name": "Fetch order items",
-                  "_postman_id": "d7ab1aa6-4924-48d2-9cf1-8d707fbbd5fb",
+                  "id": "d7ab1aa6-4924-48d2-9cf1-8d707fbbd5fb",
                   "request": {
                     "method": "GET",
                     "header": [
@@ -1580,7 +1583,7 @@
                 },
                 {
                   "name": "Fetch order adjustments",
-                  "_postman_id": "256224fa-70f3-4b8d-b5e3-8fdf8f0c898e",
+                  "id": "256224fa-70f3-4b8d-b5e3-8fdf8f0c898e",
                   "protocolProfileBehavior": {
                     "disableBodyPruning": true
                   },
@@ -1627,7 +1630,7 @@
                 },
                 {
                   "name": "Fetch order connected orders",
-                  "_postman_id": "e59e425a-fe43-41ba-9f3c-9a73b189f294",
+                  "id": "e59e425a-fe43-41ba-9f3c-9a73b189f294",
                   "request": {
                     "method": "GET",
                     "header": [
@@ -1767,7 +1770,7 @@
                 },
                 {
                   "name": "Fetch order payment",
-                  "_postman_id": "54d79020-2090-4f3a-9a9e-f0611c2decd1",
+                  "id": "54d79020-2090-4f3a-9a9e-f0611c2decd1",
                   "request": {
                     "method": "GET",
                     "header": [
@@ -1850,7 +1853,7 @@
                 },
                 {
                   "name": "Fetch order shipment",
-                  "_postman_id": "5fda03da-f695-475d-8c8a-b30d297e7196",
+                  "id": "5fda03da-f695-475d-8c8a-b30d297e7196",
                   "request": {
                     "method": "GET",
                     "header": [
@@ -1937,7 +1940,7 @@
                 },
                 {
                   "name": "Fetch order sales document",
-                  "_postman_id": "44680e09-4033-41d5-8611-2ab457f5b5ce",
+                  "id": "44680e09-4033-41d5-8611-2ab457f5b5ce",
                   "request": {
                     "method": "GET",
                     "header": [
@@ -2016,7 +2019,7 @@
                 },
                 {
                   "name": "Add single order",
-                  "_postman_id": "9fc62f24-c74f-456e-8b8c-6ef02d3b91a9",
+                  "id": "9fc62f24-c74f-456e-8b8c-6ef02d3b91a9",
                   "protocolProfileBehavior": {
                     "disableBodyPruning": true
                   },
@@ -2034,10 +2037,7 @@
                     ],
                     "body": {
                       "mode": "raw",
-                      "raw": "{\n    \"jsonapi\": {\n        \"version\": \"1.0\"\n    },\n    \"data\": {\n        \"type\": \"shop_order\",\n        \"attributes\": {\n            \"orderer\": {\n                \"nameFirst\": \"John\",\n                \"nameLast\": \"Smith\",\n                \"isCompany\": false,\n                \"companyName\": null,\n                \"phone\": \"123456789\",\n                \"email\": \"john@example.com\",\n                \"address\": {\n                    \"countryId\": \"PL\",\n                    \"postalCode\": \"00-189 \",\n                    \"cityName\": \"Warsaw\",\n                    \"street\": \"Test Rd 1\",\n                    \"annotations\": \"This is some annotation\"\n                },\n                \"vatNumber\": null\n            },\n            \"delivery\": {\n                \"nameFirst\": \"System's\",\n                \"nameLast\": \"Administrator\",\n                \"phone\": \"123456789\",\n                \"countryId\": \"US\",\n                \"regionCode\": \"NJ\",\n                \"postalCode\": \"00-189 \",\n                \"cityName\": \"Warsaw\",\n                \"street\": \"12th Test Rd\"\n            },\n            \"items\": [\n                {\n                    \"code\": \"001\",\n                    \"quantity\": 20\n                },\n                {\n                    \"id\": \"264812\",\n                    \"quantity\": 1\n                }\n            ],\n            \"shipmentTypeCode\": \"ups\",\n            \"paymentTypeCode\": \"credit_card\"\n        },\n        \"relationships\": {\n            \"user\": {\n                \"data\": {\n                    \"type\": \"user\",\n                    \"id\": \"US0123456\"\n                }\n            },\n        \t\"tags\": {\n        \t\t\"data\": [\n        \t\t\t{\n        \t\t\t\t\"type\": \"tag\",\n        \t\t\t\t\"id\": \"other-tag\"\n        \t\t\t},\n        \t\t\t{\n        \t\t\t\t\"type\": \"tag\",\n        \t\t\t\t\"id\": \"membertek-sample\"\n        \t\t\t}\n    \t\t\t]\n        \t}\n        }\n    }\n}",
-                      "options": {
-                        "raw": {}
-                      }
+                      "raw": "{\n    \"jsonapi\": {\n        \"version\": \"1.0\"\n    },\n    \"data\": {\n        \"type\": \"shop_order\",\n        \"attributes\": {\n            \"orderer\": {\n                \"nameFirst\": \"John\",\n                \"nameLast\": \"Smith\",\n                \"isCompany\": false,\n                \"companyName\": null,\n                \"phone\": \"123456789\",\n                \"email\": \"john@example.com\",\n                \"address\": {\n                    \"countryId\": \"PL\",\n                    \"postalCode\": \"00-189 \",\n                    \"cityName\": \"Warsaw\",\n                    \"street\": \"Test Rd 1\",\n                    \"annotations\": \"This is some annotation\"\n                },\n                \"vatNumber\": null\n            },\n            \"delivery\": {\n                \"nameFirst\": \"System's\",\n                \"nameLast\": \"Administrator\",\n                \"phone\": \"123456789\",\n                \"countryId\": \"US\",\n                \"regionCode\": \"NJ\",\n                \"postalCode\": \"00-189 \",\n                \"cityName\": \"Warsaw\",\n                \"street\": \"12th Test Rd\"\n            },\n            \"items\": [\n                {\n                    \"code\": \"001\",\n                    \"quantity\": 20\n                },\n                {\n                    \"id\": \"264812\",\n                    \"quantity\": 1\n                }\n            ],\n            \"shipmentTypeCode\": \"ups\",\n            \"paymentTypeCode\": \"credit_card\"\n        },\n        \"relationships\": {\n            \"user\": {\n                \"data\": {\n                    \"type\": \"user\",\n                    \"id\": \"US0123456\"\n                }\n            },\n        \t\"tags\": {\n        \t\t\"data\": [\n        \t\t\t{\n        \t\t\t\t\"type\": \"tag\",\n        \t\t\t\t\"id\": \"other-tag\"\n        \t\t\t},\n        \t\t\t{\n        \t\t\t\t\"type\": \"tag\",\n        \t\t\t\t\"id\": \"membertek-sample\"\n        \t\t\t}\n    \t\t\t]\n        \t}\n        }\n    }\n}"
                     },
                     "url": "{{url}}/api/v1/shop/orders",
                     "description": "**Order attributes**\n\n| Name                    | Type        | Required | Description                                                                         |\n|-------------------------|-------------|----------|-------------------------------------------------------------------------------------|\n| orderer                 | array       | No       | If this field is skipped entirely, data from user's profile will be used            |\n| orderer.nameFirst       | string      | Yes      | First name of entity that placed this order                                         |\n| orderer.nameLast        | string      | Yes      | Last name of entity that placed this order                                          |\n| orderer.isCompany       | bool        | Yes      | Whether order has been placed on behalf of a company entity                         |\n| orderer.companyName     | string or null | Yes/No   | This is required when `isCompany = true`                                            |\n| orderer.phone           | string      | Yes      | Phone number of orderer                                                             |\n| orderer.email           | string      | Yes      | E-mail address of orderer                                                           |\n| orderer.address.countryId | string    | Yes      | [ISO 3166-1 alpha-2](https://en.wikipedia.org/wiki/ISO_3166-1_alpha-2) country code |\n| orderer.address.regionCode | string   | Yes/No   | This field might be required for some addresses, depending on configuration of your iStruct instance. It contains 2-letter state/region/land code. |\n| orderer.address.postalCode| string    | Yes      | Orderer postal code                                                                 |\n| orderer.address.cityName  | string    | Yes      | Orderer city name                                                                   |\n| orderer.address.street    | string    | Yes      | Orderer address (street, home number, apartment number                              |\n| orderer.address.annotations | string or null  | No      | Orderer annotations or remarks regarding this order                                 |\n| orderer.vatNumber       | string or null      | Yes/No      | When `isCompany = true` this number is required (used for invoicing)                  |\n| delivery                | array       | No       | If this field is skipped entirely, default user's address will be used           |\n| delivery.nameFirst      | string      | Yes      | Order receiver first name                                                          |\n| delivery.nameLast       | string      | Yes      | Order receiver last name                                                            |\n| delivery.phone          | string      | Yes      | Phone number for delivery                                                           |\n| delivery.countryId      | string      | Yes      | [ISO 3166-1 alpha-2](https://en.wikipedia.org/wiki/ISO_3166-1_alpha-2) country code |\n| delivery.regionCode     | string      | Yes/No   | This field might be required for some addresses, depending on configuration of your iStruct instance. It contains 2-letter state/region/land code.\n| delivery.postalCode     | string      | Yes      | Delivery postal code                                                                |\n| delivery.cityName       | string      | Yes      | Delivery city name                                                                  |\n| delivery.street         | string      | Yes      | Delivery address (street, home number, apartment number                             |\n| shipSalesDocument       | bool        | Yes/No   | Whether physical copy of sales document should be inserted into package (customer wish). Depends on your iStruct instance configuration, may be disabled. |\n| items.[].code           | string      | Yes      | Item code of ordered product                                                     |\n| items.[].quantity       | integer     | Yes      | Ordered quantity of given item                                                      |\n| shipmentTypeCode        | string      | Yes      | Shipment type code, which can be fetched via **ShipmentType** endpoint                |\n| paymentTypeCode        | string       | Yes      | Payment type code, which can be fetched via **PaymentType** endpoint                   |\n\n**Relationships**\n\n\n| Name                    | Required | Description                                                                         |\n|-------------------------|----------|-------------------------------------------------------------------------------------|\n| user                    | Yes      | iStruct's user that makes this order                                                |\n| warehouse               | No       | if your iStruct instance allows users to directly change the warehouse they are ordering from, you can change it here as well. Otherwise, this field is not directly accessible. |\n| tags                    | No       | List of tags that should be added to this order                                     |"
@@ -2115,7 +2115,7 @@
                   ]
                 }
               ],
-              "_postman_id": "839fab0d-b849-45f6-a46b-f91f5ebd3b8a",
+              "id": "839fab0d-b849-45f6-a46b-f91f5ebd3b8a",
               "description": "Shop Order contains at least one product **Item**, exactly one **Shipment** and exactly one **Payment** objects. It can contain zero or more **Connected Orders**, zero or exactly one **Sales Document** objects and zero ore more **OrderAdjustment**",
               "event": [
                 {
@@ -2138,15 +2138,14 @@
                     ]
                   }
                 }
-              ],
-              "_postman_isSubFolder": true
+              ]
             },
             {
               "name": "ShipmentType",
               "item": [
                 {
                   "name": "Fetch multiple shipment types",
-                  "_postman_id": "0e46d479-534c-4b1e-bf65-b9ca4dcadda4",
+                  "id": "0e46d479-534c-4b1e-bf65-b9ca4dcadda4",
                   "protocolProfileBehavior": {
                     "disableBodyPruning": true
                   },
@@ -2226,7 +2225,7 @@
                   ]
                 }
               ],
-              "_postman_id": "58fe4f42-ec3a-42f9-a0bf-19ede0b0a78e",
+              "id": "58fe4f42-ec3a-42f9-a0bf-19ede0b0a78e",
               "description": "This endpoint returns information about shipment methods available in your iStruct instance via API. Every shipment type has a unique code, which is required when creating **Order** via api.",
               "event": [
                 {
@@ -2249,15 +2248,14 @@
                     ]
                   }
                 }
-              ],
-              "_postman_isSubFolder": true
+              ]
             },
             {
               "name": "PaymentType",
               "item": [
                 {
                   "name": "Fetch multiple payment types",
-                  "_postman_id": "c63d7a03-0fe9-4c97-bb7d-c7cc124e294d",
+                  "id": "c63d7a03-0fe9-4c97-bb7d-c7cc124e294d",
                   "protocolProfileBehavior": {
                     "disableBodyPruning": true
                   },
@@ -2337,7 +2335,7 @@
                   ]
                 }
               ],
-              "_postman_id": "8608d0b6-a825-44a0-abd0-84d12f86130c",
+              "id": "8608d0b6-a825-44a0-abd0-84d12f86130c",
               "description": "This endpoint returns information about payment methods available in your iStruct instance via API. Every payment type has a unique code, which is required when creating **Order** via api.",
               "event": [
                 {
@@ -2360,15 +2358,14 @@
                     ]
                   }
                 }
-              ],
-              "_postman_isSubFolder": true
+              ]
             },
             {
               "name": "AdjustmentType",
               "item": [
                 {
                   "name": "Fetch multiple adjustment types",
-                  "_postman_id": "bbf39b55-46c8-4f57-8ba5-20ac9da855e3",
+                  "id": "bbf39b55-46c8-4f57-8ba5-20ac9da855e3",
                   "protocolProfileBehavior": {
                     "disableBodyPruning": true
                   },
@@ -2417,7 +2414,7 @@
                   ]
                 }
               ],
-              "_postman_id": "1f721936-96df-4547-80d3-c29f4320c329",
+              "id": "1f721936-96df-4547-80d3-c29f4320c329",
               "description": "This endpoint returns information about adjustment types available in your iStruct instance via API. Adjustments are things that affect either order value (e. g. discounts, sales tax) or payment amount (e. g. vouchers, partial payments from wallet).",
               "event": [
                 {
@@ -2440,11 +2437,10 @@
                     ]
                   }
                 }
-              ],
-              "_postman_isSubFolder": true
+              ]
             }
           ],
-          "_postman_id": "3e8f0a97-4916-49d7-a069-1136dbe6a41a",
+          "id": "3e8f0a97-4916-49d7-a069-1136dbe6a41a",
           "description": "iStruct Shop modules support full eCommerce flow. Products and categories management, order and payment processing with external gateways, shipping packages via carriers or brokers, invoicing and much more.",
           "event": [
             {
@@ -2467,11 +2463,10 @@
                 ]
               }
             }
-          ],
-          "_postman_isSubFolder": true
+          ]
         }
       ],
-      "_postman_id": "1350357e-8683-4f12-abff-969e9889f12f",
+      "id": "1350357e-8683-4f12-abff-969e9889f12f",
       "description": "Manage or view iStruct resources.\n\n**All endpoints require Bearer access token.**",
       "auth": {
         "type": "oauth2",
