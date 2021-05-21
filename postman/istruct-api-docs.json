@@ -2234,6 +2234,99 @@
               ]
             },
             {
+              "name": "Channels Copy",
+              "item": [
+                {
+                  "name": "Fetch shop channels",
+                  "id": "846180ff-1e5d-4b50-aa25-e7f5cbbd602b",
+                  "protocolProfileBehavior": {
+                    "disableBodyPruning": true
+                  },
+                  "request": {
+                    "method": "GET",
+                    "header": [
+                      {
+                        "key": "Accept",
+                        "value": "application/vnd.api+json"
+                      },
+                      {
+                        "key": "Content-Type",
+                        "value": "application/vnd.api+json"
+                      }
+                    ],
+                    "url": "{{url}}/api/v1/shop/channels",
+                    "description": "**Required scope**: `shop_dictionaries:get`\n"
+                  },
+                  "response": [
+                    {
+                      "id": "57b091b1-bd78-400f-be2c-10741b9ed35a",
+                      "name": "Fetch shop channels",
+                      "originalRequest": {
+                        "method": "GET",
+                        "header": [
+                          {
+                            "key": "Accept",
+                            "value": "application/vnd.api+json"
+                          },
+                          {
+                            "key": "Content-Type",
+                            "value": "application/vnd.api+json"
+                          }
+                        ],
+                        "url": "{{url}}/api/v1/shop/channels"
+                      },
+                      "status": "OK",
+                      "code": 200,
+                      "_postman_previewlanguage": "json",
+                      "header": [
+                        {
+                          "key": "Server",
+                          "value": "nginx/1.15.8"
+                        },
+                        {
+                          "key": "Date",
+                          "value": "Tue, 16 Jun 2020 17:47:19 GMT"
+                        },
+                        {
+                          "key": "Content-Type",
+                          "value": "application/vnd.api+json"
+                        },
+                        {
+                          "key": "Transfer-Encoding",
+                          "value": "chunked"
+                        },
+                        {
+                          "key": "Connection",
+                          "value": "keep-alive"
+                        },
+                        {
+                          "key": "Expires",
+                          "value": "Thu, 19 Nov 1981 08:52:00 GMT"
+                        },
+                        {
+                          "key": "Cache-Control",
+                          "value": "no-store, no-cache, must-revalidate"
+                        },
+                        {
+                          "key": "Pragma",
+                          "value": "no-cache"
+                        },
+                        {
+                          "key": "X-Istruct-Errors",
+                          "value": "{\"notice\":[{\"message\":\"Key file \\\"file:\\/\\/\\/home\\/vagrant\\/code\\/kannaway\\/data\\/ssl\\/oauth2-server.crt\\\" permissions are not correct, should be 600 or 660 instead of 664\",\"file\":\"\\/home\\/vagrant\\/code\\/kannaway\\/vendor\\/league\\/oauth2-server\\/src\\/CryptKey.php\",\"line\":56,\"type\":\"PHP Notice\"}]}"
+                        }
+                      ],
+                      "cookie": [],
+                      "responseTime": null,
+                      "body": "{\n    \"jsonapi\": {\n        \"version\": \"1.0\"\n    },\n    \"meta\": {\n        \"page\": {\n            \"number\": 1,\n            \"size\": 25\n        },\n        \"totalItems\": 2\n    },\n    \"links\": {\n        \"self\": \"/api/v1/shop/channels?page[number]=1\",\n        \"first\": \"/api/v1/shop/channels?page[number]=1\",\n        \"last\": \"/api/v1/shop/channels?page[number]=1\"\n    },\n    \"data\": [\n        {\n            \"type\": \"shop_channel\",\n            \"id\": \"1\",\n            \"links\": {\n                \"self\": \"/api/v1/shop/channels/1\"\n            },\n            \"attributes\": {\n                \"slug\": null,\n                \"name\": \"Shop\",\n                \"targetWarehouseId\": 0,\n                \"active\": true\n            }\n        },\n        {\n            \"type\": \"shop_channel\",\n            \"id\": \"2\",\n            \"links\": {\n                \"self\": \"/api/v1/shop/channels/2\"\n            },\n            \"attributes\": {\n                \"slug\": null,\n                \"name\": \"Registration\",\n                \"targetWarehouseId\": 0,\n                \"active\": true\n            }\n        }\n    ]\n}"
+                    }
+                  ]
+                }
+              ],
+              "id": "f2fea801-5aea-4025-926e-63970c8a01fb",
+              "description": "This endpoint allows to fetch shop channels. Channels are separate places where Products can be purchased. These are predefined by other modules that are available in the system (ex. Online shop, Autoship, Admin orders). You can assign Products to be available only in specified channels."
+            },
+            {
               "name": "ShipmentType",
               "item": [
                 {
@@ -2534,99 +2627,6 @@
                   }
                 }
               ]
-            },
-            {
-              "name": "Channels Copy",
-              "item": [
-                {
-                  "name": "Fetch shop channels",
-                  "id": "846180ff-1e5d-4b50-aa25-e7f5cbbd602b",
-                  "protocolProfileBehavior": {
-                    "disableBodyPruning": true
-                  },
-                  "request": {
-                    "method": "GET",
-                    "header": [
-                      {
-                        "key": "Accept",
-                        "value": "application/vnd.api+json"
-                      },
-                      {
-                        "key": "Content-Type",
-                        "value": "application/vnd.api+json"
-                      }
-                    ],
-                    "url": "{{url}}/api/v1/shop/channels",
-                    "description": "**Required scope**: `shop_dictionaries:get`\n"
-                  },
-                  "response": [
-                    {
-                      "id": "57b091b1-bd78-400f-be2c-10741b9ed35a",
-                      "name": "Fetch shop channels",
-                      "originalRequest": {
-                        "method": "GET",
-                        "header": [
-                          {
-                            "key": "Accept",
-                            "value": "application/vnd.api+json"
-                          },
-                          {
-                            "key": "Content-Type",
-                            "value": "application/vnd.api+json"
-                          }
-                        ],
-                        "url": "{{url}}/api/v1/shop/channels"
-                      },
-                      "status": "OK",
-                      "code": 200,
-                      "_postman_previewlanguage": "json",
-                      "header": [
-                        {
-                          "key": "Server",
-                          "value": "nginx/1.15.8"
-                        },
-                        {
-                          "key": "Date",
-                          "value": "Tue, 16 Jun 2020 17:47:19 GMT"
-                        },
-                        {
-                          "key": "Content-Type",
-                          "value": "application/vnd.api+json"
-                        },
-                        {
-                          "key": "Transfer-Encoding",
-                          "value": "chunked"
-                        },
-                        {
-                          "key": "Connection",
-                          "value": "keep-alive"
-                        },
-                        {
-                          "key": "Expires",
-                          "value": "Thu, 19 Nov 1981 08:52:00 GMT"
-                        },
-                        {
-                          "key": "Cache-Control",
-                          "value": "no-store, no-cache, must-revalidate"
-                        },
-                        {
-                          "key": "Pragma",
-                          "value": "no-cache"
-                        },
-                        {
-                          "key": "X-Istruct-Errors",
-                          "value": "{\"notice\":[{\"message\":\"Key file \\\"file:\\/\\/\\/home\\/vagrant\\/code\\/kannaway\\/data\\/ssl\\/oauth2-server.crt\\\" permissions are not correct, should be 600 or 660 instead of 664\",\"file\":\"\\/home\\/vagrant\\/code\\/kannaway\\/vendor\\/league\\/oauth2-server\\/src\\/CryptKey.php\",\"line\":56,\"type\":\"PHP Notice\"}]}"
-                        }
-                      ],
-                      "cookie": [],
-                      "responseTime": null,
-                      "body": "{\n    \"jsonapi\": {\n        \"version\": \"1.0\"\n    },\n    \"meta\": {\n        \"page\": {\n            \"number\": 1,\n            \"size\": 25\n        },\n        \"totalItems\": 2\n    },\n    \"links\": {\n        \"self\": \"/api/v1/shop/channels?page[number]=1\",\n        \"first\": \"/api/v1/shop/channels?page[number]=1\",\n        \"last\": \"/api/v1/shop/channels?page[number]=1\"\n    },\n    \"data\": [\n        {\n            \"type\": \"shop_channel\",\n            \"id\": \"1\",\n            \"links\": {\n                \"self\": \"/api/v1/shop/channels/1\"\n            },\n            \"attributes\": {\n                \"slug\": null,\n                \"name\": \"Shop\",\n                \"targetWarehouseId\": 0,\n                \"active\": true\n            }\n        },\n        {\n            \"type\": \"shop_channel\",\n            \"id\": \"2\",\n            \"links\": {\n                \"self\": \"/api/v1/shop/channels/2\"\n            },\n            \"attributes\": {\n                \"slug\": null,\n                \"name\": \"Registration\",\n                \"targetWarehouseId\": 0,\n                \"active\": true\n            }\n        }\n    ]\n}"
-                    }
-                  ]
-                }
-              ],
-              "id": "f2fea801-5aea-4025-926e-63970c8a01fb",
-              "description": "This endpoint allows to fetch shop channels. Channels are separate places where Products can be purchased. These are predefined by other modules that are available in the system (ex. Online shop, Autoship, Admin orders). You can assign Products to be available only in specified channels."
             }
           ],
           "id": "3e8f0a97-4916-49d7-a069-1136dbe6a41a",
