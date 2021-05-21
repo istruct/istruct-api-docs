@@ -79,7 +79,7 @@
                 },
                 {
                   "key": "scope",
-                  "value": "shop_dictionaries:get shop_packages:get",
+                  "value": "{{client_scopes}}",
                   "type": "text",
                   "disabled": true
                 }
@@ -206,7 +206,7 @@
                     },
                     {
                       "key": "scope",
-                      "value": "shop_dictionaries:get shop_packages:get",
+                      "value": "{{client_scopes}}",
                       "type": "text"
                     }
                   ]
