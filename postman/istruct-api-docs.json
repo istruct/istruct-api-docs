@@ -2349,6 +2349,37 @@
               ]
             },
             {
+              "name": "ProductType Copy",
+              "item": [
+                {
+                  "name": "Fetch multiple product types",
+                  "id": "b22daf46-a615-449c-bc46-6290b5fc0b5f",
+                  "protocolProfileBehavior": {
+                    "disableBodyPruning": true
+                  },
+                  "request": {
+                    "method": "GET",
+                    "header": [
+                      {
+                        "key": "Accept",
+                        "type": "text",
+                        "value": "application/vnd.api+json"
+                      },
+                      {
+                        "key": "Content-Type",
+                        "type": "text",
+                        "value": "application/vnd.api+json"
+                      }
+                    ],
+                    "url": "{{url}}/api/v1/shop/products-types",
+                    "description": "**Required scope**: `shop_products:get`\n"
+                  },
+                  "response": []
+                }
+              ],
+              "id": "c1800ac5-0d1d-4ddf-a084-8d6943c26c13"
+            },
+            {
               "name": "ShipmentType",
               "item": [
                 {
@@ -2649,37 +2680,6 @@
                   }
                 }
               ]
-            },
-            {
-              "name": "ProductType Copy",
-              "item": [
-                {
-                  "name": "Fetch multiple product types",
-                  "id": "b22daf46-a615-449c-bc46-6290b5fc0b5f",
-                  "protocolProfileBehavior": {
-                    "disableBodyPruning": true
-                  },
-                  "request": {
-                    "method": "GET",
-                    "header": [
-                      {
-                        "key": "Accept",
-                        "type": "text",
-                        "value": "application/vnd.api+json"
-                      },
-                      {
-                        "key": "Content-Type",
-                        "type": "text",
-                        "value": "application/vnd.api+json"
-                      }
-                    ],
-                    "url": "{{url}}/api/v1/shop/products-types",
-                    "description": "**Required scope**: `shop_products:get`\n"
-                  },
-                  "response": []
-                }
-              ],
-              "id": "c1800ac5-0d1d-4ddf-a084-8d6943c26c13"
             }
           ],
           "id": "3e8f0a97-4916-49d7-a069-1136dbe6a41a",
