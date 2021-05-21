@@ -813,7 +813,7 @@
                       "raw": "{\n  \"data\": {\n    \"type\": \"shop_package\",\n    \"attributes\": {\n      \"sent\": true\n    }\n  }\n}"
                     },
                     "url": "{{url}}/api/v1/shop/packages/{{package_id}}",
-                    "description": "You can mark Package as sent by sending PUT request with `sent` field set to `true`.\n\nPlease be warned - once Package is marked as sent, **it cannot be unmarked**.\n\nMarking package as sent also changes statuses of related Orders to sent.\n\nYou can send package tracking details alongside `sent` field too."
+                    "description": "**Required scope**: `shop_packages:put`\n\nYou can mark Package as sent by sending PUT request with `sent` field set to `true`.\n\nPlease be warned - once Package is marked as sent, **it cannot be unmarked**.\n\nMarking package as sent also changes statuses of related Orders to sent.\n\nYou can send package tracking details alongside `sent` field too."
                   },
                   "response": [
                     {
