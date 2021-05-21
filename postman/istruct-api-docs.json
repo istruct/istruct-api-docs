@@ -1030,7 +1030,7 @@
                       "raw": "{\n  \"data\": {\n    \"type\": \"shop_package\",\n    \"attributes\": {\n      \"delivered\": true\n    }\n  }\n}"
                     },
                     "url": "{{url}}/api/v1/shop/packages/{{package_id}}",
-                    "description": "You can mark Package as delivered by sending PUT request with `delivered` field set to `true`.\n\nPlease be warned - once Package is marked as delivered, **it cannot be unmarked**.\n\nMarking package as delivered also changes statuses of related Orders to delivered.\n\nPackage has to be marked as sent first in order to mark it as delivered."
+                    "description": "**Required scope**: `shop_packages:put`\n\nYou can mark Package as delivered by sending PUT request with `delivered` field set to `true`.\n\nPlease be warned - once Package is marked as delivered, **it cannot be unmarked**.\n\nMarking package as delivered also changes statuses of related Orders to delivered.\n\nPackage has to be marked as sent first in order to mark it as delivered."
                   },
                   "response": [
                     {
