@@ -645,7 +645,7 @@
                       }
                     ],
                     "url": "{{url}}/api/v1/shop/packages/{{package_id}}/relationships/main_order",
-                    "description": "See `Order` endpoints for details about this response."
+                    "description": "**Required scope**: `shop_packages:get`\n\nSee `Order` endpoints for details about this response."
                   },
                   "response": [
                     {
