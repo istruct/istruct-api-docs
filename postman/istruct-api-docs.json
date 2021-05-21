@@ -1185,7 +1185,7 @@
                       "raw": "{\n  \"data\": {\n    \"type\": \"shop_package\",\n    \"attributes\": {\n      \"trackingNumber\": \"78463257834\",\n      \"trackingUrl\": \"https://example-courier.com/tracking/78463257834\",\n      \"carrierName\": \"Courier\"\n    }\n  }\n}"
                     },
                     "url": "{{url}}/api/v1/shop/packages/{{package_id}}",
-                    "description": "You can set tracking details of package:\n\n* Tracking number\n* Tracking URL\n* Carrier name"
+                    "description": "**Required scope**: `shop_packages:put`\n\nYou can set tracking details of package:\n\n* Tracking number\n* Tracking URL\n* Carrier name"
                   },
                   "response": [
                     {
