@@ -2478,7 +2478,8 @@
                         "type": "text"
                       }
                     ],
-                    "url": "{{url}}/api/v1/shop/adjustment-type"
+                    "url": "{{url}}/api/v1/shop/adjustment-type",
+                    "description": "**Required scope**: `shop_dictionaries:get`"
                   },
                   "response": [
                     {
