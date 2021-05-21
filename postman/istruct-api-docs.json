@@ -2651,7 +2651,7 @@
               ]
             },
             {
-              "name": "ProductType Copy",
+              "name": "ProductType",
               "item": [
                 {
                   "name": "Fetch multiple product types",
@@ -2679,7 +2679,1522 @@
                   "response": []
                 }
               ],
-              "id": "c1800ac5-0d1d-4ddf-a084-8d6943c26c13"
+              "id": "c1800ac5-0d1d-4ddf-a084-8d6943c26c13",
+              "event": [
+                {
+                  "listen": "prerequest",
+                  "script": {
+                    "id": "a2df9e6e-8ffa-4cdc-9457-ae09f1c0e27b",
+                    "type": "text/javascript",
+                    "exec": [
+                      ""
+                    ]
+                  }
+                },
+                {
+                  "listen": "test",
+                  "script": {
+                    "id": "2e749e4b-0df2-4695-813f-a28da6c0718f",
+                    "type": "text/javascript",
+                    "exec": [
+                      ""
+                    ]
+                  }
+                }
+              ]
+            },
+            {
+              "name": "Product Copy",
+              "item": [
+                {
+                  "name": "Fetch multiple products",
+                  "id": "7550c3f4-f04b-4bea-8331-fd87f9f4ad08",
+                  "protocolProfileBehavior": {
+                    "disableBodyPruning": true
+                  },
+                  "request": {
+                    "method": "GET",
+                    "header": [
+                      {
+                        "key": "Accept",
+                        "type": "text",
+                        "value": "application/vnd.api+json"
+                      },
+                      {
+                        "key": "Content-Type",
+                        "type": "text",
+                        "value": "application/vnd.api+json"
+                      }
+                    ],
+                    "url": "{{url}}/api/v1/shop/products",
+                    "description": "**Required scope**: `shop_products:get`\n\n**Available filters**\n\n| Name        | Type      | Description                             |\n|:------------|:----------|:----------------------------------------|\n| active      | bool      | Is product active?                      |\n| code        | string    | Exact product code                      |\n| channelId   | int/int[] | One or more shop channel Ids            |\n| createdFrom | datetime  | `>=` Date when product has been created |\n| createdTo   | datetime  | `<=` Date when product has been created |\n| statusId    | int/int[] | One or more user status IDs             |\n| typeId      | int       | Exact product type ID                   |\n\n**Available sortings**\n\n* createdAt\n* id"
+                  },
+                  "response": [
+                    {
+                      "id": "8a5d88e2-bf8e-4581-a989-2346fe12117d",
+                      "name": "Fetch multiple products",
+                      "originalRequest": {
+                        "method": "GET",
+                        "header": [
+                          {
+                            "key": "Accept",
+                            "type": "text",
+                            "value": "application/vnd.api+json"
+                          },
+                          {
+                            "key": "Content-Type",
+                            "type": "text",
+                            "value": "application/vnd.api+json"
+                          }
+                        ],
+                        "url": "{{url}}/api/v1/shop/products"
+                      },
+                      "status": "OK",
+                      "code": 200,
+                      "_postman_previewlanguage": "json",
+                      "header": [
+                        {
+                          "key": "Server",
+                          "value": "nginx/1.15.8"
+                        },
+                        {
+                          "key": "Date",
+                          "value": "Thu, 25 Jun 2020 18:40:36 GMT"
+                        },
+                        {
+                          "key": "Content-Type",
+                          "value": "application/vnd.api+json"
+                        },
+                        {
+                          "key": "Transfer-Encoding",
+                          "value": "chunked"
+                        },
+                        {
+                          "key": "Connection",
+                          "value": "keep-alive"
+                        },
+                        {
+                          "key": "Expires",
+                          "value": "Thu, 19 Nov 1981 08:52:00 GMT"
+                        },
+                        {
+                          "key": "Cache-Control",
+                          "value": "no-store, no-cache, must-revalidate"
+                        },
+                        {
+                          "key": "Pragma",
+                          "value": "no-cache"
+                        }
+                      ],
+                      "cookie": [],
+                      "responseTime": null,
+                      "body": "{\n    \"jsonapi\": {\n        \"version\": \"1.0\"\n    },\n    \"meta\": {\n        \"page\": {\n            \"number\": 1,\n            \"size\": 25\n        },\n        \"totalItems\": 2\n    },\n    \"links\": {\n        \"self\": \"/api/v1/shop/products?page[number]=1\",\n        \"first\": \"/api/v1/shop/products?page[number]=1\",\n        \"last\": \"/api/v1/shop/products?page[number]=1\"\n    },\n    \"data\": [\n        {\n            \"type\": \"shop_product\",\n            \"id\": \"1\",\n            \"links\": {\n                \"self\": \"/api/v1/shop/products/1\"\n            },\n            \"attributes\": {\n                \"code\": \"USAPROD\",\n                \"languages\": {\n                    \"en\": {\n                        \"name\": \"Some American Product\"\n                    }\n                },\n                \"order\": 0,\n                \"createdAt\": null,\n                \"active\": true\n            },\n            \"relationships\": {\n                \"channels\": {\n                    \"links\": {\n                        \"related\": \"/api/v1/shop/products/1/relationships/channels\"\n                    }\n                },\n                \"items\": {\n                    \"links\": {\n                        \"related\": \"/api/v1/shop/products/1/relationships/items\"\n                    }\n                },\n                \"type\": {\n                    \"links\": {\n                        \"related\": \"/api/v1/shop/products/1/relationships/type\",\n                        \"self\": \"/api/v1/shop/products-types/1\"\n                    },\n                    \"data\": {\n                        \"type\": \"shop_product_type\",\n                        \"id\": \"1\"\n                    }\n                },\n                \"statuses\": {\n                    \"links\": {\n                        \"related\": \"/api/v1/shop/products/1/relationships/statuses\"\n                    }\n                }\n            }\n        },\n        {\n            \"type\": \"shop_product\",\n            \"id\": \"2\",\n            \"links\": {\n                \"self\": \"/api/v1/shop/products/2\"\n            },\n            \"attributes\": {\n                \"code\": \"EUPROD\",\n                \"languages\": {\n                    \"en\": {\n                        \"name\": \"European product\"\n                    },\n                    \"pl\": {\n                        \"name\": \"Europejski produkt\"\n                    }\n                },\n                \"order\": 0,\n                \"createdAt\": null,\n                \"active\": true\n            },\n            \"relationships\": {\n                \"channels\": {\n                    \"links\": {\n                        \"related\": \"/api/v1/shop/products/2/relationships/channels\"\n                    }\n                },\n                \"items\": {\n                    \"links\": {\n                        \"related\": \"/api/v1/shop/products/2/relationships/items\"\n                    }\n                },\n                \"type\": {\n                    \"links\": {\n                        \"related\": \"/api/v1/shop/products/2/relationships/type\",\n                        \"self\": \"/api/v1/shop/products-types/1\"\n                    },\n                    \"data\": {\n                        \"type\": \"shop_product_type\",\n                        \"id\": \"1\"\n                    }\n                },\n                \"statuses\": {\n                    \"links\": {\n                        \"related\": \"/api/v1/shop/products/2/relationships/statuses\"\n                    }\n                }\n            }\n        }\n    ]\n}"
+                    }
+                  ]
+                },
+                {
+                  "name": "Fetch single product",
+                  "id": "2cb9e535-cc20-4508-b7f1-f585c902cc35",
+                  "protocolProfileBehavior": {
+                    "disableBodyPruning": true
+                  },
+                  "request": {
+                    "method": "GET",
+                    "header": [
+                      {
+                        "key": "Accept",
+                        "type": "text",
+                        "value": "application/vnd.api+json"
+                      },
+                      {
+                        "key": "Content-Type",
+                        "type": "text",
+                        "value": "application/vnd.api+json"
+                      }
+                    ],
+                    "url": {
+                      "raw": "{{url}}/api/v1/shop/products/:id",
+                      "host": [
+                        "{{url}}"
+                      ],
+                      "path": [
+                        "api",
+                        "v1",
+                        "shop",
+                        "products",
+                        ":id"
+                      ],
+                      "variable": [
+                        {
+                          "id": "8d755bf3-3961-4ce5-83d3-c34521f1391e",
+                          "key": "id",
+                          "value": "",
+                          "type": "string"
+                        }
+                      ]
+                    },
+                    "description": "##### Product attributes\n\n| Name      | Type     | Description                                                                          |\n|:----------|:---------|:-------------------------------------------------------------------------------------|\n| code      | string   | Code (SKU)                                                                           |\n| languages | object   | Product names.                                                                       |\n| order     | integer  | Ordinal number (positive or negative). It is used to sort products on product lists. |\n| createdAt | datetime | Date and time when product was created.                                              |\n| active    | boolean  | When Product is active, all its active Items are shown in Channels.                  |\n\n##### Product relationships\n\n| Name       | Description                                                                                                                 |\n|:-----------|:----------------------------------------------------------------------------------------------------------------------------|\n| categories | List of Shop categories in which Product is listed (full list can be fetched from `/api/v1/shop/categories`).               |\n| channels   | List of Shop channels in which Product is listed (full list can be fetched from `/api/v1/shop/channels`).                   |\n| items      | List of Product Items of this Product.                                                                                      |\n| type       | Relationship to product type (full list can be fetched from `/api/v1/shop/products-types`).                                 |\n| statuses   | List of User statuses for which Product is available for purchase (full list can be fetched from `/api/v1/users/statuses`). |"
+                  },
+                  "response": [
+                    {
+                      "id": "add70d57-066c-4f48-a2fc-a4b656b76fd3",
+                      "name": "Fetch single product",
+                      "originalRequest": {
+                        "method": "GET",
+                        "header": [
+                          {
+                            "key": "Accept",
+                            "type": "text",
+                            "value": "application/vnd.api+json"
+                          },
+                          {
+                            "key": "Content-Type",
+                            "type": "text",
+                            "value": "application/vnd.api+json"
+                          }
+                        ],
+                        "url": {
+                          "raw": "{{url}}/api/v1/shop/products/:id",
+                          "host": [
+                            "{{url}}"
+                          ],
+                          "path": [
+                            "api",
+                            "v1",
+                            "shop",
+                            "products",
+                            ":id"
+                          ],
+                          "variable": [
+                            {
+                              "description": "Product ID",
+                              "key": "id",
+                              "type": "string",
+                              "value": "1"
+                            }
+                          ]
+                        }
+                      },
+                      "status": "OK",
+                      "code": 200,
+                      "_postman_previewlanguage": "json",
+                      "header": [
+                        {
+                          "key": "Server",
+                          "value": "nginx/1.15.8"
+                        },
+                        {
+                          "key": "Date",
+                          "value": "Thu, 25 Jun 2020 19:00:54 GMT"
+                        },
+                        {
+                          "key": "Content-Type",
+                          "value": "application/vnd.api+json"
+                        },
+                        {
+                          "key": "Transfer-Encoding",
+                          "value": "chunked"
+                        },
+                        {
+                          "key": "Connection",
+                          "value": "keep-alive"
+                        },
+                        {
+                          "key": "Expires",
+                          "value": "Thu, 19 Nov 1981 08:52:00 GMT"
+                        },
+                        {
+                          "key": "Cache-Control",
+                          "value": "no-store, no-cache, must-revalidate"
+                        },
+                        {
+                          "key": "Pragma",
+                          "value": "no-cache"
+                        }
+                      ],
+                      "cookie": [],
+                      "responseTime": null,
+                      "body": "{\n    \"jsonapi\": {\n        \"version\": \"1.0\"\n    },\n    \"data\": {\n        \"type\": \"shop_product\",\n        \"id\": \"1\",\n        \"links\": {\n            \"self\": \"/api/v1/shop/products/1\"\n        },\n        \"attributes\": {\n            \"code\": \"USAPROD\",\n            \"languages\": {\n                \"en\": {\n                    \"name\": \"Some American Product\"\n                }\n            },\n            \"order\": 0,\n            \"createdAt\": \"2020-06-25T20:57:08+0200\",\n            \"active\": true\n        },\n        \"relationships\": {\n            \"channels\": {\n                \"links\": {\n                    \"related\": \"/api/v1/shop/products/1/relationships/channels\"\n                }\n            },\n            \"items\": {\n                \"links\": {\n                    \"related\": \"/api/v1/shop/products/1/relationships/items\"\n                }\n            },\n            \"type\": {\n                \"links\": {\n                    \"related\": \"/api/v1/shop/products/1/relationships/type\",\n                    \"self\": \"/api/v1/shop/products-types/1\"\n                },\n                \"data\": {\n                    \"type\": \"shop_product_type\",\n                    \"id\": \"1\"\n                }\n            },\n            \"statuses\": {\n                \"links\": {\n                    \"related\": \"/api/v1/shop/products/1/relationships/statuses\"\n                }\n            }\n        }\n    }\n}"
+                    }
+                  ]
+                },
+                {
+                  "name": "Fetch product type",
+                  "id": "f802b3b9-f394-4385-81d3-c4b8ef165d75",
+                  "protocolProfileBehavior": {
+                    "disableBodyPruning": true
+                  },
+                  "request": {
+                    "method": "GET",
+                    "header": [
+                      {
+                        "key": "Accept",
+                        "type": "text",
+                        "value": "application/vnd.api+json"
+                      },
+                      {
+                        "key": "Content-Type",
+                        "type": "text",
+                        "value": "application/vnd.api+json"
+                      }
+                    ],
+                    "url": {
+                      "raw": "{{url}}/api/v1/shop/products/:id/relationships/type",
+                      "host": [
+                        "{{url}}"
+                      ],
+                      "path": [
+                        "api",
+                        "v1",
+                        "shop",
+                        "products",
+                        ":id",
+                        "relationships",
+                        "type"
+                      ],
+                      "variable": [
+                        {
+                          "id": "a66a0e66-e176-48fd-baa9-9e44ef49ccf6",
+                          "key": "id",
+                          "value": "{{product_id}}",
+                          "type": "string",
+                          "description": "Product ID"
+                        }
+                      ]
+                    },
+                    "description": "**Required scope**: `shop_products:get`\n\nPlease refer to Shop / ProductType endpoints documentation for more details."
+                  },
+                  "response": [
+                    {
+                      "id": "cad16137-1d4f-40f3-9208-5c82ab3ac552",
+                      "name": "Fetch product type",
+                      "originalRequest": {
+                        "method": "GET",
+                        "header": [
+                          {
+                            "key": "Accept",
+                            "type": "text",
+                            "value": "application/vnd.api+json"
+                          },
+                          {
+                            "key": "Content-Type",
+                            "type": "text",
+                            "value": "application/vnd.api+json"
+                          }
+                        ],
+                        "url": {
+                          "raw": "{{url}}/api/v1/shop/products/:id/relationships/type",
+                          "host": [
+                            "{{url}}"
+                          ],
+                          "path": [
+                            "api",
+                            "v1",
+                            "shop",
+                            "products",
+                            ":id",
+                            "relationships",
+                            "type"
+                          ],
+                          "variable": [
+                            {
+                              "key": "id",
+                              "value": "{{product_id}}",
+                              "description": "Product ID"
+                            }
+                          ]
+                        }
+                      },
+                      "status": "OK",
+                      "code": 200,
+                      "_postman_previewlanguage": "json",
+                      "header": [
+                        {
+                          "key": "Server",
+                          "value": "nginx/1.15.8"
+                        },
+                        {
+                          "key": "Date",
+                          "value": "Wed, 17 Jun 2020 16:11:25 GMT"
+                        },
+                        {
+                          "key": "Content-Type",
+                          "value": "application/vnd.api+json"
+                        },
+                        {
+                          "key": "Transfer-Encoding",
+                          "value": "chunked"
+                        },
+                        {
+                          "key": "Connection",
+                          "value": "keep-alive"
+                        },
+                        {
+                          "key": "Expires",
+                          "value": "Thu, 19 Nov 1981 08:52:00 GMT"
+                        },
+                        {
+                          "key": "Cache-Control",
+                          "value": "no-store, no-cache, must-revalidate"
+                        },
+                        {
+                          "key": "Pragma",
+                          "value": "no-cache"
+                        },
+                        {
+                          "key": "X-Istruct-Errors",
+                          "value": "{\"notice\":[{\"message\":\"Key file \\\"file:\\/\\/\\/home\\/vagrant\\/code\\/kannaway\\/data\\/ssl\\/oauth2-server.crt\\\" permissions are not correct, should be 600 or 660 instead of 664\",\"file\":\"\\/home\\/vagrant\\/code\\/kannaway\\/vendor\\/league\\/oauth2-server\\/src\\/CryptKey.php\",\"line\":56,\"type\":\"PHP Notice\"}]}"
+                        }
+                      ],
+                      "cookie": [],
+                      "responseTime": null,
+                      "body": "{\n    \"jsonapi\": {\n        \"version\": \"1.0\"\n    },\n    \"data\": {\n        \"type\": \"shop_product_type\",\n        \"id\": \"1\",\n        \"links\": {\n            \"self\": \"/api/v1/shop/products-types/1\"\n        },\n        \"attributes\": {\n            \"name\": \"Standard\",\n            \"digital\": false\n        }\n    }\n}"
+                    }
+                  ]
+                },
+                {
+                  "name": "Fetch product items",
+                  "id": "988ab008-bcd4-4856-896a-0a363247c553",
+                  "protocolProfileBehavior": {
+                    "disableBodyPruning": true
+                  },
+                  "request": {
+                    "method": "GET",
+                    "header": [
+                      {
+                        "key": "Accept",
+                        "type": "text",
+                        "value": "application/vnd.api+json"
+                      },
+                      {
+                        "key": "Content-Type",
+                        "type": "text",
+                        "value": "application/vnd.api+json"
+                      }
+                    ],
+                    "url": {
+                      "raw": "{{url}}/api/v1/shop/products/:id/items",
+                      "host": [
+                        "{{url}}"
+                      ],
+                      "path": [
+                        "api",
+                        "v1",
+                        "shop",
+                        "products",
+                        ":id",
+                        "items"
+                      ],
+                      "variable": [
+                        {
+                          "id": "9648dc32-7996-4b10-9048-ea170bfedfc4",
+                          "key": "id",
+                          "value": "{{product_id}}",
+                          "type": "string",
+                          "description": "Product ID"
+                        }
+                      ]
+                    },
+                    "description": "**Required scope**: `shop_products:get`\n\n**Available filters**\n\n| Name        | Type      | Description                             |\n|:------------|:----------|:----------------------------------------|\n| active      | bool      | Is product item active?                 |\n| code        | string    | Exact product item code                 |\n| zoneId      | int/int[] | One or more zone IDs                    |\n\n**Available sortings**\n\n* id"
+                  },
+                  "response": [
+                    {
+                      "id": "a5338250-80a2-48fb-b38b-6601bb12ceb0",
+                      "name": "Fetch product items",
+                      "originalRequest": {
+                        "method": "GET",
+                        "header": [
+                          {
+                            "key": "Accept",
+                            "type": "text",
+                            "value": "application/vnd.api+json"
+                          },
+                          {
+                            "key": "Content-Type",
+                            "type": "text",
+                            "value": "application/vnd.api+json"
+                          }
+                        ],
+                        "url": {
+                          "raw": "{{url}}/api/v1/shop/products/:id/items",
+                          "host": [
+                            "{{url}}"
+                          ],
+                          "path": [
+                            "api",
+                            "v1",
+                            "shop",
+                            "products",
+                            ":id",
+                            "items"
+                          ],
+                          "variable": [
+                            {
+                              "description": "Product ID",
+                              "key": "id",
+                              "value": "{{product_id}}"
+                            }
+                          ]
+                        }
+                      },
+                      "status": "OK",
+                      "code": 200,
+                      "_postman_previewlanguage": "json",
+                      "header": [
+                        {
+                          "key": "Server",
+                          "value": "nginx/1.15.8"
+                        },
+                        {
+                          "key": "Date",
+                          "value": "Thu, 25 Jun 2020 19:27:14 GMT"
+                        },
+                        {
+                          "key": "Content-Type",
+                          "value": "application/vnd.api+json"
+                        },
+                        {
+                          "key": "Transfer-Encoding",
+                          "value": "chunked"
+                        },
+                        {
+                          "key": "Connection",
+                          "value": "keep-alive"
+                        },
+                        {
+                          "key": "Expires",
+                          "value": "Thu, 19 Nov 1981 08:52:00 GMT"
+                        },
+                        {
+                          "key": "Cache-Control",
+                          "value": "no-store, no-cache, must-revalidate"
+                        },
+                        {
+                          "key": "Pragma",
+                          "value": "no-cache"
+                        }
+                      ],
+                      "cookie": [],
+                      "responseTime": null,
+                      "body": "{\n    \"jsonapi\": {\n        \"version\": \"1.0\"\n    },\n    \"meta\": {\n        \"page\": {\n            \"number\": 1,\n            \"size\": 25\n        },\n        \"totalItems\": 4\n    },\n    \"links\": {\n        \"self\": \"/api/v1/shop/products/2/items?page[number]=1\",\n        \"first\": \"/api/v1/shop/products/2/items?page[number]=1\",\n        \"last\": \"/api/v1/shop/products/2/items?page[number]=1\"\n    },\n    \"data\": [\n        {\n            \"type\": \"shop_product_item\",\n            \"id\": \"2\",\n            \"links\": {\n                \"self\": \"/api/v1/shop/products/2/items/2\"\n            },\n            \"attributes\": {\n                \"code\": \"EUPROD\",\n                \"minimalStock\": 0,\n                \"emptyStockMessage\": \"\",\n                \"availableFrom\": null,\n                \"availableTo\": null,\n                \"active\": true,\n                \"taxCode\": \"P0000000\",\n                \"underProductMessage\": \"\"\n            },\n            \"relationships\": {\n                \"prices\": {\n                    \"links\": {\n                        \"related\": \"/api/v1/shop/products/2/items/2/relationships/prices\"\n                    }\n                },\n                \"tax\": {\n                    \"links\": {\n                        \"related\": \"/api/v1/shop/products/2/items/relationships/tax\"\n                    }\n                },\n                \"zone\": {\n                    \"links\": {\n                        \"related\": \"/api/v1/shop/products/2/items/relationships/zone\",\n                        \"self\": \"/api/v1/zones/1\"\n                    },\n                    \"data\": {\n                        \"type\": \"zone\",\n                        \"id\": \"1\"\n                    }\n                },\n                \"zones\": {\n                    \"links\": {\n                        \"related\": \"/api/v1/shop/products/2/items/2/relationships/zones\"\n                    }\n                }\n            }\n        },\n        {\n            \"type\": \"shop_product_item\",\n            \"id\": \"25\",\n            \"links\": {\n                \"self\": \"/api/v1/shop/products/2/items/25\"\n            },\n            \"attributes\": {\n                \"code\": \"118003\",\n                \"minimalStock\": 0,\n                \"emptyStockMessage\": \"Will be available on 6/5/20\",\n                \"availableFrom\": \"2020-06-01T02:00:00+0200\",\n                \"availableTo\": \"2020-06-01T02:00:00+0200\",\n                \"active\": true,\n                \"taxCode\": \"AAA\",\n                \"underProductMessage\": \"Test\"\n            },\n            \"relationships\": {\n                \"prices\": {\n                    \"links\": {\n                        \"related\": \"/api/v1/shop/products/2/items/25/relationships/prices\"\n                    }\n                },\n                \"tax\": {\n                    \"links\": {\n                        \"related\": \"/api/v1/shop/products/2/items/relationships/tax\"\n                    }\n                },\n                \"zone\": {\n                    \"links\": {\n                        \"related\": \"/api/v1/shop/products/2/items/relationships/zone\",\n                        \"self\": \"/api/v1/zones/59\"\n                    },\n                    \"data\": {\n                        \"type\": \"zone\",\n                        \"id\": \"59\"\n                    }\n                },\n                \"zones\": {\n                    \"links\": {\n                        \"related\": \"/api/v1/shop/products/2/items/25/relationships/zones\"\n                    }\n                }\n            }\n        },\n        {\n            \"type\": \"shop_product_item\",\n            \"id\": \"26\",\n            \"links\": {\n                \"self\": \"/api/v1/shop/products/2/items/26\"\n            },\n            \"attributes\": {\n                \"code\": \"118003\",\n                \"minimalStock\": 0,\n                \"emptyStockMessage\": \"Will be available on 6/5/20\",\n                \"availableFrom\": \"2020-06-01T02:00:00+0200\",\n                \"availableTo\": \"2020-06-01T02:00:00+0200\",\n                \"active\": true,\n                \"taxCode\": \"AAA\",\n                \"underProductMessage\": \"Test\"\n            },\n            \"relationships\": {\n                \"prices\": {\n                    \"links\": {\n                        \"related\": \"/api/v1/shop/products/2/items/26/relationships/prices\"\n                    }\n                },\n                \"tax\": {\n                    \"links\": {\n                        \"related\": \"/api/v1/shop/products/2/items/relationships/tax\"\n                    }\n                },\n                \"zone\": {\n                    \"links\": {\n                        \"related\": \"/api/v1/shop/products/2/items/relationships/zone\",\n                        \"self\": \"/api/v1/zones/59\"\n                    },\n                    \"data\": {\n                        \"type\": \"zone\",\n                        \"id\": \"59\"\n                    }\n                },\n                \"zones\": {\n                    \"links\": {\n                        \"related\": \"/api/v1/shop/products/2/items/26/relationships/zones\"\n                    }\n                }\n            }\n        },\n        {\n            \"type\": \"shop_product_item\",\n            \"id\": \"27\",\n            \"links\": {\n                \"self\": \"/api/v1/shop/products/2/items/27\"\n            },\n            \"attributes\": {\n                \"code\": \"118003\",\n                \"minimalStock\": 0,\n                \"emptyStockMessage\": \"Will be available on 6/5/20\",\n                \"availableFrom\": \"2020-06-01T02:00:00+0200\",\n                \"availableTo\": \"2020-06-01T02:00:00+0200\",\n                \"active\": true,\n                \"taxCode\": \"AAA\",\n                \"underProductMessage\": \"Test\"\n            },\n            \"relationships\": {\n                \"prices\": {\n                    \"links\": {\n                        \"related\": \"/api/v1/shop/products/2/items/27/relationships/prices\"\n                    }\n                },\n                \"tax\": {\n                    \"links\": {\n                        \"related\": \"/api/v1/shop/products/2/items/relationships/tax\"\n                    }\n                },\n                \"zone\": {\n                    \"links\": {\n                        \"related\": \"/api/v1/shop/products/2/items/relationships/zone\",\n                        \"self\": \"/api/v1/zones/59\"\n                    },\n                    \"data\": {\n                        \"type\": \"zone\",\n                        \"id\": \"59\"\n                    }\n                },\n                \"zones\": {\n                    \"links\": {\n                        \"related\": \"/api/v1/shop/products/2/items/27/relationships/zones\"\n                    }\n                }\n            }\n        }\n    ]\n}"
+                    }
+                  ]
+                },
+                {
+                  "name": "Fetch single product item",
+                  "id": "ab37a61f-caf8-4b6e-9779-44400d8c2f7f",
+                  "protocolProfileBehavior": {
+                    "disableBodyPruning": true
+                  },
+                  "request": {
+                    "method": "GET",
+                    "header": [
+                      {
+                        "key": "Accept",
+                        "type": "text",
+                        "value": "application/vnd.api+json"
+                      },
+                      {
+                        "key": "Content-Type",
+                        "type": "text",
+                        "value": "application/vnd.api+json"
+                      }
+                    ],
+                    "url": {
+                      "raw": "{{url}}/api/v1/shop/products/:productId/items/:itemId",
+                      "host": [
+                        "{{url}}"
+                      ],
+                      "path": [
+                        "api",
+                        "v1",
+                        "shop",
+                        "products",
+                        ":productId",
+                        "items",
+                        ":itemId"
+                      ],
+                      "variable": [
+                        {
+                          "id": "511110c9-6dae-4015-898c-f55cac31be82",
+                          "key": "productId",
+                          "value": "{{product_id}}",
+                          "type": "string",
+                          "description": "Product ID"
+                        },
+                        {
+                          "id": "f3525b94-df8a-4cc3-a8b7-f83ed7b5225a",
+                          "key": "itemId",
+                          "value": "{{product_item_id}}",
+                          "type": "string",
+                          "description": "Product Item ID"
+                        }
+                      ]
+                    },
+                    "description": "**Required scope**: `shop_products:get`\n\n##### Product item attributes\n\n| Name                | Type     | Description                                                                                     |\n|:--------------------|:---------|:------------------------------------------------------------------------------------------------|\n| code                | string   | Code (SKU)                                                                                      |\n| minimalStock        | integer  | Minimal stock of this item.                                                                     |\n| emptyStockMessage   | string   | This message is shown in some Channels when item is out of stock.                               |\n| availableFrom       | datetime | Availability date range in ISO 8601 date and time format. When empty, item is always available. |\n| availableTo         | datetime | Availability date range in ISO 8601 date and time format. When empty, item is always available. |\n| active              | boolean  | Inactive items are not shown in Channels.                                                       |\n| taxCode             | string   | Avalara Tax Code. *Not empty in zones with Sales Tax, otherwise use `tax` relationship.*        |\n| underProductMessage | string   | This message is shown in some Channels under Product card.                                      |\n| warehouseCode       | string   | Warehouse item code                                   |\n\n##### Product item relationships\n\n| Name   | Description                                                                                                                                                                                                                  |\n|:-------|:-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|\n| prices | List of Product Item prices (Please refer to \"Fetch product item prices\" endpoint documentation for more details).                                                                                                           |\n| tax    | Relationship to Tax. *Valid only in zones with VAT TAX, otherwise please see `taxCode` attribute.* List of Shop channels in which Product is listed (full list can be fetched from `/api/v1/zones/:id/relationships/taxes`). |\n| zone   | Relationship to main Product Item Zone (full list can be fetched from `/api/v1/zones`).                                                                                                                                      |\n| zones  | Relationship to all Product Item Zones in which Product Item is available (full list can be fetched from `/api/v1/zones`).                                                                                                   |"
+                  },
+                  "response": [
+                    {
+                      "id": "0d492ceb-44a2-4194-bc50-eb16c9699067",
+                      "name": "Fetch single product item",
+                      "originalRequest": {
+                        "method": "GET",
+                        "header": [
+                          {
+                            "key": "Accept",
+                            "type": "text",
+                            "value": "application/vnd.api+json"
+                          },
+                          {
+                            "key": "Content-Type",
+                            "type": "text",
+                            "value": "application/vnd.api+json"
+                          }
+                        ],
+                        "url": {
+                          "raw": "{{url}}/api/v1/shop/products/:productId/items/:itemId",
+                          "host": [
+                            "{{url}}"
+                          ],
+                          "path": [
+                            "api",
+                            "v1",
+                            "shop",
+                            "products",
+                            ":productId",
+                            "items",
+                            ":itemId"
+                          ],
+                          "variable": [
+                            {
+                              "key": "productId",
+                              "value": "{{product_id}}",
+                              "description": "Product ID"
+                            },
+                            {
+                              "key": "itemId",
+                              "value": "{{product_item_id}}",
+                              "description": "Product Item ID"
+                            }
+                          ]
+                        }
+                      },
+                      "status": "OK",
+                      "code": 200,
+                      "_postman_previewlanguage": "json",
+                      "header": [
+                        {
+                          "key": "Server",
+                          "value": "nginx/1.15.8"
+                        },
+                        {
+                          "key": "Date",
+                          "value": "Thu, 25 Jun 2020 18:30:06 GMT"
+                        },
+                        {
+                          "key": "Content-Type",
+                          "value": "application/vnd.api+json"
+                        },
+                        {
+                          "key": "Transfer-Encoding",
+                          "value": "chunked"
+                        },
+                        {
+                          "key": "Connection",
+                          "value": "keep-alive"
+                        },
+                        {
+                          "key": "Expires",
+                          "value": "Thu, 19 Nov 1981 08:52:00 GMT"
+                        },
+                        {
+                          "key": "Cache-Control",
+                          "value": "no-store, no-cache, must-revalidate"
+                        },
+                        {
+                          "key": "Pragma",
+                          "value": "no-cache"
+                        }
+                      ],
+                      "cookie": [],
+                      "responseTime": null,
+                      "body": "{\n    \"jsonapi\": {\n        \"version\": \"1.0\"\n    },\n    \"data\": {\n        \"type\": \"shop_product_item\",\n        \"id\": \"2\",\n        \"links\": {\n            \"self\": \"/api/v1/shop/products/2/items/2\"\n        },\n        \"attributes\": {\n            \"code\": \"EUPROD\",\n            \"minimalStock\": 0,\n            \"emptyStockMessage\": \"\",\n            \"availableFrom\": null,\n            \"availableTo\": null,\n            \"active\": true,\n            \"taxCode\": \"P0000000\",\n            \"underProductMessage\": \"\"\n        },\n        \"relationships\": {\n            \"prices\": {\n                \"links\": {\n                    \"related\": \"/api/v1/shop/products/2/items/2/relationships/prices\"\n                }\n            },\n            \"zone\": {\n                \"links\": {\n                    \"related\": \"/api/v1/shop/products/2/items/2/relationships/zone\",\n                    \"self\": \"/api/v1/zones/1\"\n                },\n                \"data\": {\n                    \"type\": \"zone\",\n                    \"id\": \"1\"\n                }\n            },\n            \"zones\": {\n                \"links\": {\n                    \"related\": \"/api/v1/shop/products/2/items/2/relationships/zones\"\n                }\n            }\n        }\n    }\n}"
+                    }
+                  ]
+                },
+                {
+                  "name": "Fetch single product categories",
+                  "id": "d3201016-6336-46a2-818e-70373cd26aed",
+                  "protocolProfileBehavior": {
+                    "disableBodyPruning": true
+                  },
+                  "request": {
+                    "method": "GET",
+                    "header": [
+                      {
+                        "key": "Accept",
+                        "type": "text",
+                        "value": "application/vnd.api+json"
+                      },
+                      {
+                        "key": "Content-Type",
+                        "type": "text",
+                        "value": "application/vnd.api+json"
+                      }
+                    ],
+                    "url": {
+                      "raw": "{{url}}/api/v1/shop/products/:productId/relationships/categories",
+                      "host": [
+                        "{{url}}"
+                      ],
+                      "path": [
+                        "api",
+                        "v1",
+                        "shop",
+                        "products",
+                        ":productId",
+                        "relationships",
+                        "categories"
+                      ],
+                      "variable": [
+                        {
+                          "id": "2609ef11-7f81-494c-ab36-5ae1791f9bef",
+                          "key": "productId",
+                          "value": "{{product_id}}",
+                          "type": "string",
+                          "description": "Product ID"
+                        }
+                      ]
+                    },
+                    "description": "**Required scope**: `shop_products:get`\n\n##### Product item attributes\n\n| Name                | Type     | Description                                                                                     |\n|:--------------------|:---------|:------------------------------------------------------------------------------------------------|\n| code                | string   | Code (SKU)                                                                                      |\n| minimalStock        | integer  | Minimal stock of this item.                                                                     |\n| emptyStockMessage   | string   | This message is shown in some Channels when item is out of stock.                               |\n| availableFrom       | datetime | Availability date range in ISO 8601 date and time format. When empty, item is always available. |\n| availableTo         | datetime | Availability date range in ISO 8601 date and time format. When empty, item is always available. |\n| active              | boolean  | Inactive items are not shown in Channels.                                                       |\n| taxCode             | string   | Avalara Tax Code. *Not empty in zones with Sales Tax, otherwise use `tax` relationship.*        |\n| underProductMessage | string   | This message is shown in some Channels under Product card.                                      |\n\n##### Product item relationships\n\n| Name   | Description                                                                                                                                                                                                                  |\n|:-------|:-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|\n| prices | List of Product Item prices (Please refer to \"Fetch product item prices\" endpoint documentation for more details).                                                                                                           |\n| tax    | Relationship to Tax. *Valid only in zones with VAT TAX, otherwise please see `taxCode` attribute.* List of Shop channels in which Product is listed (full list can be fetched from `/api/v1/zones/:id/relationships/taxes`). |\n| zone   | Relationship to main Product Item Zone (full list can be fetched from `/api/v1/zones`).                                                                                                                                      |\n| zones  | Relationship to all Product Item Zones in which Product Item is available (full list can be fetched from `/api/v1/zones`).                                                                                                   |"
+                  },
+                  "response": [
+                    {
+                      "id": "819bd84c-96e1-4c09-a4d9-a822a0b260e7",
+                      "name": "Fetch single product item",
+                      "originalRequest": {
+                        "method": "GET",
+                        "header": [
+                          {
+                            "key": "Accept",
+                            "type": "text",
+                            "value": "application/vnd.api+json"
+                          },
+                          {
+                            "key": "Content-Type",
+                            "type": "text",
+                            "value": "application/vnd.api+json"
+                          }
+                        ],
+                        "url": {
+                          "raw": "{{url}}/api/v1/shop/products/:productId/items/:itemId",
+                          "host": [
+                            "{{url}}"
+                          ],
+                          "path": [
+                            "api",
+                            "v1",
+                            "shop",
+                            "products",
+                            ":productId",
+                            "items",
+                            ":itemId"
+                          ],
+                          "variable": [
+                            {
+                              "key": "productId",
+                              "value": "{{product_id}}",
+                              "description": "Product ID"
+                            },
+                            {
+                              "key": "itemId",
+                              "value": "{{product_item_id}}",
+                              "description": "Product Item ID"
+                            }
+                          ]
+                        }
+                      },
+                      "status": "OK",
+                      "code": 200,
+                      "_postman_previewlanguage": "json",
+                      "header": [
+                        {
+                          "key": "Server",
+                          "value": "nginx/1.15.8"
+                        },
+                        {
+                          "key": "Date",
+                          "value": "Thu, 25 Jun 2020 18:30:06 GMT"
+                        },
+                        {
+                          "key": "Content-Type",
+                          "value": "application/vnd.api+json"
+                        },
+                        {
+                          "key": "Transfer-Encoding",
+                          "value": "chunked"
+                        },
+                        {
+                          "key": "Connection",
+                          "value": "keep-alive"
+                        },
+                        {
+                          "key": "Expires",
+                          "value": "Thu, 19 Nov 1981 08:52:00 GMT"
+                        },
+                        {
+                          "key": "Cache-Control",
+                          "value": "no-store, no-cache, must-revalidate"
+                        },
+                        {
+                          "key": "Pragma",
+                          "value": "no-cache"
+                        }
+                      ],
+                      "cookie": [],
+                      "responseTime": null,
+                      "body": "{\n    \"jsonapi\": {\n        \"version\": \"1.0\"\n    },\n    \"data\": {\n        \"type\": \"shop_product_item\",\n        \"id\": \"2\",\n        \"links\": {\n            \"self\": \"/api/v1/shop/products/2/items/2\"\n        },\n        \"attributes\": {\n            \"code\": \"EUPROD\",\n            \"minimalStock\": 0,\n            \"emptyStockMessage\": \"\",\n            \"availableFrom\": null,\n            \"availableTo\": null,\n            \"active\": true,\n            \"taxCode\": \"P0000000\",\n            \"underProductMessage\": \"\"\n        },\n        \"relationships\": {\n            \"prices\": {\n                \"links\": {\n                    \"related\": \"/api/v1/shop/products/2/items/2/relationships/prices\"\n                }\n            },\n            \"zone\": {\n                \"links\": {\n                    \"related\": \"/api/v1/shop/products/2/items/2/relationships/zone\",\n                    \"self\": \"/api/v1/zones/1\"\n                },\n                \"data\": {\n                    \"type\": \"zone\",\n                    \"id\": \"1\"\n                }\n            },\n            \"zones\": {\n                \"links\": {\n                    \"related\": \"/api/v1/shop/products/2/items/2/relationships/zones\"\n                }\n            }\n        }\n    }\n}"
+                    }
+                  ]
+                },
+                {
+                  "name": "Fetch single product channels",
+                  "id": "05a51e87-38c1-46d7-b3e6-b32fffffe673",
+                  "protocolProfileBehavior": {
+                    "disableBodyPruning": true
+                  },
+                  "request": {
+                    "method": "GET",
+                    "header": [
+                      {
+                        "key": "Accept",
+                        "type": "text",
+                        "value": "application/vnd.api+json"
+                      },
+                      {
+                        "key": "Content-Type",
+                        "type": "text",
+                        "value": "application/vnd.api+json"
+                      }
+                    ],
+                    "url": {
+                      "raw": "{{url}}/api/v1/shop/products/:productId/relationships/channels",
+                      "host": [
+                        "{{url}}"
+                      ],
+                      "path": [
+                        "api",
+                        "v1",
+                        "shop",
+                        "products",
+                        ":productId",
+                        "relationships",
+                        "channels"
+                      ],
+                      "variable": [
+                        {
+                          "id": "3a2eb85f-b712-496d-9ba0-539c7de041a1",
+                          "key": "productId",
+                          "value": "{{product_id}}",
+                          "type": "string",
+                          "description": "Product ID"
+                        }
+                      ]
+                    },
+                    "description": "**Required scope**: `shop_products:get`\n\n##### Product item attributes\n\n| Name                | Type     | Description                                                                                     |\n|:--------------------|:---------|:------------------------------------------------------------------------------------------------|\n| code                | string   | Code (SKU)                                                                                      |\n| minimalStock        | integer  | Minimal stock of this item.                                                                     |\n| emptyStockMessage   | string   | This message is shown in some Channels when item is out of stock.                               |\n| availableFrom       | datetime | Availability date range in ISO 8601 date and time format. When empty, item is always available. |\n| availableTo         | datetime | Availability date range in ISO 8601 date and time format. When empty, item is always available. |\n| active              | boolean  | Inactive items are not shown in Channels.                                                       |\n| taxCode             | string   | Avalara Tax Code. *Not empty in zones with Sales Tax, otherwise use `tax` relationship.*        |\n| underProductMessage | string   | This message is shown in some Channels under Product card.                                      |\n\n##### Product item relationships\n\n| Name   | Description                                                                                                                                                                                                                  |\n|:-------|:-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|\n| prices | List of Product Item prices (Please refer to \"Fetch product item prices\" endpoint documentation for more details).                                                                                                           |\n| tax    | Relationship to Tax. *Valid only in zones with VAT TAX, otherwise please see `taxCode` attribute.* List of Shop channels in which Product is listed (full list can be fetched from `/api/v1/zones/:id/relationships/taxes`). |\n| zone   | Relationship to main Product Item Zone (full list can be fetched from `/api/v1/zones`).                                                                                                                                      |\n| zones  | Relationship to all Product Item Zones in which Product Item is available (full list can be fetched from `/api/v1/zones`).                                                                                                   |"
+                  },
+                  "response": [
+                    {
+                      "id": "8460f5eb-ef59-4b8e-af5a-6c8bfe0f3804",
+                      "name": "Fetch single product item",
+                      "originalRequest": {
+                        "method": "GET",
+                        "header": [
+                          {
+                            "key": "Accept",
+                            "type": "text",
+                            "value": "application/vnd.api+json"
+                          },
+                          {
+                            "key": "Content-Type",
+                            "type": "text",
+                            "value": "application/vnd.api+json"
+                          }
+                        ],
+                        "url": {
+                          "raw": "{{url}}/api/v1/shop/products/:productId/items/:itemId",
+                          "host": [
+                            "{{url}}"
+                          ],
+                          "path": [
+                            "api",
+                            "v1",
+                            "shop",
+                            "products",
+                            ":productId",
+                            "items",
+                            ":itemId"
+                          ],
+                          "variable": [
+                            {
+                              "key": "productId",
+                              "value": "{{product_id}}",
+                              "description": "Product ID"
+                            },
+                            {
+                              "key": "itemId",
+                              "value": "{{product_item_id}}",
+                              "description": "Product Item ID"
+                            }
+                          ]
+                        }
+                      },
+                      "status": "OK",
+                      "code": 200,
+                      "_postman_previewlanguage": "json",
+                      "header": [
+                        {
+                          "key": "Server",
+                          "value": "nginx/1.15.8"
+                        },
+                        {
+                          "key": "Date",
+                          "value": "Thu, 25 Jun 2020 18:30:06 GMT"
+                        },
+                        {
+                          "key": "Content-Type",
+                          "value": "application/vnd.api+json"
+                        },
+                        {
+                          "key": "Transfer-Encoding",
+                          "value": "chunked"
+                        },
+                        {
+                          "key": "Connection",
+                          "value": "keep-alive"
+                        },
+                        {
+                          "key": "Expires",
+                          "value": "Thu, 19 Nov 1981 08:52:00 GMT"
+                        },
+                        {
+                          "key": "Cache-Control",
+                          "value": "no-store, no-cache, must-revalidate"
+                        },
+                        {
+                          "key": "Pragma",
+                          "value": "no-cache"
+                        }
+                      ],
+                      "cookie": [],
+                      "responseTime": null,
+                      "body": "{\n    \"jsonapi\": {\n        \"version\": \"1.0\"\n    },\n    \"data\": {\n        \"type\": \"shop_product_item\",\n        \"id\": \"2\",\n        \"links\": {\n            \"self\": \"/api/v1/shop/products/2/items/2\"\n        },\n        \"attributes\": {\n            \"code\": \"EUPROD\",\n            \"minimalStock\": 0,\n            \"emptyStockMessage\": \"\",\n            \"availableFrom\": null,\n            \"availableTo\": null,\n            \"active\": true,\n            \"taxCode\": \"P0000000\",\n            \"underProductMessage\": \"\"\n        },\n        \"relationships\": {\n            \"prices\": {\n                \"links\": {\n                    \"related\": \"/api/v1/shop/products/2/items/2/relationships/prices\"\n                }\n            },\n            \"zone\": {\n                \"links\": {\n                    \"related\": \"/api/v1/shop/products/2/items/2/relationships/zone\",\n                    \"self\": \"/api/v1/zones/1\"\n                },\n                \"data\": {\n                    \"type\": \"zone\",\n                    \"id\": \"1\"\n                }\n            },\n            \"zones\": {\n                \"links\": {\n                    \"related\": \"/api/v1/shop/products/2/items/2/relationships/zones\"\n                }\n            }\n        }\n    }\n}"
+                    }
+                  ]
+                },
+                {
+                  "name": "Fetch single product statuses",
+                  "id": "c9a82b41-70e2-4ab8-ac12-4e90693ca2b6",
+                  "protocolProfileBehavior": {
+                    "disableBodyPruning": true
+                  },
+                  "request": {
+                    "method": "GET",
+                    "header": [
+                      {
+                        "key": "Accept",
+                        "type": "text",
+                        "value": "application/vnd.api+json"
+                      },
+                      {
+                        "key": "Content-Type",
+                        "type": "text",
+                        "value": "application/vnd.api+json"
+                      }
+                    ],
+                    "url": {
+                      "raw": "{{url}}/api/v1/shop/products/:productId/relationships/statuses",
+                      "host": [
+                        "{{url}}"
+                      ],
+                      "path": [
+                        "api",
+                        "v1",
+                        "shop",
+                        "products",
+                        ":productId",
+                        "relationships",
+                        "statuses"
+                      ],
+                      "variable": [
+                        {
+                          "id": "f76fce23-c016-448d-8ce0-ea24271df0e3",
+                          "key": "productId",
+                          "value": "{{product_id}}",
+                          "type": "string",
+                          "description": "Product ID"
+                        }
+                      ]
+                    },
+                    "description": "**Required scope**: `shop_products:get`\n\n##### Product item attributes\n\n| Name                | Type     | Description                                                                                     |\n|:--------------------|:---------|:------------------------------------------------------------------------------------------------|\n| code                | string   | Code (SKU)                                                                                      |\n| minimalStock        | integer  | Minimal stock of this item.                                                                     |\n| emptyStockMessage   | string   | This message is shown in some Channels when item is out of stock.                               |\n| availableFrom       | datetime | Availability date range in ISO 8601 date and time format. When empty, item is always available. |\n| availableTo         | datetime | Availability date range in ISO 8601 date and time format. When empty, item is always available. |\n| active              | boolean  | Inactive items are not shown in Channels.                                                       |\n| taxCode             | string   | Avalara Tax Code. *Not empty in zones with Sales Tax, otherwise use `tax` relationship.*        |\n| underProductMessage | string   | This message is shown in some Channels under Product card.                                      |\n\n##### Product item relationships\n\n| Name   | Description                                                                                                                                                                                                                  |\n|:-------|:-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|\n| prices | List of Product Item prices (Please refer to \"Fetch product item prices\" endpoint documentation for more details).                                                                                                           |\n| tax    | Relationship to Tax. *Valid only in zones with VAT TAX, otherwise please see `taxCode` attribute.* List of Shop channels in which Product is listed (full list can be fetched from `/api/v1/zones/:id/relationships/taxes`). |\n| zone   | Relationship to main Product Item Zone (full list can be fetched from `/api/v1/zones`).                                                                                                                                      |\n| zones  | Relationship to all Product Item Zones in which Product Item is available (full list can be fetched from `/api/v1/zones`).                                                                                                   |"
+                  },
+                  "response": [
+                    {
+                      "id": "36223e69-21f0-4e43-a7a0-7274808412d3",
+                      "name": "Fetch single product item",
+                      "originalRequest": {
+                        "method": "GET",
+                        "header": [
+                          {
+                            "key": "Accept",
+                            "type": "text",
+                            "value": "application/vnd.api+json"
+                          },
+                          {
+                            "key": "Content-Type",
+                            "type": "text",
+                            "value": "application/vnd.api+json"
+                          }
+                        ],
+                        "url": {
+                          "raw": "{{url}}/api/v1/shop/products/:productId/items/:itemId",
+                          "host": [
+                            "{{url}}"
+                          ],
+                          "path": [
+                            "api",
+                            "v1",
+                            "shop",
+                            "products",
+                            ":productId",
+                            "items",
+                            ":itemId"
+                          ],
+                          "variable": [
+                            {
+                              "key": "productId",
+                              "value": "{{product_id}}",
+                              "description": "Product ID"
+                            },
+                            {
+                              "key": "itemId",
+                              "value": "{{product_item_id}}",
+                              "description": "Product Item ID"
+                            }
+                          ]
+                        }
+                      },
+                      "status": "OK",
+                      "code": 200,
+                      "_postman_previewlanguage": "json",
+                      "header": [
+                        {
+                          "key": "Server",
+                          "value": "nginx/1.15.8"
+                        },
+                        {
+                          "key": "Date",
+                          "value": "Thu, 25 Jun 2020 18:30:06 GMT"
+                        },
+                        {
+                          "key": "Content-Type",
+                          "value": "application/vnd.api+json"
+                        },
+                        {
+                          "key": "Transfer-Encoding",
+                          "value": "chunked"
+                        },
+                        {
+                          "key": "Connection",
+                          "value": "keep-alive"
+                        },
+                        {
+                          "key": "Expires",
+                          "value": "Thu, 19 Nov 1981 08:52:00 GMT"
+                        },
+                        {
+                          "key": "Cache-Control",
+                          "value": "no-store, no-cache, must-revalidate"
+                        },
+                        {
+                          "key": "Pragma",
+                          "value": "no-cache"
+                        }
+                      ],
+                      "cookie": [],
+                      "responseTime": null,
+                      "body": "{\n    \"jsonapi\": {\n        \"version\": \"1.0\"\n    },\n    \"data\": {\n        \"type\": \"shop_product_item\",\n        \"id\": \"2\",\n        \"links\": {\n            \"self\": \"/api/v1/shop/products/2/items/2\"\n        },\n        \"attributes\": {\n            \"code\": \"EUPROD\",\n            \"minimalStock\": 0,\n            \"emptyStockMessage\": \"\",\n            \"availableFrom\": null,\n            \"availableTo\": null,\n            \"active\": true,\n            \"taxCode\": \"P0000000\",\n            \"underProductMessage\": \"\"\n        },\n        \"relationships\": {\n            \"prices\": {\n                \"links\": {\n                    \"related\": \"/api/v1/shop/products/2/items/2/relationships/prices\"\n                }\n            },\n            \"zone\": {\n                \"links\": {\n                    \"related\": \"/api/v1/shop/products/2/items/2/relationships/zone\",\n                    \"self\": \"/api/v1/zones/1\"\n                },\n                \"data\": {\n                    \"type\": \"zone\",\n                    \"id\": \"1\"\n                }\n            },\n            \"zones\": {\n                \"links\": {\n                    \"related\": \"/api/v1/shop/products/2/items/2/relationships/zones\"\n                }\n            }\n        }\n    }\n}"
+                    }
+                  ]
+                },
+                {
+                  "name": "Fetch product item prices",
+                  "id": "e4a1bcc5-ebe5-44ab-8273-cadfee6cf7ad",
+                  "protocolProfileBehavior": {
+                    "disableBodyPruning": true
+                  },
+                  "request": {
+                    "method": "GET",
+                    "header": [
+                      {
+                        "key": "Accept",
+                        "type": "text",
+                        "value": "application/vnd.api+json"
+                      },
+                      {
+                        "key": "Content-Type",
+                        "type": "text",
+                        "value": "application/vnd.api+json"
+                      }
+                    ],
+                    "url": {
+                      "raw": "{{url}}/api/v1/shop/products/:productId/items/:itemId/relationships/prices",
+                      "host": [
+                        "{{url}}"
+                      ],
+                      "path": [
+                        "api",
+                        "v1",
+                        "shop",
+                        "products",
+                        ":productId",
+                        "items",
+                        ":itemId",
+                        "relationships",
+                        "prices"
+                      ],
+                      "variable": [
+                        {
+                          "id": "cca32cf9-7d7b-4d64-8b06-7a77100092e7",
+                          "key": "productId",
+                          "value": "{{product_id}}",
+                          "type": "string",
+                          "description": "Product ID"
+                        },
+                        {
+                          "id": "5bbaa35c-05f0-4e19-b9ab-674417997d01",
+                          "key": "itemId",
+                          "value": "{{product_item_id}}",
+                          "type": "string",
+                          "description": "Product Item ID"
+                        }
+                      ]
+                    },
+                    "description": "**Required scope**: `shop_products:get`\n\n##### Price attributes\n\n| Name     | Type     | Description                                                                                                                                           |\n|:---------|:---------|:------------------------------------------------------------------------------------------------------------------------------------------------------|\n| type     | string   | Can be one of: `status` (called \"Wholesale\" by Kannaway), `promotion`, `active` (called \"B2B\" by Kannaway).                                           |\n| currency | string   | ISO 4217 currency symbol.                                                                                                                             |\n| value    | decimal  | Unit price value in Zone currency.                                                                                                                    |\n| points   | decimal  | Unit points value.                                                                                                                                    |\n| statusId | integer  | Price targeting by User status ID (can be fetched from `/api/v1/users/statuses`). *Non empty only for type `promotion` and `status`.                  |\n| from     | datetime | Promotional price effective date range in ISO 8601 date and time format. When empty, price is always effective. Non empty only for type `promotion`. |\n| to       | datetime | Promotional price effective date range in ISO 8601 date and time format. When empty, price is always effective. Non empty only for type `promotion`. |\n\n\n**Available filters**\n\n| Name     | Type   | Description                                                                                                 |\n|:---------|:-------|:------------------------------------------------------------------------------------------------------------|\n| type     | string | Can be one of: `status` (called \"Wholesale\" by Kannaway), `promotion`, `active` (called \"B2B\" by Kannaway). |\n| statusId | int    | User status ID (can be fetched from `/api/v1/users/statuses`).                                              |\n\n**Available sortings**\n\n* type\n* value\n* points\n* from\n* to"
+                  },
+                  "response": [
+                    {
+                      "id": "4b8f066d-dc62-4932-87f6-bf34cbeae53a",
+                      "name": "Fetch retail item price",
+                      "originalRequest": {
+                        "method": "GET",
+                        "header": [
+                          {
+                            "key": "Accept",
+                            "type": "text",
+                            "value": "application/vnd.api+json"
+                          },
+                          {
+                            "key": "Content-Type",
+                            "type": "text",
+                            "value": "application/vnd.api+json"
+                          }
+                        ],
+                        "url": {
+                          "raw": "{{url}}/api/v1/shop/products/:productId/items/:itemId/relationships/prices?filter[type]=default",
+                          "host": [
+                            "{{url}}"
+                          ],
+                          "path": [
+                            "api",
+                            "v1",
+                            "shop",
+                            "products",
+                            ":productId",
+                            "items",
+                            ":itemId",
+                            "relationships",
+                            "prices"
+                          ],
+                          "query": [
+                            {
+                              "key": "filter[type]",
+                              "value": "default"
+                            }
+                          ],
+                          "variable": [
+                            {
+                              "description": "Product ID",
+                              "key": "productId",
+                              "value": "{{product_id}}"
+                            },
+                            {
+                              "description": "Product Item ID",
+                              "key": "itemId",
+                              "value": "{{product_item_id}}"
+                            }
+                          ]
+                        }
+                      },
+                      "status": "OK",
+                      "code": 200,
+                      "_postman_previewlanguage": "json",
+                      "header": [
+                        {
+                          "key": "Server",
+                          "value": "nginx/1.15.8"
+                        },
+                        {
+                          "key": "Date",
+                          "value": "Tue, 30 Jun 2020 15:50:32 GMT"
+                        },
+                        {
+                          "key": "Content-Type",
+                          "value": "application/vnd.api+json"
+                        },
+                        {
+                          "key": "Transfer-Encoding",
+                          "value": "chunked"
+                        },
+                        {
+                          "key": "Connection",
+                          "value": "keep-alive"
+                        },
+                        {
+                          "key": "Expires",
+                          "value": "Thu, 19 Nov 1981 08:52:00 GMT"
+                        },
+                        {
+                          "key": "Cache-Control",
+                          "value": "no-store, no-cache, must-revalidate"
+                        },
+                        {
+                          "key": "Pragma",
+                          "value": "no-cache"
+                        }
+                      ],
+                      "cookie": [],
+                      "responseTime": null,
+                      "body": "{\n    \"jsonapi\": {\n        \"version\": \"1.0\"\n    },\n    \"meta\": {\n        \"page\": {\n            \"number\": 1,\n            \"size\": 25\n        },\n        \"totalItems\": 1\n    },\n    \"links\": {\n        \"self\": \"/api/v1/shop/products/2/items/27/relationships/prices?page[number]=1&filter[type]=default\",\n        \"first\": \"/api/v1/shop/products/2/items/27/relationships/prices?page[number]=1&filter[type]=default\",\n        \"last\": \"/api/v1/shop/products/2/items/27/relationships/prices?page[number]=1&filter[type]=default\"\n    },\n    \"data\": [\n        {\n            \"type\": \"shop_product_item_price\",\n            \"id\": \"c152053d-b14c-5552-817c-670025a1853b\",\n            \"attributes\": {\n                \"type\": \"default\",\n                \"currency\": \"USD\",\n                \"value\": 251.94,\n                \"points\": 120,\n                \"statusId\": null,\n                \"from\": null,\n                \"to\": null\n            }\n        }\n    ]\n}"
+                    },
+                    {
+                      "id": "ac9c9c1b-51ea-4a49-b233-72b4dab651d3",
+                      "name": "Fetch product item prices",
+                      "originalRequest": {
+                        "method": "GET",
+                        "header": [
+                          {
+                            "key": "Accept",
+                            "type": "text",
+                            "value": "application/vnd.api+json"
+                          },
+                          {
+                            "key": "Content-Type",
+                            "type": "text",
+                            "value": "application/vnd.api+json"
+                          }
+                        ],
+                        "url": {
+                          "raw": "{{url}}/api/v1/shop/products/:productId/items/:itemId/relationships/prices",
+                          "host": [
+                            "{{url}}"
+                          ],
+                          "path": [
+                            "api",
+                            "v1",
+                            "shop",
+                            "products",
+                            ":productId",
+                            "items",
+                            ":itemId",
+                            "relationships",
+                            "prices"
+                          ],
+                          "variable": [
+                            {
+                              "description": "Product ID",
+                              "key": "productId",
+                              "value": "{{product_id}}"
+                            },
+                            {
+                              "description": "Product Item ID",
+                              "key": "itemId",
+                              "value": "{{product_item_id}}"
+                            }
+                          ]
+                        }
+                      },
+                      "status": "OK",
+                      "code": 200,
+                      "_postman_previewlanguage": "json",
+                      "header": [
+                        {
+                          "key": "Server",
+                          "value": "nginx/1.15.8"
+                        },
+                        {
+                          "key": "Date",
+                          "value": "Thu, 25 Jun 2020 19:49:03 GMT"
+                        },
+                        {
+                          "key": "Content-Type",
+                          "value": "application/vnd.api+json"
+                        },
+                        {
+                          "key": "Transfer-Encoding",
+                          "value": "chunked"
+                        },
+                        {
+                          "key": "Connection",
+                          "value": "keep-alive"
+                        },
+                        {
+                          "key": "Expires",
+                          "value": "Thu, 19 Nov 1981 08:52:00 GMT"
+                        },
+                        {
+                          "key": "Cache-Control",
+                          "value": "no-store, no-cache, must-revalidate"
+                        },
+                        {
+                          "key": "Pragma",
+                          "value": "no-cache"
+                        }
+                      ],
+                      "cookie": [],
+                      "responseTime": null,
+                      "body": "{\n    \"jsonapi\": {\n        \"version\": \"1.0\"\n    },\n    \"meta\": {\n        \"page\": {\n            \"number\": 1,\n            \"size\": 25\n        },\n        \"totalItems\": 1\n    },\n    \"links\": {\n        \"self\": \"/api/v1/shop/products/2/items/2/relationships/prices?page[number]=1\",\n        \"first\": \"/api/v1/shop/products/2/items/2/relationships/prices?page[number]=1\",\n        \"last\": \"/api/v1/shop/products/2/items/2/relationships/prices?page[number]=1\"\n    },\n    \"data\": [\n        {\n            \"type\": \"shop_product_item_price\",\n            \"id\": \"6fef18ae-efdf-5755-9ea2-fcaa192b6e21\",\n            \"attributes\": {\n                \"type\": \"default\",\n                \"currency\": \"EUR\",\n                \"value\": 139,\n                \"points\": 10,\n                \"statusId\": null,\n                \"from\": null,\n                \"to\": null\n            }\n        }\n    ]\n}"
+                    }
+                  ]
+                },
+                {
+                  "name": "Add single product",
+                  "id": "fa07438f-b6b5-4954-96cb-28ae68ae7417",
+                  "protocolProfileBehavior": {
+                    "disableBodyPruning": true
+                  },
+                  "request": {
+                    "method": "POST",
+                    "header": [
+                      {
+                        "key": "Accept",
+                        "type": "text",
+                        "value": "application/vnd.api+json"
+                      },
+                      {
+                        "key": "Content-Type",
+                        "type": "text",
+                        "value": "application/vnd.api+json"
+                      }
+                    ],
+                    "body": {
+                      "mode": "raw",
+                      "raw": "{\n    \"data\": {\n        \"type\": \"shop_product\",\n        \"attributes\": {\n            \"code\": \"1180032\",\n            \"languages\": {\n                \"en\": {\n                    \"name\": \"Salve Bulk Pack (5+2 Free)\"\n                },\n                \"ru\": {\n                    \"name\": \"Набор Salve (5+2 бесплатно)\"\n                }\n            },\n            \"typeId\": 1,\n            \"order\": 15,\n            \"active\": true,\n            \"items\": [\n                {\n                    \"code\": \"118003\",\n                    \"zoneId\": 5,\n                    \"taxId\": 151,\n                    \"minimalStock\": 0,\n                    \"emptyStockMessage\": \"Will be available on 6/5/20\",\n                    \"underProductMessage\": \"\",\n                    \"availableFrom\": \"2020-06-01T00:00:00+0000\",\n                    \"availableTo\": \"2020-06-01T00:00:00+0000\",\n                    \"active\": true,\n                    \"retailPrice\": {\n                        \"value\": 251.94,\n                        \"points\": 120\n                    },\n                    \"prices\": [\n                        {\n                            \"type\": \"status\",\n                            \"statusId\": 1,\n                            \"value\": 250.00,\n                            \"points\": 120\n                        },\n                        {\n                            \"type\": \"status\",\n                            \"statusId\": 2,\n                            \"value\": 250.00,\n                            \"points\": 120\n                        },\n                        {\n                            \"type\": \"promotion\",\n                            \"statusId\": 1,\n                            \"from\": \"2020-06-01T00:00:00+0000\",\n                            \"to\": \"2020-06-07T23:59:29+0000\",\n                            \"value\": 249.00,\n                            \"points\": 120\n                        },\n                        {\n                            \"type\": \"active\",\n                            \"value\": 245.00,\n                            \"points\": 120\n                        }\n                    ]\n                },\n                {\n                    \"code\": \"118003\",\n                    \"zoneId\": 2,\n                    \"taxCode\": \"PH050507\",\n                    \"active\": false,\n                    \"retailPrice\": {\n                        \"value\": 219.00,\n                        \"points\": 120\n                    }\n                }\n            ]\n        },\n        \"relationships\": {\n            \"categories\": {\n                \"data\": [\n                    {\n                        \"type\": \"shop_category\",\n                        \"id\": \"1\"\n                    },\n                    {\n                        \"type\": \"shop_category\",\n                        \"id\": \"2\"\n                    }\n                ]\n            },\n            \"channels\": {\n                \"data\": [\n                    {\n                        \"type\": \"shop_channel\",\n                        \"id\": \"1\"\n                    }\n                ]\n            },\n            \"statuses\": {\n                \"data\": [\n                    {\n                        \"type\": \"user_status\",\n                        \"id\": \"1\"\n                    },\n                    {\n                        \"type\": \"user_status\",\n                        \"id\": \"2\"\n                    }\n                ]\n            }\n        }\n    }\n}\n"
+                    },
+                    "url": "{{url}}/api/v1/shop/products",
+                    "description": "**Required scope**: `shop_products:post`\n\nYou CAN create a complete shop product through this endpoint.\n\nYou CAN set product as `active` only when there is at least one `active`\nproduct item added in the same request.\n\nYou CAN set relationships to shop categories, shop channels\n(availability) and user statuses (user targeting).\n\nYou MUST provide at least one product name (in English language).\n\nYou MAY omit non-required parameters from request body.\n\n##### Product attributes\n\n| Name          | Type                      | Required | Description                                                  |\n| :------------ | :------------------------ | :------- | :----------------------------------------------------------- |\n| code          | string                    | Yes      | Code (SKU)                                                   |\n| typeId        | integer                   | Yes      | Type ID (can be fetched from `/api/v1/shop/products-types` endpoint). |\n| languages     | object                    | Yes      | Product names, English (`en`) translation is required.       |\n| active        | boolean                   | Yes      | When Product is active, all its active Items are shown in Channels. |\n| order         | integer                   | No       | Ordinal number (positive or negative). It is used to sort products on product lists. |\n| items         | array of **Product item** | No       | Product items array (can be used to create items in the same request as product). |\n| warehouseCode | string\\|null              | Yes      | Assigns exist warehouse position. If value null provided will be created new warehouse position. |\n\n##### Product item attributes\n\n| Name                | Type               | Required | Description                                                  |\n| :------------------ | :----------------- | :------- | :----------------------------------------------------------- |\n| code                | string             | Yes      | Code (SKU)                                                   |\n| zoneId              | integer            | Yes      | Zone ID (can be fetched from `/api/v1/zones` endpoint). It determines item availability, price currency etc. |\n| taxCode             | string             | Yes/No*  | Avalara Tax Code. *Required in zones with Sales Tax, otherwise use `taxId`. |\n| taxId               | integer            | Yes/No*  | VAT Tax ID (can be fetched from `/api/v1/zones/:id/relationships/taxes` endpoint). *Required in zones with VAT Tax, otherwise use `taxCode`. |\n| retailPrice         | object             | Yes      | Retail unit price (object properties are described below).   |\n| retailPrice.value   | decimal            | Yes      | Unit price value in Zone currency.                           |\n| retailPrice.points  | decimal            | Yes      | Unit points value.                                           |\n| active              | boolean            | Yes      | Inactive items are not shown in Channels.                    |\n| prices              | array of **Price** | No       | Additional prices.                                           |\n| minimalStock        | integer            | No       | Minimal stock of this item.                                  |\n| emptyStockMessage   | string             | No       | This message is shown in some Channels when item is out of stock. |\n| underProductMessage | string             | No       | This message is shown in some Channels under Product card.   |\n| availableFrom       | datetime           | No       | Availability date range in ISO 8601 date and time format. When empty, item is always available. |\n| availableTo         | datetime           | No       | Availability date range in ISO 8601 date and time format. When empty, item is always available. |\n| warehouseCode       | string\\|null       | Yes      | Assigns exist warehouse position. If value null provided will be created new warehouse position. |\n\n##### Price attributes\n\n| Name     | Type     | Required | Description                                                  |\n| :------- | :------- | :------- | :----------------------------------------------------------- |\n| type     | string   | Yes      | Can be one of: `status` (called \"Wholesale\" by Kannaway), `promotion`, `active` (called \"B2B\" by Kannaway). |\n| value    | decimal  | Yes      | Unit price value in Zone currency.                           |\n| points   | decimal  | Yes      | Unit points value.                                           |\n| statusId | integer  | Yes/No*  | Price targeting by User status ID (can be fetched from `/api/v1/users/statuses`). *Required and can be set only for type `promotion` and `status`. |\n| from     | datetime | No       | Promotional price effective date range in ISO 8601 date and time format. When empty, price is always effective. Can be set only for type `promotion`. |\n| to       | datetime | No       | Promotional price effective date range in ISO 8601 date and time format. When empty, price is always effective. Can be set only for type `promotion`. |\n\n##### Product relationships\n\n| Name       | Required | Description                                                  |\n| :--------- | :------- | :----------------------------------------------------------- |\n| categories | No       | List of Shop categories in which Product is listed (can be fetched from `/api/v1/shop/categories`). |\n| channels   | No       | List of Shop channels in which Product is listed (can be fetched from `/api/v1/shop/channels`). |\n| statuses   | No       | List of User statuses for which Product is available for purchase (can be fetched from `/api/v1/users/statuses`). |"
+                  },
+                  "response": [
+                    {
+                      "id": "e8e2cbb5-f677-4b85-856b-c3a92a022549",
+                      "name": "Add single product",
+                      "originalRequest": {
+                        "method": "POST",
+                        "header": [
+                          {
+                            "key": "Accept",
+                            "value": "application/vnd.api+json",
+                            "type": "text"
+                          },
+                          {
+                            "key": "Content-Type",
+                            "value": "application/vnd.api+json",
+                            "type": "text"
+                          }
+                        ],
+                        "body": {
+                          "mode": "raw",
+                          "raw": "{\n    \"data\": {\n        \"type\": \"shop_product\",\n        \"attributes\": {\n            \"code\": \"1180032\",\n            \"languages\": {\n                \"en\": {\n                    \"name\": \"Salve Bulk Pack (5+2 Free)\"\n                },\n                \"ru\": {\n                    \"name\": \"Набор Salve (5+2 бесплатно)\"\n                }\n            },\n            \"typeId\": 1,\n            \"order\": 15,\n            \"active\": true,\n            \"items\": [\n                {\n                    \"code\": \"118003\",\n                    \"zoneId\": 5,\n                    \"taxId\": 151,\n                    \"minimalStock\": 0,\n                    \"emptyStockMessage\": \"Will be available on 6/5/20\",\n                    \"underProductMessage\": \"\",\n                    \"availableFrom\": \"2020-06-01T00:00:00+0000\",\n                    \"availableTo\": \"2020-06-01T00:00:00+0000\",\n                    \"active\": true,\n                    \"retailPrice\": {\n                        \"value\": 251.94,\n                        \"points\": 120\n                    },\n                    \"prices\": [\n                        {\n                            \"type\": \"status\",\n                            \"statusId\": 1,\n                            \"value\": 250.00,\n                            \"points\": 120\n                        },\n                        {\n                            \"type\": \"status\",\n                            \"statusId\": 2,\n                            \"value\": 250.00,\n                            \"points\": 120\n                        },\n                        {\n                            \"type\": \"promotion\",\n                            \"statusId\": 1,\n                            \"from\": \"2020-06-01T00:00:00+0000\",\n                            \"to\": \"2020-06-07T23:59:29+0000\",\n                            \"value\": 249.00,\n                            \"points\": 120\n                        },\n                        {\n                            \"type\": \"active\",\n                            \"value\": 245.00,\n                            \"points\": 120\n                        }\n                    ]\n                },\n                {\n                    \"code\": \"118003\",\n                    \"zoneId\": 2,\n                    \"taxCode\": \"PH050507\",\n                    \"active\": false,\n                    \"retailPrice\": {\n                        \"value\": 219.00,\n                        \"points\": 120\n                    }\n                }\n            ]\n        },\n        \"relationships\": {\n            \"categories\": {\n                \"data\": [\n                    {\n                        \"type\": \"shop_category\",\n                        \"id\": \"1\"\n                    },\n                    {\n                        \"type\": \"shop_category\",\n                        \"id\": \"2\"\n                    }\n                ]\n            },\n            \"channels\": {\n                \"data\": [\n                    {\n                        \"type\": \"shop_channel\",\n                        \"id\": \"1\"\n                    }\n                ]\n            },\n            \"statuses\": {\n                \"data\": [\n                    {\n                        \"type\": \"user_status\",\n                        \"id\": \"1\"\n                    },\n                    {\n                        \"type\": \"user_status\",\n                        \"id\": \"2\"\n                    }\n                ]\n            }\n        }\n    }\n}\n"
+                        },
+                        "url": "{{url}}/api/v1/shop/products"
+                      },
+                      "_postman_previewlanguage": null,
+                      "header": [
+                        {
+                          "key": "Content-Type",
+                          "value": "application/vnd.api+json",
+                          "description": "",
+                          "type": "text"
+                        }
+                      ],
+                      "cookie": [],
+                      "responseTime": null,
+                      "body": "{\n    \"jsonapi\": {\n        \"version\": \"1.0\"\n    },\n    \"data\": {\n        \"type\": \"shop_product\",\n        \"id\": \"1\",\n        \"links\": {\n            \"self\": \"/api/v1/shop/products/1\"\n        },\n        \"attributes\": {\n            \"code\": \"118003\",\n            \"languages\": {\n                \"en\": {\n                    \"name\": \"Salve Bulk Pack (5+2 Free)\"\n                },\n                \"ru\": {\n                    \"name\": \"Набор Salve (5+2 бесплатно)\"\n                }\n            },\n            \"order\": 15,\n            \"createdAt\": \"2020-06-07T12:00:00+0000\",\n            \"active\": true\n        },\n        \"relationships\": {\n            \"product_type\": {\n                \"data\": {\n                    \"type\": \"product_type\",\n                    \"id\": 1\n                }\n            },\n            \"categories\": {\n                \"data\": [\n                    {\n                        \"type\": \"shop_category\",\n                        \"id\": 3\n                    },\n                    {\n                        \"type\": \"shop_category\",\n                        \"id\": 5\n                    }\n                ]\n            },\n            \"channels\": {\n                \"data\": [\n                    {\n                        \"type\": \"shop_channel\",\n                        \"id\": 1\n                    }\n                ]\n            },\n            \"statuses\": {\n                \"data\": [\n                    {\n                        \"type\": \"user_status\",\n                        \"id\": 1\n                    },\n                    {\n                        \"type\": \"user_status\",\n                        \"id\": 2\n                    }\n                ]\n            },\n            \"items\": {\n                \"data\": [\n                    {\n                        \"type\": \"shop_product_item\",\n                        \"id\": 1\n                    },\n                    {\n                        \"type\": \"shop_product_item\",\n                        \"id\": 2\n                    }\n                ]\n            }\n        }\n    }\n}\n"
+                    }
+                  ]
+                },
+                {
+                  "name": "Add single product item",
+                  "id": "e2cd5f71-8436-49b0-89e0-4815c09afc83",
+                  "protocolProfileBehavior": {
+                    "disableBodyPruning": true
+                  },
+                  "request": {
+                    "method": "POST",
+                    "header": [
+                      {
+                        "key": "Accept",
+                        "type": "text",
+                        "value": "application/vnd.api+json"
+                      },
+                      {
+                        "key": "Content-Type",
+                        "type": "text",
+                        "value": "application/vnd.api+json"
+                      }
+                    ],
+                    "body": {
+                      "mode": "raw",
+                      "raw": "{\n    \"data\": {\n        \"type\": \"shop_product_item\",\n        \"attributes\": {\n            \"code\": \"118003\",\n            \"zoneId\": 59,\n            \"taxCode\":\"AAA\",\n            \"minimalStock\": 0,\n            \"emptyStockMessage\": \"Will be available on 6/5/20\",\n            \"underProductMessage\": \"Test\",\n            \"availableFrom\": \"2020-06-01T00:00:00+0000\",\n            \"availableTo\": \"2020-06-01T00:00:00+0000\",\n            \"active\": true,\n            \"retailPrice\": {\n                \"value\": 251.94,\n                \"points\": 120\n            },\n            \"prices\": [\n                {\n                    \"type\": \"status\",\n                    \"statusId\": 1,\n                    \"value\": 209.95,\n                    \"points\": 120\n                },\n                {\n                    \"type\": \"status\",\n                    \"statusId\": 2,\n                    \"value\": 209.95,\n                    \"points\": 120\n                },\n                {\n                    \"type\": \"promotion\",\n                    \"statusId\": 1,\n                    \"from\": \"2020-06-01T00:00:00+0000\",\n                    \"to\": \"2020-06-07T23:59:29+0000\",\n                    \"value\": 199.95,\n                    \"points\": 120\n                },\n                {\n                    \"type\": \"active\",\n                    \"value\": 199.95,\n                    \"points\": 120\n                }\n            ]\n        }\n    }\n}\n"
+                    },
+                    "url": {
+                      "raw": "{{url}}/api/v1/shop/products/:id/items",
+                      "host": [
+                        "{{url}}"
+                      ],
+                      "path": [
+                        "api",
+                        "v1",
+                        "shop",
+                        "products",
+                        ":id",
+                        "items"
+                      ],
+                      "variable": [
+                        {
+                          "id": "0480dd4d-58ad-439d-bfb5-6f9e20631255",
+                          "key": "id",
+                          "value": "{{product_id}}",
+                          "type": "string",
+                          "description": "Obtained after adding product with `/api/v1/shop/products` endpoint."
+                        }
+                      ]
+                    },
+                    "description": "**Required scope**: `shop_products:post`\n\nYou CAN create a product item for shop product through this endpoint.\n\nYou MAY omit non-required parameters from request body.\n\n##### Product item attributes\n\n| Name                | Type               | Required | Description                                                  |\n| :------------------ | :----------------- | :------- | :----------------------------------------------------------- |\n| code                | string             | Yes      | Code (SKU)                                                   |\n| zoneId              | integer            | Yes      | Zone ID (can be fetched from `/api/v1/zones` endpoint). It determines item availability, price currency etc. |\n| taxCode             | string             | Yes/No*  | Avalara Tax Code. *Required in zones with Sales Tax, otherwise use `taxId`. |\n| taxId               | integer            | Yes/No*  | VAT Tax ID (can be fetched from `/api/v1/zones/:id/relationships/taxes` endpoint). *Required in zones with VAT Tax, otherwise use `taxCode`. |\n| retailPrice         | object             | Yes      | Retail unit price (object properties are described below).   |\n| retailPrice.value   | decimal            | Yes      | Unit price value in Zone currency.                           |\n| retailPrice.points  | decimal            | Yes      | Unit points value.                                           |\n| active              | boolean            | Yes      | Inactive items are not shown in Channels.                    |\n| prices              | array of **Price** | No       | Additional prices.                                           |\n| minimalStock        | integer            | No       | Minimal stock of this item.                                  |\n| emptyStockMessage   | string             | No       | This message is shown in some Channels when item is out of stock. |\n| underProductMessage | string             | No       | This message is shown in some Channels under Product card.   |\n| availableFrom       | datetime           | No       | Availability date range in ISO 8601 date and time format. When empty, item is always available. |\n| availableTo         | datetime           | No       | Availability date range in ISO 8601 date and time format. When empty, item is always available. |\n| warehouseCode       | string\\|null       | Yes      | Assigns exist warehouse position. If value null provided will be created new warehouse position. |\n\n##### Price attributes\n\n| Name     | Type     | Required | Description                                                  |\n| :------- | :------- | :------- | :----------------------------------------------------------- |\n| type     | string   | Yes      | Can be one of: `status` (called \"Wholesale\" by Kannaway), `promotion`, `active` (called \"B2B\" by Kannaway). |\n| value    | decimal  | Yes      | Unit price value in Zone currency.                           |\n| points   | decimal  | Yes      | Unit points value.                                           |\n| statusId | integer  | Yes/No*  | Price targeting by User status ID (can be fetched from `/api/v1/users/statuses`). *Required and can be set only for type `promotion` and `status`. |\n| from     | datetime | No       | Promotional price effective date range in ISO 8601 date and time format. When empty, price is always effective. Can be set only for type `promotion`. |\n| to       | datetime | No       | Promotional price effective date range in ISO 8601 date and time format. When empty, price is always effective. Can be set only for type `promotion`. |"
+                  },
+                  "response": [
+                    {
+                      "id": "b5479e5a-6c9b-4304-9cf8-b558f41b23a9",
+                      "name": "Add single product item",
+                      "originalRequest": {
+                        "method": "POST",
+                        "header": [
+                          {
+                            "key": "Accept",
+                            "type": "text",
+                            "value": "application/vnd.api+json"
+                          },
+                          {
+                            "key": "Content-Type",
+                            "type": "text",
+                            "value": "application/vnd.api+json"
+                          }
+                        ],
+                        "body": {
+                          "mode": "raw",
+                          "raw": "{\n    \"data\": {\n        \"type\": \"shop_product_item\",\n        \"attributes\": {\n            \"code\": \"118003\",\n            \"zoneId\": 59,\n            \"taxCode\":\"AAA\",\n            \"minimalStock\": 0,\n            \"emptyStockMessage\": \"Will be available on 6/5/20\",\n            \"underProductMessage\": \"Test\",\n            \"availableFrom\": \"2020-06-01T00:00:00+0000\",\n            \"availableTo\": \"2020-06-01T00:00:00+0000\",\n            \"active\": true,\n            \"retailPrice\": {\n                \"value\": 251.94,\n                \"points\": 120\n            },\n            \"prices\": [\n                {\n                    \"type\": \"status\",\n                    \"statusId\": 1,\n                    \"value\": 209.95,\n                    \"points\": 120\n                },\n                {\n                    \"type\": \"status\",\n                    \"statusId\": 2,\n                    \"value\": 209.95,\n                    \"points\": 120\n                },\n                {\n                    \"type\": \"promotion\",\n                    \"statusId\": 1,\n                    \"from\": \"2020-06-01T00:00:00+0000\",\n                    \"to\": \"2020-06-07T23:59:29+0000\",\n                    \"value\": 199.95,\n                    \"points\": 120\n                },\n                {\n                    \"type\": \"active\",\n                    \"value\": 199.95,\n                    \"points\": 120\n                }\n            ]\n        }\n    }\n}\n"
+                        },
+                        "url": {
+                          "raw": "{{url}}/api/v1/shop/products/:id/items",
+                          "host": [
+                            "{{url}}"
+                          ],
+                          "path": [
+                            "api",
+                            "v1",
+                            "shop",
+                            "products",
+                            ":id",
+                            "items"
+                          ],
+                          "variable": [
+                            {
+                              "key": "id",
+                              "value": "{{product_id}}",
+                              "type": "string",
+                              "description": "Obtained after adding product with `/api/v1/shop/products` endpoint."
+                            }
+                          ]
+                        }
+                      },
+                      "status": "Created",
+                      "code": 201,
+                      "_postman_previewlanguage": "json",
+                      "header": [
+                        {
+                          "key": "Server",
+                          "value": "nginx/1.15.8"
+                        },
+                        {
+                          "key": "Date",
+                          "value": "Thu, 25 Jun 2020 19:13:10 GMT"
+                        },
+                        {
+                          "key": "Content-Type",
+                          "value": "application/vnd.api+json"
+                        },
+                        {
+                          "key": "Transfer-Encoding",
+                          "value": "chunked"
+                        },
+                        {
+                          "key": "Connection",
+                          "value": "keep-alive"
+                        },
+                        {
+                          "key": "Expires",
+                          "value": "Thu, 19 Nov 1981 08:52:00 GMT"
+                        },
+                        {
+                          "key": "Cache-Control",
+                          "value": "no-store, no-cache, must-revalidate"
+                        },
+                        {
+                          "key": "Pragma",
+                          "value": "no-cache"
+                        }
+                      ],
+                      "cookie": [],
+                      "responseTime": null,
+                      "body": "{\n    \"jsonapi\": {\n        \"version\": \"1.0\"\n    },\n    \"data\": {\n        \"type\": \"shop_product_item\",\n        \"id\": \"27\",\n        \"links\": {\n            \"self\": \"/api/v1/shop/products/2/items/27\"\n        },\n        \"attributes\": {\n            \"code\": \"118003\",\n            \"minimalStock\": 0,\n            \"emptyStockMessage\": \"Will be available on 6/5/20\",\n            \"availableFrom\": \"2020-06-01T02:00:00+0200\",\n            \"availableTo\": \"2020-06-01T02:00:00+0200\",\n            \"active\": true,\n            \"taxCode\": \"AAA\",\n            \"underProductMessage\": \"Test\"\n        },\n        \"relationships\": {\n            \"prices\": {\n                \"links\": {\n                    \"related\": \"/api/v1/shop/products/2/items/27/relationships/prices\"\n                }\n            },\n            \"zone\": {\n                \"links\": {\n                    \"related\": \"/api/v1/shop/products/2/items/relationships/zone\",\n                    \"self\": \"/api/v1/zones/59\"\n                },\n                \"data\": {\n                    \"type\": \"zone\",\n                    \"id\": \"59\"\n                }\n            },\n            \"zones\": {\n                \"links\": {\n                    \"related\": \"/api/v1/shop/products/2/items/27/relationships/zones\"\n                }\n            }\n        }\n    }\n}"
+                    }
+                  ]
+                }
+              ],
+              "id": "ebe5a356-2030-4dc6-8f72-d4dc701d19cd",
+              "description": "Product catalog management endpoints. \n\nEach **Product** contains one or more **Product items**.\n\nEach **Product item** contains **Retail price** and MAY contain additional **Prices**.",
+              "event": [
+                {
+                  "listen": "prerequest",
+                  "script": {
+                    "id": "028421ea-6b58-4e42-b8ef-1b0d3cde1f23",
+                    "type": "text/javascript",
+                    "exec": [
+                      ""
+                    ]
+                  }
+                },
+                {
+                  "listen": "test",
+                  "script": {
+                    "id": "0b1a0695-e29b-47d5-9e09-895563c7046b",
+                    "type": "text/javascript",
+                    "exec": [
+                      ""
+                    ]
+                  }
+                }
+              ]
             }
           ],
           "id": "3e8f0a97-4916-49d7-a069-1136dbe6a41a",
