@@ -4197,7 +4197,7 @@
               ]
             },
             {
-              "name": "ProductCategories Copy",
+              "name": "ProductCategories",
               "item": [
                 {
                   "name": "Fetch multiple product categories",
@@ -4270,7 +4270,29 @@
                   "response": []
                 }
               ],
-              "id": "e46af370-f700-4240-afac-6bd8f6fae821"
+              "id": "e46af370-f700-4240-afac-6bd8f6fae821",
+              "event": [
+                {
+                  "listen": "prerequest",
+                  "script": {
+                    "id": "898def12-fecd-4f33-ba0d-d0fef5fc64cd",
+                    "type": "text/javascript",
+                    "exec": [
+                      ""
+                    ]
+                  }
+                },
+                {
+                  "listen": "test",
+                  "script": {
+                    "id": "1b3d767f-941e-4c4b-8d71-56d8b133cb74",
+                    "type": "text/javascript",
+                    "exec": [
+                      ""
+                    ]
+                  }
+                }
+              ]
             }
           ],
           "id": "3e8f0a97-4916-49d7-a069-1136dbe6a41a",
