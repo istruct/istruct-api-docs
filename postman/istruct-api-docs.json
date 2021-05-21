@@ -4195,6 +4195,82 @@
                   }
                 }
               ]
+            },
+            {
+              "name": "ProductCategories Copy",
+              "item": [
+                {
+                  "name": "Fetch multiple product categories",
+                  "id": "a040edf8-93da-4368-a716-62aa903ad90c",
+                  "protocolProfileBehavior": {
+                    "disableBodyPruning": true
+                  },
+                  "request": {
+                    "method": "GET",
+                    "header": [
+                      {
+                        "key": "Accept",
+                        "value": "application/vnd.api+json",
+                        "type": "text"
+                      },
+                      {
+                        "key": "Content-Type",
+                        "value": "application/vnd.api+json",
+                        "type": "text"
+                      }
+                    ],
+                    "url": "{{url}}/api/v1/shop/categories",
+                    "description": "**Required scope**: `shop_products:get`"
+                  },
+                  "response": []
+                },
+                {
+                  "name": "Fetch single category",
+                  "id": "a3d52b57-7241-43e8-a272-301af7f9da14",
+                  "protocolProfileBehavior": {
+                    "disableBodyPruning": true
+                  },
+                  "request": {
+                    "method": "GET",
+                    "header": [
+                      {
+                        "key": "Accept",
+                        "value": "application/vnd.api+json",
+                        "type": "text"
+                      },
+                      {
+                        "key": "Content-Type",
+                        "value": "application/vnd.api+json",
+                        "type": "text"
+                      }
+                    ],
+                    "url": {
+                      "raw": "{{url}}/api/v1/shop/categories/:id",
+                      "host": [
+                        "{{url}}"
+                      ],
+                      "path": [
+                        "api",
+                        "v1",
+                        "shop",
+                        "categories",
+                        ":id"
+                      ],
+                      "variable": [
+                        {
+                          "id": "7914d601-65dc-44ec-b627-b342e57634cc",
+                          "key": "id",
+                          "value": "",
+                          "type": "string"
+                        }
+                      ]
+                    },
+                    "description": "**Required scope**: `shop_products:get`"
+                  },
+                  "response": []
+                }
+              ],
+              "id": "e46af370-f700-4240-afac-6bd8f6fae821"
             }
           ],
           "id": "3e8f0a97-4916-49d7-a069-1136dbe6a41a",
