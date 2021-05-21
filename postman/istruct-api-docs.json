@@ -80,6 +80,7 @@
                 {
                   "key": "scope",
                   "value": "{{client_scopes}}",
+                  "description": "Space separated list of scopes, for example \"shop_packages:get shop_orders:get\". Parameter can be omitted to obtain all scopes available to client.",
                   "type": "text",
                   "disabled": true
                 }
