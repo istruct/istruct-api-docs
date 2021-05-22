@@ -4455,7 +4455,7 @@
           ]
         },
         {
-          "name": "Zones Copy",
+          "name": "Zones",
           "item": [
             {
               "name": "Fetch system zones",
@@ -4673,7 +4673,29 @@
             }
           ],
           "id": "795b25b2-4e7e-4b01-9693-766f278e32e1",
-          "description": "iStruct Zones module handles access to various other resources on per zone basis. Each zone may consist of one or more delivery countries or regions. Whole zone has the same accounting rules, same currency, invoicing entity and other settings like default language, locale, timezone etc."
+          "description": "iStruct Zones module handles access to various other resources on per zone basis. Each zone may consist of one or more delivery countries or regions. Whole zone has the same accounting rules, same currency, invoicing entity and other settings like default language, locale, timezone etc.",
+          "event": [
+            {
+              "listen": "prerequest",
+              "script": {
+                "id": "625a9b22-3996-4e5b-b2c8-d8bf15732659",
+                "type": "text/javascript",
+                "exec": [
+                  ""
+                ]
+              }
+            },
+            {
+              "listen": "test",
+              "script": {
+                "id": "14ae6249-1963-4e15-a493-86e73daf7c9c",
+                "type": "text/javascript",
+                "exec": [
+                  ""
+                ]
+              }
+            }
+          ]
         }
       ],
       "id": "1350357e-8683-4f12-abff-969e9889f12f",
