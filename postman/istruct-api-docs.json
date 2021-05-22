@@ -4257,7 +4257,7 @@
                   ],
                   "cookie": [],
                   "responseTime": null,
-                  "body": "{\n    \"jsonapi\": {\n        \"version\": \"1.0\"\n    },\n    \"meta\": {\n        \"page\": {\n            \"number\": 1,\n            \"size\": 25\n        },\n        \"totalItems\": 20\n    },\n    \"links\": {\n        \"self\": \"/api/v1/tags?page[number]=1\",\n        \"first\": \"/api/v1/tags?page[number]=1\",\n        \"last\": \"/api/v1/tags?page[number]=1\"\n    },\n    \"data\": [\n        {\n            \"type\": \"tag\",\n            \"id\": \"381\",\n            \"links\": {\n                \"self\": \"/api/v1/tags/381\"\n            },\n            \"attributes\": {\n                \"validFrom\": null,\n                \"validTo\": null,\n                \"state\": \"revoked\"\n            },\n            \"relationships\": {\n                \"definition\": {\n                    \"links\": {\n                        \"related\": \"/api/v1/tags/381/relationships/definition\",\n                        \"self\": \"/api/v1/tags/definitions/54\"\n                    },\n                    \"data\": {\n                        \"type\": \"tag_definition\",\n                        \"id\": \"54\"\n                    }\n                }\n            }\n        },\n        {\n            \"type\": \"tag\",\n            \"id\": \"545\",\n            \"links\": {\n                \"self\": \"/api/v1/tags/545\"\n            },\n            \"attributes\": {\n                \"validFrom\": null,\n                \"validTo\": null,\n                \"state\": \"revoked\"\n            },\n            \"relationships\": {\n                \"definition\": {\n                    \"links\": {\n                        \"related\": \"/api/v1/tags/545/relationships/definition\",\n                        \"self\": \"/api/v1/tags/definitions/54\"\n                    },\n                    \"data\": {\n                        \"type\": \"tag_definition\",\n                        \"id\": \"54\"\n                    }\n                }\n            }\n        },\n        {\n            \"type\": \"tag\",\n            \"id\": \"557\",\n            \"links\": {\n                \"self\": \"/api/v1/tags/557\"\n            },\n            \"attributes\": {\n                \"validFrom\": null,\n                \"validTo\": null,\n                \"state\": \"revoked\"\n            },\n            \"relationships\": {\n                \"definition\": {\n                    \"links\": {\n                        \"related\": \"/api/v1/tags/557/relationships/definition\",\n                        \"self\": \"/api/v1/tags/definitions/54\"\n                    },\n                    \"data\": {\n                        \"type\": \"tag_definition\",\n                        \"id\": \"54\"\n                    }\n                }\n            }\n        },\n        {\n            \"type\": \"tag\",\n            \"id\": \"783\",\n            \"links\": {\n                \"self\": \"/api/v1/tags/783\"\n            },\n            \"attributes\": {\n                \"validFrom\": null,\n                \"validTo\": null,\n                \"state\": \"assigned\"\n            },\n            \"relationships\": {\n                \"definition\": {\n                    \"links\": {\n                        \"related\": \"/api/v1/tags/783/relationships/definition\",\n                        \"self\": \"/api/v1/tags/definitions/46\"\n                    },\n                    \"data\": {\n                        \"type\": \"tag_definition\",\n                        \"id\": \"46\"\n                    }\n                }\n            }\n        },\n        {\n            \"type\": \"tag\",\n            \"id\": \"784\",\n            \"links\": {\n                \"self\": \"/api/v1/tags/784\"\n            },\n            \"attributes\": {\n                \"validFrom\": null,\n                \"validTo\": null,\n                \"state\": \"assigned\"\n            },\n            \"relationships\": {\n                \"definition\": {\n                    \"links\": {\n                        \"related\": \"/api/v1/tags/784/relationships/definition\",\n                        \"self\": \"/api/v1/tags/definitions/47\"\n                    },\n                    \"data\": {\n                        \"type\": \"tag_definition\",\n                        \"id\": \"47\"\n                    }\n                }\n            }\n        },\n        {\n            \"type\": \"tag\",\n            \"id\": \"785\",\n            \"links\": {\n                \"self\": \"/api/v1/tags/785\"\n            },\n            \"attributes\": {\n                \"validFrom\": null,\n                \"validTo\": null,\n                \"state\": \"revoked\"\n            },\n            \"relationships\": {\n                \"definition\": {\n                    \"links\": {\n                        \"related\": \"/api/v1/tags/785/relationships/definition\",\n                        \"self\": \"/api/v1/tags/definitions/59\"\n                    },\n                    \"data\": {\n                        \"type\": \"tag_definition\",\n                        \"id\": \"59\"\n                    }\n                }\n            }\n        },\n        {\n            \"type\": \"tag\",\n            \"id\": \"824\",\n            \"links\": {\n                \"self\": \"/api/v1/tags/824\"\n            },\n            \"attributes\": {\n                \"validFrom\": \"2019-05-22T00:07:07+0200\",\n                \"validTo\": \"2019-05-25T00:07:09+0200\",\n                \"state\": \"assigned\"\n            },\n            \"relationships\": {\n                \"definition\": {\n                    \"links\": {\n                        \"related\": \"/api/v1/tags/824/relationships/definition\",\n                        \"self\": \"/api/v1/tags/definitions/61\"\n                    },\n                    \"data\": {\n                        \"type\": \"tag_definition\",\n                        \"id\": \"61\"\n                    }\n                }\n            }\n        },\n        {\n            \"type\": \"tag\",\n            \"id\": \"863\",\n            \"links\": {\n                \"self\": \"/api/v1/tags/863\"\n            },\n            \"attributes\": {\n                \"validFrom\": \"2019-05-23T08:00:00+0200\",\n                \"validTo\": \"2019-06-24T08:00:00+0200\",\n                \"state\": \"revoked\"\n            },\n            \"relationships\": {\n                \"definition\": {\n                    \"links\": {\n                        \"related\": \"/api/v1/tags/863/relationships/definition\",\n                        \"self\": \"/api/v1/tags/definitions/58\"\n                    },\n                    \"data\": {\n                        \"type\": \"tag_definition\",\n                        \"id\": \"58\"\n                    }\n                }\n            }\n        },\n        {\n            \"type\": \"tag\",\n            \"id\": \"1099\",\n            \"links\": {\n                \"self\": \"/api/v1/tags/1099\"\n            },\n            \"attributes\": {\n                \"validFrom\": null,\n                \"validTo\": null,\n                \"state\": \"assigned\"\n            },\n            \"relationships\": {\n                \"definition\": {\n                    \"links\": {\n                        \"related\": \"/api/v1/tags/1099/relationships/definition\",\n                        \"self\": \"/api/v1/tags/definitions/78\"\n                    },\n                    \"data\": {\n                        \"type\": \"tag_definition\",\n                        \"id\": \"78\"\n                    }\n                }\n            }\n        },\n        {\n            \"type\": \"tag\",\n            \"id\": \"27483\",\n            \"links\": {\n                \"self\": \"/api/v1/tags/27483\"\n            },\n            \"attributes\": {\n                \"validFrom\": null,\n                \"validTo\": null,\n                \"state\": \"revoked\"\n            },\n            \"relationships\": {\n                \"definition\": {\n                    \"links\": {\n                        \"related\": \"/api/v1/tags/27483/relationships/definition\",\n                        \"self\": \"/api/v1/tags/definitions/85\"\n                    },\n                    \"data\": {\n                        \"type\": \"tag_definition\",\n                        \"id\": \"85\"\n                    }\n                }\n            }\n        },\n        {\n            \"type\": \"tag\",\n            \"id\": \"27484\",\n            \"links\": {\n                \"self\": \"/api/v1/tags/27484\"\n            },\n            \"attributes\": {\n                \"validFrom\": null,\n                \"validTo\": null,\n                \"state\": \"revoked\"\n            },\n            \"relationships\": {\n                \"definition\": {\n                    \"links\": {\n                        \"related\": \"/api/v1/tags/27484/relationships/definition\",\n                        \"self\": \"/api/v1/tags/definitions/86\"\n                    },\n                    \"data\": {\n                        \"type\": \"tag_definition\",\n                        \"id\": \"86\"\n                    }\n                }\n            }\n        },\n        {\n            \"type\": \"tag\",\n            \"id\": \"27583\",\n            \"links\": {\n                \"self\": \"/api/v1/tags/27583\"\n            },\n            \"attributes\": {\n                \"validFrom\": \"2019-06-16T18:46:05+0200\",\n                \"validTo\": \"2019-06-20T18:46:07+0200\",\n                \"state\": \"revoked\"\n            },\n            \"relationships\": {\n                \"definition\": {\n                    \"links\": {\n                        \"related\": \"/api/v1/tags/27583/relationships/definition\",\n                        \"self\": \"/api/v1/tags/definitions/60\"\n                    },\n                    \"data\": {\n                        \"type\": \"tag_definition\",\n                        \"id\": \"60\"\n                    }\n                }\n            }\n        },\n        {\n            \"type\": \"tag\",\n            \"id\": \"27584\",\n            \"links\": {\n                \"self\": \"/api/v1/tags/27584\"\n            },\n            \"attributes\": {\n                \"validFrom\": null,\n                \"validTo\": null,\n                \"state\": \"revoked\"\n            },\n            \"relationships\": {\n                \"definition\": {\n                    \"links\": {\n                        \"related\": \"/api/v1/tags/27584/relationships/definition\",\n                        \"self\": \"/api/v1/tags/definitions/83\"\n                    },\n                    \"data\": {\n                        \"type\": \"tag_definition\",\n                        \"id\": \"83\"\n                    }\n                }\n            }\n        },\n        {\n            \"type\": \"tag\",\n            \"id\": \"27587\",\n            \"links\": {\n                \"self\": \"/api/v1/tags/27587\"\n            },\n            \"attributes\": {\n                \"validFrom\": null,\n                \"validTo\": null,\n                \"state\": \"revoked\"\n            },\n            \"relationships\": {\n                \"definition\": {\n                    \"links\": {\n                        \"related\": \"/api/v1/tags/27587/relationships/definition\",\n                        \"self\": \"/api/v1/tags/definitions/87\"\n                    },\n                    \"data\": {\n                        \"type\": \"tag_definition\",\n                        \"id\": \"87\"\n                    }\n                }\n            }\n        },\n        {\n            \"type\": \"tag\",\n            \"id\": \"27602\",\n            \"links\": {\n                \"self\": \"/api/v1/tags/27602\"\n            },\n            \"attributes\": {\n                \"validFrom\": null,\n                \"validTo\": null,\n                \"state\": \"revoked\"\n            },\n            \"relationships\": {\n                \"definition\": {\n                    \"links\": {\n                        \"related\": \"/api/v1/tags/27602/relationships/definition\",\n                        \"self\": \"/api/v1/tags/definitions/61\"\n                    },\n                    \"data\": {\n                        \"type\": \"tag_definition\",\n                        \"id\": \"61\"\n                    }\n                }\n            }\n        },\n        {\n            \"type\": \"tag\",\n            \"id\": \"28201\",\n            \"links\": {\n                \"self\": \"/api/v1/tags/28201\"\n            },\n            \"attributes\": {\n                \"validFrom\": null,\n                \"validTo\": null,\n                \"state\": \"revoked\"\n            },\n            \"relationships\": {\n                \"definition\": {\n                    \"links\": {\n                        \"related\": \"/api/v1/tags/28201/relationships/definition\",\n                        \"self\": \"/api/v1/tags/definitions/83\"\n                    },\n                    \"data\": {\n                        \"type\": \"tag_definition\",\n                        \"id\": \"83\"\n                    }\n                }\n            }\n        },\n        {\n            \"type\": \"tag\",\n            \"id\": \"27228380\",\n            \"links\": {\n                \"self\": \"/api/v1/tags/27228380\"\n            },\n            \"attributes\": {\n                \"validFrom\": null,\n                \"validTo\": null,\n                \"state\": \"assigned\"\n            },\n            \"relationships\": {\n                \"definition\": {\n                    \"links\": {\n                        \"related\": \"/api/v1/tags/27228380/relationships/definition\",\n                        \"self\": \"/api/v1/tags/definitions/56\"\n                    },\n                    \"data\": {\n                        \"type\": \"tag_definition\",\n                        \"id\": \"56\"\n                    }\n                }\n            }\n        },\n        {\n            \"type\": \"tag\",\n            \"id\": \"27228418\",\n            \"links\": {\n                \"self\": \"/api/v1/tags/27228418\"\n            },\n            \"attributes\": {\n                \"validFrom\": null,\n                \"validTo\": null,\n                \"state\": \"assigned\"\n            },\n            \"relationships\": {\n                \"definition\": {\n                    \"links\": {\n                        \"related\": \"/api/v1/tags/27228418/relationships/definition\",\n                        \"self\": \"/api/v1/tags/definitions/101\"\n                    },\n                    \"data\": {\n                        \"type\": \"tag_definition\",\n                        \"id\": \"101\"\n                    }\n                }\n            }\n        },\n        {\n            \"type\": \"tag\",\n            \"id\": \"27228423\",\n            \"links\": {\n                \"self\": \"/api/v1/tags/27228423\"\n            },\n            \"attributes\": {\n                \"validFrom\": \"2020-04-01T10:17:21+0200\",\n                \"validTo\": null,\n                \"state\": \"assigned\"\n            },\n            \"relationships\": {\n                \"definition\": {\n                    \"links\": {\n                        \"related\": \"/api/v1/tags/27228423/relationships/definition\",\n                        \"self\": \"/api/v1/tags/definitions/114\"\n                    },\n                    \"data\": {\n                        \"type\": \"tag_definition\",\n                        \"id\": \"114\"\n                    }\n                }\n            }\n        },\n        {\n            \"type\": \"tag\",\n            \"id\": \"27228424\",\n            \"links\": {\n                \"self\": \"/api/v1/tags/27228424\"\n            },\n            \"attributes\": {\n                \"validFrom\": \"2020-04-01T10:17:21+0200\",\n                \"validTo\": null,\n                \"state\": \"assigned\"\n            },\n            \"relationships\": {\n                \"definition\": {\n                    \"links\": {\n                        \"related\": \"/api/v1/tags/27228424/relationships/definition\",\n                        \"self\": \"/api/v1/tags/definitions/121\"\n                    },\n                    \"data\": {\n                        \"type\": \"tag_definition\",\n                        \"id\": \"121\"\n                    }\n                }\n            }\n        }\n    ]\n}"
+                  "body": "{\n    \"jsonapi\": {\n        \"version\": \"1.0\"\n    },\n    \"meta\": {\n        \"page\": {\n            \"number\": 1,\n            \"size\": 25\n        },\n        \"totalItems\": 20\n    },\n    \"links\": {\n        \"self\": \"/api/v1/tags?page[number]=1\",\n        \"first\": \"/api/v1/tags?page[number]=1\",\n        \"last\": \"/api/v1/tags?page[number]=1\"\n    },\n    \"data\": [\n        {\n            \"type\": \"tag\",\n            \"id\": \"1\",\n            \"links\": {\n                \"self\": \"/api/v1/tags/1\"\n            },\n            \"attributes\": {\n                \"validFrom\": null,\n                \"validTo\": null,\n                \"state\": \"revoked\"\n            },\n            \"relationships\": {\n                \"definition\": {\n                    \"links\": {\n                        \"related\": \"/api/v1/tags/381/relationships/definition\",\n                        \"self\": \"/api/v1/tags/definitions/54\"\n                    },\n                    \"data\": {\n                        \"type\": \"tag_definition\",\n                        \"id\": \"1\"\n                    }\n                }\n            }\n        },\n        {\n            \"type\": \"tag\",\n            \"id\": \"2\",\n            \"links\": {\n                \"self\": \"/api/v1/tags/2\"\n            },\n            \"attributes\": {\n                \"validFrom\": null,\n                \"validTo\": null,\n                \"state\": \"revoked\"\n            },\n            \"relationships\": {\n                \"definition\": {\n                    \"links\": {\n                        \"related\": \"/api/v1/tags/545/relationships/definition\",\n                        \"self\": \"/api/v1/tags/definitions/54\"\n                    },\n                    \"data\": {\n                        \"type\": \"tag_definition\",\n                        \"id\": \"1\"\n                    }\n                }\n            }\n        },\n        {\n            \"type\": \"tag\",\n            \"id\": \"3\",\n            \"links\": {\n                \"self\": \"/api/v1/tags/3\"\n            },\n            \"attributes\": {\n                \"validFrom\": null,\n                \"validTo\": null,\n                \"state\": \"revoked\"\n            },\n            \"relationships\": {\n                \"definition\": {\n                    \"links\": {\n                        \"related\": \"/api/v1/tags/557/relationships/definition\",\n                        \"self\": \"/api/v1/tags/definitions/2\"\n                    },\n                    \"data\": {\n                        \"type\": \"tag_definition\",\n                        \"id\": \"2\"\n                    }\n                }\n            }\n        },\n        {\n            \"type\": \"tag\",\n            \"id\": \"4\",\n            \"links\": {\n                \"self\": \"/api/v1/tags/4\"\n            },\n            \"attributes\": {\n                \"validFrom\": null,\n                \"validTo\": null,\n                \"state\": \"assigned\"\n            },\n            \"relationships\": {\n                \"definition\": {\n                    \"links\": {\n                        \"related\": \"/api/v1/tags/3/relationships/definition\",\n                        \"self\": \"/api/v1/tags/definitions/2\"\n                    },\n                    \"data\": {\n                        \"type\": \"tag_definition\",\n                        \"id\": \"2\"\n                    }\n                }\n            }\n        },\n        {\n            \"type\": \"tag\",\n            \"id\": \"5\",\n            \"links\": {\n                \"self\": \"/api/v1/tags/definitions/3\"\n            },\n            \"attributes\": {\n                \"validFrom\": null,\n                \"validTo\": null,\n                \"state\": \"assigned\"\n            },\n            \"relationships\": {\n                \"definition\": {\n                    \"links\": {\n                        \"related\": \"/api/v1/tags/5/relationships/definition\",\n                        \"self\": \"/api/v1/tags/definitions/3\"\n                    },\n                    \"data\": {\n                        \"type\": \"tag_definition\",\n                        \"id\": \"3\"\n                    }\n                }\n            }\n        },\n        {\n            \"type\": \"tag\",\n            \"id\": \"6\",\n            \"links\": {\n                \"self\": \"/api/v1/tags/6\"\n            },\n            \"attributes\": {\n                \"validFrom\": null,\n                \"validTo\": null,\n                \"state\": \"revoked\"\n            },\n            \"relationships\": {\n                \"definition\": {\n                    \"links\": {\n                        \"related\": \"/api/v1/tags/6/relationships/definition\",\n                        \"self\": \"/api/v1/tags/definitions/4\"\n                    },\n                    \"data\": {\n                        \"type\": \"tag_definition\",\n                        \"id\": \"4\"\n                    }\n                }\n            }\n        },\n        {\n            \"type\": \"tag\",\n            \"id\": \"7\",\n            \"links\": {\n                \"self\": \"/api/v1/tags/7\"\n            },\n            \"attributes\": {\n                \"validFrom\": \"2019-05-22T00:07:07+0200\",\n                \"validTo\": \"2019-05-25T00:07:09+0200\",\n                \"state\": \"assigned\"\n            },\n            \"relationships\": {\n                \"definition\": {\n                    \"links\": {\n                        \"related\": \"/api/v1/tags/7/relationships/definition\",\n                        \"self\": \"/api/v1/tags/definitions/8\"\n                    },\n                    \"data\": {\n                        \"type\": \"tag_definition\",\n                        \"id\": \"8\"\n                    }\n                }\n            }\n        },\n        {\n            \"type\": \"tag\",\n            \"id\": \"20\",\n            \"links\": {\n                \"self\": \"/api/v1/tags/20\"\n            },\n            \"attributes\": {\n                \"validFrom\": \"2019-05-23T08:00:00+0200\",\n                \"validTo\": \"2019-06-24T08:00:00+0200\",\n                \"state\": \"revoked\"\n            },\n            \"relationships\": {\n                \"definition\": {\n                    \"links\": {\n                        \"related\": \"/api/v1/tags/20/relationships/definition\",\n                        \"self\": \"/api/v1/tags/definitions/11\"\n                    },\n                    \"data\": {\n                        \"type\": \"tag_definition\",\n                        \"id\": \"11\"\n                    }\n                }\n            }\n        },\n        {\n            \"type\": \"tag\",\n            \"id\": \"8\",\n            \"links\": {\n                \"self\": \"/api/v1/tags/8\"\n            },\n            \"attributes\": {\n                \"validFrom\": null,\n                \"validTo\": null,\n                \"state\": \"assigned\"\n            },\n            \"relationships\": {\n                \"definition\": {\n                    \"links\": {\n                        \"related\": \"/api/v1/tags/8/relationships/definition\",\n                        \"self\": \"/api/v1/tags/definitions/12\"\n                    },\n                    \"data\": {\n                        \"type\": \"tag_definition\",\n                        \"id\": \"12\"\n                    }\n                }\n            }\n        },\n        {\n            \"type\": \"tag\",\n            \"id\": \"30\",\n            \"links\": {\n                \"self\": \"/api/v1/tags/30\"\n            },\n            \"attributes\": {\n                \"validFrom\": null,\n                \"validTo\": null,\n                \"state\": \"revoked\"\n            },\n            \"relationships\": {\n                \"definition\": {\n                    \"links\": {\n                        \"related\": \"/api/v1/tags/8/relationships/definition\",\n                        \"self\": \"/api/v1/tags/definitions/20\"\n                    },\n                    \"data\": {\n                        \"type\": \"tag_definition\",\n                        \"id\": \"20\"\n                    }\n                }\n            }\n        },\n        {\n            \"type\": \"tag\",\n            \"id\": \"9\",\n            \"links\": {\n                \"self\": \"/api/v1/tags/9\"\n            },\n            \"attributes\": {\n                \"validFrom\": null,\n                \"validTo\": null,\n                \"state\": \"revoked\"\n            },\n            \"relationships\": {\n                \"definition\": {\n                    \"links\": {\n                        \"related\": \"/api/v1/tags/27484/relationships/definition\",\n                        \"self\": \"/api/v1/tags/definitions/86\"\n                    },\n                    \"data\": {\n                        \"type\": \"tag_definition\",\n                        \"id\": \"86\"\n                    }\n                }\n            }\n        },\n        {\n            \"type\": \"tag\",\n            \"id\": \"50\",\n            \"links\": {\n                \"self\": \"/api/v1/tags/50\"\n            },\n            \"attributes\": {\n                \"validFrom\": \"2019-06-16T18:46:05+0200\",\n                \"validTo\": \"2019-06-20T18:46:07+0200\",\n                \"state\": \"revoked\"\n            },\n            \"relationships\": {\n                \"definition\": {\n                    \"links\": {\n                        \"related\": \"/api/v1/tags/50/relationships/definition\",\n                        \"self\": \"/api/v1/tags/definitions/60\"\n                    },\n                    \"data\": {\n                        \"type\": \"tag_definition\",\n                        \"id\": \"60\"\n                    }\n                }\n            }\n        },\n        {\n            \"type\": \"tag\",\n            \"id\": \"10\",\n            \"links\": {\n                \"self\": \"/api/v1/tags/10\"\n            },\n            \"attributes\": {\n                \"validFrom\": null,\n                \"validTo\": null,\n                \"state\": \"revoked\"\n            },\n            \"relationships\": {\n                \"definition\": {\n                    \"links\": {\n                        \"related\": \"/api/v1/tags/10/relationships/definition\",\n                        \"self\": \"/api/v1/tags/definitions/8\"\n                    },\n                    \"data\": {\n                        \"type\": \"tag_definition\",\n                        \"id\": \"8\"\n                    }\n                }\n            }\n        },\n        {\n            \"type\": \"tag\",\n            \"id\": \"60\",\n            \"links\": {\n                \"self\": \"/api/v1/tags/60\"\n            },\n            \"attributes\": {\n                \"validFrom\": null,\n                \"validTo\": null,\n                \"state\": \"revoked\"\n            },\n            \"relationships\": {\n                \"definition\": {\n                    \"links\": {\n                        \"related\": \"/api/v1/tags/60/relationships/definition\",\n                        \"self\": \"/api/v1/tags/definitions/9\"\n                    },\n                    \"data\": {\n                        \"type\": \"tag_definition\",\n                        \"id\": \"9\"\n                    }\n                }\n            }\n        },\n        {\n            \"type\": \"tag\",\n            \"id\": \"11\",\n            \"links\": {\n                \"self\": \"/api/v1/tags/11\"\n            },\n            \"attributes\": {\n                \"validFrom\": null,\n                \"validTo\": null,\n                \"state\": \"revoked\"\n            },\n            \"relationships\": {\n                \"definition\": {\n                    \"links\": {\n                        \"related\": \"/api/v1/tags/11/relationships/definition\",\n                        \"self\": \"/api/v1/tags/definitions/1\"\n                    },\n                    \"data\": {\n                        \"type\": \"tag_definition\",\n                        \"id\": \"1\"\n                    }\n                }\n            }\n        },\n        {\n            \"type\": \"tag\",\n            \"id\": \"12\",\n            \"links\": {\n                \"self\": \"/api/v1/tags/12\"\n            },\n            \"attributes\": {\n                \"validFrom\": null,\n                \"validTo\": null,\n                \"state\": \"revoked\"\n            },\n            \"relationships\": {\n                \"definition\": {\n                    \"links\": {\n                        \"related\": \"/api/v1/tags/12/relationships/definition\",\n                        \"self\": \"/api/v1/tags/definitions/3\"\n                    },\n                    \"data\": {\n                        \"type\": \"tag_definition\",\n                        \"id\": \"3\"\n                    }\n                }\n            }\n        },\n        {\n            \"type\": \"tag\",\n            \"id\": \"80\",\n            \"links\": {\n                \"self\": \"/api/v1/tags/80\"\n            },\n            \"attributes\": {\n                \"validFrom\": null,\n                \"validTo\": null,\n                \"state\": \"assigned\"\n            },\n            \"relationships\": {\n                \"definition\": {\n                    \"links\": {\n                        \"related\": \"/api/v1/tags/80/relationships/definition\",\n                        \"self\": \"/api/v1/tags/definitions/4\"\n                    },\n                    \"data\": {\n                        \"type\": \"tag_definition\",\n                        \"id\": \"4\"\n                    }\n                }\n            }\n        },\n        {\n            \"type\": \"tag\",\n            \"id\": \"13\",\n            \"links\": {\n                \"self\": \"/api/v1/tags/13\"\n            },\n            \"attributes\": {\n                \"validFrom\": null,\n                \"validTo\": null,\n                \"state\": \"assigned\"\n            },\n            \"relationships\": {\n                \"definition\": {\n                    \"links\": {\n                        \"related\": \"/api/v1/tags/13/relationships/definition\",\n                        \"self\": \"/api/v1/tags/definitions/11\"\n                    },\n                    \"data\": {\n                        \"type\": \"tag_definition\",\n                        \"id\": \"11\"\n                    }\n                }\n            }\n        },\n        {\n            \"type\": \"tag\",\n            \"id\": \"14\",\n            \"links\": {\n                \"self\": \"/api/v1/tags/14\"\n            },\n            \"attributes\": {\n                \"validFrom\": \"2020-04-01T10:17:21+0200\",\n                \"validTo\": null,\n                \"state\": \"assigned\"\n            },\n            \"relationships\": {\n                \"definition\": {\n                    \"links\": {\n                        \"related\": \"/api/v1/tags/14/relationships/definition\",\n                        \"self\": \"/api/v1/tags/definitions/12\"\n                    },\n                    \"data\": {\n                        \"type\": \"tag_definition\",\n                        \"id\": \"12\"\n                    }\n                }\n            }\n        },\n        {\n            \"type\": \"tag\",\n            \"id\": \"15\",\n            \"links\": {\n                \"self\": \"/api/v1/tags/15\"\n            },\n            \"attributes\": {\n                \"validFrom\": \"2020-04-01T10:17:21+0200\",\n                \"validTo\": null,\n                \"state\": \"assigned\"\n            },\n            \"relationships\": {\n                \"definition\": {\n                    \"links\": {\n                        \"related\": \"/api/v1/tags/15/relationships/definition\",\n                        \"self\": \"/api/v1/tags/definitions/12\"\n                    },\n                    \"data\": {\n                        \"type\": \"tag_definition\",\n                        \"id\": \"12\"\n                    }\n                }\n            }\n        }\n    ]\n}"
                 }
               ]
             },
@@ -4352,7 +4352,7 @@
                   "header": null,
                   "cookie": [],
                   "responseTime": null,
-                  "body": "{\n    \"jsonapi\": {\n        \"version\": \"1.0\"\n    },\n    \"data\": {\n        \"type\": \"user\",\n        \"id\": \"1\",\n        \"links\": {\n            \"self\": \"/api/v1/users/1\"\n        },\n        \"attributes\": {\n            \"code\": \"1\",\n            \"firstName\": \"System\",\n            \"lastName\": \"Admin\",\n            \"displayedName\": \"Jenny Jenny\",\n            \"createdAt\": \"2019-03-19T20:23:47+0100\",\n            \"birthDate\": \"2020-02-20T00:00:00+0100\",\n            \"email\": \"k.aszkielowicz@insee.pl\",\n            \"address\": {\n                \"countryId\": \"US\",\n                \"postalCode\": \"92121\",\n                \"regionCode\": \"CA\",\n                \"regionName\": \"California\",\n                \"cityName\": \"San Diego\",\n                \"street\": \"10525 Vista Sorrento Pkwy #200 298\"\n            },\n            \"phone\": \"87654321\",\n            \"mobilePhone\": \"12345678\",\n            \"active\": true\n        },\n        \"relationships\": {\n            \"status\": {\n                \"links\": {\n                    \"related\": \"/api/v1/users/1/relationships/status\",\n                    \"self\": \"/api/v1/users/statuses/4\"\n                },\n                \"data\": {\n                    \"type\": \"user_status\",\n                    \"id\": \"4\"\n                }\n            },\n            \"tags\": {\n                \"links\": {\n                    \"related\": \"/api/v1/users/1/relationships/tags\"\n                }\n            }\n        }\n    }\n}"
+                  "body": "{\n    \"jsonapi\": {\n        \"version\": \"1.0\"\n    },\n    \"data\": {\n        \"type\": \"user\",\n        \"id\": \"1\",\n        \"links\": {\n            \"self\": \"/api/v1/users/1\"\n        },\n        \"attributes\": {\n            \"code\": \"1\",\n            \"firstName\": \"Tester\",\n            \"lastName\": \"Testing\",\n            \"displayedName\": \"Tester Testing\",\n            \"createdAt\": \"2020-01-01T00:00:00+0100\",\n            \"birthDate\": \"2020-01-01T00:00:00+0100\",\n            \"email\": \"mail@example.com\",\n            \"address\": {\n                \"countryId\": \"PL\",\n                \"postalCode\": \"11-222\",\n                \"regionCode\": null,\n                \"regionName\": null,\n                \"cityName\": \"Warszawa\",\n                \"street\": \"Testowa 1/2\"\n            },\n            \"phone\": \"132456789\",\n            \"mobilePhone\": \"12345678\",\n            \"active\": true\n        },\n        \"relationships\": {\n            \"status\": {\n                \"links\": {\n                    \"related\": \"/api/v1/users/1/relationships/status\",\n                    \"self\": \"/api/v1/users/statuses/4\"\n                },\n                \"data\": {\n                    \"type\": \"user_status\",\n                    \"id\": \"4\"\n                }\n            },\n            \"tags\": {\n                \"links\": {\n                    \"related\": \"/api/v1/users/1/relationships/tags\"\n                }\n            }\n        }\n    }\n}"
                 }
               ]
             },
@@ -4420,11 +4420,11 @@
                     ],
                     "url": "{{url}}/api/v1/users/1/relationships/status"
                   },
-                  "_postman_previewlanguage": null,
+                  "_postman_previewlanguage": "json",
                   "header": null,
                   "cookie": [],
                   "responseTime": null,
-                  "body": "{\n    \"jsonapi\": {\n        \"version\": \"1.0\"\n    },\n    \"data\": {\n        \"type\": \"user_status\",\n        \"id\": \"4\",\n        \"links\": {\n            \"self\": \"/api/v1/users/statuses/4\"\n        },\n        \"attributes\": {\n            \"name\": \"Brand Ambassador\",\n            \"business\": true,\n            \"defaultRoleId\": 5\n        }\n    }\n}"
+                  "body": "{\n    \"jsonapi\": {\n        \"version\": \"1.0\"\n    },\n    \"data\": {\n        \"type\": \"user_status\",\n        \"id\": \"1\",\n        \"links\": {\n            \"self\": \"/api/v1/users/statuses/1\"\n        },\n        \"attributes\": {\n            \"name\": \"Client\",\n            \"business\": true,\n            \"defaultRoleId\": 1\n        }\n    }\n}"
                 }
               ]
             }
@@ -4453,6 +4453,227 @@
               }
             }
           ]
+        },
+        {
+          "name": "Zones Copy",
+          "item": [
+            {
+              "name": "Fetch system zones",
+              "id": "43e89fe6-0013-4db4-a32a-4315d74d33aa",
+              "protocolProfileBehavior": {
+                "disableBodyPruning": true
+              },
+              "request": {
+                "method": "GET",
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/vnd.api+json"
+                  },
+                  {
+                    "key": "Content-Type",
+                    "value": "application/vnd.api+json"
+                  }
+                ],
+                "url": "{{url}}/api/v1/zones",
+                "description": "**Required scope**: `zones:get`\n"
+              },
+              "response": [
+                {
+                  "id": "ae6e008c-815c-43e1-a92e-6a308cdfa6ae",
+                  "name": "Fetch system zones",
+                  "originalRequest": {
+                    "method": "GET",
+                    "header": [
+                      {
+                        "key": "Accept",
+                        "value": "application/vnd.api+json"
+                      },
+                      {
+                        "key": "Content-Type",
+                        "value": "application/vnd.api+json"
+                      }
+                    ],
+                    "url": "{{url}}/api/v1/zones"
+                  },
+                  "status": "OK",
+                  "code": 200,
+                  "_postman_previewlanguage": "json",
+                  "header": [
+                    {
+                      "key": "Server",
+                      "value": "nginx/1.15.8"
+                    },
+                    {
+                      "key": "Date",
+                      "value": "Tue, 16 Jun 2020 17:37:20 GMT"
+                    },
+                    {
+                      "key": "Content-Type",
+                      "value": "application/vnd.api+json"
+                    },
+                    {
+                      "key": "Transfer-Encoding",
+                      "value": "chunked"
+                    },
+                    {
+                      "key": "Connection",
+                      "value": "keep-alive"
+                    },
+                    {
+                      "key": "Expires",
+                      "value": "Thu, 19 Nov 1981 08:52:00 GMT"
+                    },
+                    {
+                      "key": "Cache-Control",
+                      "value": "no-store, no-cache, must-revalidate"
+                    },
+                    {
+                      "key": "Pragma",
+                      "value": "no-cache"
+                    },
+                    {
+                      "key": "X-Istruct-Errors",
+                      "value": "{\"notice\":[{\"message\":\"Key file \\\"file:\\/\\/\\/home\\/vagrant\\/code\\/kannaway\\/data\\/ssl\\/oauth2-server.crt\\\" permissions are not correct, should be 600 or 660 instead of 664\",\"file\":\"\\/home\\/vagrant\\/code\\/kannaway\\/vendor\\/league\\/oauth2-server\\/src\\/CryptKey.php\",\"line\":56,\"type\":\"PHP Notice\"}]}"
+                    }
+                  ],
+                  "cookie": [],
+                  "responseTime": null,
+                  "body": "{\n    \"jsonapi\": {\n        \"version\": \"1.0\"\n    },\n    \"meta\": {\n        \"page\": {\n            \"number\": 1,\n            \"size\": 25\n        },\n        \"totalItems\": 1\n    },\n    \"links\": {\n        \"self\": \"/api/v1/zones?page[number]=1\",\n        \"first\": \"/api/v1/zones?page[number]=1\",\n        \"last\": \"/api/v1/zones?page[number]=1\",\n        \"next\": \"/api/v1/zones?page[number]=1\"\n    },\n    \"data\": [\n        {\n            \"type\": \"zone\",\n            \"id\": \"1\",\n            \"links\": {\n                \"self\": \"/api/v1/zones/1\"\n            },\n            \"attributes\": {\n                \"name\": \"EU\",\n                \"currency\": \"EUR\",\n                \"language\": \"en\",\n                \"locale\": \"pl_PL\",\n                \"timezone\": \"Europe/Warsaw\",\n                \"email\": \"support@example.com\",\n                \"warehouseId\": 1,\n                \"active\": true\n            },\n            \"relationships\": {\n                \"taxes\": {\n                    \"links\": {\n                        \"related\": \"/api/v1/zones/1/relationships/taxes\"\n                    }\n                }\n            }\n        }\n    ]\n}"
+                }
+              ]
+            },
+            {
+              "name": "Fetch zone taxes",
+              "id": "fb661d32-cf80-4be0-902a-56ecd6cfd701",
+              "protocolProfileBehavior": {
+                "disableBodyPruning": true
+              },
+              "request": {
+                "method": "GET",
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/vnd.api+json"
+                  },
+                  {
+                    "key": "Content-Type",
+                    "value": "application/vnd.api+json"
+                  }
+                ],
+                "url": {
+                  "raw": "{{url}}/api/v1/zones/:zone_id/relationships/taxes",
+                  "host": [
+                    "{{url}}"
+                  ],
+                  "path": [
+                    "api",
+                    "v1",
+                    "zones",
+                    ":zone_id",
+                    "relationships",
+                    "taxes"
+                  ],
+                  "variable": [
+                    {
+                      "id": "41bffc17-5ed2-49f0-bf4b-72ff7595664f",
+                      "key": "zone_id",
+                      "value": "{{zone_id}}",
+                      "type": "string",
+                      "description": "ID of system zone"
+                    }
+                  ]
+                },
+                "description": "**Required scope**: `zones:get`\n"
+              },
+              "response": [
+                {
+                  "id": "47f844ea-9d94-474e-afdd-820f16256857",
+                  "name": "Fetch zone taxes",
+                  "originalRequest": {
+                    "method": "GET",
+                    "header": [
+                      {
+                        "key": "Accept",
+                        "value": "application/vnd.api+json"
+                      },
+                      {
+                        "key": "Content-Type",
+                        "value": "application/vnd.api+json"
+                      }
+                    ],
+                    "url": {
+                      "raw": "{{url}}/api/v1/zones/:zone_id/relationships/taxes",
+                      "host": [
+                        "{{url}}"
+                      ],
+                      "path": [
+                        "api",
+                        "v1",
+                        "zones",
+                        ":zone_id",
+                        "relationships",
+                        "taxes"
+                      ],
+                      "variable": [
+                        {
+                          "key": "zone_id",
+                          "value": "{{zone_id}}",
+                          "description": "ID of system zone"
+                        }
+                      ]
+                    }
+                  },
+                  "status": "OK",
+                  "code": 200,
+                  "_postman_previewlanguage": "json",
+                  "header": [
+                    {
+                      "key": "Server",
+                      "value": "nginx/1.15.8"
+                    },
+                    {
+                      "key": "Date",
+                      "value": "Tue, 16 Jun 2020 17:38:55 GMT"
+                    },
+                    {
+                      "key": "Content-Type",
+                      "value": "application/vnd.api+json"
+                    },
+                    {
+                      "key": "Transfer-Encoding",
+                      "value": "chunked"
+                    },
+                    {
+                      "key": "Connection",
+                      "value": "keep-alive"
+                    },
+                    {
+                      "key": "Expires",
+                      "value": "Thu, 19 Nov 1981 08:52:00 GMT"
+                    },
+                    {
+                      "key": "Cache-Control",
+                      "value": "no-store, no-cache, must-revalidate"
+                    },
+                    {
+                      "key": "Pragma",
+                      "value": "no-cache"
+                    },
+                    {
+                      "key": "X-Istruct-Errors",
+                      "value": "{\"notice\":[{\"message\":\"Key file \\\"file:\\/\\/\\/home\\/vagrant\\/code\\/kannaway\\/data\\/ssl\\/oauth2-server.crt\\\" permissions are not correct, should be 600 or 660 instead of 664\",\"file\":\"\\/home\\/vagrant\\/code\\/kannaway\\/vendor\\/league\\/oauth2-server\\/src\\/CryptKey.php\",\"line\":56,\"type\":\"PHP Notice\"}]}"
+                    }
+                  ],
+                  "cookie": [],
+                  "responseTime": null,
+                  "body": "{\n    \"jsonapi\": {\n        \"version\": \"1.0\"\n    },\n    \"meta\": {\n        \"page\": {\n            \"number\": 1,\n            \"size\": 25\n        },\n        \"totalItems\": 2\n    },\n    \"links\": {\n        \"self\": \"/api/v1/zones/1/relationships/taxes?page[number]=1\",\n        \"first\": \"/api/v1/zones/1/relationships/taxes?page[number]=1\",\n        \"last\": \"/api/v1/zones/1/relationships/taxes?page[number]=2\",\n        \"next\": \"/api/v1/zones/1/relationships/taxes?page[number]=2\"\n    },\n    \"data\": [\n        {\n            \"type\": \"zone_tax\",\n            \"id\": \"5\",\n            \"attributes\": {\n                \"percent\": 0,\n                \"isActive\": false,\n                \"isDefault\": false\n            }\n        },\n        {\n            \"type\": \"zone_tax\",\n            \"id\": \"4\",\n            \"attributes\": {\n                \"percent\": 0,\n                \"isActive\": false,\n                \"isDefault\": false\n            }\n        }\n    ]\n}"
+                }
+              ]
+            }
+          ],
+          "id": "795b25b2-4e7e-4b01-9693-766f278e32e1",
+          "description": "iStruct Zones module handles access to various other resources on per zone basis. Each zone may consist of one or more delivery countries or regions. Whole zone has the same accounting rules, same currency, invoicing entity and other settings like default language, locale, timezone etc."
         }
       ],
       "id": "1350357e-8683-4f12-abff-969e9889f12f",
