@@ -4064,6 +4064,395 @@
               }
             }
           ]
+        },
+        {
+          "name": "User Copy",
+          "item": [
+            {
+              "name": "Fetch user statuses",
+              "id": "c2c9c85a-cacc-4378-9e31-5d0c71649169",
+              "protocolProfileBehavior": {
+                "disableBodyPruning": true
+              },
+              "request": {
+                "method": "GET",
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/vnd.api+json"
+                  },
+                  {
+                    "key": "Content-Type",
+                    "value": "application/vnd.api+json"
+                  }
+                ],
+                "url": "{{url}}/api/v1/users/statuses",
+                "description": "**Required scope**: `users:get`\n"
+              },
+              "response": [
+                {
+                  "id": "6b041d95-2f94-4dc3-afaa-5656fd5fae08",
+                  "name": "Fetch user statuses",
+                  "originalRequest": {
+                    "method": "GET",
+                    "header": [
+                      {
+                        "key": "Accept",
+                        "value": "application/vnd.api+json"
+                      },
+                      {
+                        "key": "Content-Type",
+                        "value": "application/vnd.api+json"
+                      }
+                    ],
+                    "url": "{{url}}/api/v1/users/statuses"
+                  },
+                  "status": "OK",
+                  "code": 200,
+                  "_postman_previewlanguage": "json",
+                  "header": [
+                    {
+                      "key": "Server",
+                      "value": "nginx/1.15.8"
+                    },
+                    {
+                      "key": "Date",
+                      "value": "Tue, 16 Jun 2020 15:21:22 GMT"
+                    },
+                    {
+                      "key": "Content-Type",
+                      "value": "application/vnd.api+json"
+                    },
+                    {
+                      "key": "Transfer-Encoding",
+                      "value": "chunked"
+                    },
+                    {
+                      "key": "Connection",
+                      "value": "keep-alive"
+                    },
+                    {
+                      "key": "Expires",
+                      "value": "Thu, 19 Nov 1981 08:52:00 GMT"
+                    },
+                    {
+                      "key": "Cache-Control",
+                      "value": "no-store, no-cache, must-revalidate"
+                    },
+                    {
+                      "key": "Pragma",
+                      "value": "no-cache"
+                    },
+                    {
+                      "key": "X-Istruct-Errors",
+                      "value": "{\"notice\":[{\"message\":\"Key file \\\"file:\\/\\/\\/home\\/vagrant\\/code\\/kannaway\\/data\\/ssl\\/oauth2-server.crt\\\" permissions are not correct, should be 600 or 660 instead of 664\",\"file\":\"\\/home\\/vagrant\\/code\\/kannaway\\/vendor\\/league\\/oauth2-server\\/src\\/CryptKey.php\",\"line\":56,\"type\":\"PHP Notice\"}]}"
+                    }
+                  ],
+                  "cookie": [],
+                  "responseTime": null,
+                  "body": "{\n    \"jsonapi\": {\n        \"version\": \"1.0\"\n    },\n    \"meta\": {\n        \"page\": {\n            \"number\": 1,\n            \"size\": 25\n        },\n        \"totalItems\": 23\n    },\n    \"links\": {\n        \"self\": \"/api/v1/users/statuses?page[number]=1\",\n        \"first\": \"/api/v1/users/statuses?page[number]=1\",\n        \"last\": \"/api/v1/users/statuses?page[number]=1\"\n    },\n    \"data\": [\n        {\n            \"type\": \"user_status\",\n            \"id\": \"1\",\n            \"links\": {\n                \"self\": \"/api/v1/users/statuses/1\"\n            },\n            \"attributes\": {\n                \"name\": \"Guest\",\n                \"business\": false,\n                \"defaultRoleId\": 1\n            }\n        },\n        {\n            \"type\": \"user_status\",\n            \"id\": \"2\",\n            \"links\": {\n                \"self\": \"/api/v1/users/statuses/2\"\n            },\n            \"attributes\": {\n                \"name\": \"Customer\",\n                \"business\": false,\n                \"defaultRoleId\": 3\n            }\n        }\n    ]\n}"
+                }
+              ]
+            },
+            {
+              "name": "Fetch user tags",
+              "id": "14467db6-9bb6-4b89-89e1-d40e771d2494",
+              "protocolProfileBehavior": {
+                "disableBodyPruning": true
+              },
+              "request": {
+                "method": "GET",
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/vnd.api+json"
+                  },
+                  {
+                    "key": "Content-Type",
+                    "value": "application/vnd.api+json"
+                  }
+                ],
+                "url": {
+                  "raw": "{{url}}/api/v1/users/:id/relationships/tags",
+                  "host": [
+                    "{{url}}"
+                  ],
+                  "path": [
+                    "api",
+                    "v1",
+                    "users",
+                    ":id",
+                    "relationships",
+                    "tags"
+                  ],
+                  "variable": [
+                    {
+                      "id": "c7850dae-d34e-4af6-94eb-98cbc8b59ad5",
+                      "key": "id",
+                      "value": "",
+                      "type": "string"
+                    }
+                  ]
+                },
+                "description": "**Required scope**: `users:get`\n"
+              },
+              "response": [
+                {
+                  "id": "73f9a853-d3b4-4aef-9fa7-0aad2e2e51ee",
+                  "name": "Fetch user tags",
+                  "originalRequest": {
+                    "method": "GET",
+                    "header": [
+                      {
+                        "key": "Accept",
+                        "value": "application/vnd.api+json"
+                      },
+                      {
+                        "key": "Content-Type",
+                        "value": "application/vnd.api+json"
+                      }
+                    ],
+                    "url": "{{url}}/api/v1/users/1/relationships/tags"
+                  },
+                  "status": "OK",
+                  "code": 200,
+                  "_postman_previewlanguage": "json",
+                  "header": [
+                    {
+                      "key": "Server",
+                      "value": "nginx/1.15.8"
+                    },
+                    {
+                      "key": "Date",
+                      "value": "Tue, 16 Jun 2020 15:21:22 GMT"
+                    },
+                    {
+                      "key": "Content-Type",
+                      "value": "application/vnd.api+json"
+                    },
+                    {
+                      "key": "Transfer-Encoding",
+                      "value": "chunked"
+                    },
+                    {
+                      "key": "Connection",
+                      "value": "keep-alive"
+                    },
+                    {
+                      "key": "Expires",
+                      "value": "Thu, 19 Nov 1981 08:52:00 GMT"
+                    },
+                    {
+                      "key": "Cache-Control",
+                      "value": "no-store, no-cache, must-revalidate"
+                    },
+                    {
+                      "key": "Pragma",
+                      "value": "no-cache"
+                    },
+                    {
+                      "key": "X-Istruct-Errors",
+                      "value": "{\"notice\":[{\"message\":\"Key file \\\"file:\\/\\/\\/home\\/vagrant\\/code\\/kannaway\\/data\\/ssl\\/oauth2-server.crt\\\" permissions are not correct, should be 600 or 660 instead of 664\",\"file\":\"\\/home\\/vagrant\\/code\\/kannaway\\/vendor\\/league\\/oauth2-server\\/src\\/CryptKey.php\",\"line\":56,\"type\":\"PHP Notice\"}]}"
+                    }
+                  ],
+                  "cookie": [],
+                  "responseTime": null,
+                  "body": "{\n    \"jsonapi\": {\n        \"version\": \"1.0\"\n    },\n    \"meta\": {\n        \"page\": {\n            \"number\": 1,\n            \"size\": 25\n        },\n        \"totalItems\": 20\n    },\n    \"links\": {\n        \"self\": \"/api/v1/tags?page[number]=1\",\n        \"first\": \"/api/v1/tags?page[number]=1\",\n        \"last\": \"/api/v1/tags?page[number]=1\"\n    },\n    \"data\": [\n        {\n            \"type\": \"tag\",\n            \"id\": \"381\",\n            \"links\": {\n                \"self\": \"/api/v1/tags/381\"\n            },\n            \"attributes\": {\n                \"validFrom\": null,\n                \"validTo\": null,\n                \"state\": \"revoked\"\n            },\n            \"relationships\": {\n                \"definition\": {\n                    \"links\": {\n                        \"related\": \"/api/v1/tags/381/relationships/definition\",\n                        \"self\": \"/api/v1/tags/definitions/54\"\n                    },\n                    \"data\": {\n                        \"type\": \"tag_definition\",\n                        \"id\": \"54\"\n                    }\n                }\n            }\n        },\n        {\n            \"type\": \"tag\",\n            \"id\": \"545\",\n            \"links\": {\n                \"self\": \"/api/v1/tags/545\"\n            },\n            \"attributes\": {\n                \"validFrom\": null,\n                \"validTo\": null,\n                \"state\": \"revoked\"\n            },\n            \"relationships\": {\n                \"definition\": {\n                    \"links\": {\n                        \"related\": \"/api/v1/tags/545/relationships/definition\",\n                        \"self\": \"/api/v1/tags/definitions/54\"\n                    },\n                    \"data\": {\n                        \"type\": \"tag_definition\",\n                        \"id\": \"54\"\n                    }\n                }\n            }\n        },\n        {\n            \"type\": \"tag\",\n            \"id\": \"557\",\n            \"links\": {\n                \"self\": \"/api/v1/tags/557\"\n            },\n            \"attributes\": {\n                \"validFrom\": null,\n                \"validTo\": null,\n                \"state\": \"revoked\"\n            },\n            \"relationships\": {\n                \"definition\": {\n                    \"links\": {\n                        \"related\": \"/api/v1/tags/557/relationships/definition\",\n                        \"self\": \"/api/v1/tags/definitions/54\"\n                    },\n                    \"data\": {\n                        \"type\": \"tag_definition\",\n                        \"id\": \"54\"\n                    }\n                }\n            }\n        },\n        {\n            \"type\": \"tag\",\n            \"id\": \"783\",\n            \"links\": {\n                \"self\": \"/api/v1/tags/783\"\n            },\n            \"attributes\": {\n                \"validFrom\": null,\n                \"validTo\": null,\n                \"state\": \"assigned\"\n            },\n            \"relationships\": {\n                \"definition\": {\n                    \"links\": {\n                        \"related\": \"/api/v1/tags/783/relationships/definition\",\n                        \"self\": \"/api/v1/tags/definitions/46\"\n                    },\n                    \"data\": {\n                        \"type\": \"tag_definition\",\n                        \"id\": \"46\"\n                    }\n                }\n            }\n        },\n        {\n            \"type\": \"tag\",\n            \"id\": \"784\",\n            \"links\": {\n                \"self\": \"/api/v1/tags/784\"\n            },\n            \"attributes\": {\n                \"validFrom\": null,\n                \"validTo\": null,\n                \"state\": \"assigned\"\n            },\n            \"relationships\": {\n                \"definition\": {\n                    \"links\": {\n                        \"related\": \"/api/v1/tags/784/relationships/definition\",\n                        \"self\": \"/api/v1/tags/definitions/47\"\n                    },\n                    \"data\": {\n                        \"type\": \"tag_definition\",\n                        \"id\": \"47\"\n                    }\n                }\n            }\n        },\n        {\n            \"type\": \"tag\",\n            \"id\": \"785\",\n            \"links\": {\n                \"self\": \"/api/v1/tags/785\"\n            },\n            \"attributes\": {\n                \"validFrom\": null,\n                \"validTo\": null,\n                \"state\": \"revoked\"\n            },\n            \"relationships\": {\n                \"definition\": {\n                    \"links\": {\n                        \"related\": \"/api/v1/tags/785/relationships/definition\",\n                        \"self\": \"/api/v1/tags/definitions/59\"\n                    },\n                    \"data\": {\n                        \"type\": \"tag_definition\",\n                        \"id\": \"59\"\n                    }\n                }\n            }\n        },\n        {\n            \"type\": \"tag\",\n            \"id\": \"824\",\n            \"links\": {\n                \"self\": \"/api/v1/tags/824\"\n            },\n            \"attributes\": {\n                \"validFrom\": \"2019-05-22T00:07:07+0200\",\n                \"validTo\": \"2019-05-25T00:07:09+0200\",\n                \"state\": \"assigned\"\n            },\n            \"relationships\": {\n                \"definition\": {\n                    \"links\": {\n                        \"related\": \"/api/v1/tags/824/relationships/definition\",\n                        \"self\": \"/api/v1/tags/definitions/61\"\n                    },\n                    \"data\": {\n                        \"type\": \"tag_definition\",\n                        \"id\": \"61\"\n                    }\n                }\n            }\n        },\n        {\n            \"type\": \"tag\",\n            \"id\": \"863\",\n            \"links\": {\n                \"self\": \"/api/v1/tags/863\"\n            },\n            \"attributes\": {\n                \"validFrom\": \"2019-05-23T08:00:00+0200\",\n                \"validTo\": \"2019-06-24T08:00:00+0200\",\n                \"state\": \"revoked\"\n            },\n            \"relationships\": {\n                \"definition\": {\n                    \"links\": {\n                        \"related\": \"/api/v1/tags/863/relationships/definition\",\n                        \"self\": \"/api/v1/tags/definitions/58\"\n                    },\n                    \"data\": {\n                        \"type\": \"tag_definition\",\n                        \"id\": \"58\"\n                    }\n                }\n            }\n        },\n        {\n            \"type\": \"tag\",\n            \"id\": \"1099\",\n            \"links\": {\n                \"self\": \"/api/v1/tags/1099\"\n            },\n            \"attributes\": {\n                \"validFrom\": null,\n                \"validTo\": null,\n                \"state\": \"assigned\"\n            },\n            \"relationships\": {\n                \"definition\": {\n                    \"links\": {\n                        \"related\": \"/api/v1/tags/1099/relationships/definition\",\n                        \"self\": \"/api/v1/tags/definitions/78\"\n                    },\n                    \"data\": {\n                        \"type\": \"tag_definition\",\n                        \"id\": \"78\"\n                    }\n                }\n            }\n        },\n        {\n            \"type\": \"tag\",\n            \"id\": \"27483\",\n            \"links\": {\n                \"self\": \"/api/v1/tags/27483\"\n            },\n            \"attributes\": {\n                \"validFrom\": null,\n                \"validTo\": null,\n                \"state\": \"revoked\"\n            },\n            \"relationships\": {\n                \"definition\": {\n                    \"links\": {\n                        \"related\": \"/api/v1/tags/27483/relationships/definition\",\n                        \"self\": \"/api/v1/tags/definitions/85\"\n                    },\n                    \"data\": {\n                        \"type\": \"tag_definition\",\n                        \"id\": \"85\"\n                    }\n                }\n            }\n        },\n        {\n            \"type\": \"tag\",\n            \"id\": \"27484\",\n            \"links\": {\n                \"self\": \"/api/v1/tags/27484\"\n            },\n            \"attributes\": {\n                \"validFrom\": null,\n                \"validTo\": null,\n                \"state\": \"revoked\"\n            },\n            \"relationships\": {\n                \"definition\": {\n                    \"links\": {\n                        \"related\": \"/api/v1/tags/27484/relationships/definition\",\n                        \"self\": \"/api/v1/tags/definitions/86\"\n                    },\n                    \"data\": {\n                        \"type\": \"tag_definition\",\n                        \"id\": \"86\"\n                    }\n                }\n            }\n        },\n        {\n            \"type\": \"tag\",\n            \"id\": \"27583\",\n            \"links\": {\n                \"self\": \"/api/v1/tags/27583\"\n            },\n            \"attributes\": {\n                \"validFrom\": \"2019-06-16T18:46:05+0200\",\n                \"validTo\": \"2019-06-20T18:46:07+0200\",\n                \"state\": \"revoked\"\n            },\n            \"relationships\": {\n                \"definition\": {\n                    \"links\": {\n                        \"related\": \"/api/v1/tags/27583/relationships/definition\",\n                        \"self\": \"/api/v1/tags/definitions/60\"\n                    },\n                    \"data\": {\n                        \"type\": \"tag_definition\",\n                        \"id\": \"60\"\n                    }\n                }\n            }\n        },\n        {\n            \"type\": \"tag\",\n            \"id\": \"27584\",\n            \"links\": {\n                \"self\": \"/api/v1/tags/27584\"\n            },\n            \"attributes\": {\n                \"validFrom\": null,\n                \"validTo\": null,\n                \"state\": \"revoked\"\n            },\n            \"relationships\": {\n                \"definition\": {\n                    \"links\": {\n                        \"related\": \"/api/v1/tags/27584/relationships/definition\",\n                        \"self\": \"/api/v1/tags/definitions/83\"\n                    },\n                    \"data\": {\n                        \"type\": \"tag_definition\",\n                        \"id\": \"83\"\n                    }\n                }\n            }\n        },\n        {\n            \"type\": \"tag\",\n            \"id\": \"27587\",\n            \"links\": {\n                \"self\": \"/api/v1/tags/27587\"\n            },\n            \"attributes\": {\n                \"validFrom\": null,\n                \"validTo\": null,\n                \"state\": \"revoked\"\n            },\n            \"relationships\": {\n                \"definition\": {\n                    \"links\": {\n                        \"related\": \"/api/v1/tags/27587/relationships/definition\",\n                        \"self\": \"/api/v1/tags/definitions/87\"\n                    },\n                    \"data\": {\n                        \"type\": \"tag_definition\",\n                        \"id\": \"87\"\n                    }\n                }\n            }\n        },\n        {\n            \"type\": \"tag\",\n            \"id\": \"27602\",\n            \"links\": {\n                \"self\": \"/api/v1/tags/27602\"\n            },\n            \"attributes\": {\n                \"validFrom\": null,\n                \"validTo\": null,\n                \"state\": \"revoked\"\n            },\n            \"relationships\": {\n                \"definition\": {\n                    \"links\": {\n                        \"related\": \"/api/v1/tags/27602/relationships/definition\",\n                        \"self\": \"/api/v1/tags/definitions/61\"\n                    },\n                    \"data\": {\n                        \"type\": \"tag_definition\",\n                        \"id\": \"61\"\n                    }\n                }\n            }\n        },\n        {\n            \"type\": \"tag\",\n            \"id\": \"28201\",\n            \"links\": {\n                \"self\": \"/api/v1/tags/28201\"\n            },\n            \"attributes\": {\n                \"validFrom\": null,\n                \"validTo\": null,\n                \"state\": \"revoked\"\n            },\n            \"relationships\": {\n                \"definition\": {\n                    \"links\": {\n                        \"related\": \"/api/v1/tags/28201/relationships/definition\",\n                        \"self\": \"/api/v1/tags/definitions/83\"\n                    },\n                    \"data\": {\n                        \"type\": \"tag_definition\",\n                        \"id\": \"83\"\n                    }\n                }\n            }\n        },\n        {\n            \"type\": \"tag\",\n            \"id\": \"27228380\",\n            \"links\": {\n                \"self\": \"/api/v1/tags/27228380\"\n            },\n            \"attributes\": {\n                \"validFrom\": null,\n                \"validTo\": null,\n                \"state\": \"assigned\"\n            },\n            \"relationships\": {\n                \"definition\": {\n                    \"links\": {\n                        \"related\": \"/api/v1/tags/27228380/relationships/definition\",\n                        \"self\": \"/api/v1/tags/definitions/56\"\n                    },\n                    \"data\": {\n                        \"type\": \"tag_definition\",\n                        \"id\": \"56\"\n                    }\n                }\n            }\n        },\n        {\n            \"type\": \"tag\",\n            \"id\": \"27228418\",\n            \"links\": {\n                \"self\": \"/api/v1/tags/27228418\"\n            },\n            \"attributes\": {\n                \"validFrom\": null,\n                \"validTo\": null,\n                \"state\": \"assigned\"\n            },\n            \"relationships\": {\n                \"definition\": {\n                    \"links\": {\n                        \"related\": \"/api/v1/tags/27228418/relationships/definition\",\n                        \"self\": \"/api/v1/tags/definitions/101\"\n                    },\n                    \"data\": {\n                        \"type\": \"tag_definition\",\n                        \"id\": \"101\"\n                    }\n                }\n            }\n        },\n        {\n            \"type\": \"tag\",\n            \"id\": \"27228423\",\n            \"links\": {\n                \"self\": \"/api/v1/tags/27228423\"\n            },\n            \"attributes\": {\n                \"validFrom\": \"2020-04-01T10:17:21+0200\",\n                \"validTo\": null,\n                \"state\": \"assigned\"\n            },\n            \"relationships\": {\n                \"definition\": {\n                    \"links\": {\n                        \"related\": \"/api/v1/tags/27228423/relationships/definition\",\n                        \"self\": \"/api/v1/tags/definitions/114\"\n                    },\n                    \"data\": {\n                        \"type\": \"tag_definition\",\n                        \"id\": \"114\"\n                    }\n                }\n            }\n        },\n        {\n            \"type\": \"tag\",\n            \"id\": \"27228424\",\n            \"links\": {\n                \"self\": \"/api/v1/tags/27228424\"\n            },\n            \"attributes\": {\n                \"validFrom\": \"2020-04-01T10:17:21+0200\",\n                \"validTo\": null,\n                \"state\": \"assigned\"\n            },\n            \"relationships\": {\n                \"definition\": {\n                    \"links\": {\n                        \"related\": \"/api/v1/tags/27228424/relationships/definition\",\n                        \"self\": \"/api/v1/tags/definitions/121\"\n                    },\n                    \"data\": {\n                        \"type\": \"tag_definition\",\n                        \"id\": \"121\"\n                    }\n                }\n            }\n        }\n    ]\n}"
+                }
+              ]
+            },
+            {
+              "name": "Fetch users",
+              "id": "5ebb439f-f530-4d17-a158-d67c84d15991",
+              "protocolProfileBehavior": {
+                "disableBodyPruning": true
+              },
+              "request": {
+                "method": "GET",
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/vnd.api+json",
+                    "type": "text"
+                  },
+                  {
+                    "key": "Content-Type",
+                    "value": "application/vnd.api+json",
+                    "type": "text"
+                  }
+                ],
+                "url": "{{url}}/api/v1/users",
+                "description": "**Required scope**: `users:get`\n"
+              },
+              "response": []
+            },
+            {
+              "name": "Fetch single user",
+              "id": "1d44e435-3e09-4963-8c13-1a5f6fff3d01",
+              "protocolProfileBehavior": {
+                "disableBodyPruning": true
+              },
+              "request": {
+                "method": "GET",
+                "header": [
+                  {
+                    "key": "Accept",
+                    "type": "text",
+                    "value": "application/vnd.api+json"
+                  },
+                  {
+                    "key": "Content-Type",
+                    "type": "text",
+                    "value": "application/vnd.api+json"
+                  }
+                ],
+                "url": {
+                  "raw": "{{url}}/api/v1/users/:userId",
+                  "host": [
+                    "{{url}}"
+                  ],
+                  "path": [
+                    "api",
+                    "v1",
+                    "users",
+                    ":userId"
+                  ],
+                  "variable": [
+                    {
+                      "id": "0f00f237-d24d-4734-abce-2451be9d378c",
+                      "key": "userId",
+                      "value": "",
+                      "type": "string"
+                    }
+                  ]
+                },
+                "description": "**Required scope**: `users:get`\n"
+              },
+              "response": [
+                {
+                  "id": "f1fabd59-8ba9-4db3-8a1d-f171dbd88873",
+                  "name": "Fetch user",
+                  "originalRequest": {
+                    "method": "GET",
+                    "header": [
+                      {
+                        "key": "Accept",
+                        "value": "application/vnd.api+json",
+                        "type": "text"
+                      },
+                      {
+                        "key": "Content-Type",
+                        "value": "application/vnd.api+json",
+                        "type": "text"
+                      }
+                    ],
+                    "url": "{{url}}/api/v1/users/1"
+                  },
+                  "_postman_previewlanguage": null,
+                  "header": null,
+                  "cookie": [],
+                  "responseTime": null,
+                  "body": "{\n    \"jsonapi\": {\n        \"version\": \"1.0\"\n    },\n    \"data\": {\n        \"type\": \"user\",\n        \"id\": \"1\",\n        \"links\": {\n            \"self\": \"/api/v1/users/1\"\n        },\n        \"attributes\": {\n            \"code\": \"1\",\n            \"firstName\": \"System\",\n            \"lastName\": \"Admin\",\n            \"displayedName\": \"Jenny Jenny\",\n            \"createdAt\": \"2019-03-19T20:23:47+0100\",\n            \"birthDate\": \"2020-02-20T00:00:00+0100\",\n            \"email\": \"k.aszkielowicz@insee.pl\",\n            \"address\": {\n                \"countryId\": \"US\",\n                \"postalCode\": \"92121\",\n                \"regionCode\": \"CA\",\n                \"regionName\": \"California\",\n                \"cityName\": \"San Diego\",\n                \"street\": \"10525 Vista Sorrento Pkwy #200 298\"\n            },\n            \"phone\": \"87654321\",\n            \"mobilePhone\": \"12345678\",\n            \"active\": true\n        },\n        \"relationships\": {\n            \"status\": {\n                \"links\": {\n                    \"related\": \"/api/v1/users/1/relationships/status\",\n                    \"self\": \"/api/v1/users/statuses/4\"\n                },\n                \"data\": {\n                    \"type\": \"user_status\",\n                    \"id\": \"4\"\n                }\n            },\n            \"tags\": {\n                \"links\": {\n                    \"related\": \"/api/v1/users/1/relationships/tags\"\n                }\n            }\n        }\n    }\n}"
+                }
+              ]
+            },
+            {
+              "name": "Fetch user status",
+              "id": "6452880d-2dd3-4580-82d0-e40273934116",
+              "protocolProfileBehavior": {
+                "disableBodyPruning": true
+              },
+              "request": {
+                "method": "GET",
+                "header": [
+                  {
+                    "key": "Accept",
+                    "type": "text",
+                    "value": "application/vnd.api+json"
+                  },
+                  {
+                    "key": "Content-Type",
+                    "type": "text",
+                    "value": "application/vnd.api+json"
+                  }
+                ],
+                "url": {
+                  "raw": "{{url}}/api/v1/users/:userId/relationships/status",
+                  "host": [
+                    "{{url}}"
+                  ],
+                  "path": [
+                    "api",
+                    "v1",
+                    "users",
+                    ":userId",
+                    "relationships",
+                    "status"
+                  ],
+                  "variable": [
+                    {
+                      "id": "d3fa12e1-71e1-40ac-8cdf-3972495c57dc",
+                      "key": "userId",
+                      "value": "",
+                      "type": "string"
+                    }
+                  ]
+                },
+                "description": "**Required scope**: `users:get`\n"
+              },
+              "response": [
+                {
+                  "id": "24ca0ea8-1f6d-4e2a-8e16-183f198bd28a",
+                  "name": "Fetch user status",
+                  "originalRequest": {
+                    "method": "GET",
+                    "header": [
+                      {
+                        "key": "Accept",
+                        "value": "application/vnd.api+json",
+                        "type": "text"
+                      },
+                      {
+                        "key": "Content-Type",
+                        "value": "application/vnd.api+json",
+                        "type": "text"
+                      }
+                    ],
+                    "url": "{{url}}/api/v1/users/1/relationships/status"
+                  },
+                  "_postman_previewlanguage": null,
+                  "header": null,
+                  "cookie": [],
+                  "responseTime": null,
+                  "body": "{\n    \"jsonapi\": {\n        \"version\": \"1.0\"\n    },\n    \"data\": {\n        \"type\": \"user_status\",\n        \"id\": \"4\",\n        \"links\": {\n            \"self\": \"/api/v1/users/statuses/4\"\n        },\n        \"attributes\": {\n            \"name\": \"Brand Ambassador\",\n            \"business\": true,\n            \"defaultRoleId\": 5\n        }\n    }\n}"
+                }
+              ]
+            }
+          ],
+          "id": "0b256d7f-1312-457b-86bc-91ff1186669b",
+          "description": "User accounts and profile data management modules.",
+          "event": [
+            {
+              "listen": "prerequest",
+              "script": {
+                "id": "d5b4eea4-0337-4bf0-9ed7-708efc1a70fc",
+                "type": "text/javascript",
+                "exec": [
+                  ""
+                ]
+              }
+            },
+            {
+              "listen": "test",
+              "script": {
+                "id": "27781277-3eea-4874-8e1f-f75619355404",
+                "type": "text/javascript",
+                "exec": [
+                  ""
+                ]
+              }
+            }
+          ]
         }
       ],
       "id": "1350357e-8683-4f12-abff-969e9889f12f",
