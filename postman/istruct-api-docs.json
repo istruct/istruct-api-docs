@@ -3800,7 +3800,7 @@
                     ],
                     "body": {
                       "mode": "raw",
-                      "raw": "{\n    \"data\": {\n        \"type\": \"shop_product_item\",\n        \"attributes\": {\n            \"code\": \"118003\",\n            \"zoneId\": 59,\n            \"taxCode\":\"AAA\",\n            \"minimalStock\": 0,\n            \"emptyStockMessage\": \"Will be available on 6/5/20\",\n            \"underProductMessage\": \"Test\",\n            \"availableFrom\": \"2020-06-01T00:00:00+0000\",\n            \"availableTo\": \"2020-06-01T00:00:00+0000\",\n            \"active\": true,\n            \"retailPrice\": {\n                \"value\": 251.94,\n                \"points\": 120\n            },\n            \"prices\": [\n                {\n                    \"type\": \"status\",\n                    \"statusId\": 1,\n                    \"value\": 209.95,\n                    \"points\": 120\n                },\n                {\n                    \"type\": \"status\",\n                    \"statusId\": 2,\n                    \"value\": 209.95,\n                    \"points\": 120\n                },\n                {\n                    \"type\": \"promotion\",\n                    \"statusId\": 1,\n                    \"from\": \"2020-06-01T00:00:00+0000\",\n                    \"to\": \"2020-06-07T23:59:29+0000\",\n                    \"value\": 199.95,\n                    \"points\": 120\n                },\n                {\n                    \"type\": \"active\",\n                    \"value\": 199.95,\n                    \"points\": 120\n                }\n            ]\n        }\n    }\n}\n"
+                      "raw": "{\n    \"data\": {\n        \"type\": \"shop_product_item\",\n        \"attributes\": {\n            \"code\": \"123456\",\n            \"zoneId\": 500,\n            \"taxId\":100,\n            \"minimalStock\": 0,\n            \"emptyStockMessage\": \"Not available\",\n            \"availableFrom\": \"2020-01-01T00:00:00+0000\",\n            \"availableTo\": \"2020-12-01T00:00:00+0000\",\n            \"active\": true,\n            \"retailPrice\": {\n                \"value\": 250.00,\n                \"points\": 120\n            },\n            \"prices\": [\n                {\n                    \"type\": \"status\",\n                    \"statusId\": 1,\n                    \"value\": 200.00,\n                    \"points\": 120\n                },\n                {\n                    \"type\": \"status\",\n                    \"statusId\": 2,\n                    \"value\": 300.00,\n                    \"points\": 120\n                }\n            ]\n        }\n    }\n}\n"
                     },
                     "url": {
                       "raw": "{{url}}/api/v1/shop/products/:id/items",
@@ -3817,7 +3817,6 @@
                       ],
                       "variable": [
                         {
-                          "id": "0480dd4d-58ad-439d-bfb5-6f9e20631255",
                           "key": "id",
                           "value": "{{product_id}}",
                           "type": "string",
