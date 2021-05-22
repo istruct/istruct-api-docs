@@ -4667,7 +4667,7 @@
                   ],
                   "cookie": [],
                   "responseTime": null,
-                  "body": "{\n    \"jsonapi\": {\n        \"version\": \"1.0\"\n    },\n    \"meta\": {\n        \"page\": {\n            \"number\": 1,\n            \"size\": 25\n        },\n        \"totalItems\": 2\n    },\n    \"links\": {\n        \"self\": \"/api/v1/zones/1/relationships/taxes?page[number]=1\",\n        \"first\": \"/api/v1/zones/1/relationships/taxes?page[number]=1\",\n        \"last\": \"/api/v1/zones/1/relationships/taxes?page[number]=2\",\n        \"next\": \"/api/v1/zones/1/relationships/taxes?page[number]=2\"\n    },\n    \"data\": [\n        {\n            \"type\": \"zone_tax\",\n            \"id\": \"5\",\n            \"attributes\": {\n                \"percent\": 0,\n                \"isActive\": false,\n                \"isDefault\": false\n            }\n        },\n        {\n            \"type\": \"zone_tax\",\n            \"id\": \"4\",\n            \"attributes\": {\n                \"percent\": 0,\n                \"isActive\": false,\n                \"isDefault\": false\n            }\n        }\n    ]\n}"
+                  "body": "{\n    \"jsonapi\": {\n        \"version\": \"1.0\"\n    },\n    \"meta\": {\n        \"page\": {\n            \"number\": 1,\n            \"size\": 25\n        },\n        \"totalItems\": 2\n    },\n    \"links\": {\n        \"self\": \"/api/v1/zones/1/relationships/taxes?page[number]=1\",\n        \"first\": \"/api/v1/zones/1/relationships/taxes?page[number]=1\",\n        \"last\": \"/api/v1/zones/1/relationships/taxes?page[number]=2\",\n        \"next\": \"/api/v1/zones/1/relationships/taxes?page[number]=2\"\n    },\n    \"data\": [\n        {\n            \"type\": \"zone_tax\",\n            \"id\": \"1\",\n            \"attributes\": {\n                \"percent\": 0,\n                \"isActive\": false,\n                \"isDefault\": false\n            }\n        },\n        {\n            \"type\": \"zone_tax\",\n            \"id\": \"2\",\n            \"attributes\": {\n                \"percent\": 0,\n                \"isActive\": false,\n                \"isDefault\": false\n            }\n        }\n    ]\n}"
                 }
               ]
             }
@@ -4696,6 +4696,413 @@
               }
             }
           ]
+        },
+        {
+          "name": "Tags Copy",
+          "item": [
+            {
+              "name": "Tags definitions",
+              "id": "0958b8ec-a1ad-4677-a3fc-5c8eaeab737d",
+              "protocolProfileBehavior": {
+                "disableBodyPruning": true
+              },
+              "request": {
+                "method": "GET",
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/vnd.api+json",
+                    "type": "text"
+                  },
+                  {
+                    "key": "Content-Type",
+                    "value": "application/vnd.api+json",
+                    "type": "text"
+                  }
+                ],
+                "url": "{{url}}/api/v1/tags/definitions",
+                "description": "**Required scope**: `tags:get`\n"
+              },
+              "response": [
+                {
+                  "id": "27742a51-03a4-4c8e-8852-b7f9c6f03e35",
+                  "name": "Tags definitions ",
+                  "originalRequest": {
+                    "method": "GET",
+                    "header": [
+                      {
+                        "key": "Accept",
+                        "value": "application/vnd.api+json",
+                        "type": "text"
+                      },
+                      {
+                        "key": "Content-Type",
+                        "value": "application/vnd.api+json",
+                        "type": "text"
+                      }
+                    ],
+                    "url": "{{url}}/api/v1/tags/definitions"
+                  },
+                  "status": "OK",
+                  "code": 200,
+                  "_postman_previewlanguage": "json",
+                  "header": [
+                    {
+                      "key": "Server",
+                      "value": "nginx/1.15.8"
+                    },
+                    {
+                      "key": "Date",
+                      "value": "Tue, 01 Sep 2020 11:54:21 GMT"
+                    },
+                    {
+                      "key": "Content-Type",
+                      "value": "application/vnd.api+json"
+                    },
+                    {
+                      "key": "Transfer-Encoding",
+                      "value": "chunked"
+                    },
+                    {
+                      "key": "Connection",
+                      "value": "keep-alive"
+                    },
+                    {
+                      "key": "Expires",
+                      "value": "Thu, 19 Nov 1981 08:52:00 GMT"
+                    },
+                    {
+                      "key": "Cache-Control",
+                      "value": "no-store, no-cache, must-revalidate"
+                    },
+                    {
+                      "key": "Pragma",
+                      "value": "no-cache"
+                    },
+                    {
+                      "key": "X-Istruct-Errors",
+                      "value": "{\"notice\":[{\"message\":\"Key file \\\"file:\\/\\/\\/home\\/vagrant\\/code\\/kannaway\\/data\\/ssl\\/oauth2-server.crt\\\" permissions are not correct, should be 600 or 660 instead of 664\",\"file\":\"\\/home\\/vagrant\\/code\\/kannaway\\/vendor\\/league\\/oauth2-server\\/src\\/CryptKey.php\",\"line\":56,\"type\":\"PHP Notice\"}]}"
+                    }
+                  ],
+                  "cookie": [],
+                  "responseTime": null,
+                  "body": "{\n    \"jsonapi\": {\n        \"version\": \"1.0\"\n    },\n    \"meta\": {\n        \"page\": {\n            \"number\": 1,\n            \"size\": 25\n        },\n        \"totalItems\": 117\n    },\n    \"links\": {\n        \"self\": \"/api/v1/tags/definitions?page[number]=1\",\n        \"first\": \"/api/v1/tags/definitions?page[number]=1\",\n        \"last\": \"/api/v1/tags/definitions?page[number]=5\",\n        \"next\": \"/api/v1/tags/definitions?page[number]=2\"\n    },\n    \"data\": [\n        {\n            \"type\": \"tag_definition\",\n            \"id\": \"1\",\n            \"links\": {\n                \"self\": \"/api/v1/tags/definitions/1\"\n            },\n            \"attributes\": {\n                \"name\": \"account-status-active\",\n                \"languages\": {\n                    \"en\": {\n                        \"name\": \"Active\"\n                    },\n                    \"ja\": {\n                        \"name\": \"アクティブ\"\n                    }\n                }\n            },\n            \"relationships\": {\n                \"type\": {\n                    \"links\": {\n                        \"related\": \"/api/v1/tags/definitions/1/relationships/type\",\n                        \"self\": \"/api/v1/tags/definitions/types/1\"\n                    },\n                    \"data\": {\n                        \"type\": \"definition-type\",\n                        \"id\": \"1\"\n                    }\n                }\n            }\n        },\n        {\n            \"type\": \"tag_definition\",\n            \"id\": \"2\",\n            \"links\": {\n                \"self\": \"/api/v1/tags/definitions/2\"\n            },\n            \"attributes\": {\n                \"name\": \"account-status-fraud\",\n                \"languages\": {\n                    \"en\": {\n                        \"name\": \"Fraud\"\n                    }\n                }\n            },\n            \"relationships\": {\n                \"type\": {\n                    \"links\": {\n                        \"related\": \"/api/v1/tags/definitions/2/relationships/type\",\n                        \"self\": \"/api/v1/tags/definitions/types/1\"\n                    },\n                    \"data\": {\n                        \"type\": \"definition-type\",\n                        \"id\": \"1\"\n                    }\n                }\n            }\n        },\n        {\n            \"type\": \"tag_definition\",\n            \"id\": \"3\",\n            \"links\": {\n                \"self\": \"/api/v1/tags/definitions/3\"\n            },\n            \"attributes\": {\n                \"name\": \"account-status-suspended\",\n                \"languages\": {\n                    \"en\": {\n                        \"name\": \"Suspended\"\n                    }\n                }\n            },\n            \"relationships\": {\n                \"type\": {\n                    \"links\": {\n                        \"related\": \"/api/v1/tags/definitions/3/relationships/type\",\n                        \"self\": \"/api/v1/tags/definitions/types/1\"\n                    },\n                    \"data\": {\n                        \"type\": \"definition-type\",\n                        \"id\": \"1\"\n                    }\n                }\n            }\n        },\n        {\n            \"type\": \"tag_definition\",\n            \"id\": \"4\",\n            \"links\": {\n                \"self\": \"/api/v1/tags/definitions/4\"\n            },\n            \"attributes\": {\n                \"name\": \"account-status-on-hold\",\n                \"languages\": {\n                    \"en\": {\n                        \"name\": \"On hold\"\n                    }\n                }\n            },\n            \"relationships\": {\n                \"type\": {\n                    \"links\": {\n                        \"related\": \"/api/v1/tags/definitions/4/relationships/type\",\n                        \"self\": \"/api/v1/tags/definitions/types/1\"\n                    },\n                    \"data\": {\n                        \"type\": \"definition-type\",\n                        \"id\": \"1\"\n                    }\n                }\n            }\n        },\n        {\n            \"type\": \"tag_definition\",\n            \"id\": \"5\",\n            \"links\": {\n                \"self\": \"/api/v1/tags/definitions/5\"\n            },\n            \"attributes\": {\n                \"name\": \"account-status-terminated\",\n                \"languages\": {\n                    \"en\": {\n                        \"name\": \"Terminated\"\n                    }\n                }\n            },\n            \"relationships\": {\n                \"type\": {\n                    \"links\": {\n                        \"related\": \"/api/v1/tags/definitions/5/relationships/type\",\n                        \"self\": \"/api/v1/tags/definitions/types/1\"\n                    },\n                    \"data\": {\n                        \"type\": \"definition-type\",\n                        \"id\": \"1\"\n                    }\n                }\n            }\n        },\n        {\n            \"type\": \"tag_definition\",\n            \"id\": \"6\",\n            \"links\": {\n                \"self\": \"/api/v1/tags/definitions/6\"\n            },\n            \"attributes\": {\n                \"name\": \"returns-adverse-reaction\",\n                \"languages\": {\n                    \"en\": {\n                        \"name\": \"Adverse reaction\"\n                    },\n                    \"pl\": {\n                        \"name\": \"Działanie niepożądane\"\n                    }\n                }\n            },\n            \"relationships\": {\n                \"type\": {\n                    \"links\": {\n                        \"related\": \"/api/v1/tags/definitions/6/relationships/type\",\n                        \"self\": \"/api/v1/tags/definitions/types/2\"\n                    },\n                    \"data\": {\n                        \"type\": \"definition-type\",\n                        \"id\": \"2\"\n                    }\n                }\n            }\n        },\n        {\n            \"type\": \"tag_definition\",\n            \"id\": \"7\",\n            \"links\": {\n                \"self\": \"/api/v1/tags/definitions/7\"\n            },\n            \"attributes\": {\n                \"name\": \"returns-damaged-product\",\n                \"languages\": {\n                    \"en\": {\n                        \"name\": \"Damaged product\"\n                    },\n                    \"pl\": {\n                        \"name\": \"Uszkodzony produkt\"\n                    }\n                }\n            },\n            \"relationships\": {\n                \"type\": {\n                    \"links\": {\n                        \"related\": \"/api/v1/tags/definitions/7/relationships/type\",\n                        \"self\": \"/api/v1/tags/definitions/types/2\"\n                    },\n                    \"data\": {\n                        \"type\": \"definition-type\",\n                        \"id\": \"2\"\n                    }\n                }\n            }\n        },\n        {\n            \"type\": \"tag_definition\",\n            \"id\": \"8\",\n            \"links\": {\n                \"self\": \"/api/v1/tags/definitions/8\"\n            },\n            \"attributes\": {\n                \"name\": \"returns-duplicate-order\",\n                \"languages\": {\n                    \"en\": {\n                        \"name\": \"Duplicate order\"\n                    },\n                    \"pl\": {\n                        \"name\": \"Duplikat zamówienia\"\n                    }\n                }\n            },\n            \"relationships\": {\n                \"type\": {\n                    \"links\": {\n                        \"related\": \"/api/v1/tags/definitions/8/relationships/type\",\n                        \"self\": \"/api/v1/tags/definitions/types/2\"\n                    },\n                    \"data\": {\n                        \"type\": \"definition-type\",\n                        \"id\": \"2\"\n                    }\n                }\n            }\n        },\n        {\n            \"type\": \"tag_definition\",\n            \"id\": \"9\",\n            \"links\": {\n                \"self\": \"/api/v1/tags/definitions/9\"\n            },\n            \"attributes\": {\n                \"name\": \"returns-leaving-kannaway\",\n                \"languages\": {\n                    \"en\": {\n                        \"name\": \"Leaving Kannaway\"\n                    },\n                    \"pl\": {\n                        \"name\": \"Opuszczono Kannaway\"\n                    }\n                }\n            },\n            \"relationships\": {\n                \"type\": {\n                    \"links\": {\n                        \"related\": \"/api/v1/tags/definitions/9/relationships/type\",\n                        \"self\": \"/api/v1/tags/definitions/types/2\"\n                    },\n                    \"data\": {\n                        \"type\": \"definition-type\",\n                        \"id\": \"2\"\n                    }\n                }\n            }\n        },\n        {\n            \"type\": \"tag_definition\",\n            \"id\": \"10\",\n            \"links\": {\n                \"self\": \"/api/v1/tags/definitions/10\"\n            },\n            \"attributes\": {\n                \"name\": \"returns-product-efficacy\",\n                \"languages\": {\n                    \"en\": {\n                        \"name\": \"Product efficacy\"\n                    },\n                    \"pl\": {\n                        \"name\": \"Skuteczność produktu\"\n                    }\n                }\n            },\n            \"relationships\": {\n                \"type\": {\n                    \"links\": {\n                        \"related\": \"/api/v1/tags/definitions/10/relationships/type\",\n                        \"self\": \"/api/v1/tags/definitions/types/2\"\n                    },\n                    \"data\": {\n                        \"type\": \"definition-type\",\n                        \"id\": \"2\"\n                    }\n                }\n            }\n        },\n        {\n            \"type\": \"tag_definition\",\n            \"id\": \"11\",\n            \"links\": {\n                \"self\": \"/api/v1/tags/definitions/11\"\n            },\n            \"attributes\": {\n                \"name\": \"returns-product-quality\",\n                \"languages\": {\n                    \"en\": {\n                        \"name\": \"Product quality\"\n                    },\n                    \"pl\": {\n                        \"name\": \"Jakość produktu\"\n                    }\n                }\n            },\n            \"relationships\": {\n                \"type\": {\n                    \"links\": {\n                        \"related\": \"/api/v1/tags/definitions/11/relationships/type\",\n                        \"self\": \"/api/v1/tags/definitions/types/2\"\n                    },\n                    \"data\": {\n                        \"type\": \"definition-type\",\n                        \"id\": \"2\"\n                    }\n                }\n            }\n        },\n        {\n            \"type\": \"tag_definition\",\n            \"id\": \"12\",\n            \"links\": {\n                \"self\": \"/api/v1/tags/definitions/12\"\n            },\n            \"attributes\": {\n                \"name\": \"returns-unwanted-as\",\n                \"languages\": {\n                    \"en\": {\n                        \"name\": \"Unwanted AS\"\n                    },\n                    \"pl\": {\n                        \"name\": \"Niechciany AS\"\n                    }\n                }\n            },\n            \"relationships\": {\n                \"type\": {\n                    \"links\": {\n                        \"related\": \"/api/v1/tags/definitions/12/relationships/type\",\n                        \"self\": \"/api/v1/tags/definitions/types/2\"\n                    },\n                    \"data\": {\n                        \"type\": \"definition-type\",\n                        \"id\": \"2\"\n                    }\n                }\n            }\n        },\n        {\n            \"type\": \"tag_definition\",\n            \"id\": \"13\",\n            \"links\": {\n                \"self\": \"/api/v1/tags/definitions/13\"\n            },\n            \"attributes\": {\n                \"name\": \"returns-unwanted-ba-fee\",\n                \"languages\": {\n                    \"en\": {\n                        \"name\": \"Unwanted BA fee\"\n                    },\n                    \"pl\": {\n                        \"name\": \"Niechciana opłata BA\"\n                    }\n                }\n            },\n            \"relationships\": {\n                \"type\": {\n                    \"links\": {\n                        \"related\": \"/api/v1/tags/definitions/13/relationships/type\",\n                        \"self\": \"/api/v1/tags/definitions/types/2\"\n                    },\n                    \"data\": {\n                        \"type\": \"definition-type\",\n                        \"id\": \"2\"\n                    }\n                }\n            }\n        },\n        {\n            \"type\": \"tag_definition\",\n            \"id\": \"14\",\n            \"links\": {\n                \"self\": \"/api/v1/tags/definitions/14\"\n            },\n            \"attributes\": {\n                \"name\": \"replacement-reason-product-quality\",\n                \"languages\": {\n                    \"en\": {\n                        \"name\": \"Product quiality\"\n                    },\n                    \"pl\": {\n                        \"name\": \"Jakość produktu\"\n                    }\n                }\n            },\n            \"relationships\": {\n                \"type\": {\n                    \"links\": {\n                        \"related\": \"/api/v1/tags/definitions/14/relationships/type\",\n                        \"self\": \"/api/v1/tags/definitions/types/3\"\n                    },\n                    \"data\": {\n                        \"type\": \"definition-type\",\n                        \"id\": \"3\"\n                    }\n                }\n            }\n        },\n        {\n            \"type\": \"tag_definition\",\n            \"id\": \"15\",\n            \"links\": {\n                \"self\": \"/api/v1/tags/definitions/15\"\n            },\n            \"attributes\": {\n                \"name\": \"replacement-reason-damaged-product\",\n                \"languages\": {\n                    \"en\": {\n                        \"name\": \"Damaged product\"\n                    },\n                    \"pl\": {\n                        \"name\": \"Uszkodzony produkt\"\n                    }\n                }\n            },\n            \"relationships\": {\n                \"type\": {\n                    \"links\": {\n                        \"related\": \"/api/v1/tags/definitions/15/relationships/type\",\n                        \"self\": \"/api/v1/tags/definitions/types/3\"\n                    },\n                    \"data\": {\n                        \"type\": \"definition-type\",\n                        \"id\": \"3\"\n                    }\n                }\n            }\n        },\n        {\n            \"type\": \"tag_definition\",\n            \"id\": \"16\",\n            \"links\": {\n                \"self\": \"/api/v1/tags/definitions/16\"\n            },\n            \"attributes\": {\n                \"name\": \"replacement-reason-wrong-product\",\n                \"languages\": {\n                    \"en\": {\n                        \"name\": \"Wrong product\"\n                    },\n                    \"pl\": {\n                        \"name\": \"Zły produkt\"\n                    }\n                }\n            },\n            \"relationships\": {\n                \"type\": {\n                    \"links\": {\n                        \"related\": \"/api/v1/tags/definitions/16/relationships/type\",\n                        \"self\": \"/api/v1/tags/definitions/types/3\"\n                    },\n                    \"data\": {\n                        \"type\": \"definition-type\",\n                        \"id\": \"3\"\n                    }\n                }\n            }\n        },\n        {\n            \"type\": \"tag_definition\",\n            \"id\": \"17\",\n            \"links\": {\n                \"self\": \"/api/v1/tags/definitions/17\"\n            },\n            \"attributes\": {\n                \"name\": \"replacement-reason-mixed-orders\",\n                \"languages\": {\n                    \"en\": {\n                        \"name\": \"Mixed orders\"\n                    },\n                    \"pl\": {\n                        \"name\": \"Pomieszane zamwienia\"\n                    }\n                }\n            },\n            \"relationships\": {\n                \"type\": {\n                    \"links\": {\n                        \"related\": \"/api/v1/tags/definitions/17/relationships/type\",\n                        \"self\": \"/api/v1/tags/definitions/types/3\"\n                    },\n                    \"data\": {\n                        \"type\": \"definition-type\",\n                        \"id\": \"3\"\n                    }\n                }\n            }\n        },\n        {\n            \"type\": \"tag_definition\",\n            \"id\": \"18\",\n            \"links\": {\n                \"self\": \"/api/v1/tags/definitions/18\"\n            },\n            \"attributes\": {\n                \"name\": \"replacement-reason-missing-product\",\n                \"languages\": {\n                    \"en\": {\n                        \"name\": \"Missing product\"\n                    },\n                    \"pl\": {\n                        \"name\": \"Brakujący produkt\"\n                    }\n                }\n            },\n            \"relationships\": {\n                \"type\": {\n                    \"links\": {\n                        \"related\": \"/api/v1/tags/definitions/18/relationships/type\",\n                        \"self\": \"/api/v1/tags/definitions/types/3\"\n                    },\n                    \"data\": {\n                        \"type\": \"definition-type\",\n                        \"id\": \"3\"\n                    }\n                }\n            }\n        },\n        {\n            \"type\": \"tag_definition\",\n            \"id\": \"19\",\n            \"links\": {\n                \"self\": \"/api/v1/tags/definitions/19\"\n            },\n            \"attributes\": {\n                \"name\": \"new-tag\",\n                \"languages\": {\n                    \"en\": {\n                        \"name\": \"New\"\n                    }\n                }\n            },\n            \"relationships\": {\n                \"type\": {\n                    \"links\": {\n                        \"related\": \"/api/v1/tags/definitions/19/relationships/type\",\n                        \"self\": \"/api/v1/tags/definitions/types/1\"\n                    },\n                    \"data\": {\n                        \"type\": \"definition-type\",\n                        \"id\": \"1\"\n                    }\n                }\n            }\n        },\n        {\n            \"type\": \"tag_definition\",\n            \"id\": \"20\",\n            \"links\": {\n                \"self\": \"/api/v1/tags/definitions/20\"\n            },\n            \"attributes\": {\n                \"name\": \"newtag\",\n                \"languages\": {\n                    \"en\": {\n                        \"name\": \"new tag\"\n                    }\n                }\n            },\n            \"relationships\": {\n                \"type\": {\n                    \"links\": {\n                        \"related\": \"/api/v1/tags/definitions/20/relationships/type\",\n                        \"self\": \"/api/v1/tags/definitions/types/1\"\n                    },\n                    \"data\": {\n                        \"type\": \"definition-type\",\n                        \"id\": \"1\"\n                    }\n                }\n            }\n        },\n        {\n            \"type\": \"tag_definition\",\n            \"id\": \"21\",\n            \"links\": {\n                \"self\": \"/api/v1/tags/definitions/21\"\n            },\n            \"attributes\": {\n                \"name\": \"newordertag\",\n                \"languages\": {\n                    \"en\": {\n                        \"name\": \"NewOrderTag\"\n                    }\n                }\n            },\n            \"relationships\": {\n                \"type\": {\n                    \"links\": {\n                        \"related\": \"/api/v1/tags/definitions/21/relationships/type\",\n                        \"self\": \"/api/v1/tags/definitions/types/2\"\n                    },\n                    \"data\": {\n                        \"type\": \"definition-type\",\n                        \"id\": \"2\"\n                    }\n                }\n            }\n        },\n        {\n            \"type\": \"tag_definition\",\n            \"id\": \"22\",\n            \"links\": {\n                \"self\": \"/api/v1/tags/definitions/22\"\n            },\n            \"attributes\": {\n                \"name\": \"vip-tag\",\n                \"languages\": {\n                    \"en\": {\n                        \"name\": \"VIP \"\n                    }\n                }\n            },\n            \"relationships\": {\n                \"type\": {\n                    \"links\": {\n                        \"related\": \"/api/v1/tags/definitions/22/relationships/type\",\n                        \"self\": \"/api/v1/tags/definitions/types/1\"\n                    },\n                    \"data\": {\n                        \"type\": \"definition-type\",\n                        \"id\": \"1\"\n                    }\n                }\n            }\n        },\n        {\n            \"type\": \"tag_definition\",\n            \"id\": \"23\",\n            \"links\": {\n                \"self\": \"/api/v1/tags/definitions/23\"\n            },\n            \"attributes\": {\n                \"name\": \"grandfathered-rank\",\n                \"languages\": {\n                    \"en\": {\n                        \"name\": \"Grandfathered\"\n                    }\n                }\n            },\n            \"relationships\": {\n                \"type\": {\n                    \"links\": {\n                        \"related\": \"/api/v1/tags/definitions/23/relationships/type\",\n                        \"self\": \"/api/v1/tags/definitions/types/1\"\n                    },\n                    \"data\": {\n                        \"type\": \"definition-type\",\n                        \"id\": \"1\"\n                    }\n                }\n            }\n        },\n        {\n            \"type\": \"tag_definition\",\n            \"id\": \"24\",\n            \"links\": {\n                \"self\": \"/api/v1/tags/definitions/24\"\n            },\n            \"attributes\": {\n                \"name\": \"events-meal-preference-vegan\",\n                \"languages\": {\n                    \"en\": {\n                        \"name\": \"Meal Preference: Vegan\"\n                    }\n                }\n            },\n            \"relationships\": {\n                \"type\": {\n                    \"links\": {\n                        \"related\": \"/api/v1/tags/definitions/24/relationships/type\",\n                        \"self\": \"/api/v1/tags/definitions/types/1\"\n                    },\n                    \"data\": {\n                        \"type\": \"definition-type\",\n                        \"id\": \"1\"\n                    }\n                }\n            }\n        },\n        {\n            \"type\": \"tag_definition\",\n            \"id\": \"25\",\n            \"links\": {\n                \"self\": \"/api/v1/tags/definitions/25\"\n            },\n            \"attributes\": {\n                \"name\": \"events-meal-preference-gluten-free\",\n                \"languages\": {\n                    \"en\": {\n                        \"name\": \"Meal Preference: Gluten-Free\"\n                    }\n                }\n            },\n            \"relationships\": {\n                \"type\": {\n                    \"links\": {\n                        \"related\": \"/api/v1/tags/definitions/25/relationships/type\",\n                        \"self\": \"/api/v1/tags/definitions/types/1\"\n                    },\n                    \"data\": {\n                        \"type\": \"definition-type\",\n                        \"id\": \"1\"\n                    }\n                }\n            }\n        }\n    ]\n}"
+                }
+              ]
+            },
+            {
+              "name": "Tags definitions types",
+              "id": "282e5d5b-b8d1-4fe6-8e76-fb74d50d2211",
+              "protocolProfileBehavior": {
+                "disableBodyPruning": true
+              },
+              "request": {
+                "method": "GET",
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/vnd.api+json",
+                    "type": "text"
+                  },
+                  {
+                    "key": "Content-Type",
+                    "value": "application/vnd.api+json",
+                    "type": "text"
+                  }
+                ],
+                "url": "{{url}}/api/v1/tags/definitions",
+                "description": "**Required scope**: `tags:get`\n"
+              },
+              "response": [
+                {
+                  "id": "678d07d0-7efa-4f45-a257-accb06ad840b",
+                  "name": "Tags definitions types ",
+                  "originalRequest": {
+                    "method": "GET",
+                    "header": [
+                      {
+                        "key": "Accept",
+                        "value": "application/vnd.api+json",
+                        "type": "text"
+                      },
+                      {
+                        "key": "Content-Type",
+                        "value": "application/vnd.api+json",
+                        "type": "text"
+                      }
+                    ],
+                    "url": "{{url}}/api/v1/tags/definitions/types"
+                  },
+                  "status": "OK",
+                  "code": 200,
+                  "_postman_previewlanguage": "json",
+                  "header": [
+                    {
+                      "key": "Server",
+                      "value": "nginx/1.15.8"
+                    },
+                    {
+                      "key": "Date",
+                      "value": "Tue, 01 Sep 2020 11:54:21 GMT"
+                    },
+                    {
+                      "key": "Content-Type",
+                      "value": "application/vnd.api+json"
+                    },
+                    {
+                      "key": "Transfer-Encoding",
+                      "value": "chunked"
+                    },
+                    {
+                      "key": "Connection",
+                      "value": "keep-alive"
+                    },
+                    {
+                      "key": "Expires",
+                      "value": "Thu, 19 Nov 1981 08:52:00 GMT"
+                    },
+                    {
+                      "key": "Cache-Control",
+                      "value": "no-store, no-cache, must-revalidate"
+                    },
+                    {
+                      "key": "Pragma",
+                      "value": "no-cache"
+                    },
+                    {
+                      "key": "X-Istruct-Errors",
+                      "value": "{\"notice\":[{\"message\":\"Key file \\\"file:\\/\\/\\/home\\/vagrant\\/code\\/kannaway\\/data\\/ssl\\/oauth2-server.crt\\\" permissions are not correct, should be 600 or 660 instead of 664\",\"file\":\"\\/home\\/vagrant\\/code\\/kannaway\\/vendor\\/league\\/oauth2-server\\/src\\/CryptKey.php\",\"line\":56,\"type\":\"PHP Notice\"}]}"
+                    }
+                  ],
+                  "cookie": [],
+                  "responseTime": null,
+                  "body": "{\n    \"jsonapi\": {\n        \"version\": \"1.0\"\n    },\n    \"meta\": {\n        \"page\": {\n            \"number\": 1,\n            \"size\": 25\n        },\n        \"totalItems\": 4\n    },\n    \"links\": {\n        \"self\": \"/api/v1/tags/definitions/types?page[number]=1\",\n        \"first\": \"/api/v1/tags/definitions/types?page[number]=1\",\n        \"last\": \"/api/v1/tags/definitions/types?page[number]=1\"\n    },\n    \"data\": [\n        {\n            \"type\": \"definition-type\",\n            \"id\": \"3\",\n            \"links\": {\n                \"self\": \"/api/v1/tags/definitions/types/3\"\n            },\n            \"attributes\": {\n                \"name\": \"Order replacement reason tag\"\n            }\n        },\n        {\n            \"type\": \"definition-type\",\n            \"id\": \"2\",\n            \"links\": {\n                \"self\": \"/api/v1/tags/definitions/types/2\"\n            },\n            \"attributes\": {\n                \"name\": \"Order return tag\"\n            }\n        },\n        {\n            \"type\": \"definition-type\",\n            \"id\": \"4\",\n            \"links\": {\n                \"self\": \"/api/v1/tags/definitions/types/4\"\n            },\n            \"attributes\": {\n                \"name\": \"Order tag\"\n            }\n        },\n        {\n            \"type\": \"definition-type\",\n            \"id\": \"1\",\n            \"links\": {\n                \"self\": \"/api/v1/tags/definitions/types/1\"\n            },\n            \"attributes\": {\n                \"name\": \"User tag\"\n            }\n        }\n    ]\n}"
+                }
+              ]
+            },
+            {
+              "name": "Fetch single tags definition type",
+              "id": "1055778e-ce66-4e3e-ac07-a310efb96493",
+              "protocolProfileBehavior": {
+                "disableBodyPruning": true
+              },
+              "request": {
+                "method": "GET",
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/vnd.api+json",
+                    "type": "text"
+                  },
+                  {
+                    "key": "Content-Type",
+                    "value": "application/vnd.api+json",
+                    "type": "text"
+                  }
+                ],
+                "url": {
+                  "raw": "{{url}}/api/v1/tags/definitions/types/:id",
+                  "host": [
+                    "{{url}}"
+                  ],
+                  "path": [
+                    "api",
+                    "v1",
+                    "tags",
+                    "definitions",
+                    "types",
+                    ":id"
+                  ],
+                  "variable": [
+                    {
+                      "id": "25ab56f8-ba58-4a58-8316-772584eb1610",
+                      "key": "id",
+                      "value": "",
+                      "type": "string"
+                    }
+                  ]
+                },
+                "description": "**Required scope**: `tags:get`\n"
+              },
+              "response": [
+                {
+                  "id": "c771e797-79f2-40f8-9210-f780958a516c",
+                  "name": "Tag definiton type",
+                  "originalRequest": {
+                    "method": "GET",
+                    "header": [
+                      {
+                        "key": "Accept",
+                        "value": "application/vnd.api+json",
+                        "type": "text"
+                      },
+                      {
+                        "key": "Content-Type",
+                        "value": "application/vnd.api+json",
+                        "type": "text"
+                      }
+                    ],
+                    "url": "{{url}}/api/v1/tags/definitions/types/1"
+                  },
+                  "status": "OK",
+                  "code": 200,
+                  "_postman_previewlanguage": "json",
+                  "header": [
+                    {
+                      "key": "Server",
+                      "value": "nginx/1.15.8"
+                    },
+                    {
+                      "key": "Date",
+                      "value": "Tue, 01 Sep 2020 11:54:21 GMT"
+                    },
+                    {
+                      "key": "Content-Type",
+                      "value": "application/vnd.api+json"
+                    },
+                    {
+                      "key": "Transfer-Encoding",
+                      "value": "chunked"
+                    },
+                    {
+                      "key": "Connection",
+                      "value": "keep-alive"
+                    },
+                    {
+                      "key": "Expires",
+                      "value": "Thu, 19 Nov 1981 08:52:00 GMT"
+                    },
+                    {
+                      "key": "Cache-Control",
+                      "value": "no-store, no-cache, must-revalidate"
+                    },
+                    {
+                      "key": "Pragma",
+                      "value": "no-cache"
+                    },
+                    {
+                      "key": "X-Istruct-Errors",
+                      "value": "{\"notice\":[{\"message\":\"Key file \\\"file:\\/\\/\\/home\\/vagrant\\/code\\/kannaway\\/data\\/ssl\\/oauth2-server.crt\\\" permissions are not correct, should be 600 or 660 instead of 664\",\"file\":\"\\/home\\/vagrant\\/code\\/kannaway\\/vendor\\/league\\/oauth2-server\\/src\\/CryptKey.php\",\"line\":56,\"type\":\"PHP Notice\"}]}"
+                    }
+                  ],
+                  "cookie": [],
+                  "responseTime": null,
+                  "body": "{\n    \"jsonapi\": {\n        \"version\": \"1.0\"\n    },\n    \"data\": {\n        \"type\": \"definition-type\",\n        \"id\": \"1\",\n        \"links\": {\n            \"self\": \"/api/v1/tags/definitions/types/1\"\n        },\n        \"attributes\": {\n            \"name\": \"User tag\"\n        }\n    }\n}"
+                }
+              ]
+            },
+            {
+              "name": "Fetch single tag definition",
+              "id": "dfda4e78-370c-471d-b45d-5f163a8ce658",
+              "protocolProfileBehavior": {
+                "disableBodyPruning": true
+              },
+              "request": {
+                "method": "GET",
+                "header": [
+                  {
+                    "key": "Accept",
+                    "type": "text",
+                    "value": "application/vnd.api+json"
+                  },
+                  {
+                    "key": "Content-Type",
+                    "type": "text",
+                    "value": "application/vnd.api+json"
+                  }
+                ],
+                "url": {
+                  "raw": "{{url}}/api/v1/tags/definitions/:id",
+                  "host": [
+                    "{{url}}"
+                  ],
+                  "path": [
+                    "api",
+                    "v1",
+                    "tags",
+                    "definitions",
+                    ":id"
+                  ],
+                  "variable": [
+                    {
+                      "id": "34b8df15-033e-4497-b1ea-67de9b6a7c18",
+                      "key": "id",
+                      "value": "",
+                      "type": "string"
+                    }
+                  ]
+                },
+                "description": "**Required scope**: `tags:get`\n"
+              },
+              "response": [
+                {
+                  "id": "012d41d8-7aca-47c2-aa5c-4d34355b2530",
+                  "name": "Tag definition",
+                  "originalRequest": {
+                    "method": "GET",
+                    "header": [
+                      {
+                        "key": "Accept",
+                        "value": "application/vnd.api+json",
+                        "type": "text"
+                      },
+                      {
+                        "key": "Content-Type",
+                        "value": "application/vnd.api+json",
+                        "type": "text"
+                      }
+                    ],
+                    "url": "{{url}}/api/v1/tags/definitions/1"
+                  },
+                  "status": "OK",
+                  "code": 200,
+                  "_postman_previewlanguage": "json",
+                  "header": [
+                    {
+                      "key": "Server",
+                      "value": "nginx/1.15.8"
+                    },
+                    {
+                      "key": "Date",
+                      "value": "Tue, 01 Sep 2020 11:54:21 GMT"
+                    },
+                    {
+                      "key": "Content-Type",
+                      "value": "application/vnd.api+json"
+                    },
+                    {
+                      "key": "Transfer-Encoding",
+                      "value": "chunked"
+                    },
+                    {
+                      "key": "Connection",
+                      "value": "keep-alive"
+                    },
+                    {
+                      "key": "Expires",
+                      "value": "Thu, 19 Nov 1981 08:52:00 GMT"
+                    },
+                    {
+                      "key": "Cache-Control",
+                      "value": "no-store, no-cache, must-revalidate"
+                    },
+                    {
+                      "key": "Pragma",
+                      "value": "no-cache"
+                    },
+                    {
+                      "key": "X-Istruct-Errors",
+                      "value": "{\"notice\":[{\"message\":\"Key file \\\"file:\\/\\/\\/home\\/vagrant\\/code\\/kannaway\\/data\\/ssl\\/oauth2-server.crt\\\" permissions are not correct, should be 600 or 660 instead of 664\",\"file\":\"\\/home\\/vagrant\\/code\\/kannaway\\/vendor\\/league\\/oauth2-server\\/src\\/CryptKey.php\",\"line\":56,\"type\":\"PHP Notice\"}]}"
+                    }
+                  ],
+                  "cookie": [],
+                  "responseTime": null,
+                  "body": "{\n    \"jsonapi\": {\n        \"version\": \"1.0\"\n    },\n    \"data\": {\n        \"type\": \"tag_definition\",\n        \"id\": \"1\",\n        \"links\": {\n            \"self\": \"/api/v1/tags/definitions/1\"\n        },\n        \"attributes\": {\n            \"name\": \"account-status-active\",\n            \"languages\": {\n                \"en\": {\n                    \"name\": \"Active\"\n                },\n                \"ja\": {\n                    \"name\": \"アクティブ\"\n                }\n            }\n        },\n        \"relationships\": {\n            \"type\": {\n                \"links\": {\n                    \"related\": \"/api/v1/tags/definitions/1/relationships/type\",\n                    \"self\": \"/api/v1/tags/definitions/types/1\"\n                },\n                \"data\": {\n                    \"type\": \"definition-type\",\n                    \"id\": \"1\"\n                }\n            }\n        }\n    }\n}"
+                }
+              ]
+            }
+          ],
+          "id": "71617c1e-e148-4c5e-a0c8-8d75598f0370"
         }
       ],
       "id": "1350357e-8683-4f12-abff-969e9889f12f",
