@@ -4698,7 +4698,7 @@
           ]
         },
         {
-          "name": "Tags Copy",
+          "name": "Tags",
           "item": [
             {
               "name": "Tags definitions",
@@ -5102,7 +5102,29 @@
               ]
             }
           ],
-          "id": "71617c1e-e148-4c5e-a0c8-8d75598f0370"
+          "id": "71617c1e-e148-4c5e-a0c8-8d75598f0370",
+          "event": [
+            {
+              "listen": "prerequest",
+              "script": {
+                "id": "c9e8ec90-8cbb-4846-a8ff-54f32b4c59f4",
+                "type": "text/javascript",
+                "exec": [
+                  ""
+                ]
+              }
+            },
+            {
+              "listen": "test",
+              "script": {
+                "id": "7c4decff-140a-433f-92be-e17d8e00f836",
+                "type": "text/javascript",
+                "exec": [
+                  ""
+                ]
+              }
+            }
+          ]
         }
       ],
       "id": "1350357e-8683-4f12-abff-969e9889f12f",
