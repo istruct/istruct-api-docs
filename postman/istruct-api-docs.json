@@ -3368,94 +3368,7 @@
                     },
                     "description": "**Required scope**: `shop_products:get`\n\n##### Product item attributes\n\n| Name                | Type     | Description                                                                                     |\n|:--------------------|:---------|:------------------------------------------------------------------------------------------------|\n| code                | string   | Code (SKU)                                                                                      |\n| minimalStock        | integer  | Minimal stock of this item.                                                                     |\n| emptyStockMessage   | string   | This message is shown in some Channels when item is out of stock.                               |\n| availableFrom       | datetime | Availability date range in ISO 8601 date and time format. When empty, item is always available. |\n| availableTo         | datetime | Availability date range in ISO 8601 date and time format. When empty, item is always available. |\n| active              | boolean  | Inactive items are not shown in Channels.                                                       |\n| taxCode             | string   | Avalara Tax Code. *Not empty in zones with Sales Tax, otherwise use `tax` relationship.*        |\n| underProductMessage | string   | This message is shown in some Channels under Product card.                                      |\n\n##### Product item relationships\n\n| Name   | Description                                                                                                                                                                                                                  |\n|:-------|:-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|\n| prices | List of Product Item prices (Please refer to \"Fetch product item prices\" endpoint documentation for more details).                                                                                                           |\n| tax    | Relationship to Tax. *Valid only in zones with VAT TAX, otherwise please see `taxCode` attribute.* List of Shop channels in which Product is listed (full list can be fetched from `/api/v1/zones/:id/relationships/taxes`). |\n| zone   | Relationship to main Product Item Zone (full list can be fetched from `/api/v1/zones`).                                                                                                                                      |\n| zones  | Relationship to all Product Item Zones in which Product Item is available (full list can be fetched from `/api/v1/zones`).                                                                                                   |"
                   },
-                  "response": [
-                    {
-                      "id": "819bd84c-96e1-4c09-a4d9-a822a0b260e7",
-                      "name": "Fetch single product item",
-                      "originalRequest": {
-                        "method": "GET",
-                        "header": [
-                          {
-                            "key": "Accept",
-                            "type": "text",
-                            "value": "application/vnd.api+json"
-                          },
-                          {
-                            "key": "Content-Type",
-                            "type": "text",
-                            "value": "application/vnd.api+json"
-                          }
-                        ],
-                        "url": {
-                          "raw": "{{url}}/api/v1/shop/products/:productId/items/:itemId",
-                          "host": [
-                            "{{url}}"
-                          ],
-                          "path": [
-                            "api",
-                            "v1",
-                            "shop",
-                            "products",
-                            ":productId",
-                            "items",
-                            ":itemId"
-                          ],
-                          "variable": [
-                            {
-                              "key": "productId",
-                              "value": "{{product_id}}",
-                              "description": "Product ID"
-                            },
-                            {
-                              "key": "itemId",
-                              "value": "{{product_item_id}}",
-                              "description": "Product Item ID"
-                            }
-                          ]
-                        }
-                      },
-                      "status": "OK",
-                      "code": 200,
-                      "_postman_previewlanguage": "json",
-                      "header": [
-                        {
-                          "key": "Server",
-                          "value": "nginx/1.15.8"
-                        },
-                        {
-                          "key": "Date",
-                          "value": "Thu, 25 Jun 2020 18:30:06 GMT"
-                        },
-                        {
-                          "key": "Content-Type",
-                          "value": "application/vnd.api+json"
-                        },
-                        {
-                          "key": "Transfer-Encoding",
-                          "value": "chunked"
-                        },
-                        {
-                          "key": "Connection",
-                          "value": "keep-alive"
-                        },
-                        {
-                          "key": "Expires",
-                          "value": "Thu, 19 Nov 1981 08:52:00 GMT"
-                        },
-                        {
-                          "key": "Cache-Control",
-                          "value": "no-store, no-cache, must-revalidate"
-                        },
-                        {
-                          "key": "Pragma",
-                          "value": "no-cache"
-                        }
-                      ],
-                      "cookie": [],
-                      "responseTime": null,
-                      "body": "{\n    \"jsonapi\": {\n        \"version\": \"1.0\"\n    },\n    \"data\": {\n        \"type\": \"shop_product_item\",\n        \"id\": \"2\",\n        \"links\": {\n            \"self\": \"/api/v1/shop/products/2/items/2\"\n        },\n        \"attributes\": {\n            \"code\": \"EUPROD\",\n            \"minimalStock\": 0,\n            \"emptyStockMessage\": \"\",\n            \"availableFrom\": null,\n            \"availableTo\": null,\n            \"active\": true,\n            \"taxCode\": \"P0000000\",\n            \"underProductMessage\": \"\"\n        },\n        \"relationships\": {\n            \"prices\": {\n                \"links\": {\n                    \"related\": \"/api/v1/shop/products/2/items/2/relationships/prices\"\n                }\n            },\n            \"zone\": {\n                \"links\": {\n                    \"related\": \"/api/v1/shop/products/2/items/2/relationships/zone\",\n                    \"self\": \"/api/v1/zones/1\"\n                },\n                \"data\": {\n                    \"type\": \"zone\",\n                    \"id\": \"1\"\n                }\n            },\n            \"zones\": {\n                \"links\": {\n                    \"related\": \"/api/v1/shop/products/2/items/2/relationships/zones\"\n                }\n            }\n        }\n    }\n}"
-                    }
-                  ]
+                  "response": []
                 },
                 {
                   "name": "Fetch single product channels",
@@ -3723,7 +3636,7 @@
                       ],
                       "cookie": [],
                       "responseTime": null,
-                      "body": "{\n    \"jsonapi\": {\n        \"version\": \"1.0\"\n    },\n    \"data\": {\n        \"type\": \"shop_product_item\",\n        \"id\": \"2\",\n        \"links\": {\n            \"self\": \"/api/v1/shop/products/2/items/2\"\n        },\n        \"attributes\": {\n            \"code\": \"EUPROD\",\n            \"minimalStock\": 0,\n            \"emptyStockMessage\": \"\",\n            \"availableFrom\": null,\n            \"availableTo\": null,\n            \"active\": true,\n            \"taxCode\": \"P0000000\",\n            \"underProductMessage\": \"\"\n        },\n        \"relationships\": {\n            \"prices\": {\n                \"links\": {\n                    \"related\": \"/api/v1/shop/products/2/items/2/relationships/prices\"\n                }\n            },\n            \"zone\": {\n                \"links\": {\n                    \"related\": \"/api/v1/shop/products/2/items/2/relationships/zone\",\n                    \"self\": \"/api/v1/zones/1\"\n                },\n                \"data\": {\n                    \"type\": \"zone\",\n                    \"id\": \"1\"\n                }\n            },\n            \"zones\": {\n                \"links\": {\n                    \"related\": \"/api/v1/shop/products/2/items/2/relationships/zones\"\n                }\n            }\n        }\n    }\n}"
+                      "body": "{\n    \"jsonapi\": {\n        \"version\": \"1.0\"\n    },\n    \"data\": {\n        \"type\": \"shop_product_item\",\n        \"id\": \"2\",\n        \"links\": {\n            \"self\": \"/api/v1/shop/products/2/items/2\"\n        },\n        \"attributes\": {\n            \"code\": \"EUPROD\",\n            \"minimalStock\": 0,\n            \"emptyStockMessage\": \"\",\n            \"availableFrom\": null,\n            \"availableTo\": null,\n            \"active\": true\n        },\n        \"relationships\": {\n            \"prices\": {\n                \"links\": {\n                    \"related\": \"/api/v1/shop/products/2/items/2/relationships/prices\"\n                }\n            },\n            \"zone\": {\n                \"links\": {\n                    \"related\": \"/api/v1/shop/products/2/items/2/relationships/zone\",\n                    \"self\": \"/api/v1/zones/1\"\n                },\n                \"data\": {\n                    \"type\": \"zone\",\n                    \"id\": \"1\"\n                }\n            }\n        }\n    }\n}"
                     }
                   ]
                 },
