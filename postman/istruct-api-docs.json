@@ -1064,7 +1064,7 @@
                   ]
                 },
                 {
-                  "name": "Mark order as paid Copy",
+                  "name": "Mark order as paid",
                   "id": "f1ccf4ff-f691-4356-94a5-076b052fc107",
                   "protocolProfileBehavior": {
                     "disableBodyPruning": true
