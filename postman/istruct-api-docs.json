@@ -1159,6 +1159,158 @@
                       "body": "{\n    \"jsonapi\": {\n        \"version\": \"1.0\"\n    },\n    \"data\": {\n        \"type\": \"shop_order\",\n        \"id\": \"1\",\n        \"links\": {\n            \"self\": \"/api/v1/shop/orders/1\"\n        },\n        \"attributes\": {\n            \"code\": \"1/09/2018/1\",\n            \"currency\": \"PLN\",\n            \"amount\": 103.19,\n            \"points\": 329,\n            \"orderer\": {\n                \"name\": \"John Smith\",\n                \"isCompany\": false,\n                \"companyName\": null,\n                \"phone\": \"123456789\",\n                \"email\": \"john@example.com\",\n                \"address\": {\n                    \"countryId\": \"PL\",\n                    \"postalCode\": \"00-189 \",\n                    \"cityName\": \"Warsaw\",\n                    \"street\": \"Test Rd 1\",\n                    \"annotations\": \"This is some annotation\"\n                },\n                \"vatNumber\": null,\n                \"isVatEu\": false\n            },\n            \"delivery\": {\n                \"name\": \"John Smith\",\n                \"phone\": \"123456789\",\n                \"countryId\": \"PL\",\n                \"postalCode\": \"00-189 \",\n                \"cityName\": \"Warsaw\",\n                \"street\": \"12th Test Rd\"\n            },\n            \"createdAt\": \"2018-09-03T07:33:48+0200\",\n            \"currentStatusId\": 5,\n            \"currentStatusUpdatedAt\": \"2018-10-19T21:06:45+0200\",\n            \"shipSalesDocument\": true\n        },\n        \"relationships\": {\n            \"payment\": {\n                \"links\": {\n                    \"related\": \"/api/v1/shop/orders/1/relationships/payment\"\n                },\n                \"data\": {\n                    \"type\": \"shop_order_payment\",\n                    \"id\": \"1\"\n                }\n            },\n            \"shipment\": {\n                \"links\": {\n                    \"related\": \"/api/v1/shop/orders/1/relationships/shipment\"\n                },\n                \"data\": {\n                    \"type\": \"shop_order_shipment\",\n                    \"id\": \"1\"\n                }\n            },\n            \"items\": {\n                \"links\": {\n                    \"related\": \"/api/v1/shop/orders/1/relationships/items\"\n                }\n            },\n            \"connectedOrders\": {\n                \"links\": {\n                    \"related\": \"/api/v1/shop/orders/1/relationships/connected_orders\"\n                }\n            },\n            \"salesDocument\": {\n                \"links\": {\n                    \"related\": \"/api/v1/shop/orders/1/relationships/sales_document\"\n                },\n                \"data\": {\n                    \"type\": \"invoice\",\n                    \"id\": \"1\"\n                }\n            }\n        }\n    }\n}"
                     }
                   ]
+                },
+                {
+                  "name": "Mark order as paid Copy",
+                  "id": "f1ccf4ff-f691-4356-94a5-076b052fc107",
+                  "protocolProfileBehavior": {
+                    "disableBodyPruning": true
+                  },
+                  "request": {
+                    "method": "PUT",
+                    "header": [
+                      {
+                        "key": "Accept",
+                        "value": "application/vnd.api+json"
+                      },
+                      {
+                        "key": "Content-Type",
+                        "value": "application/vnd.api+json"
+                      }
+                    ],
+                    "body": {
+                      "mode": "raw",
+                      "raw": "{\n    \"data\": {\n        \"type\": \"shop_order\",\n        \"attributes\": {\n            \"paid\": true\n        }\n    }\n}"
+                    },
+                    "url": "{{url}}/api/v1/shop/orders/{{order_id}}",
+                    "description": "**Required scope**: `shop_orders:put` AND `shop_orders:put:paid`\n\nYou can mark Order as paid by sending PUT request with `paid` field set to `true`.\n\nPlease be warned - once Order is marked as paid, **it cannot be unmarked**."
+                  },
+                  "response": [
+                    {
+                      "id": "6fd7925b-2763-45f1-b522-c2af0a1d7f7b",
+                      "name": "Can't mark canceled order as paid",
+                      "originalRequest": {
+                        "method": "PUT",
+                        "header": [
+                          {
+                            "key": "Accept",
+                            "value": "application/vnd.api+json"
+                          },
+                          {
+                            "key": "Content-Type",
+                            "value": "application/vnd.api+json"
+                          }
+                        ],
+                        "body": {
+                          "mode": "raw",
+                          "raw": "{\n    \"data\": {\n        \"type\": \"shop_order\",\n        \"attributes\": {\n            \"paid\": true\n        }\n    }\n}"
+                        },
+                        "url": "{{url}}/api/v1/shop/orders/{{order_id}}"
+                      },
+                      "status": "Bad Request",
+                      "code": 400,
+                      "_postman_previewlanguage": "json",
+                      "header": [
+                        {
+                          "key": "Server",
+                          "value": "nginx/1.15.8"
+                        },
+                        {
+                          "key": "Date",
+                          "value": "Thu, 27 May 2021 19:36:40 GMT"
+                        },
+                        {
+                          "key": "Content-Type",
+                          "value": "application/vnd.api+json"
+                        },
+                        {
+                          "key": "Transfer-Encoding",
+                          "value": "chunked"
+                        },
+                        {
+                          "key": "Connection",
+                          "value": "keep-alive"
+                        },
+                        {
+                          "key": "Expires",
+                          "value": "Thu, 19 Nov 1981 08:52:00 GMT"
+                        },
+                        {
+                          "key": "Cache-Control",
+                          "value": "no-store, no-cache, must-revalidate"
+                        },
+                        {
+                          "key": "Pragma",
+                          "value": "no-cache"
+                        }
+                      ],
+                      "cookie": [],
+                      "responseTime": null,
+                      "body": "{\n    \"errors\": [\n        {\n            \"status\": \"400\",\n            \"detail\": \"Canceled order can't be marked as paid\"\n        }\n    ]\n}"
+                    },
+                    {
+                      "id": "db5af899-6f5e-4202-9d94-26d4b0ad78a5",
+                      "name": "Mark order as paid",
+                      "originalRequest": {
+                        "method": "PUT",
+                        "header": [
+                          {
+                            "key": "Accept",
+                            "value": "application/vnd.api+json"
+                          },
+                          {
+                            "key": "Content-Type",
+                            "value": "application/vnd.api+json"
+                          }
+                        ],
+                        "body": {
+                          "mode": "raw",
+                          "raw": "{\n    \"data\": {\n        \"type\": \"shop_order\",\n        \"attributes\": {\n            \"paid\": true\n        }\n    }\n}"
+                        },
+                        "url": "{{url}}/api/v1/shop/orders/{{order_id}}"
+                      },
+                      "status": "OK",
+                      "code": 200,
+                      "_postman_previewlanguage": "json",
+                      "header": [
+                        {
+                          "key": "Server",
+                          "value": "nginx/1.15.8"
+                        },
+                        {
+                          "key": "Date",
+                          "value": "Thu, 27 May 2021 19:27:05 GMT"
+                        },
+                        {
+                          "key": "Content-Type",
+                          "value": "application/vnd.api+json"
+                        },
+                        {
+                          "key": "Transfer-Encoding",
+                          "value": "chunked"
+                        },
+                        {
+                          "key": "Connection",
+                          "value": "keep-alive"
+                        },
+                        {
+                          "key": "Expires",
+                          "value": "Thu, 19 Nov 1981 08:52:00 GMT"
+                        },
+                        {
+                          "key": "Cache-Control",
+                          "value": "no-store, no-cache, must-revalidate"
+                        },
+                        {
+                          "key": "Pragma",
+                          "value": "no-cache"
+                        }
+                      ],
+                      "cookie": [],
+                      "responseTime": null,
+                      "body": "{\n    \"jsonapi\": {\n        \"version\": \"1.0\"\n    },\n    \"data\": {\n        \"type\": \"shop_order\",\n        \"id\": \"1\",\n        \"links\": {\n            \"self\": \"/api/v1/shop/orders/1\"\n        },\n        \"attributes\": {\n            \"code\": \"1/09/2018/1\",\n            \"currency\": \"PLN\",\n            \"amount\": 103.19,\n            \"points\": 329,\n            \"orderer\": {\n                \"name\": \"John Smith\",\n                \"isCompany\": true,\n                \"companyName\": \"Smith Company\",\n                \"phone\": \"123456789\",\n                \"email\": \"john@example.com\",\n                \"address\": {\n                    \"countryId\": \"PL\",\n                    \"postalCode\": \"00-189\",\n                    \"regionName\": null,\n                    \"regionCode\": null,\n                    \"cityName\": \"Warsaw\",\n                    \"street\": \"Some Rd 4C\",\n                    \"annotations\": null\n                },\n                \"vatNumber\": \"123456\",\n                \"isVatEu\": false,\n                \"userCode\": \"123\"\n            },\n            \"delivery\": {\n            \t\"name\": \"John Smith\",\n                \"phone\": \"123 456 789\",\n                \"countryId\": \"PL\",\n                \"regionName\": null,\n                \"regionCode\": null,\n                \"postalCode\": \"00-189 \",\n                \"cityName\": \"Warsaw\",\n                \"street\": \"Some Rd 4C\"\n            },\n            \"warehouseId\": 2,\n            \"cancelled\": false,\n            \"createdAt\": \"2018-09-03T07:33:48+0200\",\n            \"paidAt\": \"2021-05-27T21:27:04+0200\",\n            \"currentStatusId\": 2,\n            \"currentStatusUpdatedAt\": \"2018-10-19T21:06:45+0200\",\n            \"shipSalesDocument\": true,\n            \"orderDiscount\": 0,\n            \"orderTax\": 0,\n            \"salesTax\": 0,\n            \"taxExempt\": null,\n            \"personalConsumption\": false,\n            \"calculatedAt\": \"2020-03-19T13:48:53+0100\",\n            \"paymentNickname\": null,\n            \"paymentAuthCode\": null,\n            \"paymentGatewayName\": null\n        },\n        \"relationships\": {\n            \"payment\": {\n                \"links\": {\n                    \"related\": \"/api/v1/shop/orders/1/relationships/payment\"\n                },\n                \"data\": {\n                    \"type\": \"shop_order_payment\",\n                    \"id\": \"23\"\n                }\n            },\n            \"shipment\": {\n                \"links\": {\n                    \"related\": \"/api/v1/shop/orders/1/relationships/shipment\"\n                },\n                \"data\": {\n                    \"type\": \"shop_order_shipment\",\n                    \"id\": \"25\"\n                }\n            },\n            \"items\": {\n                \"links\": {\n                    \"related\": \"/api/v1/shop/orders/1/relationships/items\"\n                }\n            },\n            \"connectedOrders\": {\n                \"links\": {\n                    \"related\": \"/api/v1/shop/orders/1/relationships/connected_orders\"\n                }\n            },\n            \"orderAdjustments\": {\n                \"links\": {\n                    \"related\": \"/api/v1/shop/orders/1/relationships/order_adjustments\"\n                }\n            }\n        }\n    }\n}"
+                    }
+                  ]
                 }
               ],
               "id": "839fab0d-b849-45f6-a46b-f91f5ebd3b8a",
