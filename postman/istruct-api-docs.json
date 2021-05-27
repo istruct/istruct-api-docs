@@ -1064,103 +1064,6 @@
                   ]
                 },
                 {
-                  "name": "Add single order",
-                  "id": "9fc62f24-c74f-456e-8b8c-6ef02d3b91a9",
-                  "protocolProfileBehavior": {
-                    "disableBodyPruning": true
-                  },
-                  "request": {
-                    "method": "POST",
-                    "header": [
-                      {
-                        "key": "Accept",
-                        "value": "application/vnd.api+json"
-                      },
-                      {
-                        "key": "Content-Type",
-                        "value": "application/vnd.api+json"
-                      }
-                    ],
-                    "body": {
-                      "mode": "raw",
-                      "raw": "{\n    \"jsonapi\": {\n        \"version\": \"1.0\"\n    },\n    \"data\": {\n        \"type\": \"shop_order\",\n        \"attributes\": {\n            \"orderer\": {\n                \"nameFirst\": \"John\",\n                \"nameLast\": \"Smith\",\n                \"isCompany\": false,\n                \"companyName\": null,\n                \"phone\": \"123456789\",\n                \"email\": \"john@example.com\",\n                \"address\": {\n                    \"countryId\": \"PL\",\n                    \"postalCode\": \"00-189 \",\n                    \"cityName\": \"Warsaw\",\n                    \"street\": \"Test Rd 1\",\n                    \"annotations\": \"This is some annotation\"\n                },\n                \"vatNumber\": null\n            },\n            \"delivery\": {\n                \"nameFirst\": \"System's\",\n                \"nameLast\": \"Administrator\",\n                \"phone\": \"123456789\",\n                \"countryId\": \"US\",\n                \"regionCode\": \"NJ\",\n                \"postalCode\": \"00-189 \",\n                \"cityName\": \"Warsaw\",\n                \"street\": \"12th Test Rd\"\n            },\n            \"items\": [\n                {\n                    \"code\": \"001\",\n                    \"quantity\": 20\n                },\n                {\n                    \"id\": \"264812\",\n                    \"quantity\": 1\n                }\n            ],\n            \"shipmentTypeCode\": \"ups\",\n            \"paymentTypeCode\": \"credit_card\"\n        },\n        \"relationships\": {\n            \"user\": {\n                \"data\": {\n                    \"type\": \"user\",\n                    \"id\": \"US0123456\"\n                }\n            },\n        \t\"tags\": {\n        \t\t\"data\": [\n        \t\t\t{\n        \t\t\t\t\"type\": \"tag\",\n        \t\t\t\t\"id\": \"other-tag\"\n        \t\t\t},\n        \t\t\t{\n        \t\t\t\t\"type\": \"tag\",\n        \t\t\t\t\"id\": \"membertek-sample\"\n        \t\t\t}\n    \t\t\t]\n        \t}\n        }\n    }\n}"
-                    },
-                    "url": "{{url}}/api/v1/shop/orders",
-                    "description": "**Required scope**: `shop_orders:post`\n\n**Order attributes**\n\n| Name                    | Type        | Required | Description                                                                         |\n|-------------------------|-------------|----------|-------------------------------------------------------------------------------------|\n| orderer                 | array       | No       | If this field is skipped entirely, data from user's profile will be used            |\n| orderer.nameFirst       | string      | Yes      | First name of entity that placed this order                                         |\n| orderer.nameLast        | string      | Yes      | Last name of entity that placed this order                                          |\n| orderer.isCompany       | bool        | Yes      | Whether order has been placed on behalf of a company entity                         |\n| orderer.companyName     | string or null | Yes/No   | This is required when `isCompany = true`                                            |\n| orderer.phone           | string      | Yes      | Phone number of orderer                                                             |\n| orderer.email           | string      | Yes      | E-mail address of orderer                                                           |\n| orderer.address.countryId | string    | Yes      | [ISO 3166-1 alpha-2](https://en.wikipedia.org/wiki/ISO_3166-1_alpha-2) country code |\n| orderer.address.regionCode | string   | Yes/No   | This field might be required for some addresses, depending on configuration of your iStruct instance. It contains 2-letter state/region/land code. |\n| orderer.address.postalCode| string    | Yes      | Orderer postal code                                                                 |\n| orderer.address.cityName  | string    | Yes      | Orderer city name                                                                   |\n| orderer.address.street    | string    | Yes      | Orderer address (street, home number, apartment number                              |\n| orderer.address.annotations | string or null  | No      | Orderer annotations or remarks regarding this order                                 |\n| orderer.vatNumber       | string or null      | Yes/No      | When `isCompany = true` this number is required (used for invoicing)                  |\n| delivery                | array       | No       | If this field is skipped entirely, default user's address will be used           |\n| delivery.nameFirst      | string      | Yes      | Order receiver first name                                                          |\n| delivery.nameLast       | string      | Yes      | Order receiver last name                                                            |\n| delivery.phone          | string      | Yes      | Phone number for delivery                                                           |\n| delivery.countryId      | string      | Yes      | [ISO 3166-1 alpha-2](https://en.wikipedia.org/wiki/ISO_3166-1_alpha-2) country code |\n| delivery.regionCode     | string      | Yes/No   | This field might be required for some addresses, depending on configuration of your iStruct instance. It contains 2-letter state/region/land code.\n| delivery.postalCode     | string      | Yes      | Delivery postal code                                                                |\n| delivery.cityName       | string      | Yes      | Delivery city name                                                                  |\n| delivery.street         | string      | Yes      | Delivery address (street, home number, apartment number                             |\n| shipSalesDocument       | bool        | Yes/No   | Whether physical copy of sales document should be inserted into package (customer wish). Depends on your iStruct instance configuration, may be disabled. |\n| items.[].code           | string      | Yes      | Item code of ordered product                                                     |\n| items.[].quantity       | integer     | Yes      | Ordered quantity of given item                                                      |\n| shipmentTypeCode        | string      | Yes      | Shipment type code, which can be fetched via **ShipmentType** endpoint                |\n| paymentTypeCode        | string       | Yes      | Payment type code, which can be fetched via **PaymentType** endpoint                   |\n\n**Relationships**\n\n\n| Name                    | Required | Description                                                                         |\n|-------------------------|----------|-------------------------------------------------------------------------------------|\n| user                    | Yes      | iStruct's user that makes this order                                                |\n| warehouse               | No       | if your iStruct instance allows users to directly change the warehouse they are ordering from, you can change it here as well. Otherwise, this field is not directly accessible. |\n| tags                    | No       | List of tags that should be added to this order                                     |"
-                  },
-                  "response": [
-                    {
-                      "id": "3d6abe99-88a8-43aa-bd3a-9c3d7238d9a7",
-                      "name": "Add single order",
-                      "originalRequest": {
-                        "method": "GET",
-                        "header": [
-                          {
-                            "key": "Accept",
-                            "value": "application/vnd.api+json"
-                          },
-                          {
-                            "key": "Content-Type",
-                            "name": "Content-Type",
-                            "value": "application/json",
-                            "type": "text"
-                          }
-                        ],
-                        "body": {
-                          "mode": "raw",
-                          "raw": "{\n    \"jsonapi\": {\n        \"version\": \"1.0\"\n    },\n    \"data\": {\n        \"type\": \"shop_order\",\n        \"attributes\": {\n            \"orderer\": {\n                \"nameFirst\": \"System's\",\n                \"nameLast\": \"Administrator\",\n                \"isCompany\": false,\n                \"companyName\": null,\n                \"phone\": \"123456789\",\n                \"email\": \"john@example.com\",\n                \"address\": {\n                    \"countryId\": \"PL\",\n                    \"postalCode\": \"00-189 \",\n                    \"cityName\": \"Warsaw\",\n                    \"street\": \"Test Rd 1\",\n                    \"annotations\": \"This is some annotation\"\n                },\n                \"vatNumber\": null\n            },\n            \"delivery\": {\n                \"name\": \"John Smith\",\n                \"phone\": \"123456789\",\n                \"countryId\": \"US\",\n                \"regionCode\": \"NJ\",\n                \"postalCode\": \"00-189 \",\n                \"cityName\": \"Warsaw\",\n                \"street\": \"12th Test Rd\"\n            },\n            \"items\": [\n                {\n                    \"code\": \"001\",\n                    \"quantity\": 20\n                },\n                {\n                    \"id\": \"264812\",\n                    \"quantity\": 1\n                }\n            ],\n            \"shipmentTypeCode\": \"ups\",\n            \"paymentTypeCode\": \"credit_card\"\n        },\n        \"relationships\": {\n            \"user\": {\n                \"data\": {\n                    \"type\": \"user\",\n                    \"id\": \"US0123\"\n                }\n            },\n        \t\"tags\": {\n        \t\t\"data\": [\n        \t\t\t{\n        \t\t\t\t\"type\": \"tag\",\n        \t\t\t\t\"id\": \"other-tag\"\n        \t\t\t},\n        \t\t\t{\n        \t\t\t\t\"type\": \"tag\",\n        \t\t\t\t\"id\": \"some-example\"\n        \t\t\t}\n    \t\t\t]\n        \t}\n        }\n    }\n}",
-                          "options": {
-                            "raw": {
-                              "language": "json"
-                            }
-                          }
-                        },
-                        "url": "http://{{url}}/api/v1/shop/orders/{{order_id}}"
-                      },
-                      "status": "OK",
-                      "code": 200,
-                      "_postman_previewlanguage": "json",
-                      "header": [
-                        {
-                          "key": "Server",
-                          "value": "nginx/1.15.0"
-                        },
-                        {
-                          "key": "Date",
-                          "value": "Fri, 19 Oct 2018 21:41:07 GMT"
-                        },
-                        {
-                          "key": "Content-Type",
-                          "value": "application/vnd.api+json"
-                        },
-                        {
-                          "key": "Transfer-Encoding",
-                          "value": "chunked"
-                        },
-                        {
-                          "key": "Connection",
-                          "value": "keep-alive"
-                        },
-                        {
-                          "key": "Expires",
-                          "value": "Thu, 19 Nov 1981 08:52:00 GMT"
-                        },
-                        {
-                          "key": "Cache-Control",
-                          "value": "no-store, no-cache, must-revalidate"
-                        },
-                        {
-                          "key": "Pragma",
-                          "value": "no-cache"
-                        }
-                      ],
-                      "cookie": [],
-                      "responseTime": null,
-                      "body": "{\n    \"jsonapi\": {\n        \"version\": \"1.0\"\n    },\n    \"data\": {\n        \"type\": \"shop_order\",\n        \"id\": \"1\",\n        \"links\": {\n            \"self\": \"/api/v1/shop/orders/1\"\n        },\n        \"attributes\": {\n            \"code\": \"1/09/2018/1\",\n            \"currency\": \"PLN\",\n            \"amount\": 103.19,\n            \"points\": 329,\n            \"orderer\": {\n                \"name\": \"John Smith\",\n                \"isCompany\": false,\n                \"companyName\": null,\n                \"phone\": \"123456789\",\n                \"email\": \"john@example.com\",\n                \"address\": {\n                    \"countryId\": \"PL\",\n                    \"postalCode\": \"00-189 \",\n                    \"cityName\": \"Warsaw\",\n                    \"street\": \"Test Rd 1\",\n                    \"annotations\": \"This is some annotation\"\n                },\n                \"vatNumber\": null,\n                \"isVatEu\": false\n            },\n            \"delivery\": {\n                \"name\": \"John Smith\",\n                \"phone\": \"123456789\",\n                \"countryId\": \"PL\",\n                \"postalCode\": \"00-189 \",\n                \"cityName\": \"Warsaw\",\n                \"street\": \"12th Test Rd\"\n            },\n            \"createdAt\": \"2018-09-03T07:33:48+0200\",\n            \"currentStatusId\": 5,\n            \"currentStatusUpdatedAt\": \"2018-10-19T21:06:45+0200\",\n            \"shipSalesDocument\": true\n        },\n        \"relationships\": {\n            \"payment\": {\n                \"links\": {\n                    \"related\": \"/api/v1/shop/orders/1/relationships/payment\"\n                },\n                \"data\": {\n                    \"type\": \"shop_order_payment\",\n                    \"id\": \"1\"\n                }\n            },\n            \"shipment\": {\n                \"links\": {\n                    \"related\": \"/api/v1/shop/orders/1/relationships/shipment\"\n                },\n                \"data\": {\n                    \"type\": \"shop_order_shipment\",\n                    \"id\": \"1\"\n                }\n            },\n            \"items\": {\n                \"links\": {\n                    \"related\": \"/api/v1/shop/orders/1/relationships/items\"\n                }\n            },\n            \"connectedOrders\": {\n                \"links\": {\n                    \"related\": \"/api/v1/shop/orders/1/relationships/connected_orders\"\n                }\n            },\n            \"salesDocument\": {\n                \"links\": {\n                    \"related\": \"/api/v1/shop/orders/1/relationships/sales_document\"\n                },\n                \"data\": {\n                    \"type\": \"invoice\",\n                    \"id\": \"1\"\n                }\n            }\n        }\n    }\n}"
-                    }
-                  ]
-                },
-                {
                   "name": "Mark order as paid Copy",
                   "id": "f1ccf4ff-f691-4356-94a5-076b052fc107",
                   "protocolProfileBehavior": {
@@ -1309,6 +1212,103 @@
                       "cookie": [],
                       "responseTime": null,
                       "body": "{\n    \"jsonapi\": {\n        \"version\": \"1.0\"\n    },\n    \"data\": {\n        \"type\": \"shop_order\",\n        \"id\": \"1\",\n        \"links\": {\n            \"self\": \"/api/v1/shop/orders/1\"\n        },\n        \"attributes\": {\n            \"code\": \"1/09/2018/1\",\n            \"currency\": \"PLN\",\n            \"amount\": 103.19,\n            \"points\": 329,\n            \"orderer\": {\n                \"name\": \"John Smith\",\n                \"isCompany\": true,\n                \"companyName\": \"Smith Company\",\n                \"phone\": \"123456789\",\n                \"email\": \"john@example.com\",\n                \"address\": {\n                    \"countryId\": \"PL\",\n                    \"postalCode\": \"00-189\",\n                    \"regionName\": null,\n                    \"regionCode\": null,\n                    \"cityName\": \"Warsaw\",\n                    \"street\": \"Some Rd 4C\",\n                    \"annotations\": null\n                },\n                \"vatNumber\": \"123456\",\n                \"isVatEu\": false,\n                \"userCode\": \"123\"\n            },\n            \"delivery\": {\n            \t\"name\": \"John Smith\",\n                \"phone\": \"123 456 789\",\n                \"countryId\": \"PL\",\n                \"regionName\": null,\n                \"regionCode\": null,\n                \"postalCode\": \"00-189 \",\n                \"cityName\": \"Warsaw\",\n                \"street\": \"Some Rd 4C\"\n            },\n            \"warehouseId\": 2,\n            \"cancelled\": false,\n            \"createdAt\": \"2018-09-03T07:33:48+0200\",\n            \"paidAt\": \"2021-05-27T21:27:04+0200\",\n            \"currentStatusId\": 2,\n            \"currentStatusUpdatedAt\": \"2018-10-19T21:06:45+0200\",\n            \"shipSalesDocument\": true,\n            \"orderDiscount\": 0,\n            \"orderTax\": 0,\n            \"salesTax\": 0,\n            \"taxExempt\": null,\n            \"personalConsumption\": false,\n            \"calculatedAt\": \"2020-03-19T13:48:53+0100\",\n            \"paymentNickname\": null,\n            \"paymentAuthCode\": null,\n            \"paymentGatewayName\": null\n        },\n        \"relationships\": {\n            \"payment\": {\n                \"links\": {\n                    \"related\": \"/api/v1/shop/orders/1/relationships/payment\"\n                },\n                \"data\": {\n                    \"type\": \"shop_order_payment\",\n                    \"id\": \"23\"\n                }\n            },\n            \"shipment\": {\n                \"links\": {\n                    \"related\": \"/api/v1/shop/orders/1/relationships/shipment\"\n                },\n                \"data\": {\n                    \"type\": \"shop_order_shipment\",\n                    \"id\": \"25\"\n                }\n            },\n            \"items\": {\n                \"links\": {\n                    \"related\": \"/api/v1/shop/orders/1/relationships/items\"\n                }\n            },\n            \"connectedOrders\": {\n                \"links\": {\n                    \"related\": \"/api/v1/shop/orders/1/relationships/connected_orders\"\n                }\n            },\n            \"orderAdjustments\": {\n                \"links\": {\n                    \"related\": \"/api/v1/shop/orders/1/relationships/order_adjustments\"\n                }\n            }\n        }\n    }\n}"
+                    }
+                  ]
+                },
+                {
+                  "name": "Add single order",
+                  "id": "9fc62f24-c74f-456e-8b8c-6ef02d3b91a9",
+                  "protocolProfileBehavior": {
+                    "disableBodyPruning": true
+                  },
+                  "request": {
+                    "method": "POST",
+                    "header": [
+                      {
+                        "key": "Accept",
+                        "value": "application/vnd.api+json"
+                      },
+                      {
+                        "key": "Content-Type",
+                        "value": "application/vnd.api+json"
+                      }
+                    ],
+                    "body": {
+                      "mode": "raw",
+                      "raw": "{\n    \"jsonapi\": {\n        \"version\": \"1.0\"\n    },\n    \"data\": {\n        \"type\": \"shop_order\",\n        \"attributes\": {\n            \"orderer\": {\n                \"nameFirst\": \"John\",\n                \"nameLast\": \"Smith\",\n                \"isCompany\": false,\n                \"companyName\": null,\n                \"phone\": \"123456789\",\n                \"email\": \"john@example.com\",\n                \"address\": {\n                    \"countryId\": \"PL\",\n                    \"postalCode\": \"00-189 \",\n                    \"cityName\": \"Warsaw\",\n                    \"street\": \"Test Rd 1\",\n                    \"annotations\": \"This is some annotation\"\n                },\n                \"vatNumber\": null\n            },\n            \"delivery\": {\n                \"nameFirst\": \"System's\",\n                \"nameLast\": \"Administrator\",\n                \"phone\": \"123456789\",\n                \"countryId\": \"US\",\n                \"regionCode\": \"NJ\",\n                \"postalCode\": \"00-189 \",\n                \"cityName\": \"Warsaw\",\n                \"street\": \"12th Test Rd\"\n            },\n            \"items\": [\n                {\n                    \"code\": \"001\",\n                    \"quantity\": 20\n                },\n                {\n                    \"id\": \"264812\",\n                    \"quantity\": 1\n                }\n            ],\n            \"shipmentTypeCode\": \"ups\",\n            \"paymentTypeCode\": \"credit_card\"\n        },\n        \"relationships\": {\n            \"user\": {\n                \"data\": {\n                    \"type\": \"user\",\n                    \"id\": \"US0123456\"\n                }\n            },\n        \t\"tags\": {\n        \t\t\"data\": [\n        \t\t\t{\n        \t\t\t\t\"type\": \"tag\",\n        \t\t\t\t\"id\": \"other-tag\"\n        \t\t\t},\n        \t\t\t{\n        \t\t\t\t\"type\": \"tag\",\n        \t\t\t\t\"id\": \"membertek-sample\"\n        \t\t\t}\n    \t\t\t]\n        \t}\n        }\n    }\n}"
+                    },
+                    "url": "{{url}}/api/v1/shop/orders",
+                    "description": "**Required scope**: `shop_orders:post`\n\n**Order attributes**\n\n| Name                    | Type        | Required | Description                                                                         |\n|-------------------------|-------------|----------|-------------------------------------------------------------------------------------|\n| orderer                 | array       | No       | If this field is skipped entirely, data from user's profile will be used            |\n| orderer.nameFirst       | string      | Yes      | First name of entity that placed this order                                         |\n| orderer.nameLast        | string      | Yes      | Last name of entity that placed this order                                          |\n| orderer.isCompany       | bool        | Yes      | Whether order has been placed on behalf of a company entity                         |\n| orderer.companyName     | string or null | Yes/No   | This is required when `isCompany = true`                                            |\n| orderer.phone           | string      | Yes      | Phone number of orderer                                                             |\n| orderer.email           | string      | Yes      | E-mail address of orderer                                                           |\n| orderer.address.countryId | string    | Yes      | [ISO 3166-1 alpha-2](https://en.wikipedia.org/wiki/ISO_3166-1_alpha-2) country code |\n| orderer.address.regionCode | string   | Yes/No   | This field might be required for some addresses, depending on configuration of your iStruct instance. It contains 2-letter state/region/land code. |\n| orderer.address.postalCode| string    | Yes      | Orderer postal code                                                                 |\n| orderer.address.cityName  | string    | Yes      | Orderer city name                                                                   |\n| orderer.address.street    | string    | Yes      | Orderer address (street, home number, apartment number                              |\n| orderer.address.annotations | string or null  | No      | Orderer annotations or remarks regarding this order                                 |\n| orderer.vatNumber       | string or null      | Yes/No      | When `isCompany = true` this number is required (used for invoicing)                  |\n| delivery                | array       | No       | If this field is skipped entirely, default user's address will be used           |\n| delivery.nameFirst      | string      | Yes      | Order receiver first name                                                          |\n| delivery.nameLast       | string      | Yes      | Order receiver last name                                                            |\n| delivery.phone          | string      | Yes      | Phone number for delivery                                                           |\n| delivery.countryId      | string      | Yes      | [ISO 3166-1 alpha-2](https://en.wikipedia.org/wiki/ISO_3166-1_alpha-2) country code |\n| delivery.regionCode     | string      | Yes/No   | This field might be required for some addresses, depending on configuration of your iStruct instance. It contains 2-letter state/region/land code.\n| delivery.postalCode     | string      | Yes      | Delivery postal code                                                                |\n| delivery.cityName       | string      | Yes      | Delivery city name                                                                  |\n| delivery.street         | string      | Yes      | Delivery address (street, home number, apartment number                             |\n| shipSalesDocument       | bool        | Yes/No   | Whether physical copy of sales document should be inserted into package (customer wish). Depends on your iStruct instance configuration, may be disabled. |\n| items.[].code           | string      | Yes      | Item code of ordered product                                                     |\n| items.[].quantity       | integer     | Yes      | Ordered quantity of given item                                                      |\n| shipmentTypeCode        | string      | Yes      | Shipment type code, which can be fetched via **ShipmentType** endpoint                |\n| paymentTypeCode        | string       | Yes      | Payment type code, which can be fetched via **PaymentType** endpoint                   |\n\n**Relationships**\n\n\n| Name                    | Required | Description                                                                         |\n|-------------------------|----------|-------------------------------------------------------------------------------------|\n| user                    | Yes      | iStruct's user that makes this order                                                |\n| warehouse               | No       | if your iStruct instance allows users to directly change the warehouse they are ordering from, you can change it here as well. Otherwise, this field is not directly accessible. |\n| tags                    | No       | List of tags that should be added to this order                                     |"
+                  },
+                  "response": [
+                    {
+                      "id": "3d6abe99-88a8-43aa-bd3a-9c3d7238d9a7",
+                      "name": "Add single order",
+                      "originalRequest": {
+                        "method": "GET",
+                        "header": [
+                          {
+                            "key": "Accept",
+                            "value": "application/vnd.api+json"
+                          },
+                          {
+                            "key": "Content-Type",
+                            "name": "Content-Type",
+                            "value": "application/json",
+                            "type": "text"
+                          }
+                        ],
+                        "body": {
+                          "mode": "raw",
+                          "raw": "{\n    \"jsonapi\": {\n        \"version\": \"1.0\"\n    },\n    \"data\": {\n        \"type\": \"shop_order\",\n        \"attributes\": {\n            \"orderer\": {\n                \"nameFirst\": \"System's\",\n                \"nameLast\": \"Administrator\",\n                \"isCompany\": false,\n                \"companyName\": null,\n                \"phone\": \"123456789\",\n                \"email\": \"john@example.com\",\n                \"address\": {\n                    \"countryId\": \"PL\",\n                    \"postalCode\": \"00-189 \",\n                    \"cityName\": \"Warsaw\",\n                    \"street\": \"Test Rd 1\",\n                    \"annotations\": \"This is some annotation\"\n                },\n                \"vatNumber\": null\n            },\n            \"delivery\": {\n                \"name\": \"John Smith\",\n                \"phone\": \"123456789\",\n                \"countryId\": \"US\",\n                \"regionCode\": \"NJ\",\n                \"postalCode\": \"00-189 \",\n                \"cityName\": \"Warsaw\",\n                \"street\": \"12th Test Rd\"\n            },\n            \"items\": [\n                {\n                    \"code\": \"001\",\n                    \"quantity\": 20\n                },\n                {\n                    \"id\": \"264812\",\n                    \"quantity\": 1\n                }\n            ],\n            \"shipmentTypeCode\": \"ups\",\n            \"paymentTypeCode\": \"credit_card\"\n        },\n        \"relationships\": {\n            \"user\": {\n                \"data\": {\n                    \"type\": \"user\",\n                    \"id\": \"US0123\"\n                }\n            },\n        \t\"tags\": {\n        \t\t\"data\": [\n        \t\t\t{\n        \t\t\t\t\"type\": \"tag\",\n        \t\t\t\t\"id\": \"other-tag\"\n        \t\t\t},\n        \t\t\t{\n        \t\t\t\t\"type\": \"tag\",\n        \t\t\t\t\"id\": \"some-example\"\n        \t\t\t}\n    \t\t\t]\n        \t}\n        }\n    }\n}",
+                          "options": {
+                            "raw": {
+                              "language": "json"
+                            }
+                          }
+                        },
+                        "url": "http://{{url}}/api/v1/shop/orders/{{order_id}}"
+                      },
+                      "status": "OK",
+                      "code": 200,
+                      "_postman_previewlanguage": "json",
+                      "header": [
+                        {
+                          "key": "Server",
+                          "value": "nginx/1.15.0"
+                        },
+                        {
+                          "key": "Date",
+                          "value": "Fri, 19 Oct 2018 21:41:07 GMT"
+                        },
+                        {
+                          "key": "Content-Type",
+                          "value": "application/vnd.api+json"
+                        },
+                        {
+                          "key": "Transfer-Encoding",
+                          "value": "chunked"
+                        },
+                        {
+                          "key": "Connection",
+                          "value": "keep-alive"
+                        },
+                        {
+                          "key": "Expires",
+                          "value": "Thu, 19 Nov 1981 08:52:00 GMT"
+                        },
+                        {
+                          "key": "Cache-Control",
+                          "value": "no-store, no-cache, must-revalidate"
+                        },
+                        {
+                          "key": "Pragma",
+                          "value": "no-cache"
+                        }
+                      ],
+                      "cookie": [],
+                      "responseTime": null,
+                      "body": "{\n    \"jsonapi\": {\n        \"version\": \"1.0\"\n    },\n    \"data\": {\n        \"type\": \"shop_order\",\n        \"id\": \"1\",\n        \"links\": {\n            \"self\": \"/api/v1/shop/orders/1\"\n        },\n        \"attributes\": {\n            \"code\": \"1/09/2018/1\",\n            \"currency\": \"PLN\",\n            \"amount\": 103.19,\n            \"points\": 329,\n            \"orderer\": {\n                \"name\": \"John Smith\",\n                \"isCompany\": false,\n                \"companyName\": null,\n                \"phone\": \"123456789\",\n                \"email\": \"john@example.com\",\n                \"address\": {\n                    \"countryId\": \"PL\",\n                    \"postalCode\": \"00-189 \",\n                    \"cityName\": \"Warsaw\",\n                    \"street\": \"Test Rd 1\",\n                    \"annotations\": \"This is some annotation\"\n                },\n                \"vatNumber\": null,\n                \"isVatEu\": false\n            },\n            \"delivery\": {\n                \"name\": \"John Smith\",\n                \"phone\": \"123456789\",\n                \"countryId\": \"PL\",\n                \"postalCode\": \"00-189 \",\n                \"cityName\": \"Warsaw\",\n                \"street\": \"12th Test Rd\"\n            },\n            \"createdAt\": \"2018-09-03T07:33:48+0200\",\n            \"currentStatusId\": 5,\n            \"currentStatusUpdatedAt\": \"2018-10-19T21:06:45+0200\",\n            \"shipSalesDocument\": true\n        },\n        \"relationships\": {\n            \"payment\": {\n                \"links\": {\n                    \"related\": \"/api/v1/shop/orders/1/relationships/payment\"\n                },\n                \"data\": {\n                    \"type\": \"shop_order_payment\",\n                    \"id\": \"1\"\n                }\n            },\n            \"shipment\": {\n                \"links\": {\n                    \"related\": \"/api/v1/shop/orders/1/relationships/shipment\"\n                },\n                \"data\": {\n                    \"type\": \"shop_order_shipment\",\n                    \"id\": \"1\"\n                }\n            },\n            \"items\": {\n                \"links\": {\n                    \"related\": \"/api/v1/shop/orders/1/relationships/items\"\n                }\n            },\n            \"connectedOrders\": {\n                \"links\": {\n                    \"related\": \"/api/v1/shop/orders/1/relationships/connected_orders\"\n                }\n            },\n            \"salesDocument\": {\n                \"links\": {\n                    \"related\": \"/api/v1/shop/orders/1/relationships/sales_document\"\n                },\n                \"data\": {\n                    \"type\": \"invoice\",\n                    \"id\": \"1\"\n                }\n            }\n        }\n    }\n}"
                     }
                   ]
                 }
