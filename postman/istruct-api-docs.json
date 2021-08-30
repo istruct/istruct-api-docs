@@ -64,24 +64,24 @@
               "urlencoded": [
                 {
                   "key": "grant_type",
-                  "value": "client_credentials",
-                  "type": "text"
+                  "type": "text",
+                  "value": "client_credentials"
                 },
                 {
                   "key": "client_id",
-                  "value": "{{client_id}}",
-                  "type": "text"
+                  "type": "text",
+                  "value": "{{client_id}}"
                 },
                 {
                   "key": "client_secret",
-                  "value": "{{client_secret}}",
-                  "type": "text"
+                  "type": "text",
+                  "value": "{{client_secret}}"
                 },
                 {
-                  "key": "scope",
-                  "value": "{{client_scopes}}",
                   "description": "Space separated list of scopes, for example \"shop_packages:get shop_orders:get\". Parameter can be omitted to obtain all scopes available to client.",
+                  "key": "scope",
                   "type": "text",
+                  "value": "{{client_scopes}}",
                   "disabled": true
                 }
               ]
@@ -1211,7 +1211,7 @@
                       ],
                       "cookie": [],
                       "responseTime": null,
-                      "body": "{\n    \"jsonapi\": {\n        \"version\": \"1.0\"\n    },\n    \"data\": {\n        \"type\": \"shop_order\",\n        \"id\": \"1\",\n        \"links\": {\n            \"self\": \"/api/v1/shop/orders/1\"\n        },\n        \"attributes\": {\n            \"code\": \"1/09/2018/1\",\n            \"currency\": \"PLN\",\n            \"amount\": 103.19,\n            \"points\": 329,\n            \"orderer\": {\n                \"name\": \"John Smith\",\n                \"isCompany\": true,\n                \"companyName\": \"Smith Company\",\n                \"phone\": \"123456789\",\n                \"email\": \"john@example.com\",\n                \"address\": {\n                    \"countryId\": \"PL\",\n                    \"postalCode\": \"00-189\",\n                    \"regionName\": null,\n                    \"regionCode\": null,\n                    \"cityName\": \"Warsaw\",\n                    \"street\": \"Some Rd 4C\",\n                    \"annotations\": null\n                },\n                \"vatNumber\": \"123456\",\n                \"isVatEu\": false,\n                \"userCode\": \"123\"\n            },\n            \"delivery\": {\n            \t\"name\": \"John Smith\",\n                \"phone\": \"123 456 789\",\n                \"countryId\": \"PL\",\n                \"regionName\": null,\n                \"regionCode\": null,\n                \"postalCode\": \"00-189 \",\n                \"cityName\": \"Warsaw\",\n                \"street\": \"Some Rd 4C\"\n            },\n            \"warehouseId\": 2,\n            \"cancelled\": false,\n            \"createdAt\": \"2018-09-03T07:33:48+0200\",\n            \"paidAt\": \"2021-05-27T21:27:04+0200\",\n            \"currentStatusId\": 2,\n            \"currentStatusUpdatedAt\": \"2018-10-19T21:06:45+0200\",\n            \"shipSalesDocument\": true,\n            \"orderDiscount\": 0,\n            \"orderTax\": 0,\n            \"salesTax\": 0,\n            \"taxExempt\": null,\n            \"personalConsumption\": false,\n            \"calculatedAt\": \"2020-03-19T13:48:53+0100\",\n            \"paymentNickname\": null,\n            \"paymentAuthCode\": null,\n            \"paymentGatewayName\": null\n        },\n        \"relationships\": {\n            \"payment\": {\n                \"links\": {\n                    \"related\": \"/api/v1/shop/orders/1/relationships/payment\"\n                },\n                \"data\": {\n                    \"type\": \"shop_order_payment\",\n                    \"id\": \"23\"\n                }\n            },\n            \"shipment\": {\n                \"links\": {\n                    \"related\": \"/api/v1/shop/orders/1/relationships/shipment\"\n                },\n                \"data\": {\n                    \"type\": \"shop_order_shipment\",\n                    \"id\": \"25\"\n                }\n            },\n            \"items\": {\n                \"links\": {\n                    \"related\": \"/api/v1/shop/orders/1/relationships/items\"\n                }\n            },\n            \"connectedOrders\": {\n                \"links\": {\n                    \"related\": \"/api/v1/shop/orders/1/relationships/connected_orders\"\n                }\n            },\n            \"orderAdjustments\": {\n                \"links\": {\n                    \"related\": \"/api/v1/shop/orders/1/relationships/order_adjustments\"\n                }\n            }\n        }\n    }\n}"
+                      "body": "{\n    \"jsonapi\": {\n        \"version\": \"1.0\"\n    },\n    \"data\": {\n        \"type\": \"shop_order\",\n        \"id\": \"1\",\n        \"links\": {\n            \"self\": \"/api/v1/shop/orders/1\"\n        },\n        \"attributes\": {\n            \"code\": \"1/09/2018/1\",\n            \"currency\": \"PLN\",\n            \"amount\": 103.19,\n            \"points\": 329,\n            \"orderer\": {\n                \"name\": \"John Smith\",\n                \"isCompany\": true,\n                \"companyName\": \"Smith Company\",\n                \"phone\": \"123456789\",\n                \"email\": \"john@example.com\",\n                \"address\": {\n                    \"countryId\": \"PL\",\n                    \"postalCode\": \"00-189\",\n                    \"regionName\": null,\n                    \"regionCode\": null,\n                    \"cityName\": \"Warsaw\",\n                    \"street\": \"Some Rd 4C\",\n                    \"annotations\": null\n                },\n                \"vatNumber\": \"123456\",\n                \"isVatEu\": false\n            },\n            \"delivery\": {\n            \t\"name\": \"John Smith\",\n                \"phone\": \"123 456 789\",\n                \"countryId\": \"PL\",\n                \"regionName\": null,\n                \"regionCode\": null,\n                \"postalCode\": \"00-189\",\n                \"cityName\": \"Warsaw\",\n                \"street\": \"Some Rd 4C\"\n            },\n            \"warehouseId\": 2,\n            \"cancelled\": false,\n            \"createdAt\": \"2018-09-03T07:33:48+0200\",\n            \"paidAt\": \"2021-05-27T21:27:04+0200\",\n            \"currentStatusId\": 2,\n            \"currentStatusUpdatedAt\": \"2018-10-19T21:06:45+0200\",\n            \"shipSalesDocument\": true\n        },\n        \"relationships\": {\n            \"payment\": {\n                \"links\": {\n                    \"related\": \"/api/v1/shop/orders/1/relationships/payment\"\n                },\n                \"data\": {\n                    \"type\": \"shop_order_payment\",\n                    \"id\": \"23\"\n                }\n            },\n            \"shipment\": {\n                \"links\": {\n                    \"related\": \"/api/v1/shop/orders/1/relationships/shipment\"\n                },\n                \"data\": {\n                    \"type\": \"shop_order_shipment\",\n                    \"id\": \"25\"\n                }\n            },\n            \"items\": {\n                \"links\": {\n                    \"related\": \"/api/v1/shop/orders/1/relationships/items\"\n                }\n            },\n            \"connectedOrders\": {\n                \"links\": {\n                    \"related\": \"/api/v1/shop/orders/1/relationships/connected_orders\"\n                }\n            },\n            \"orderAdjustments\": {\n                \"links\": {\n                    \"related\": \"/api/v1/shop/orders/1/relationships/order_adjustments\"\n                }\n            }\n        }\n    }\n}"
                     }
                   ]
                 },
