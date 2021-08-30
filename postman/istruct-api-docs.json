@@ -43,7 +43,7 @@
               }
             }
           ],
-          "id": "b8a48a3c-1c26-4446-8339-0283c2718679",
+          "_postman_id": "b8a48a3c-1c26-4446-8339-0283c2718679",
           "protocolProfileBehavior": {
             "disableBodyPruning": true
           },
@@ -84,7 +84,10 @@
                   "value": "{{client_scopes}}",
                   "disabled": true
                 }
-              ]
+              ],
+              "options": {
+                "urlencoded": {}
+              }
             },
             "url": "{{url}}/api/v1/oauth2/token",
             "description": "Generates new OAuth2 JWT token for current client."
@@ -210,7 +213,10 @@
                       "value": "{{client_scopes}}",
                       "type": "text"
                     }
-                  ]
+                  ],
+                  "options": {
+                    "urlencoded": {}
+                  }
                 },
                 "url": "{{url}}/api/v1/oauth2/token"
               },
@@ -266,7 +272,7 @@
           ]
         }
       ],
-      "id": "98582d72-aa93-4bc7-823b-db3c9a6b71f0",
+      "_postman_id": "98582d72-aa93-4bc7-823b-db3c9a6b71f0",
       "description": "To interact with other endpoints your requests have to be authorized using OAuth2 access token.\n\nTo obtain a token your application can get it in exchange for API Keys using client credentials grant (id and secret).",
       "event": [
         {
@@ -302,7 +308,7 @@
               "item": [
                 {
                   "name": "Fetch multiple orders",
-                  "id": "39c07ac8-6d3c-46da-911c-5f685c5abb95",
+                  "_postman_id": "39c07ac8-6d3c-46da-911c-5f685c5abb95",
                   "request": {
                     "method": "GET",
                     "header": [
@@ -466,7 +472,7 @@
                 },
                 {
                   "name": "Fetch single order",
-                  "id": "9b99bad5-ef1d-4c20-ad19-e16060f0b5c7",
+                  "_postman_id": "9b99bad5-ef1d-4c20-ad19-e16060f0b5c7",
                   "request": {
                     "method": "GET",
                     "header": [
@@ -545,7 +551,7 @@
                 },
                 {
                   "name": "Fetch order items",
-                  "id": "d7ab1aa6-4924-48d2-9cf1-8d707fbbd5fb",
+                  "_postman_id": "d7ab1aa6-4924-48d2-9cf1-8d707fbbd5fb",
                   "request": {
                     "method": "GET",
                     "header": [
@@ -628,7 +634,7 @@
                 },
                 {
                   "name": "Fetch order adjustments",
-                  "id": "256224fa-70f3-4b8d-b5e3-8fdf8f0c898e",
+                  "_postman_id": "256224fa-70f3-4b8d-b5e3-8fdf8f0c898e",
                   "protocolProfileBehavior": {
                     "disableBodyPruning": true
                   },
@@ -675,7 +681,7 @@
                 },
                 {
                   "name": "Fetch order connected orders",
-                  "id": "e59e425a-fe43-41ba-9f3c-9a73b189f294",
+                  "_postman_id": "e59e425a-fe43-41ba-9f3c-9a73b189f294",
                   "request": {
                     "method": "GET",
                     "header": [
@@ -816,7 +822,7 @@
                 },
                 {
                   "name": "Fetch order payment",
-                  "id": "54d79020-2090-4f3a-9a9e-f0611c2decd1",
+                  "_postman_id": "54d79020-2090-4f3a-9a9e-f0611c2decd1",
                   "request": {
                     "method": "GET",
                     "header": [
@@ -899,7 +905,7 @@
                 },
                 {
                   "name": "Fetch order shipment",
-                  "id": "5fda03da-f695-475d-8c8a-b30d297e7196",
+                  "_postman_id": "5fda03da-f695-475d-8c8a-b30d297e7196",
                   "request": {
                     "method": "GET",
                     "header": [
@@ -986,7 +992,7 @@
                 },
                 {
                   "name": "Fetch order sales document",
-                  "id": "44680e09-4033-41d5-8611-2ab457f5b5ce",
+                  "_postman_id": "44680e09-4033-41d5-8611-2ab457f5b5ce",
                   "request": {
                     "method": "GET",
                     "header": [
@@ -1065,7 +1071,7 @@
                 },
                 {
                   "name": "Mark order as paid",
-                  "id": "f1ccf4ff-f691-4356-94a5-076b052fc107",
+                  "_postman_id": "f1ccf4ff-f691-4356-94a5-076b052fc107",
                   "protocolProfileBehavior": {
                     "disableBodyPruning": true
                   },
@@ -1083,7 +1089,10 @@
                     ],
                     "body": {
                       "mode": "raw",
-                      "raw": "{\n    \"data\": {\n        \"type\": \"shop_order\",\n        \"attributes\": {\n            \"paid\": true\n        }\n    }\n}"
+                      "raw": "{\n    \"data\": {\n        \"type\": \"shop_order\",\n        \"attributes\": {\n            \"paid\": true\n        }\n    }\n}",
+                      "options": {
+                        "raw": {}
+                      }
                     },
                     "url": "{{url}}/api/v1/shop/orders/{{order_id}}",
                     "description": "**Required scope**: `shop_orders:put` AND `shop_orders:put:paid`\n\nYou can mark Order as paid by sending PUT request with `paid` field set to `true`.\n\nPlease be warned - once Order is marked as paid, **it cannot be unmarked**."
@@ -1217,7 +1226,7 @@
                 },
                 {
                   "name": "Add single order",
-                  "id": "9fc62f24-c74f-456e-8b8c-6ef02d3b91a9",
+                  "_postman_id": "9fc62f24-c74f-456e-8b8c-6ef02d3b91a9",
                   "protocolProfileBehavior": {
                     "disableBodyPruning": true
                   },
@@ -1235,7 +1244,10 @@
                     ],
                     "body": {
                       "mode": "raw",
-                      "raw": "{\n    \"jsonapi\": {\n        \"version\": \"1.0\"\n    },\n    \"data\": {\n        \"type\": \"shop_order\",\n        \"attributes\": {\n            \"orderer\": {\n                \"nameFirst\": \"John\",\n                \"nameLast\": \"Smith\",\n                \"isCompany\": false,\n                \"companyName\": null,\n                \"phone\": \"123456789\",\n                \"email\": \"john@example.com\",\n                \"address\": {\n                    \"countryId\": \"PL\",\n                    \"postalCode\": \"00-189 \",\n                    \"cityName\": \"Warsaw\",\n                    \"street\": \"Test Rd 1\",\n                    \"annotations\": \"This is some annotation\"\n                },\n                \"vatNumber\": null\n            },\n            \"delivery\": {\n                \"nameFirst\": \"System's\",\n                \"nameLast\": \"Administrator\",\n                \"phone\": \"123456789\",\n                \"countryId\": \"US\",\n                \"regionCode\": \"NJ\",\n                \"postalCode\": \"00-189 \",\n                \"cityName\": \"Warsaw\",\n                \"street\": \"12th Test Rd\"\n            },\n            \"items\": [\n                {\n                    \"code\": \"001\",\n                    \"quantity\": 20\n                },\n                {\n                    \"id\": \"264812\",\n                    \"quantity\": 1\n                }\n            ],\n            \"shipmentTypeCode\": \"ups\",\n            \"paymentTypeCode\": \"credit_card\"\n        },\n        \"relationships\": {\n            \"user\": {\n                \"data\": {\n                    \"type\": \"user\",\n                    \"id\": \"US0123456\"\n                }\n            },\n        \t\"tags\": {\n        \t\t\"data\": [\n        \t\t\t{\n        \t\t\t\t\"type\": \"tag\",\n        \t\t\t\t\"id\": \"other-tag\"\n        \t\t\t},\n        \t\t\t{\n        \t\t\t\t\"type\": \"tag\",\n        \t\t\t\t\"id\": \"membertek-sample\"\n        \t\t\t}\n    \t\t\t]\n        \t}\n        }\n    }\n}"
+                      "raw": "{\n    \"jsonapi\": {\n        \"version\": \"1.0\"\n    },\n    \"data\": {\n        \"type\": \"shop_order\",\n        \"attributes\": {\n            \"orderer\": {\n                \"nameFirst\": \"John\",\n                \"nameLast\": \"Smith\",\n                \"isCompany\": false,\n                \"companyName\": null,\n                \"phone\": \"123456789\",\n                \"email\": \"john@example.com\",\n                \"address\": {\n                    \"countryId\": \"PL\",\n                    \"postalCode\": \"00-189 \",\n                    \"cityName\": \"Warsaw\",\n                    \"street\": \"Test Rd 1\",\n                    \"annotations\": \"This is some annotation\"\n                },\n                \"vatNumber\": null\n            },\n            \"delivery\": {\n                \"nameFirst\": \"System's\",\n                \"nameLast\": \"Administrator\",\n                \"phone\": \"123456789\",\n                \"countryId\": \"US\",\n                \"regionCode\": \"NJ\",\n                \"postalCode\": \"00-189 \",\n                \"cityName\": \"Warsaw\",\n                \"street\": \"12th Test Rd\"\n            },\n            \"items\": [\n                {\n                    \"code\": \"001\",\n                    \"quantity\": 20\n                },\n                {\n                    \"id\": \"264812\",\n                    \"quantity\": 1\n                }\n            ],\n            \"shipmentTypeCode\": \"ups\",\n            \"paymentTypeCode\": \"credit_card\"\n        },\n        \"relationships\": {\n            \"user\": {\n                \"data\": {\n                    \"type\": \"user\",\n                    \"id\": \"US0123456\"\n                }\n            },\n        \t\"tags\": {\n        \t\t\"data\": [\n        \t\t\t{\n        \t\t\t\t\"type\": \"tag\",\n        \t\t\t\t\"id\": \"other-tag\"\n        \t\t\t},\n        \t\t\t{\n        \t\t\t\t\"type\": \"tag\",\n        \t\t\t\t\"id\": \"membertek-sample\"\n        \t\t\t}\n    \t\t\t]\n        \t}\n        }\n    }\n}",
+                      "options": {
+                        "raw": {}
+                      }
                     },
                     "url": "{{url}}/api/v1/shop/orders",
                     "description": "**Required scope**: `shop_orders:post`\n\n**Order attributes**\n\n| Name                    | Type        | Required | Description                                                                         |\n|-------------------------|-------------|----------|-------------------------------------------------------------------------------------|\n| orderer                 | array       | No       | If this field is skipped entirely, data from user's profile will be used            |\n| orderer.nameFirst       | string      | Yes      | First name of entity that placed this order                                         |\n| orderer.nameLast        | string      | Yes      | Last name of entity that placed this order                                          |\n| orderer.isCompany       | bool        | Yes      | Whether order has been placed on behalf of a company entity                         |\n| orderer.companyName     | string or null | Yes/No   | This is required when `isCompany = true`                                            |\n| orderer.phone           | string      | Yes      | Phone number of orderer                                                             |\n| orderer.email           | string      | Yes      | E-mail address of orderer                                                           |\n| orderer.address.countryId | string    | Yes      | [ISO 3166-1 alpha-2](https://en.wikipedia.org/wiki/ISO_3166-1_alpha-2) country code |\n| orderer.address.regionCode | string   | Yes/No   | This field might be required for some addresses, depending on configuration of your iStruct instance. It contains 2-letter state/region/land code. |\n| orderer.address.postalCode| string    | Yes      | Orderer postal code                                                                 |\n| orderer.address.cityName  | string    | Yes      | Orderer city name                                                                   |\n| orderer.address.street    | string    | Yes      | Orderer address (street, home number, apartment number                              |\n| orderer.address.annotations | string or null  | No      | Orderer annotations or remarks regarding this order                                 |\n| orderer.vatNumber       | string or null      | Yes/No      | When `isCompany = true` this number is required (used for invoicing)                  |\n| delivery                | array       | No       | If this field is skipped entirely, default user's address will be used           |\n| delivery.nameFirst      | string      | Yes      | Order receiver first name                                                          |\n| delivery.nameLast       | string      | Yes      | Order receiver last name                                                            |\n| delivery.phone          | string      | Yes      | Phone number for delivery                                                           |\n| delivery.countryId      | string      | Yes      | [ISO 3166-1 alpha-2](https://en.wikipedia.org/wiki/ISO_3166-1_alpha-2) country code |\n| delivery.regionCode     | string      | Yes/No   | This field might be required for some addresses, depending on configuration of your iStruct instance. It contains 2-letter state/region/land code.\n| delivery.postalCode     | string      | Yes      | Delivery postal code                                                                |\n| delivery.cityName       | string      | Yes      | Delivery city name                                                                  |\n| delivery.street         | string      | Yes      | Delivery address (street, home number, apartment number                             |\n| shipSalesDocument       | bool        | Yes/No   | Whether physical copy of sales document should be inserted into package (customer wish). Depends on your iStruct instance configuration, may be disabled. |\n| items.[].code           | string      | Yes      | Item code of ordered product                                                     |\n| items.[].quantity       | integer     | Yes      | Ordered quantity of given item                                                      |\n| shipmentTypeCode        | string      | Yes      | Shipment type code, which can be fetched via **ShipmentType** endpoint                |\n| paymentTypeCode        | string       | Yes      | Payment type code, which can be fetched via **PaymentType** endpoint                   |\n\n**Relationships**\n\n\n| Name                    | Required | Description                                                                         |\n|-------------------------|----------|-------------------------------------------------------------------------------------|\n| user                    | Yes      | iStruct's user that makes this order                                                |\n| warehouse               | No       | if your iStruct instance allows users to directly change the warehouse they are ordering from, you can change it here as well. Otherwise, this field is not directly accessible. |\n| tags                    | No       | List of tags that should be added to this order                                     |"
@@ -1313,7 +1325,7 @@
                   ]
                 }
               ],
-              "id": "839fab0d-b849-45f6-a46b-f91f5ebd3b8a",
+              "_postman_id": "839fab0d-b849-45f6-a46b-f91f5ebd3b8a",
               "description": "Shop Order contains at least one product **Item**, exactly one **Shipment** and exactly one **Payment** objects. It can contain zero or more **Connected Orders**, zero or exactly one **Sales Document** objects and zero ore more **OrderAdjustment**",
               "event": [
                 {
@@ -1336,14 +1348,15 @@
                     ]
                   }
                 }
-              ]
+              ],
+              "_postman_isSubFolder": true
             },
             {
               "name": "Package",
               "item": [
                 {
                   "name": "Fetch multiple packages",
-                  "id": "d60874bd-a5c1-4375-a8da-aaa9c0dee547",
+                  "_postman_id": "d60874bd-a5c1-4375-a8da-aaa9c0dee547",
                   "request": {
                     "method": "GET",
                     "header": [
@@ -1516,7 +1529,7 @@
                 },
                 {
                   "name": "Fetch single package",
-                  "id": "9e33573f-4599-4ff2-96f1-b7cfe9237d53",
+                  "_postman_id": "9e33573f-4599-4ff2-96f1-b7cfe9237d53",
                   "request": {
                     "method": "GET",
                     "header": [
@@ -1672,7 +1685,7 @@
                 },
                 {
                   "name": "Fetch package main order",
-                  "id": "a1c609b8-eb80-4675-9eca-34c3d131b2eb",
+                  "_postman_id": "a1c609b8-eb80-4675-9eca-34c3d131b2eb",
                   "request": {
                     "method": "GET",
                     "header": [
@@ -1751,7 +1764,7 @@
                 },
                 {
                   "name": "Fetch package main shipment",
-                  "id": "f4b99a90-7ba1-497f-8177-fb418188f34f",
+                  "_postman_id": "f4b99a90-7ba1-497f-8177-fb418188f34f",
                   "request": {
                     "method": "GET",
                     "header": [
@@ -1834,7 +1847,7 @@
                 },
                 {
                   "name": "Mark package as sent",
-                  "id": "be375048-8ab0-47e3-a1f3-116f47125885",
+                  "_postman_id": "be375048-8ab0-47e3-a1f3-116f47125885",
                   "request": {
                     "method": "PUT",
                     "header": [
@@ -2051,7 +2064,7 @@
                 },
                 {
                   "name": "Mark package as delivered",
-                  "id": "4b9987b8-3e20-4761-b3f0-36f2e9cadafd",
+                  "_postman_id": "4b9987b8-3e20-4761-b3f0-36f2e9cadafd",
                   "request": {
                     "method": "PUT",
                     "header": [
@@ -2206,7 +2219,7 @@
                 },
                 {
                   "name": "Set package tracking details",
-                  "id": "561023af-7b3b-402b-bbe8-502e09fca4ff",
+                  "_postman_id": "561023af-7b3b-402b-bbe8-502e09fca4ff",
                   "request": {
                     "method": "PUT",
                     "header": [
@@ -2360,7 +2373,7 @@
                   ]
                 }
               ],
-              "id": "22efebb0-9f03-4dd2-ad24-94cd16d2d2d0",
+              "_postman_id": "22efebb0-9f03-4dd2-ad24-94cd16d2d2d0",
               "description": "Packages aggregate Orders into a single entity that allows one or more of them to be shipped in one parcel. Package contains one **Main Order** that defines delivery address and shipment type. Main order can contain zero or more **Connected Orders** that should be shipped all together.",
               "event": [
                 {
@@ -2383,14 +2396,15 @@
                     ]
                   }
                 }
-              ]
+              ],
+              "_postman_isSubFolder": true
             },
             {
               "name": "Channels",
               "item": [
                 {
                   "name": "Fetch shop channels",
-                  "id": "846180ff-1e5d-4b50-aa25-e7f5cbbd602b",
+                  "_postman_id": "846180ff-1e5d-4b50-aa25-e7f5cbbd602b",
                   "protocolProfileBehavior": {
                     "disableBodyPruning": true
                   },
@@ -2475,7 +2489,7 @@
                   ]
                 }
               ],
-              "id": "f2fea801-5aea-4025-926e-63970c8a01fb",
+              "_postman_id": "f2fea801-5aea-4025-926e-63970c8a01fb",
               "description": "This endpoint allows to fetch shop channels. Channels are separate places where Products can be purchased. These are predefined by other modules that are available in the system (ex. Online shop, Autoship, Admin orders). You can assign Products to be available only in specified channels.",
               "event": [
                 {
@@ -2498,14 +2512,15 @@
                     ]
                   }
                 }
-              ]
+              ],
+              "_postman_isSubFolder": true
             },
             {
               "name": "ShipmentType",
               "item": [
                 {
                   "name": "Fetch multiple shipment types",
-                  "id": "0e46d479-534c-4b1e-bf65-b9ca4dcadda4",
+                  "_postman_id": "0e46d479-534c-4b1e-bf65-b9ca4dcadda4",
                   "protocolProfileBehavior": {
                     "disableBodyPruning": true
                   },
@@ -2586,7 +2601,7 @@
                   ]
                 }
               ],
-              "id": "58fe4f42-ec3a-42f9-a0bf-19ede0b0a78e",
+              "_postman_id": "58fe4f42-ec3a-42f9-a0bf-19ede0b0a78e",
               "description": "This endpoint returns information about shipment methods available in your iStruct instance via API. Every shipment type has a unique code, which is required when creating **Order** via api.",
               "event": [
                 {
@@ -2609,14 +2624,15 @@
                     ]
                   }
                 }
-              ]
+              ],
+              "_postman_isSubFolder": true
             },
             {
               "name": "PaymentType",
               "item": [
                 {
                   "name": "Fetch multiple payment types",
-                  "id": "c63d7a03-0fe9-4c97-bb7d-c7cc124e294d",
+                  "_postman_id": "c63d7a03-0fe9-4c97-bb7d-c7cc124e294d",
                   "protocolProfileBehavior": {
                     "disableBodyPruning": true
                   },
@@ -2697,7 +2713,7 @@
                   ]
                 }
               ],
-              "id": "8608d0b6-a825-44a0-abd0-84d12f86130c",
+              "_postman_id": "8608d0b6-a825-44a0-abd0-84d12f86130c",
               "description": "This endpoint returns information about payment methods available in your iStruct instance via API. Every payment type has a unique code, which is required when creating **Order** via api.",
               "event": [
                 {
@@ -2720,14 +2736,15 @@
                     ]
                   }
                 }
-              ]
+              ],
+              "_postman_isSubFolder": true
             },
             {
               "name": "AdjustmentType",
               "item": [
                 {
                   "name": "Fetch multiple adjustment types",
-                  "id": "bbf39b55-46c8-4f57-8ba5-20ac9da855e3",
+                  "_postman_id": "bbf39b55-46c8-4f57-8ba5-20ac9da855e3",
                   "protocolProfileBehavior": {
                     "disableBodyPruning": true
                   },
@@ -2777,7 +2794,7 @@
                   ]
                 }
               ],
-              "id": "1f721936-96df-4547-80d3-c29f4320c329",
+              "_postman_id": "1f721936-96df-4547-80d3-c29f4320c329",
               "description": "This endpoint returns information about adjustment types available in your iStruct instance via API. Adjustments are things that affect either order value (e. g. discounts, sales tax) or payment amount (e. g. vouchers, partial payments from wallet).",
               "event": [
                 {
@@ -2800,14 +2817,15 @@
                     ]
                   }
                 }
-              ]
+              ],
+              "_postman_isSubFolder": true
             },
             {
               "name": "ProductType",
               "item": [
                 {
                   "name": "Fetch multiple product types",
-                  "id": "b22daf46-a615-449c-bc46-6290b5fc0b5f",
+                  "_postman_id": "b22daf46-a615-449c-bc46-6290b5fc0b5f",
                   "protocolProfileBehavior": {
                     "disableBodyPruning": true
                   },
@@ -2831,7 +2849,7 @@
                   "response": []
                 }
               ],
-              "id": "c1800ac5-0d1d-4ddf-a084-8d6943c26c13",
+              "_postman_id": "c1800ac5-0d1d-4ddf-a084-8d6943c26c13",
               "event": [
                 {
                   "listen": "prerequest",
@@ -2853,14 +2871,15 @@
                     ]
                   }
                 }
-              ]
+              ],
+              "_postman_isSubFolder": true
             },
             {
               "name": "Product",
               "item": [
                 {
                   "name": "Fetch multiple products",
-                  "id": "7550c3f4-f04b-4bea-8331-fd87f9f4ad08",
+                  "_postman_id": "7550c3f4-f04b-4bea-8331-fd87f9f4ad08",
                   "protocolProfileBehavior": {
                     "disableBodyPruning": true
                   },
@@ -2946,7 +2965,7 @@
                 },
                 {
                   "name": "Fetch single product",
-                  "id": "2cb9e535-cc20-4508-b7f1-f585c902cc35",
+                  "_postman_id": "2cb9e535-cc20-4508-b7f1-f585c902cc35",
                   "protocolProfileBehavior": {
                     "disableBodyPruning": true
                   },
@@ -3072,7 +3091,7 @@
                 },
                 {
                   "name": "Fetch product type",
-                  "id": "f802b3b9-f394-4385-81d3-c4b8ef165d75",
+                  "_postman_id": "f802b3b9-f394-4385-81d3-c4b8ef165d75",
                   "protocolProfileBehavior": {
                     "disableBodyPruning": true
                   },
@@ -3206,7 +3225,7 @@
                 },
                 {
                   "name": "Fetch product items",
-                  "id": "988ab008-bcd4-4856-896a-0a363247c553",
+                  "_postman_id": "988ab008-bcd4-4856-896a-0a363247c553",
                   "protocolProfileBehavior": {
                     "disableBodyPruning": true
                   },
@@ -3334,7 +3353,7 @@
                 },
                 {
                   "name": "Fetch single product item",
-                  "id": "ab37a61f-caf8-4b6e-9779-44400d8c2f7f",
+                  "_postman_id": "ab37a61f-caf8-4b6e-9779-44400d8c2f7f",
                   "protocolProfileBehavior": {
                     "disableBodyPruning": true
                   },
@@ -3476,7 +3495,7 @@
                 },
                 {
                   "name": "Fetch single product categories",
-                  "id": "d3201016-6336-46a2-818e-70373cd26aed",
+                  "_postman_id": "d3201016-6336-46a2-818e-70373cd26aed",
                   "protocolProfileBehavior": {
                     "disableBodyPruning": true
                   },
@@ -3524,7 +3543,7 @@
                 },
                 {
                   "name": "Fetch single product channels",
-                  "id": "05a51e87-38c1-46d7-b3e6-b32fffffe673",
+                  "_postman_id": "05a51e87-38c1-46d7-b3e6-b32fffffe673",
                   "protocolProfileBehavior": {
                     "disableBodyPruning": true
                   },
@@ -3572,7 +3591,7 @@
                 },
                 {
                   "name": "Fetch single product statuses",
-                  "id": "c9a82b41-70e2-4ab8-ac12-4e90693ca2b6",
+                  "_postman_id": "c9a82b41-70e2-4ab8-ac12-4e90693ca2b6",
                   "protocolProfileBehavior": {
                     "disableBodyPruning": true
                   },
@@ -3620,7 +3639,7 @@
                 },
                 {
                   "name": "Fetch product item prices",
-                  "id": "e4a1bcc5-ebe5-44ab-8273-cadfee6cf7ad",
+                  "_postman_id": "e4a1bcc5-ebe5-44ab-8273-cadfee6cf7ad",
                   "protocolProfileBehavior": {
                     "disableBodyPruning": true
                   },
@@ -3860,7 +3879,7 @@
                 },
                 {
                   "name": "Add single product",
-                  "id": "fa07438f-b6b5-4954-96cb-28ae68ae7417",
+                  "_postman_id": "fa07438f-b6b5-4954-96cb-28ae68ae7417",
                   "protocolProfileBehavior": {
                     "disableBodyPruning": true
                   },
@@ -3880,7 +3899,10 @@
                     ],
                     "body": {
                       "mode": "raw",
-                      "raw": "{\n    \"data\": {\n        \"type\": \"shop_product\",\n        \"attributes\": {\n            \"code\": \"123456\",\n            \"languages\": {\n                \"en\": {\n                    \"name\": \"Product name\"\n                },\n                \"ru\": {\n                    \"name\": \"наименование товара\"\n                }\n            },\n            \"typeId\": 1,\n            \"order\": 15,\n            \"active\": true,\n            \"items\": [\n                {\n                    \"code\": \"123456\",\n                    \"zoneId\": 2,\n                    \"taxId\": 3,\n                    \"minimalStock\": 0,\n                    \"emptyStockMessage\": \"Available from 2030-01-01\",\n                    \"availableFrom\": \"2030-01-01T00:00:00+0000\",\n                    \"availableTo\": \"2050-01-01T00:00:00+0000\",\n                    \"active\": true,\n                    \"retailPrice\": {\n                        \"value\": 123.45,\n                        \"points\": 120\n                    },\n                    \"prices\": [\n                        {\n                            \"type\": \"status\",\n                            \"statusId\": 1,\n                            \"value\": 250.00,\n                            \"points\": 120\n                        },\n                        {\n                            \"type\": \"status\",\n                            \"statusId\": 2,\n                            \"value\": 250.00,\n                            \"points\": 120\n                        },\n                        {\n                            \"type\": \"promotion\",\n                            \"statusId\": 1,\n                            \"from\": \"2030-01-01T00:00:00+0000\",\n                            \"to\": \"2030-02-01T23:59:29+0000\",\n                            \"value\": 249.00,\n                            \"points\": 120\n                        },\n                        {\n                            \"type\": \"active\",\n                            \"value\": 245.00,\n                            \"points\": 120\n                        }\n                    ]\n                },\n                {\n                    \"code\": \"123456\",\n                    \"zoneId\": 9,\n                    \"taxId\": 100,\n                    \"active\": false,\n                    \"retailPrice\": {\n                        \"value\": 220.00,\n                        \"points\": 120\n                    }\n                }\n            ]\n        },\n        \"relationships\": {\n            \"categories\": {\n                \"data\": [\n                    {\n                        \"type\": \"shop_category\",\n                        \"id\": \"1\"\n                    },\n                    {\n                        \"type\": \"shop_category\",\n                        \"id\": \"2\"\n                    }\n                ]\n            },\n            \"channels\": {\n                \"data\": [\n                    {\n                        \"type\": \"shop_channel\",\n                        \"id\": \"1\"\n                    }\n                ]\n            },\n            \"statuses\": {\n                \"data\": [\n                    {\n                        \"type\": \"user_status\",\n                        \"id\": \"1\"\n                    },\n                    {\n                        \"type\": \"user_status\",\n                        \"id\": \"2\"\n                    }\n                ]\n            }\n        }\n    }\n}\n"
+                      "raw": "{\n    \"data\": {\n        \"type\": \"shop_product\",\n        \"attributes\": {\n            \"code\": \"123456\",\n            \"languages\": {\n                \"en\": {\n                    \"name\": \"Product name\"\n                },\n                \"ru\": {\n                    \"name\": \"наименование товара\"\n                }\n            },\n            \"typeId\": 1,\n            \"order\": 15,\n            \"active\": true,\n            \"items\": [\n                {\n                    \"code\": \"123456\",\n                    \"zoneId\": 2,\n                    \"taxId\": 3,\n                    \"minimalStock\": 0,\n                    \"emptyStockMessage\": \"Available from 2030-01-01\",\n                    \"availableFrom\": \"2030-01-01T00:00:00+0000\",\n                    \"availableTo\": \"2050-01-01T00:00:00+0000\",\n                    \"active\": true,\n                    \"retailPrice\": {\n                        \"value\": 123.45,\n                        \"points\": 120\n                    },\n                    \"prices\": [\n                        {\n                            \"type\": \"status\",\n                            \"statusId\": 1,\n                            \"value\": 250.00,\n                            \"points\": 120\n                        },\n                        {\n                            \"type\": \"status\",\n                            \"statusId\": 2,\n                            \"value\": 250.00,\n                            \"points\": 120\n                        },\n                        {\n                            \"type\": \"promotion\",\n                            \"statusId\": 1,\n                            \"from\": \"2030-01-01T00:00:00+0000\",\n                            \"to\": \"2030-02-01T23:59:29+0000\",\n                            \"value\": 249.00,\n                            \"points\": 120\n                        },\n                        {\n                            \"type\": \"active\",\n                            \"value\": 245.00,\n                            \"points\": 120\n                        }\n                    ]\n                },\n                {\n                    \"code\": \"123456\",\n                    \"zoneId\": 9,\n                    \"taxId\": 100,\n                    \"active\": false,\n                    \"retailPrice\": {\n                        \"value\": 220.00,\n                        \"points\": 120\n                    }\n                }\n            ]\n        },\n        \"relationships\": {\n            \"categories\": {\n                \"data\": [\n                    {\n                        \"type\": \"shop_category\",\n                        \"id\": \"1\"\n                    },\n                    {\n                        \"type\": \"shop_category\",\n                        \"id\": \"2\"\n                    }\n                ]\n            },\n            \"channels\": {\n                \"data\": [\n                    {\n                        \"type\": \"shop_channel\",\n                        \"id\": \"1\"\n                    }\n                ]\n            },\n            \"statuses\": {\n                \"data\": [\n                    {\n                        \"type\": \"user_status\",\n                        \"id\": \"1\"\n                    },\n                    {\n                        \"type\": \"user_status\",\n                        \"id\": \"2\"\n                    }\n                ]\n            }\n        }\n    }\n}\n",
+                      "options": {
+                        "raw": {}
+                      }
                     },
                     "url": "{{url}}/api/v1/shop/products",
                     "description": "**Required scope**: `shop_products:post`\n\nYou CAN create a complete shop product through this endpoint.\n\nYou CAN set product as `active` only when there is at least one `active`\nproduct item added in the same request.\n\nYou CAN set relationships to shop categories, shop channels\n(availability) and user statuses (user targeting).\n\nYou MUST provide at least one product name (in default language).\n\nYou MAY omit non-required parameters from request body.\n\n##### Product attributes\n\n| Name          | Type                      | Required | Description                                                  |\n| :------------ | :------------------------ | :------- | :----------------------------------------------------------- |\n| code          | string                    | Yes      | Code (SKU)                                                   |\n| typeId        | integer                   | Yes      | Type ID (can be fetched from `/api/v1/shop/products-types` endpoint). |\n| languages     | object                    | Yes      | Product names, default translation is required.       |\n| active        | boolean                   | Yes      | When Product is active, all its active Items are shown in Channels. |\n| order         | integer                   | No       | Ordinal number (positive or negative). It is used to sort products on product lists. |\n| items         | array of **Product item** | No       | Product items array (can be used to create items in the same request as product). |\n| warehouseCode | string\\|null              | Yes      | Assigns exist warehouse position. If value null provided will be created new warehouse position. |\n\n##### Product item attributes\n\n| Name                | Type               | Required | Description                                                  |\n| :------------------ | :----------------- | :------- | :----------------------------------------------------------- |\n| code                | string             | Yes      | Code (SKU)                                                   |\n| zoneId              | integer            | Yes      | Zone ID (can be fetched from `/api/v1/zones` endpoint). It determines item availability, price currency etc. |\n| taxId               | integer            | Yes  | VAT Tax ID (can be fetched from `/api/v1/zones/:id/relationships/taxes` endpoint). |\n| retailPrice         | object             | Yes      | Retail unit price (object properties are described below).   |\n| retailPrice.value   | decimal            | Yes      | Unit price value in Zone currency.                           |\n| retailPrice.points  | decimal            | Yes      | Unit points value.                                           |\n| active              | boolean            | Yes      | Inactive items are not shown in Channels.                    |\n| prices              | array of **Price** | No       | Additional prices.                                           |\n| minimalStock        | integer            | No       | Minimal stock of this item.                                  |\n| emptyStockMessage   | string             | No       | This message is shown in some Channels when item is out of stock. |\n| availableFrom       | datetime           | No       | Availability date range in ISO 8601 date and time format. When empty, item is always available. |\n| availableTo         | datetime           | No       | Availability date range in ISO 8601 date and time format. When empty, item is always available. |\n| warehouseCode       | string\\|null       | Yes      | Assigns exist warehouse position. If value null provided will be created new warehouse position. |\n\n##### Price attributes\n\n| Name     | Type     | Required | Description                                                  |\n| :------- | :------- | :------- | :----------------------------------------------------------- |\n| type     | string   | Yes      | Can be one of: `status`, `promotion`, `active`. |\n| value    | decimal  | Yes      | Unit price value in Zone currency.                           |\n| points   | decimal  | Yes      | Unit points value.                                           |\n| statusId | integer  | Yes/No*  | Price targeting by User status ID (can be fetched from `/api/v1/users/statuses`). *Required and can be set only for type `promotion` and `status`. |\n| from     | datetime | No       | Promotional price effective date range in ISO 8601 date and time format. When empty, price is always effective. Can be set only for type `promotion`. |\n| to       | datetime | No       | Promotional price effective date range in ISO 8601 date and time format. When empty, price is always effective. Can be set only for type `promotion`. |\n\n##### Product relationships\n\n| Name       | Required | Description                                                  |\n| :--------- | :------- | :----------------------------------------------------------- |\n| categories | No       | List of Shop categories in which Product is listed (can be fetched from `/api/v1/shop/categories`). |\n| channels   | No       | List of Shop channels in which Product is listed (can be fetched from `/api/v1/shop/channels`). |\n| statuses   | No       | List of User statuses for which Product is available for purchase (can be fetched from `/api/v1/users/statuses`). |"
@@ -3932,7 +3954,7 @@
                 },
                 {
                   "name": "Add single product item",
-                  "id": "e2cd5f71-8436-49b0-89e0-4815c09afc83",
+                  "_postman_id": "e2cd5f71-8436-49b0-89e0-4815c09afc83",
                   "protocolProfileBehavior": {
                     "disableBodyPruning": true
                   },
@@ -3952,7 +3974,10 @@
                     ],
                     "body": {
                       "mode": "raw",
-                      "raw": "{\n    \"data\": {\n        \"type\": \"shop_product_item\",\n        \"attributes\": {\n            \"code\": \"123456\",\n            \"zoneId\": 500,\n            \"taxId\":100,\n            \"minimalStock\": 0,\n            \"emptyStockMessage\": \"Not available\",\n            \"availableFrom\": \"2020-01-01T00:00:00+0000\",\n            \"availableTo\": \"2020-12-01T00:00:00+0000\",\n            \"active\": true,\n            \"retailPrice\": {\n                \"value\": 250.00,\n                \"points\": 120\n            },\n            \"prices\": [\n                {\n                    \"type\": \"status\",\n                    \"statusId\": 1,\n                    \"value\": 200.00,\n                    \"points\": 120\n                },\n                {\n                    \"type\": \"status\",\n                    \"statusId\": 2,\n                    \"value\": 300.00,\n                    \"points\": 120\n                }\n            ]\n        }\n    }\n}\n"
+                      "raw": "{\n    \"data\": {\n        \"type\": \"shop_product_item\",\n        \"attributes\": {\n            \"code\": \"123456\",\n            \"zoneId\": 500,\n            \"taxId\":100,\n            \"minimalStock\": 0,\n            \"emptyStockMessage\": \"Not available\",\n            \"availableFrom\": \"2020-01-01T00:00:00+0000\",\n            \"availableTo\": \"2020-12-01T00:00:00+0000\",\n            \"active\": true,\n            \"retailPrice\": {\n                \"value\": 250.00,\n                \"points\": 120\n            },\n            \"prices\": [\n                {\n                    \"type\": \"status\",\n                    \"statusId\": 1,\n                    \"value\": 200.00,\n                    \"points\": 120\n                },\n                {\n                    \"type\": \"status\",\n                    \"statusId\": 2,\n                    \"value\": 300.00,\n                    \"points\": 120\n                }\n            ]\n        }\n    }\n}\n",
+                      "options": {
+                        "raw": {}
+                      }
                     },
                     "url": {
                       "raw": "{{url}}/api/v1/shop/products/:id/items",
@@ -4073,7 +4098,7 @@
                   ]
                 }
               ],
-              "id": "ebe5a356-2030-4dc6-8f72-d4dc701d19cd",
+              "_postman_id": "ebe5a356-2030-4dc6-8f72-d4dc701d19cd",
               "description": "Product catalog management endpoints. \n\nEach **Product** contains one or more **Product items**.\n\nEach **Product item** contains **Retail price** and MAY contain additional **Prices**.",
               "event": [
                 {
@@ -4096,14 +4121,15 @@
                     ]
                   }
                 }
-              ]
+              ],
+              "_postman_isSubFolder": true
             },
             {
               "name": "ProductCategories",
               "item": [
                 {
                   "name": "Fetch multiple product categories",
-                  "id": "a040edf8-93da-4368-a716-62aa903ad90c",
+                  "_postman_id": "a040edf8-93da-4368-a716-62aa903ad90c",
                   "protocolProfileBehavior": {
                     "disableBodyPruning": true
                   },
@@ -4128,7 +4154,7 @@
                 },
                 {
                   "name": "Fetch single category",
-                  "id": "a3d52b57-7241-43e8-a272-301af7f9da14",
+                  "_postman_id": "a3d52b57-7241-43e8-a272-301af7f9da14",
                   "protocolProfileBehavior": {
                     "disableBodyPruning": true
                   },
@@ -4172,7 +4198,7 @@
                   "response": []
                 }
               ],
-              "id": "e46af370-f700-4240-afac-6bd8f6fae821",
+              "_postman_id": "e46af370-f700-4240-afac-6bd8f6fae821",
               "event": [
                 {
                   "listen": "prerequest",
@@ -4194,10 +4220,11 @@
                     ]
                   }
                 }
-              ]
+              ],
+              "_postman_isSubFolder": true
             }
           ],
-          "id": "3e8f0a97-4916-49d7-a069-1136dbe6a41a",
+          "_postman_id": "3e8f0a97-4916-49d7-a069-1136dbe6a41a",
           "description": "iStruct Shop modules support full eCommerce flow. Products and categories management, order and payment processing with external gateways, shipping packages via carriers or brokers, invoicing and much more.",
           "event": [
             {
@@ -4220,14 +4247,15 @@
                 ]
               }
             }
-          ]
+          ],
+          "_postman_isSubFolder": true
         },
         {
           "name": "User",
           "item": [
             {
               "name": "Fetch user statuses",
-              "id": "c2c9c85a-cacc-4378-9e31-5d0c71649169",
+              "_postman_id": "c2c9c85a-cacc-4378-9e31-5d0c71649169",
               "protocolProfileBehavior": {
                 "disableBodyPruning": true
               },
@@ -4313,7 +4341,7 @@
             },
             {
               "name": "Fetch user tags",
-              "id": "14467db6-9bb6-4b89-89e1-d40e771d2494",
+              "_postman_id": "14467db6-9bb6-4b89-89e1-d40e771d2494",
               "protocolProfileBehavior": {
                 "disableBodyPruning": true
               },
@@ -4420,7 +4448,7 @@
             },
             {
               "name": "Fetch users",
-              "id": "5ebb439f-f530-4d17-a158-d67c84d15991",
+              "_postman_id": "5ebb439f-f530-4d17-a158-d67c84d15991",
               "protocolProfileBehavior": {
                 "disableBodyPruning": true
               },
@@ -4445,7 +4473,7 @@
             },
             {
               "name": "Fetch single user",
-              "id": "1d44e435-3e09-4963-8c13-1a5f6fff3d01",
+              "_postman_id": "1d44e435-3e09-4963-8c13-1a5f6fff3d01",
               "protocolProfileBehavior": {
                 "disableBodyPruning": true
               },
@@ -4515,7 +4543,7 @@
             },
             {
               "name": "Fetch user status",
-              "id": "6452880d-2dd3-4580-82d0-e40273934116",
+              "_postman_id": "6452880d-2dd3-4580-82d0-e40273934116",
               "protocolProfileBehavior": {
                 "disableBodyPruning": true
               },
@@ -4586,7 +4614,7 @@
               ]
             }
           ],
-          "id": "0b256d7f-1312-457b-86bc-91ff1186669b",
+          "_postman_id": "0b256d7f-1312-457b-86bc-91ff1186669b",
           "description": "User accounts and profile data management modules.",
           "event": [
             {
@@ -4609,14 +4637,15 @@
                 ]
               }
             }
-          ]
+          ],
+          "_postman_isSubFolder": true
         },
         {
           "name": "Zones",
           "item": [
             {
               "name": "Fetch system zones",
-              "id": "43e89fe6-0013-4db4-a32a-4315d74d33aa",
+              "_postman_id": "43e89fe6-0013-4db4-a32a-4315d74d33aa",
               "protocolProfileBehavior": {
                 "disableBodyPruning": true
               },
@@ -4702,7 +4731,7 @@
             },
             {
               "name": "Fetch zone taxes",
-              "id": "fb661d32-cf80-4be0-902a-56ecd6cfd701",
+              "_postman_id": "fb661d32-cf80-4be0-902a-56ecd6cfd701",
               "protocolProfileBehavior": {
                 "disableBodyPruning": true
               },
@@ -4829,7 +4858,7 @@
               ]
             }
           ],
-          "id": "795b25b2-4e7e-4b01-9693-766f278e32e1",
+          "_postman_id": "795b25b2-4e7e-4b01-9693-766f278e32e1",
           "description": "iStruct Zones module handles access to various other resources on per zone basis. Each zone may consist of one or more delivery countries or regions. Whole zone has the same accounting rules, same currency, invoicing entity and other settings like default language, locale, timezone etc.",
           "event": [
             {
@@ -4852,14 +4881,15 @@
                 ]
               }
             }
-          ]
+          ],
+          "_postman_isSubFolder": true
         },
         {
           "name": "Tags",
           "item": [
             {
               "name": "Tags definitions",
-              "id": "0958b8ec-a1ad-4677-a3fc-5c8eaeab737d",
+              "_postman_id": "0958b8ec-a1ad-4677-a3fc-5c8eaeab737d",
               "protocolProfileBehavior": {
                 "disableBodyPruning": true
               },
@@ -4949,7 +4979,7 @@
             },
             {
               "name": "Tags definitions types",
-              "id": "282e5d5b-b8d1-4fe6-8e76-fb74d50d2211",
+              "_postman_id": "282e5d5b-b8d1-4fe6-8e76-fb74d50d2211",
               "protocolProfileBehavior": {
                 "disableBodyPruning": true
               },
@@ -5039,7 +5069,7 @@
             },
             {
               "name": "Fetch single tags definition type",
-              "id": "1055778e-ce66-4e3e-ac07-a310efb96493",
+              "_postman_id": "1055778e-ce66-4e3e-ac07-a310efb96493",
               "protocolProfileBehavior": {
                 "disableBodyPruning": true
               },
@@ -5150,7 +5180,7 @@
             },
             {
               "name": "Fetch single tag definition",
-              "id": "dfda4e78-370c-471d-b45d-5f163a8ce658",
+              "_postman_id": "dfda4e78-370c-471d-b45d-5f163a8ce658",
               "protocolProfileBehavior": {
                 "disableBodyPruning": true
               },
@@ -5259,7 +5289,7 @@
               ]
             }
           ],
-          "id": "71617c1e-e148-4c5e-a0c8-8d75598f0370",
+          "_postman_id": "71617c1e-e148-4c5e-a0c8-8d75598f0370",
           "event": [
             {
               "listen": "prerequest",
@@ -5281,10 +5311,11 @@
                 ]
               }
             }
-          ]
+          ],
+          "_postman_isSubFolder": true
         }
       ],
-      "id": "1350357e-8683-4f12-abff-969e9889f12f",
+      "_postman_id": "1350357e-8683-4f12-abff-969e9889f12f",
       "description": "Manage or view iStruct resources.\n\n**All endpoints require Bearer access token.**",
       "auth": {
         "type": "oauth2",
